@@ -1,0 +1,1 @@
+Etapa inicial del proyecto, clonamos el repositorio, creamos la rama develop, y creamos el presente archivo.
