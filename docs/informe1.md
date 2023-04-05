@@ -63,7 +63,7 @@
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
-Precondiciones:  N/A
+**Precondiciones**:  N/A
 Proceso: 
 Debe llenarse un formulario con los siguientes campos:
  1. Email
@@ -71,10 +71,10 @@ Debe llenarse un formulario con los siguientes campos:
  3. Repetir la contraseña
  4. Nombre de usuario
  5. Foto de perfil
-> Nota: Una vez completado los campos anteriores, se habilitara el botón **REGISTRATSE**
+> Nota: Una vez completado los campos anteriores, se habilitara el botón ***REGISTRATSE***
 
-Resultado esperado: Nuevo usuario registrado en el sistema
-Validaciones 
+**Resultado esperado**: Nuevo usuario registrado en el sistema
+**Validaciones**:
  - No debe existir otra cuenta creada con ese correo
  - El campo contraseña y repetir contraseña deben coincidir
  - La contraseña ingresada debe cumplir con los siguientes requerimientos:
@@ -85,6 +85,100 @@ Validaciones
 	-   No debe tener espacios en blanco.
  - El nombre de usuario no puede contener caracteres especiales y su longitud no puede superar los 25 caracteres
  - La foto de perfil debe estar en alguno de los siguientes formatos (PNG,JPEG,GIF) y su tamaño no debe superar los 12MB, también debe tener al menos 400 píxeles de ancho y 150 píxeles de alto.
+---
+#### YO COMO ***USUARIO***
+
+**PUEDO**: Iniciar sesión en la aplicación
+
+**PARA**: Obtener acceso a las funcionalidades de la misma
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Precondiciones**:  La cuenta con la que quiero iniciar sesión debe existir dentro del sistema
+Proceso: 
+Debe llenarse un formulario con los siguientes campos:
+ 1. Email
+ 2. Contraseña segura
+> Nota: Una vez completado los campos anteriores, se habilitara el botón ***INICIAR SESIÓN***
+
+**Resultado esperado**: El usuario es redirigido a la pantalla principal de la aplicación
+**Validaciones**: N/A 
+
+---
+#### YO COMO ***USUARIO***
+
+**PUEDO**: Restablecer mi contraseña 
+
+**PARA**: Recuperar el acceso a la aplicación 
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Precondiciones**:  La cuenta que intento recuperar debe estar registrada en el sistema
+Proceso: 
+En la ventana de inicio de sesión presiono recuperar contraseña, en ese momento la aplicación me redirige a una pantalla con un formulario el cual tiene los siguientes campos:
+ 1. Email
+> Nota: Una vez completado los campos anteriores, se habilitara el botón ***RECUPERAR***
+
+Una vez presionado el botón de recuperar, se mostrara en pantalla el mensaje "Se envió a tu dirección de correo electrónico las instrucciones para recuperar tu contraseña"
+**Resultado esperado**: El usuario es recibe un correo electrónico con un enlace el cual lo dirige a nuevamente a la aplicación y se le muestra un formulario el cual le pide que ingrese la nueva contraseña.
+**Validaciones**: 
+ - La nueva contraseña debe cumplir con las condiciones de contraseña segura
+
+---
+#### YO COMO ***USUARIO***
+
+**PUEDO**: Ver menú diario
+
+**PARA**: Observar detalles del menú diario de un comedor especifico
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Precondiciones**:  Debo tener una cuenta registrada  y haber iniciado sesión en la aplicación
+Proceso:
+
+ 1. En la ventana principal, elijo la opción ***ver menú diario***
+ 2. Elijo el comedor y presiono ***ver***
+ 3. En la lista elijo el día que quiero ver
+> Nota: La lista esta ordenada por fecha
+
+**Validaciones**: 
+
+---
+#### YO COMO ***USUARIO***
+
+**PUEDO**: Ver información del comedor
+
+**PARA**: Observar detalles de un comedor
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Precondiciones**:  Debo tener una cuenta registrada  y haber iniciado sesión en la aplicación
+Proceso:
+ 1. En la ventana principal, elijo la opción ***comedores***
+ 2. En la lista elijo el comedor que quiero ver
+
+**Validaciones**: 
+
+---
+#### YO COMO ***USUARIO***
+
+**PUEDO**: Actualizar mi información de perfil
+
+**PARA**: Cambiar mis datos personales y de contacto
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Precondiciones**:  Debo tener una cuenta registrada  y haber iniciado sesión en la aplicación
+Proceso:
+ - En la ventana principal, elijo la opción ***perfil***
+ Se me abrirá una pantalla con un formulario el cual me permitirá editar:
+ 
+ - Nombre de usuario
+ - Foto de perfil
+ - Contraseña 
+
+**Validaciones**: 
+Los campos nombre de usuario y contraseña deben validarse al igual que se hicieron en el momento del registro.
 
 ### Bocetos de IU
 
