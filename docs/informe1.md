@@ -9,7 +9,66 @@
   
 
 ## Elicitación
++ Aplicación para comedor escolar. El objetivo principal de la aplicación es que madres, padres o responsables puedan conocer el menú diario y controlar el consumo realizados por sus hijos.
 
+Resultados de la Entrevista.
+
+Preguntas
+1)¿Cuál es el proceso actual que los padres o responsables siguen para conocer el menú diario del comedor escolar?
+2)¿Qué información específica les gustaría obtener los padres o responsables sobre el menú diario y el consumo de sus hijos en el comedor escolar?
+3)¿Cómo le gustaría recibir esta información, a través de notificaciones push, correo electrónico o mensajes de texto?
+4)¿Le gustaría a los padres o responsables tener la posibilidad de realizar comentarios sobre el menú diario del comedor escolar?
+5)¿Qué tan importante sería para los padres o responsables poder tener información sobre alergias alimentarias o restricciones dietéticas de sus hijos en la aplicación?
+6)¿Le gustaría a los padres o responsables tener la opción de realizar pedidos anticipados de comida para sus hijos?
+7)¿Cómo les gustaría a los padres o responsables realizar el seguimiento del consumo de sus hijos en el comedor escolar? ¿Le gustaría recibir actualizaciones diarias, semanales o mensuales?
+8)¿Le gustaría a los padres o responsables tener la opción de configurar recordatorios o alertas sobre el consumo de sus hijos en la aplicación?
+9)¿Existen restricciones presupuestarias o de tiempo que debamos tener en cuenta al desarrollar la aplicación?
+10)¿Hay algún otro requisito o característica que le gustaría ver en la aplicación que no se haya mencionado anteriormente?
+
+Respuestas
+1)Proceso actual: "Actualmente, los padres o responsables tienen que pedir una copia impresa del menú semanal en la escuela o visitar el sitio web del comedor escolar para conocer el menú diario."
+2)Información específica: "Los padres o responsables desean saber qué se va a servir en el almuerzo, así como la información nutricional y las posibles alergias alimentarias asociadas con cada opción de menú."
+3)Forma de recibir la información: "La mayoría de los padres o responsables prefieren recibir la información a través de notificaciones push en la aplicación, pero algunos también podrían preferir recibir correos electrónicos o mensajes de texto."
+4)Comentarios sobre el menú: "Sí, los padres o responsables quieren tener la opción de realizar comentarios o sugerencias sobre el menú diario para que la escuela pueda mejorar la calidad de la comida que sirve."
+5)Información sobre alergias o restricciones dietéticas: "Es muy importante para los padres o responsables poder ingresar información sobre alergias alimentarias o restricciones dietéticas de sus hijos en la aplicación para asegurarse de que sus hijos solo coman alimentos seguros y saludables."
+6)Pedidos anticipados: "Sí, algunos padres o responsables quieren tener la opción de realizar pedidos anticipados de comida para sus hijos para que se les sirva exactamente lo que necesitan."
+7)Seguimiento del consumo: "La mayoría de los padres o responsables preferiría recibir actualizaciones diarias sobre el consumo de sus hijos en el comedor escolar para asegurarse de que están comiendo lo suficiente y comiendo alimentos saludables."
+8)Alertas y recordatorios: "Sí, algunos padres o responsables quieren tener la opción de configurar alertas o recordatorios sobre el consumo de sus hijos en la aplicación para mantenerse al tanto de lo que están comiendo."
+9)Restricciones presupuestarias o de tiempo: "No hay restricciones presupuestarias o de tiempo específicas, pero sería bueno tener una aplicación fácil de usar y que no consuma mucho tiempo para los padres o responsables."
+10)Otros requisitos o características: "Algunos padres o responsables podrían querer ver información adicional sobre el tiempo de actividad física de sus hijos en la escuela o la cantidad de tiempo que pasan en el comedor escolar."
+
+
+Referencias a fuentes de información:
+
+La fuente de donde procede esta información, es a traves de entrevistas realizadas con el personal del colegio, y padres/madres/tutores legales, que mostraban interes de disponer de una app donde puedan administrar el consumo de 
+alimentos de sus hijos cuando estan fuera de sus hogares.
+
+
+Caracterización de usuarios: User Personas
+
+1)Padres o tutores legales: Son los principales usuarios de la aplicación y están interesados en conocer el menú diario del comedor escolar y controlar el consumo realizado por sus hijos. 
+Quieren asegurarse de que sus hijos estén comiendo comidas saludables y nutritivas y que no estén expuestos a alimentos que puedan causar alergias o intolerancias alimentarias. 
+También podrían estar interesados en realizar comentarios y sugerencias sobre el menú.
+
+Estudiantes: Aunque no son usuarios directos de la aplicación, son la razón por la cual se desarrolla la aplicación. 
+Los estudiantes necesitan una dieta saludable y equilibrada durante el día escolar y la aplicación ayudará a sus padres o tutores legales a asegurarse de que sus hijos estén recibiendo la nutrición adecuada.
+
+Personal del comedor escolar: El personal del comedor escolar podría ser considerado indirectamente como usuarios de la aplicación, 
+ya que la aplicación podría permitirles conocer mejor las preferencias y necesidades de los estudiantes y así mejorar la calidad del servicio que brindan.
+
+
+Modelo Conceptual del problema: El modelo conceptual del problema proporciona una representación abstracta y de alto nivel de los componentes clave del sistema y sus relaciones. 
+En el caso de la aplicación para el comedor escolar, el modelo conceptual podría ser el siguiente:
+
+1) Usuarios: Los usuarios principales son los padres o tutores legales, que utilizan la aplicación para conocer el menú diario del comedor escolar y controlar el consumo realizado por sus hijos.
+2) Información del menú: La aplicación proporciona información sobre el menú diario del comedor escolar, incluyendo opciones de almuerzo y bebidas, información nutricional 
+   y posibles alergias alimentarias asociadas con cada opción.
+   3) Registro de información personal: Los usuarios pueden ingresar información sobre alergias alimentarias y restricciones dietéticas de sus hijos para asegurarse de que solo coman alimentos seguros y saludables.
+   4) Comentarios y sugerencias: Los usuarios pueden realizar comentarios y sugerencias sobre el menú diario para mejorar la calidad de la comida que sirve el comedor escolar.
+   5) Pedidos anticipados: Los usuarios pueden realizar pedidos anticipados de comida para sus hijos para que se les sirva exactamente lo que necesitan.
+   6) Registro y seguimiento del consumo: La aplicación permite a los usuarios realizar un seguimiento del consumo de sus hijos en el comedor escolar para asegurarse de que están comiendo lo suficiente y comiendo alimentos saludables.
+   7) Alertas y recordatorios: La aplicación puede enviar alertas y recordatorios a los usuarios sobre el consumo de sus hijos en el comedor escolar para ayudarles a mantenerse al tanto de lo que están comiendo.
+   8) Personalización: La aplicación puede ser personalizada para las necesidades específicas de cada estudiante, incluyendo restricciones dietéticas y preferencias de comida.
   
 
 ## Especificación
