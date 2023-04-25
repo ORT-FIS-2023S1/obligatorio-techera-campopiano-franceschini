@@ -10,6 +10,7 @@
  - [ ] separar las historias de usuario de los casos de uso.
  - [ ] agregar diagrama UML (modelo conceptual).
  - [ ] agregar requerimientos no funcionales presentes en la letra.
+ - [ ] agregar cursos alternativos a las historias de usuario.
  
  ### Bocetos de IU
  
