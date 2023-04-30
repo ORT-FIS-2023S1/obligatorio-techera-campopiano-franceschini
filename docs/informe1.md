@@ -54,25 +54,25 @@ Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cab
 
 ### Preguntas realizadas en la segunda entrevista, a dos de los padres, la Sra. Ana García y el Sr. Juan Perez.
 
-**¿Cómo describirían su experiencia actual con el comedor escolar y su proceso de pedido de alimentos?**
+**¿Cómo describirían su experiencia actual con el servicio de cantina de la escuela y el proceso de solicitud de comida?**
 
-**Responde Ana Garcia:** En general, nuestra experiencia ha sido positiva. Sin embargo, a veces encontramos que el proceso de pedir alimentos puede ser un poco complicado y que hay largas filas durante los horarios de almuerzo más ocupados. También hemos tenido algunas preocupaciones sobre la calidad y variedad de la comida.
+**Responde Ana Garcia:** En general, nuestra experiencia ha sido positiva. Sin embargo, a veces encontramos que el proceso de pedir comida puede ser un poco complicado y que hay largas filas durante los horarios de almuerzo más ocupados. También hemos tenido algunas preocupaciones sobre la calidad y variedad de la comida que ofrece la cantina.
 
 **¿Qué expectativas tienen en relación a la implementación de una aplicación para el comedor escolar?**
 
-**Responde Ana Garcia:** Creemos que una aplicación podría hacer el proceso de pedir alimentos más fácil y rápido, lo que sería muy conveniente para nosotros como padres que estamos muy ocupados. Además, nos gustaría ver más opciones de alimentos saludables y variados en el menú.
+**Responde Ana Garcia:** Creemos que una aplicación podría hacer el proceso de pedir el almuerzo más fácil y rápido, lo que sería muy conveniente para nosotros como padres que estamos muy ocupados. Además, nos gustaría ver más opciones saludables y variados en el menú.
 
 **¿Qué características específicas les gustaría ver en una aplicación para el comedor escolar?**
 
-**Responde Juan Perez:** Nos gustaría ver un menú claro y fácil de usar, con opciones para personalizar los pedidos y hacer solicitudes especiales. También sería útil tener una función de seguimiento de pedidos para que los estudiantes puedan saber en qué etapa del proceso se encuentra su pedido. Además, sería importante tener información clara sobre los ingredientes y la información nutricional de los alimentos disponibles.
+**Responde Juan Perez:** Nos gustaría ver un menú claro y fácil de usar, con opciones para personalizar los pedidos y hacer solicitudes especiales. También sería útil tener una función de seguimiento de pedidos para que los estudiantes puedan saber en qué etapa del proceso se encuentra su pedido. Además, sería importante tener información clara sobre los ingredientes y la información nutricional de los menúes disponibles.
 
 **¿Tienen alguna preocupación en cuanto a la privacidad y seguridad de la información personal en una aplicación de comedor escolar?**
 
-**Responde Ana García:** Sí, nos preocupa la seguridad y privacidad de los datos personales y de los pedidos de alimentos. Sería importante para nosotros saber cómo se manejarían nuestros datos personales y cómo se protegerían de posibles amenazas externas.
+**Responde Ana García:** Sí, nos preocupa la seguridad y privacidad de los datos personales y de los pedidos de comida. Sería importante para nosotros saber cómo se manejarían nuestros datos personales y cómo se protegerían de posibles amenazas externas.
 
 **¿Cómo podrían ver la implementación de una aplicación mejorando la experiencia general del comedor escolar para los estudiantes y los padres?**
 
-**Responde Juan Perez:** Creemos que una aplicación podría hacer que el proceso de pedido de alimentos sea más fácil y eficiente, lo que podría reducir el tiempo de espera y las filas. Además, si la aplicación incluye opciones de personalización y información nutricional clara, los estudiantes y padres podrían hacer elecciones más saludables y mejor informadas sobre la comida que consumen. En general, una aplicación podría mejorar la experiencia general del comedor escolar para todos los involucrados.
+**Responde Juan Perez:** Creemos que una aplicación podría hacer que el proceso de pedido de comida sea más fácil y eficiente, lo que podría reducir el tiempo de espera y las filas. Además, si la aplicación incluye opciones de personalización y información nutricional clara, los estudiantes y padres podrían hacer elecciones más saludables y mejor informadas sobre la comida que consumen. En general, una aplicación podría mejorar la experiencia general del comedor escolar para todos los involucrados.
 
 ### Preguntas realizadas en la tercera entrevista que tuvo lugar en la institución, con la Sra. Laura Gomez.
 
@@ -82,7 +82,7 @@ Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cab
 
 **¿Cómo cree que una aplicación podría mejorar la experiencia del comedor escolar para usted y su hijo?**
 
-**Respuesta:** Creo que una aplicación sería muy útil para hacer que el proceso de pedido de alimentos sea más fácil y rápido, lo que sería especialmente conveniente para mí ya que trabajo a tiempo completo. Además, si la aplicación incluye información nutricional y opciones de personalización, podré hacer elecciones más informadas y saludables para mi hijo.
+**Respuesta:** Creo que una aplicación sería muy útil para hacer que el proceso de pedido de comida sea más fácil y rápido, lo que sería especialmente conveniente para mí ya que trabajo a tiempo completo. Además, si la aplicación incluye información nutricional y opciones de personalización, podré hacer elecciones más informadas y saludables para mi hijo.
 
 **¿Hay algún otro aspecto que le gustaría ver incorporado en una aplicación de comedor escolar?**
 
@@ -145,7 +145,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
  - **Registrar menú:** La aplicación debe permitir a los usuarios administradores registrar un menú solicitándoles la siguiente información:
 	 - Fecha en la cual se estará sirviendo el menú
 	 - Comedor en el cual se servirá dicho menú
-	 - Información nutricional (área de texto en la cual el administrador podrá dar información sobre el aporte nutricional del menú, como también indicar que alternativas se les dará a aquellos alumnos que posean intolerancia a algunos alimentos del menú)
+	 - Información nutricional (área de texto en la cual el administrador podrá dar información sobre el aporte nutricional del menú, como también indicar que alternativas se les dará a aquellos alumnos que posean intolerancia a algunos ingredientes del menú)
 	 - Desayuno (área de texto que describe que será servido en el desayuno)
 	 - Almuerzo (área de texto que describe que será servido en el almuerzo)
 	 - Merienda (área de texto que describe que será servido en el merienda)
