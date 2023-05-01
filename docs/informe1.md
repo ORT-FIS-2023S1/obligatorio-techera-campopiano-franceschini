@@ -64,7 +64,7 @@ Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cab
 
 **¿Qué características específicas les gustaría ver en una aplicación para el comedor escolar?**
 
-**Responde Juan Perez:** Nos gustaría ver un menú claro y fácil de usar, con opciones para personalizar los pedidos y hacer solicitudes especiales. También sería útil tener una función de seguimiento de pedidos para que los estudiantes puedan saber en qué etapa del proceso se encuentra su pedido. Además, sería importante tener información clara sobre los ingredientes y la información nutricional de los menúes disponibles.
+**Responde Juan Perez:** Nos gustaría ver un menú claro y fácil de usar, con opciones para personalizar los pedidos y hacer solicitudes especiales. También sería útil tener una función de seguimiento de pedidos para que los estudiantes puedan saber en qué etapa del proceso se encuentra su pedido. Además, sería importante tener información clara sobre los ingredientes y la información nutricional de los menúes disponibles. Ademas, nos gustaria disponer de menúes semanales, a los cuales podramos de alguna manera subscribirnos, tanto semanal como mensualmente, para no tener que lidiar todos los dias con el tema del almuerzo y tener que estar pendientes del mismo todos los dias.
 
 **¿Tienen alguna preocupación en cuanto a la privacidad y seguridad de la información personal en una aplicación de comedor escolar?**
 
