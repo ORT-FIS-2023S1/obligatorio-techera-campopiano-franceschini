@@ -6,7 +6,7 @@ Breve descripción: Este caso de uso permite al usuario gestionar sus métodos d
 
 **Precondiciones:**
 
--   El usuario debe haber iniciado sesión en la aplicación como padre de un alumno registrado en el colegio.
+-   El usuario debe haber iniciado sesión en la aplicación como padre de un comensal registrado en el colegio.
 -   La cuenta del usuario debe estar asociada a una cantina escolar en la aplicación.
 - El usuario debe haber verificado su información de contacto.
 
