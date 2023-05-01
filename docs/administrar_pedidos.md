@@ -1,5 +1,6 @@
 ﻿# YO COMO ADMINISTRADOR
 **PUEDO:** ADMINISTRAR PEDIDOS
+
 **PARA:** Poder gestionar eficientemente las órdenes de los clientes y asegurarme de que sean procesadas de manera adecuada.
 
 **Precondiciones:**
