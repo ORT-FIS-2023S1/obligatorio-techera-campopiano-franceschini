@@ -2,7 +2,7 @@ YO COMO ADMINISTRADOR
 
 PUEDO: ADMINISTRAR GRUPOS
 
-PARA: Poder 
+PARA: Poder llevar un control sobre los grupos
 
 Precondiciones:
 
