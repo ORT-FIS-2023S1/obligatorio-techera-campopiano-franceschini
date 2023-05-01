@@ -196,6 +196,16 @@ Para este registro **_se solicitara información adicional_** sobre la instituci
 
 #### YO COMO **_USUARIO_**
 
+**PUEDO**: Ver menú semanal
+
+**PARA**: Observar todos los menus diarios que se serviran durante una semana
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+---
+
+#### YO COMO **_USUARIO_**
+
 **PUEDO**: Ver información del comedor
 
 **PARA**: Observar detalles de un comedor
@@ -221,23 +231,6 @@ Para este registro **_se solicitara información adicional_** sobre la instituci
 
 #### YO COMO **_ADMINISTRADOR_**
 
-**PUEDO**: Registrar un comedor
-
-**PARA**: Especificar información sobre donde se ubica el comedor y menú que se sirven a diario
-
-##### CRITERIOS DE ACEPTACIÓN 👌
-
-**Validaciones**:
-
-1. El campo nombre del comedor no puede superar los 25 caracteres
-2. La descripción no debe superar los 280 caracteres
-3. La dirección debe estar en el siguiente formato:< Calle > < numero puerta > Esq: < esquina >
-4. El campo descripción es opcional
-
----
-
-#### YO COMO **_ADMINISTRADOR_**
-
 **PUEDO**: Editar la información de un comedor
 
 **PARA**: Mantener esta información actualizada
@@ -256,13 +249,14 @@ Para este registro **_se solicitara información adicional_** sobre la instituci
 
 **PUEDO**: Registrar un menú diario
 
-**PARA**: Que los usuarios puedan observar dicha información dentro del perfil del comedor
+**PARA**: Que los usuarios puedan observar dicha información dentro del perfil del comedor y que este menu diario forme parte del menu semanal
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
 **Validaciones**:
 
 1. Los campos desayuno y merienda son opcionales
+2. Una vez creado el menu diario, este debe poder obserbarse en el menu semanal correspondiente
 
 ---
 
@@ -276,11 +270,47 @@ Para este registro **_se solicitara información adicional_** sobre la instituci
 
 **Validaciones**:
 
+---
+
+#### YO COMO **_ADMINISTRADOR_**
+
+**PUEDO**: Agregar platos al menu
+
+**PARA**: Que los platos esten disponibles para orderar desde el menu del comedor
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Validaciones**:
+
+---
+
+#### YO COMO **_ADMINISTRADOR_**
+
+**PUEDO**: Editar los platos del menu
+
+**PARA**: Mantener actualizado la informacion de platos de mi menu
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Validaciones**:
+
+---
+
+#### YO COMO **_ADMINISTRADOR_**
+
+**PUEDO**: Eliminar un plato del menu
+
+**PARA**: Par aque este no sea mas visible en el menu y por lo tanto no pueda ser ordenado
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+**Validaciones**:
+
 ### HISTORIAS DE USUARIO
 
 **Nombre: Registro de usuario**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|---------------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | N/A | *USUARIO<br>*SISTEMA | SE REGISTRA UNA NUEVA CUENTA DE USUARIO EN EL SISTEMA |
 | FLUJO NORMAL | | El usuario ingresa a la aplicacion<br>El sistema solicita al usuario la siguiente informacion:<br>1. Email<br>2. Contrasenia segura<br>3. Nombre<br>4. Foto de perfil<br>Luego de llenar el formulario el usuario preciona el boton de registrarse<br>El sistema valida la informacion ingresada por el usuario<br>El sistema verifica que el email ya no este registrado en el sistema<br>El sistema registra la nueva cuenta<br>El sistema muestra un mensaje de suceso al usuario |
 | Flujos alternativos | | - Existe otra cuenta creada con ese correo <br> -El campo contraseña y repetir contraseña no coinciden <br> - La contraseña ingresada debe cumplir con los siguientes requerimientos: <br> - Debe incluir números. <br> - Una combinación de letras mayúsculas y minúsculas. <br> - Incluya al menos un carácter especial (\* ? ! @ # $ / () {} = . , ; : ) <br> - Tenga una longitud mayor o igual a 8 caracteres. <br> - No debe tener espacios en blanco. <br> - El nombre de usuario contiene caracteres especiales o su longitud es superior a los 25 caracteres <br> - La foto de perfil no es valida: esta en un formato diferente a los siguientes (PNG,JPEG,GIF) o su tamaño supera los 12MB, también debe tener al menos 400 píxeles de ancho y 150 píxeles de alto. |
@@ -289,92 +319,123 @@ Para este registro **_se solicitara información adicional_** sobre la instituci
 
 **Nombre: Iniciar sesión**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tener una cuenta registrada en el sistema | *USUARIO<br>*SISTEMA | El usuario es redirigido a la pantalla principal de la aplicación y tiene acceso a las funcionalidades |
-| FLUJO NORMAL | | El usuario ingresa a la aplicación<br>El sistema solicita al usuario la siguiente información:<br>1. Email<br>2. Contraseña<br>El usuario completa los campos y presiona en la opción iniciar sesión <br>El sistema valida la información ingresada por el usuario<br>El sistema redirige al usuario a la pantalla principal de la aplicación|
+| FLUJO NORMAL | | El usuario ingresa a la aplicación<br>El sistema solicita al usuario la siguiente información:<br>1. Email<br>2. Contraseña<br>El usuario completa los campos y presiona en la opción iniciar sesión <br>El sistema valida la información ingresada por el usuario<br>El sistema redirige al usuario a la pantalla principal de la aplicación |
 | Flujos alternativos | | - Existe otra cuenta creada con ese correo <br> -No existe una cuenta registrada con ese email (El sistema muestra un mensaje de error al usuario) <br> - La contraseña no coincide con el email ingresado (El sistema muestra un mensaje de error al usuario) |
 
 ---
 
 **Nombre: Restablecer mi contraseña**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tener una cuenta registrada en el sistema | *USUARIO<br>*SISTEMA | La contraseña de la cuenta es modificada |
-| FLUJO NORMAL | | El usuario ingresa a la aplicación<br>El sistema solicita al usuario la siguiente información:<br>1. Email<br>2. Contraseña<br>El usuario no recuerda su contraseña, por lo cual escoge la opción restablecer contraseña<br>El sistema solicita el email asociado a la cuenta<br> El usuario introduce la contraseña y presiona en 'recuperar' <br>El sistema envía un correo electrónico con las instrucciones a seguir<br>El sistema muestra el siguente mensaje al usuario 'se envió un email con instrucciones para la recuperación de la cuenta'|
+| FLUJO NORMAL | | El usuario ingresa a la aplicación<br>El sistema solicita al usuario la siguiente información:<br>1. Email<br>2. Contraseña<br>El usuario no recuerda su contraseña, por lo cual escoge la opción restablecer contraseña<br>El sistema solicita el email asociado a la cuenta<br> El usuario introduce la contraseña y presiona en 'recuperar' <br>El sistema envía un correo electrónico con las instrucciones a seguir<br>El sistema muestra el siguente mensaje al usuario 'se envió un email con instrucciones para la recuperación de la cuenta' |
 | Flujos alternativos | | - N/A |
 
 ---
 
 **Nombre: Ver menú diario**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Estar logeado en el sistema | *USUARIO<br>*SISTEMA | Se muestra información del menú diario |
-| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **_ver menú diario_** <br> El sistema despliega una pantalla con una lista de comedores ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la lista de menús ordenados por fecha <br> El usuario selecciona el que le interesa y presiona **_ver_** <br> El sistema muestra la información del menú|
+| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio <br> El usuario selecciona la opcion **Ver menú diario** <br> El sistema muestra la información del menú para ese dia |
 | Flujos alternativos | | - N/A |
 
 ---
 
 **Nombre: Agregar comentarios al menu diario**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estar logeado en el sistema | *USUARIO<br>*SISTEMA | Se registra un nuevo comentario en el menú diario |
-| FLUJO NORMAL | | En la ventana principal, el usuario elije la opción **_ver menú diario_** <br>El sistema despliega una pantalla con una lista de comedores ordenados alfabéticamente <br>El usuario escoge el comedor que le interesa <br> El sistema despliega una pantalla con la lista de menús ordenados por fecha <br>El usuario selecciona el que le interesa y presiona la opción **_ver_** <br> El sistema despliega una pantalla con la información del menu <br>El usuario presiona el botón **_Agregar comentario_**<br> El sistema despliega un formulario con un area de texto donde escribir el comentario <br> El usuario escribe su comentario y al finalizar presiona la opción agregar <br> El sistema agrega el comentario al comedor y muestra la información actualizada al usuario|
-| Flujos alternativos | | - El usuario desiste de agregar su comenatario y preciona la opcion **_Cancelar_** (El sistema cierra el area de texto y vuelve a mostrar la informacion del comedor al usuario)  
+|-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *USUARIO <br> *SISTEMA | Se registra un nuevo comentario al colegio |
+| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio <br> El usuario seleciona la opcion **ver menu diario**<br>El sistema muestra al usuario la vista del menu diario<br>El usuaro seleciona la opcion **Agregar comentario**<br>El sistema muetra al usuario un formulario donde puede ingresar su comentario<br> El usuario escribe su comentario y al finalizar presiona la opción **Guardar** <br> El sistema agrega el comentario al comedor y muestra la información del comedor actualizada al usuario |
+| Flujos alternativos | | - El usuario desiste de agregar su comenatario y preciona la opcion **Cancelar** (El sistema cierra el area de texto y vuelve a mostrar la informacion del comedor al usuario)  
 |
 
 ---
 
-**Nombre: Ver información del comedor**
+**Nombre: Ver información del colegio**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *USUARIO<br>*SISTEMA |El sistema muestra al usuario la informacion sobre el colegio |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio |
+| Flujos alternativos | | -N/A |
+
+---
+
+**Nombre: Ver comensales de un colegio**
 | Precondición | Actores | Post condición |
 |--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estar logeado en el sistema | *USUARIO<br>*SISTEMA | El sistema muestra la informacion del comedor seleccionado |
-| FLUJO NORMAL | | En la ventana principal, el usuario elije la opción **_comedores_** <br>El sistema despliega un una lista con comedores ordenados alfabéticamente <br>El usuario selecciona el comedor de su interés y presiona **_ver_**<br> El sistema despliega una pantalla con la información del comedor seleccionado |
-| Flujos alternativos | | -N/A |
+| Estar logeado en el sistema | *USUARIO<br>*SISTEMA |El sistema muestra al usuario una lista de comensales asociados a el que acuden a ese colegio| |El sistema muestra al usuario la informacion sobre el colegio |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio donde se incluye una lista de comensales<br>El usuario escoge en la lista el comensal que le interesa y presiona **ver** <br> El sistema muestra la informacion de ese comensal|
+| Flujos alternativos | | -El usuario no asocio ningun comensal de ese colegio a su cuenta, en tal caso la lista de comensales estara vacia |
 
 ---
 
 **Nombre: Actualizar información de perfil**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Estar logeado en el sistema | *USUARIO<br>*SISTEMA | El sistema actualiza la información de perfil del usuario |
-| FLUJO NORMAL | | En la ventana principal, el usuario elije la opción **_perfil_**<br>El sistema despliega un formulario con la información de perfil del usuario el cual permite editar los siguentes campos: **(Nombre de usuario,Foto de perfil,Contraseña)**<br>Una vez el usuario modifica dicho formulario escoge entre las opciones cancelar y guardar 'guardar'.<br> El sistema valida la nueva información <br> El sistema actualiza dicha información|
+| FLUJO NORMAL | | En la ventana principal, el usuario elije la opción **_perfil_**<br>El sistema despliega una vista con la informacion de perfil del usuario<br>El usuario escoje la opcion **editar**<br>El sistema despliega un formulario con la información de perfil el cual permite editar los siguentes campos: **(Nombre de usuario,Foto de perfil,Contraseña)**<br>Una vez el usuario modifica dicho formulario escoge entre las opciones cancelar y guardar 'guardar'.<br> El sistema valida la nueva información <br> El sistema actualiza dicha información |
 | Flujos alternativos | | -El sistema encuentra la nueva información ingresada como no valida( Muestra un mensaje de error al usuario, indicando los errores encontrados)<br> El usuario desiste de realizar la operación y presiona cancelar(El sistema vuelve a la pantalla de información de perfil) |
 
 ---
 
-**Nombre: Registrar un nuevo comedor**
+**Nombre: Editar la información del comedor**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estar logeado en el sistema.<br> Ser un administrador. | *ADMINISTRADOR<br>*SISTEMA | El sistema registrara un nuevo comedor con la información proporcionada por el usuario, y establecerá dicho usuario como administrador de ese comedor |
-| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **registrar nuevo comedor**<br> El sistema despliega un formulario solicitando la siguiente información <br>**Nombre del comedor**<br>**Dirección** donde se ubica el mismo. <br>**Descripción** (área de texto donde el administrador podrá dar mas detalles sobre el comedor, ej.: numero de alumnos que atiende, hace cuanto tiempo esta funcionando ,etc.)<br> Una vez el administrador completa los campos anteriores, el sistema habilitara el botón **REGISTRAR**<br> El administrador presiona sobre el botón registrar<br>El sistema valida la información ingresada por el usuario y registra el nuevo comedor<br> El sistema muestra un mensaje de suceso al usuario|
-| Flujos alternativos | | -El administrador desiste de registrar el nuevo comedor y presiona cancelar (El sistema desplegara la pantalla de administración)<br> -La información ingresada por el administrador esta incorrecta o es incompleta (El sistema muestra al usuario un mensaje de error) |
-
----
-
-**Nombre: Editar la información de un comedor**
-| Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estar logeado en el sistema.<br> Ser un administrador.<br> Tener al menos un comedor registrado para poder editar. | *ADMINISTRADOR<br>*SISTEMA | El sistema actualizara la información del comedor |
-| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **administrar comedores**<br>El sistema despliega una lista de comedores creados por el administrador<br>El administrador selecciona el que quiere editar y presiona **_ver_** <br>El sistema despliega una pantalla con la información del comedor, y las siguientes opciones:<br>**Registrar nuevo menú diario**<br>**Administrar menús diarios**<br>**Editar información del comedor** <br>**Eliminar comedor**<br> El administrador escoge **Editar información del comedor**<br> El sistema muestra un formulario donde podre editar la siguiente información: <br> **Nombre del comedor** <br> **Dirección** <br> **Descripción** <br> Una vez realizado cambios en alguno de esos campos el sistema habilitara el botón **GUARDAR** <br> El administrador presiona en el botón guardar <br> El sistema valida la información ingresada y actualiza el registro de comedor <br> El sistema muestra al usuario el registro del comedor actualizado|
+|--------------------------------------------------------------------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema.<br> Ser un administrador.<br> | *ADMINISTRADOR<br>*SISTEMA | El sistema actualizara la información del comedor |
+| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Editar información del comedor**<br>El sistema despliega un formulario con la informacion del comedor la cual puede ser editada .<br> El administrador edita la informacio y luego escoje la opcion **Guardar**<br>El sistema valida la informacion ingresada por el administrador <br>El sistema muestra un mensaje de suceso. |
 | Flujos alternativos | | -El administrador desiste de actualizar el comedor y presiona cancelar (El sistema desplegara la pantalla de administración)<br> -La información ingresada por el administrador esta incorrecta o es incompleta (El sistema muestra al usuario un mensaje de error) |
 
 ---
 
 **Nombre: Registrar menú diario**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estar logeado en el sistema.<br> Ser un administrador.<br> Tener al menos un comedor registrado. | *ADMINISTRADOR<br>*SISTEMA | El sistema registrara un nuevo menú diario en el comedor |
-| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **administrar comedores**<br>El sistema despliega una lista de comedores creados por el administrador<br>El administrador selecciona el que le interesa y presiona **_ver_** <br>El sistema despliega una pantalla con la información del comedor, y las siguientes opciones:<br>**Registrar nuevo menú diario**<br>**Administrar menús diarios**<br>**Editar información del comedor** <br>**Eliminar comedor**<br>El administrador escoge la opción **Registrar nuevo menú diario**<br>El sistema despliega un formulario solicitando la siguiente información: <br> **Fecha** en la cual se estará sirviendo el menú<br> **Información nutricional** (área de texto se podrá dar información sobre el aporte nutricional del menú, como también indicar que alternativas se les dará a aquellos alumnos que posean intolerancia sobre algunos alimentos del menú) <br>**Desayuno** (área de texto que describe que será servido en el desayuno)<br>**Almuerzo** (área de texto que describe que será servido en el almuerzo)<br>**Merienda** (área de texto que describe que será servido en el merienda) <br>Una vez el administrador ingresa toda la información el sistema habilita el botón **REGISTRAR** <br> El administrador presiona en el botón registrar <br> El sistema valida la información ingresada y registra un nuevo menú diario en el comedor <br> El sistema muestra al administrador un mensaje de éxito|
-| Flujos alternativos | | -El administrador desiste de registrar un nuevo menú diario y presiona cancelar (El sistema desplegara la pantalla de administración)<br> -La información ingresada por el administrador esta incorrecta o es incompleta (El sistema muestra al usuario un mensaje de error) |
+|--------------------------------------------------------------------------------------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema.<br> Ser un administrador. | *ADMINISTRADOR<br>*SISTEMA | El sistema registrara un nuevo menú diario en el comedor |
+| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Administrar menus**<br>El sistema despliega una pantalla con diferentes opciones.<br> El administrador escoje **Administrar menu diario**<br>El sistema despliega una lista de menus creados en ese comedor y una opcion de agregar menu diario<br>El administrador escoje la opcion **Agregar menu diario**.<br>El sistema despliega un formulario solicitando la siguiente información: <br> **Fecha** en la cual se estará sirviendo el menú<br> **Información nutricional** (área de texto se podrá dar información sobre el aporte nutricional del menú, como también indicar que alternativas se les dará a aquellos alumnos que posean intolerancia sobre algunos alimentos del menú) <br>**Desayuno** (área de texto que describe que será servido en el desayuno)<br>**Almuerzo** (área de texto que describe que será servido en el almuerzo)<br>**Merienda** (área de texto que describe que será servido en el merienda) <br>El administrador ingresa toda la informacion y preciona **Registrar**. <br> El sistema valida la información ingresada y registra un nuevo menú diario en el comedor <br> El sistema muestra al administrador un mensaje de éxito |
+| Flujos alternativos | | -El administrador desiste de registrar un nuevo menú diario y presiona cancelar (El sistema desplegara la pantalla de Administrar menu diario)<br> -La información ingresada por el administrador esta incorrecta o es incompleta (El sistema muestra al usuario un mensaje de error) |
 
 ---
 
 **Nombre: Editar información de un menú diario**
 | Precondición | Actores | Post condición |
-|--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estar logeado en el sistema.<br> Ser un administrador.<br> Tener al menos un comedor registrado.<br>Tener al menos un menú diario registrado en dicho comedor. | *ADMINISTRADOR<br>*SISTEMA | El sistema actualizara la información del menú diario |
-| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **administrar comedores**<br>El sistema despliega una lista de comedores creados por el administrador<br>El administrador selecciona el que le interesa y presiona **_ver_** <br>El sistema despliega una pantalla con la información del comedor, y las siguientes opciones:<br>**Registrar nuevo menú diario**<br>**Administrar menús diarios**<br>**Editar información del comedor** <br>**Eliminar comedor**<br> El administrador escoge **Administrar menús diarios**<br>El sistema despliega una lista de menús registrados en ese comedor<br>El administrador selecciona el que quiere editar y presiona **_ver_** <br>El sistema despliega una pantalla con la información del menú diario, y las siguientes opciones:<br>**Editar información del menú**<br>**Eliminar este menú**<br>El administrador escoge **Editar información del menú** <br> El sistema despliega un formulario solicitando la siguiente información: <br> **Fecha** en la cual se estará sirviendo el menú <br> **Información nutricional** (área de texto se podrá dar información sobre el aporte nutricional del menú, como también indicar que alternativas se les dará a aquellos alumnos que posean intolerancia sobre algunos alimentos del menú) <br>**Desayuno** (área de texto que describe que será servido en el desayuno)<br>**Almuerzo** (área de texto que describe que será servido en el almuerzo)<br>**Merienda** (área de texto que describe que será servido en el merienda) <br>Una vez el administrador ingresa toda la información el sistema habilita el botón **GUARDAR** <br> El administrador presiona en el botón guardar<br> El sistema valida la información ingresada y registra un nuevo menú diario en el comedor <br> El sistema muestra al administrador un mensaje de éxito|
-| Flujos alternativos | | -El administrador desiste de registrar un nuevo menú diario y presiona cancelar (El sistema desplegara la pantalla de administración)<br> -La información ingresada por el administrador esta incorrecta o es incompleta (El sistema muestra al usuario un mensaje de error) |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema.<br> Ser un administrador.<br>Tener al menos un menú diario registrado. | *ADMINISTRADOR<br>*SISTEMA | El sistema actualizara la información del menú diario |
+| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Administrar menus**<br>El sistema despliega una pantalla con diferentes opciones.<br> El administrador escoje **Administrar menu diario**<br>El sistema despliega una lista de menus creados en ese comedor<br>El administrador escoje en la lista el menu diario que quiere editar y preciona en **editar**.<br> El sistema despliega un formulario con la informacion del menu el cual puede ser editado.<br> El administrador edita la informacion y preciona en **Guardar**<br> El sistema valida la información ingresada. <br> El sistema muestra al administrador un mensaje de éxito |
+| Flujos alternativos | | -El administrador desiste de editar la informacion del menu diario y presiona cancelar (El sistema desplegara la pantalla de Administrar menu diario)<br> -La información ingresada por el administrador esta incorrecta o es incompleta (El sistema muestra al usuario un mensaje de error) |
+
+---
+**Nombre: Eliminar un menú diario**
+| Precondición | Actores | Post condición |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema.<br> Ser un administrador.<br>Tener al menos un menú diario registrado en dicho comedor. | *ADMINISTRADOR<br>*SISTEMA | El sistema eliminara el menú diario del comedor|
+| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Administrar menus**<br>El sistema despliega una pantalla con diferentes opciones.<br> El administrador escoje **Administrar menu diario**<br>El sistema despliega una lista de menus creados en ese comedor<br>El administrador escoje en la lista el menu diario que quiere editar y preciona en **eliminar**.<br> El sistema despliega un mensaje de confirmacion.<br> El administrador preciona en **Confirmar**<br> El sistema elimina la información del comedor. <br> El sistema muestra al administrador un mensaje de éxito |
+| Flujos alternativos | | -El administrador desiste de editar la informacion del menu diario y presiona cancelar (El sistema desplegara la pantalla de Administrar menu diario) |
+---
+**Nombre: Agregar un plato al menu**
+| Precondición | Actores | Post condición |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema.<br> Ser un administrador. | *ADMINISTRADOR<br>*SISTEMA | El sistema agregara un plato al menu del comedor y este sera visible por los usuarios suscriptos a ese comedor|
+| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Administrar menus**<br>El sistema despliega una pantalla con diferentes opciones.<br> El administrador escoje **Administrar menu**<br>El sistema despliega una lista de menus creados en ese comedor y la opcion **Agregar plato al menu**<br>El administrador escoje la opcion **Agregar plato al menu**.<br>El sistema despliega un formulario con los siguentes campos: **Nombre del plato**,**Precio del plato**,**Ingredientes principales**,**Tamanio de la porcion**.<br>El administrador completa dichos campos y escoje la opcion **Guardar**.<br>El sistema valida la informacion ingresada por el administrador.<br> El sistema despliega un mensaje de exito. |
+| Flujos alternativos | | -El administrador desiste de la operacion y presiona cancelar (El sistema desplegara la pantalla de Administrar menu)<br> -La informacion ingresada por el administrador es incorrecta o esta incompleta(El sistema muestra un mensaje de error). |
+---
+**Nombre: Editar un plato del menu**
+| Precondición | Actores | Post condición |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema.<br> Ser un administrador. | *ADMINISTRADOR<br>*SISTEMA | El sistema editara la informacion de un plato perteneciente al menu|
+| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Administrar menus**<br>El sistema despliega una pantalla con diferentes opciones.<br> El administrador escoje **Administrar menu**<br>El sistema despliega una lista de menus creados en ese comedor.<br>El administrador escoje el plato que desea editar y preciona **Editar**<br>El sistema despliega un formulario con la informacion del plato,el cual se puede editar.<br>El administrador edita dichos campos y escoje la opcion **Guardar**.<br>El sistema valida la informacion ingresada por el administrador.<br> El sistema despliega un mensaje de exito. |
+| Flujos alternativos | | -El administrador desiste de la operacion y presiona cancelar (El sistema desplegara la pantalla de Administrar menu)<br> -La informacion ingresada por el administrador es incorrecta o esta incompleta(El sistema muestra un mensaje de error). |
+---
+**Nombre: Eliminar un plato del menu**
+| Precondición | Actores | Post condición |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema.<br> Ser un administrador.<br>Tener al menos un plato dentro del menu | *ADMINISTRADOR<br>*SISTEMA | El sistema eliminara el plato del menu|
+| FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Administrar menus**<br>El sistema despliega una pantalla con diferentes opciones.<br> El administrador escoje **Administrar menu**<br>El sistema despliega una lista de menus creados en ese comedor.<br>El administrador escoje el plato que desea editar y preciona **Eliminar**<br>El sistema despliega un mensaje de confirmacion.<br>El administrador escoje la opcion **Eliminar**.<br>El sistema elimina la informacion del plato.<br> El sistema despliega un mensaje de exito. |
+| Flujos alternativos | | -El administrador desiste de la operacion y presiona cancelar (El sistema desplegara la pantalla de Administrar menu) |
+
+
 
 ### Bocetos de IU
 
