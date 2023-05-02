@@ -1,27 +1,6 @@
-Nombre del caso de uso: Administración de grupos
-
-Actor principal: Administrador
-
-Breve descripción: 
-
-Este caso de uso permite al administrador gestionar los grupos, registrando nuevos grupos, visualizando el listado de grupos, permitiendo editar y eliminar grupos.
-
-
-Precondiciones: 
-
-El administrador debe tener una cuenta registrada y haber iniciado sesión en la aplicación.
-
-La cuenta de administrador debe tener permisos para administrar grupos.
-
-
-Flujo principal:
-
-1- El administrador inicia sesión en la aplicación.
-2- En la pantalla principal, el administrador elige la opción "Administración" y luego "Administración de grupos".
-3- El administrador puede acceder a la pantalla de vista de grupo, donde puede editar o eliminar grupos y registrar un nuevo comensal, o puede acceder a la ventana para registrar un nuevo grupo.
-4-Si el administrador quiere registrar un nuevo comensal, se listan todos los grupos y el administrador selecciona uno en el cual registrar al comensal.
-
-
-Flujo alternativo:
-
-Si el administrador no tiene una cuenta registrada o no ha iniciado sesión, no podrá acceder a este caso de uso.
+**Nombre: Administración de grupos**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *ADMINISTRADOR<br>*SISTEMA |El sistema muestra al usuario la informacion sobre los grupos |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **Administración** y luego **Administración de Grupos** <br> El Administrador puede acceder a la vista del grupo,donde se despliega una pantalla con la lista de grupos, los cuales el Administrador puede editar o eliminar, y tambien registrar un nuevo comensal. O puede acceder a la ventana para registrar un nuevo comensal. <br> Se muestra una pantalla donde se listan los grupos y el Administrador elije el grupo en el que quiere registrar al comensal. <br> |
+| Flujos alternativos | | -N/A |
