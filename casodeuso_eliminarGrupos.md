@@ -1,6 +1,6 @@
 **Nombre: Eliminar Grupos**
 | Precondición | Actores | Post condición |
 |-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Estar logeado en el sistema | *ADMINISTRADOR<br>*SISTEMA |El sistema muestra al usuario la informacion sobre los grupos |
-| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **Administración** y luego **Administración de Grupos** <br> El Administrador puede acceder a la vista del grupo,donde se despliega una pantalla con la lista de grupos, los cuales el Administrador puede editar o eliminar, y tambien registrar un nuevo comensal. O puede acceder a la ventana para registrar un nuevo comensal. <br> Se muestra una pantalla donde se listan los grupos y el Administrador elije el grupo en el que quiere registrar al comensal. <br> |
-| Flujos alternativos | | -N/A |
+| Estar logeado en el sistema | *ADMINISTRADOR<br>*SISTEMA |El usuario administrador elimina un grupo |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **Administración** , luego **Administración de Grupos** y finalmente **Lista de grupos**.<br> El Administrador accede a la vista de grupos donde se despliega una pantalla con la lista de grupos. <br> El Administrador selecciona un grupo a eliminar. <br> El sistema muestra una pantalla con la opción para eliminar el grupo. <br> El Administrador selecciona la opción **Eliminar** para eliminar el grupo. <br> En caso de querer cancelar los cambios, selecciona la opcion **Cancelar** |
+| Flujos alternativos | | N/A.|
