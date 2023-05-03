@@ -11,13 +11,13 @@
 
 **Contexto:**
 
-El día 25 de abril de 2023, se llevaron a cabo una serie de entrevistas en el *Colegio Francisco Epínola*, en relación a la implementación de una aplicación para el comedor escolar. Las entrevistas se realizaron en la sala de reuniones del colegio, en horarios distintos para cada uno de los entrevistados. 
+El día 25 de abril de 2023, se llevaron a cabo una serie de entrevistas en el *comedor Francisco Epínola*, en relación a la implementación de una aplicación para el comedor escolar. Las entrevistas se realizaron en la sala de reuniones del comedor, en horarios distintos para cada uno de los entrevistados. 
 
-La primera entrevista tuvo lugar a las 10:00 horas con parte del equipo docente, la Sra. Mag. Lucía Martínez, que es una persona referente del colegio encargada de la gestión del colegio, y el Prof. Sr. Enrique Cal. En la entrevista se discutieron temas relacionados con la logística de la implementación de la aplicación y la colaboración entre el colegio y la cantina para el éxito de la iniciativa.
+La primera entrevista tuvo lugar a las 10:00 horas con parte del equipo docente, la Sra. Mag. Lucía Martínez, que es una persona referente del comedor encargada de la gestión del comedor, y el Prof. Sr. Enrique Cal. En la entrevista se discutieron temas relacionados con la logística de la implementación de la aplicación y la colaboración entre el comedor y la cantina para el éxito de la iniciativa.
 
-La segunda entrevista tuvo lugar a las 11:30 de la mañana con los padres de dos estudiantes del colegio, el Sr. Juan Pérez y la Sra. Ana García. Durante la entrevista se discutieron temas relacionados con la experiencia de los padres en relación a la alimentación de sus hijos en el comedor escolar y sus expectativas en cuanto a la implementación de una aplicación para hacer más eficiente y cómodo el proceso.
+La segunda entrevista tuvo lugar a las 11:30 de la mañana con los padres de dos estudiantes del comedor, el Sr. Juan Pérez y la Sra. Ana García. Durante la entrevista se discutieron temas relacionados con la experiencia de los padres en relación a la alimentación de sus hijos en el comedor escolar y sus expectativas en cuanto a la implementación de una aplicación para hacer más eficiente y cómodo el proceso.
 
-La tercera entrevista se llevó a cabo a las 12:00 del mediodia con la madre de otro estudiante del colegio, la Sra. Laura Gómez. Durante la entrevista se abordaron temas similares a los de la segunda entrevista, pero con un enfoque más específico en las necesidades y expectativas de la Sra. Gómez.
+La tercera entrevista se llevó a cabo a las 12:00 del mediodia con la madre de otro estudiante del comedor, la Sra. Laura Gómez. Durante la entrevista se abordaron temas similares a los de la segunda entrevista, pero con un enfoque más específico en las necesidades y expectativas de la Sra. Gómez.
 
 Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cabo de manera individual o como maximo de dos personas, para permitir una conversación más enfocada y detallada.
 
@@ -86,7 +86,7 @@ Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cab
 
 **Referencias a fuentes de información:**
 
-La fuente de donde procede esta información, es a traves de entrevistas realizadas con el personal del colegio, y padres/madres/tutores legales, que mostraban interes de disponer de una app donde puedan administrar el consumo de alimentos de sus hijos cuando estan fuera de sus hogares.
+La fuente de donde procede esta información, es a traves de entrevistas realizadas con el personal del comedor, y padres/madres/tutores legales, que mostraban interes de disponer de una app donde puedan administrar el consumo de alimentos de sus hijos cuando estan fuera de sus hogares.
 
 
 **Caracterización de usuarios: User Personas**
@@ -100,7 +100,7 @@ Los estudiantes necesitan una dieta saludable y equilibrada durante el día esco
 **Personal del comedor escolar:** El personal del comedor escolar podría ser considerado indirectamente como usuarios de la aplicación, 
 ya que la aplicación podría permitirles conocer mejor las preferencias y necesidades de los estudiantes y así mejorar la calidad del servicio que brindan. 
 
-**El equipo docente del colegio:** Es un grupo clave para asegurar que la aplicación cumpla con las expectativas y necesidades de los padres, ya que ellos entienden los objetivos educativos y de bienestar de los estudiantes. Por lo tanto, es importante considerar su perspectiva al diseñar e implementar la aplicación para garantizar que sea eficaz y se alinee con los objetivos educativos del colegio.
+**El equipo docente del comedor:** Es un grupo clave para asegurar que la aplicación cumpla con las expectativas y necesidades de los padres, ya que ellos entienden los objetivos educativos y de bienestar de los estudiantes. Por lo tanto, es importante considerar su perspectiva al diseñar e implementar la aplicación para garantizar que sea eficaz y se alinee con los objetivos educativos del comedor.
 
 **Modelo Conceptual del problema:** 
 
@@ -165,7 +165,7 @@ Respuestas
 
 Referencias a fuentes de información:
 
-La fuente de donde procede esta información, es a traves de entrevistas realizadas con el personal del colegio, y padres/madres/tutores legales, que mostraban interes de disponer de una app donde puedan administrar el consumo de
+La fuente de donde procede esta información, es a traves de entrevistas realizadas con el personal del comedor, y padres/madres/tutores legales, que mostraban interes de disponer de una app donde puedan administrar el consumo de
 
 alimentos de sus hijos cuando estan fuera de sus hogares.
 
@@ -210,6 +210,14 @@ y posibles alergias alimentarias asociadas con cada opción.
 ## Especificación
 
 ### Definición de requerimientos funcionales y no funcionales
+
+### Misión de la aplicación
+El sistema esta pensado para un comedor de un comedor, busca dar soporte a 3 grupos de usuarios .
+
+ 1. Usuarios: Los usuarios son los tutores que tienen niños o adolescentes a cargo y están interesados en tener un cierto control sobre la alimentación de los mismos en el comedor.
+ 2. Administradores: Personal a cargo del comedor en el comedor, esta interesado en ofrecer alimentos los cuales los usuarios se vean cómodos.
+ 3. Comensales: Los alumnos de ese comedor, que frecuentan el comedor están referenciados como comensales, si bien este actor tiene un papel fundamental en el dominio del negocio, la aplicación esta pensada para que el no actué directamente con ella, si no que sea el usuario el que por medio de esta aplicación de acceso al menú del comedor. Esto se planteo asi debido a la preocupación de los usuarios sobre el el manejo del dinero por parte de los comensales, ellos les interesa ver como se alimentan y que no tengan que preocuparse por el manejo que le están dando al dinero con todo el riesgo que eso conlleva. Por esta razón no hay casos de usos ni historias para el actor comensal, ya que el comensal es parte de las historias y casos de los demás actores.
+ La aplicación busca algo mas que solo dar información sobre como se alimentan los comensales,  busca ayudar en problemáticas mas complejas tales como ayudar a combatir la obesidad infantil y la malnutrición. También busca dar seguridad alimentaria a los comensales, restringiendo el menú al cual tienen acceso, y fijando limites diarios de consumo.
 
 #### Funcionales:
 
@@ -451,6 +459,26 @@ y posibles alergias alimentarias asociadas con cada opción.
 	- Puedo filtrar y buscar los pedidos por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.
 	- Puedo generar informes y estadísticas sobre los pedidos procesados, como la cantidad de ingresos generados por pedidos en un determinado período de tiempo.
 
+#### YO COMO **_USUARIO_**
+**PUEDO:** AGREGAR MÉTODOS DE PAGO
+
+**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
+
+**Precondiciones:**
+- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
+- Mi cuenta debe estar asociada a un alumno registrado en el comedor.
+- Debo haber verificado mi información de contacto(email, teléfono). 
+
+**Proceso:**
+* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
+- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
+- La información de pago ingresada debe ser precisa y segura.
+- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
+
 
 
 ### HISTORIAS DE USUARIO
@@ -486,7 +514,30 @@ y posibles alergias alimentarias asociadas con cada opción.
 | Precondición | Actores | Post condición |
 |-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Estar logeado en el sistema | *USUARIO<br>*SISTEMA | Se muestra información del menú diario |
-| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio <br> El usuario selecciona la opcion **Ver menú diario** <br> El sistema muestra la información del menú para ese dia |
+| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **comedores** <br> El sistema despliega una pantalla con una lista de comedores a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la informacion del comedor <br> El usuario selecciona la opcion **Ver menú diario** <br> El sistema muestra la información del menú para ese dia |
+| Flujos alternativos | | - N/A |
+
+---
+
+  **Nombre: Ver menú**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *USUARIO<br>*SISTEMA | Se muestra información del menú diario |
+| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **comedores** <br> El sistema despliega una pantalla con una lista de comedores a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la informacion del comedor <br> El usuario selecciona la opcion **Ver menú** <br> El sistema muestra la información del menú |
+| Flujos alternativos | | - N/A |
+
+---
+
+**Nombre: Ver menú semanal**
+
+| Precondición | Actores | Post condición |
+
+|-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+| Estar logeado en el sistema | *USUARIO<br>*SISTEMA | Se muestra información del menú diario |
+
+| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **comedores** <br> El sistema despliega una pantalla con una lista de comedores ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la información del comedor <br> El usuario selecciona la opción **Ver menú semanal** <br> El sistema muestra la información del menú para esa semana |
+
 | Flujos alternativos | | - N/A |
 
 ---
@@ -494,28 +545,110 @@ y posibles alergias alimentarias asociadas con cada opción.
 **Nombre: Agregar comentarios al menu diario**
 | Precondición | Actores | Post condición |
 |-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Estar logeado en el sistema | *USUARIO <br> *SISTEMA | Se registra un nuevo comentario al colegio |
-| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio <br> El usuario seleciona la opcion **ver menu diario**<br>El sistema muestra al usuario la vista del menu diario<br>El usuaro seleciona la opcion **Agregar comentario**<br>El sistema muetra al usuario un formulario donde puede ingresar su comentario<br> El usuario escribe su comentario y al finalizar presiona la opción **Guardar** <br> El sistema agrega el comentario al comedor y muestra la información del comedor actualizada al usuario |
+| Estar logeado en el sistema | *USUARIO <br> *SISTEMA | Se registra un nuevo comentario al comedor |
+| FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **comedores** <br> El sistema despliega una pantalla con una lista de comedores a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la informacion del comedor <br> El usuario seleciona la opcion **ver menu diario**<br>El sistema muestra al usuario la vista del menu diario<br>El usuaro seleciona la opcion **Agregar comentario**<br>El sistema muetra al usuario un formulario donde puede ingresar su comentario<br> El usuario escribe su comentario y al finalizar presiona la opción **Guardar** <br> El sistema agrega el comentario al comedor y muestra la información del comedor actualizada al usuario |
 | Flujos alternativos | | - El usuario desiste de agregar su comenatario y preciona la opcion **Cancelar** (El sistema cierra el area de texto y vuelve a mostrar la informacion del comedor al usuario)  
 |
 
 ---
 
-**Nombre: Ver información del colegio**
+**Nombre: Ver información del comedor**
 | Precondición | Actores | Post condición |
 |-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Estar logeado en el sistema | *USUARIO<br>*SISTEMA |El sistema muestra al usuario la informacion sobre el colegio |
-| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio |
+| Estar logeado en el sistema | *USUARIO<br>*SISTEMA |El sistema muestra al usuario la informacion sobre el comedor |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comedores** <br> El sistema despliega una pantalla con una lista de comedores a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la informacion del comedor |
 | Flujos alternativos | | -N/A |
 
 ---
 
-**Nombre: Ver comensales de un colegio**
+---
+**Nombre: Suscribirse al menú semanal**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado a la cuenta | *USUARIO<br>*SISTEMA |El sistema suscribe el comensal al menú semanal |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comensales** <br> El sistema despliega una pantalla con una lista de comensales a los cuales el usuario vinculo su cuenta, ordenados alfabéticamente <br> El usuario elije el comensal que le interesa <br> El sistema despliega una pantalla con la información del comensal<br> El usuario escoge la opción **Agregar suscripción a menú semanal**<br>El sistema despliega una lista de menú semanales ordenados por fecha<br>El usuario escoge el que quiere y presiona **suscribir**<br> El sistema muestra un mensaje de suceso al usuario |
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla principal) |
+
+---
+**Nombre: Cancelar suscripción al menú semanal**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado a la cuenta | *USUARIO<br>*SISTEMA |El sistema cancela la suscripción al menú semanal de un comensal |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comensales** <br> El sistema despliega una pantalla con una lista de comensales a los cuales el usuario vinculo su cuenta, ordenados alfabéticamente <br> El usuario elije el comensal que le interesa <br> El sistema despliega una pantalla con la información del comensal<br> El usuario escoge la opción **Eliminar suscripción menú semanal**<br>El sistema despliega mensaje de confirmación<br>El usuario usuario preciona **confirmar**<br> El sistema muestra un mensaje de suceso al usuario |
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla de información del comensal) |
+
+---
+**Nombre: Agregar plato al carrito**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado a la cuenta | *USUARIO<br>*SISTEMA |El sistema agrega un plato al carrito de la compra |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comensales** <br> El sistema despliega una pantalla con una lista de comensales a los cuales el usuario vinculo su cuenta, ordenados alfabéticamente <br> El usuario elije el comensal que le interesa <br> El sistema despliega una pantalla con la información del comensal<br> El usuario escoge la opción **Realizar un pedido**<br>El sistema despliega una vista del menu del comedor al cual pertenece ese comensal<br>El usuario escoge el plato que quiere, y presiona **agregar al carrito**<br>El sistema despliega mensaje de confirmación<br>El usuario usuario presiona **confirmar**<br> El sistema muestra un mensaje de suceso al usuario y hace visible un botón con la opción **finalizar pedido**<br>El usuario termina de agregar los platos que desea y escoge la opción **finalizar pedido**<br>**CONTINUA EN CASO FINALIZAR COMPRA**|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla de información del menú) |
+
+
+
+---
+**Nombre: Finalizar compra**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado a la cuenta | *USUARIO<br>*SISTEMA |El sistema debita el total del pedido al método de pago del usuario, El sistema registra un nuevo pedido en el comedor |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **compras** <br>El sistema dirige al usuario a la pantalla de carrito de compras<br>El usuario escoge la opción **pagar**<br>El sistema despliega mensaje de confirmación<br>El usuario usuario presiona **confirmar**<br>El sistema envia la solicitud de debito a la pasarela de pagos<br>Una vez el sistema recibe confirmación de la pasarela de pagos, registra el pedido en el comedor<br> El sistema muestra un mensaje de suceso al usuario|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla del carrito de compras)<br>El usuario no tiene saldo suficiente(El sistema muestra un mensaje de error al usuario) |
+
+---
+**Nombre: Eliminar plato del carrito**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado a la cuenta<br>Tener al menos un plato en el carrito de compras | *USUARIO<br>*SISTEMA |El sistema elimina un plato de la lista de platos del carrito, El sistema resta el valor de los platos eliminado al total a pagar del carrito |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **compras** <br>El sistema dirige al usuario a la pantalla de carrito de compras<br>El usuario escoge la opción **eliminar** en la lista de platos<br>El sistema despliega mensaje de confirmación<br>El usuario usuario presiona **confirmar**<br>El sistema quita ese plato de la lista de platos del carrito<br>El sistema resta el valor del item quitado a la suma total a pagar del carrito<br>|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla del carrito de compras) |
+
+---
+
+**Nombre: Vincular comensal**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema| *USUARIO<br>*SISTEMA |El sistema vincula un nuevo comensal al usuario |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comensales** <br>El sistema dirige al usuario a la pantalla de comensales donde se puede ver una lista de comensales asociados y la opción **Agregar nuevo comensal**<br>El usuario escoge la opción **Agregar nuevo comensal**<br>El sistema despliega una lista de comedores<br>El usuario elige el comedor al cual pertenece el comensal<br>El sistema despliega la lista de grupos de comensales de ese comedor<br>El usuario elije el grupo al cual pertenece el comensal<br>El sistema despliega una lista de comensales que pertenecen a ese grupo<br>EL usuario elige el comensal que le interesa y presiona **agregar**<br>El sistema pide un limite diario de consumo para el comensal<br>El usuario introduce el limite diario para ese comensal<br>El sistema vincula el comensal al usuario<br>El sistema despliega mensaje de suceso|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla principal) |
+---
+**Nombre: Desvincular un comensal**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado| *USUARIO<br>*SISTEMA |El sistema desvincula el comensal al usuario |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comensales** <br>El sistema dirige al usuario a la pantalla de comensales donde se puede ver una lista de comensales asociados con la opción **Eliminar**<br>El usuario escoge la opción **Eliminar**<br>El sistema despliega una mensaje de confirmación<br>El usuario escoge **confirmar** <br>El sistema desvincula el usuario de ese comensal<br>El sistema muestra un mensaje de suceso al usuario|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla comensales) |
+
+---
+**Nombre: Editar limite de consumo de un comensal**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado| *USUARIO<br>*SISTEMA |El sistema desvincula el comensal al usuario |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comensales** <br>El sistema dirige al usuario a la pantalla de comensales donde se puede ver una lista de comensales asociados con la opción **ver**<br>El sistema despliega una pantalla con la informacion del comensal<br>El usuario escoge la opcion **Editar limite de consumo**<br>El sistema solicita un nuevo limite de consumo<br>El usuario introduce el nuevo limite y presiona **guardar**<br>El actualiza el limite de consumo para ese comensal<br>El sistema muestra un mensaje de suceso al usuario|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla de informacion del comensal) |
+---
+**Nombre: Suscribirse a un comedor**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema| *USUARIO<br>*SISTEMA |El sistema suscribe el usuario al comedor |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comedores** <br>El sistema dirige al usuario a la pantalla de comedores donde se puede ver una lista de comedores a los cuales esta suscripto el usuario y la opción **Agregar nueva suscripción**<br>El usuario escoge la opción **Agregar nueva suscripción**<br>El sistema despliega una lista de comedores ordenados alfabéticamente<br>El usuario escoge el comedor que quiere suscribirse y presiona **suscribir**<br>El sistema despliega una mensaje de confirmación<br>El usuario escoge **confirmar** <br>El sistema suscribe el comensal a ese comedor<br>El sistema muestra un mensaje de suceso al usuario|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla de comedores) |
+
+---
+**Nombre: Cancelar suscripción a un comedor**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema<br>Estar suscripto al menos a un comedor| *USUARIO<br>*SISTEMA |El sistema elimina la suscripción del usuario a ese comedor |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comedores** <br>El sistema dirige al usuario a la pantalla de comedores donde se puede ver una lista de comedores a los cuales esta suscripto el usuario con las opciones de **Eliminar**<br>El usuario presiona **eliminar** sobre el comedor que le interesa eliminar la suscripción<br>El sistema despliega una mensaje de confirmación<br>El usuario escoge **confirmar** <br>El sistema elimina la suscripción de ese usuario al comedor<br>El sistema muestra un mensaje de suceso al usuario|
+| Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla de comedores) |
+---
+
+**Nombre: Ver comensales de un comedor**
 | Precondición | Actores | Post condición |
 |--------------------- |---------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estar logeado en el sistema | *USUARIO<br>*SISTEMA |El sistema muestra al usuario una lista de comensales asociados a el que acuden a ese colegio| |El sistema muestra al usuario la informacion sobre el colegio |
-| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **colegios** <br> El sistema despliega una pantalla con una lista de colegios a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el colegio que le interesa <br> El sistema despliega una pantalla con la informacion del colegio donde se incluye una lista de comensales<br>El usuario escoge en la lista el comensal que le interesa y presiona **ver** <br> El sistema muestra la informacion de ese comensal|
-| Flujos alternativos | | -El usuario no asocio ningun comensal de ese colegio a su cuenta, en tal caso la lista de comensales estara vacia |
+| Estar logeado en el sistema | *USUARIO<br>*SISTEMA |El sistema muestra al usuario una lista de comensales asociados a el que acuden a ese comedor| |El sistema muestra al usuario la informacion sobre el comedor |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **comedores** <br> El sistema despliega una pantalla con una lista de comedores a los cuales el usuario se suscribio ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la informacion del comedor donde se incluye una lista de comensales<br>El usuario escoge en la lista el comensal que le interesa y presiona **ver** <br> El sistema muestra la informacion de ese comensal|
+| Flujos alternativos | | -El usuario no asocio ningun comensal de ese comedor a su cuenta, en tal caso la lista de comensales estara vacia |
 
 ---
 
