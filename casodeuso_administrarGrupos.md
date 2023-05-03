@@ -19,7 +19,7 @@ Puedo Registrar grupos:
 	Accedo a una pantalla donde puedo registrar un nuevo grupo.
 
 Puedo Ver un grupo:
-	Puedo editar un grupo
+	Puedo editar un grupo.
 	Puedo eliminar un grupo
 
 Puedo Registrar un nuevo comensal:
