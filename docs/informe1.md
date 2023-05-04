@@ -116,96 +116,6 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 7. Alertas y recordatorios: La aplicación puede enviar alertas y recordatorios a los usuarios sobre el consumo de sus hijos en el comedor escolar para ayudarles a mantenerse al tanto de lo que están comiendo.
 8. Personalización: La aplicación puede ser personalizada para las necesidades específicas de cada estudiante, incluyendo restricciones dietéticas y preferencias de comida.
 
-Resultados de la Entrevista.
-
-
-Preguntas
-
-1)¿Cuál es el proceso actual que los padres o responsables siguen para conocer el menú diario del comedor escolar?
-
-2)¿Qué información específica les gustaría obtener los padres o responsables sobre el menú diario y el consumo de sus hijos en el comedor escolar?
-
-3)¿Cómo le gustaría recibir esta información, a través de notificaciones push, correo electrónico o mensajes de texto?
-
-4)¿Le gustaría a los padres o responsables tener la posibilidad de realizar comentarios sobre el menú diario del comedor escolar?
-
-5)¿Qué tan importante sería para los padres o responsables poder tener información sobre alergias alimentarias o restricciones dietéticas de sus hijos en la aplicación?
-
-6)¿Le gustaría a los padres o responsables tener la opción de realizar pedidos anticipados de comida para sus hijos?
-
-7)¿Cómo les gustaría a los padres o responsables realizar el seguimiento del consumo de sus hijos en el comedor escolar? ¿Le gustaría recibir actualizaciones diarias, semanales o mensuales?
-
-8)¿Le gustaría a los padres o responsables tener la opción de configurar recordatorios o alertas sobre el consumo de sus hijos en la aplicación?
-
-9)¿Existen restricciones presupuestarias o de tiempo que debamos tener en cuenta al desarrollar la aplicación?
-
-10)¿Hay algún otro requisito o característica que le gustaría ver en la aplicación que no se haya mencionado anteriormente?
-
-Respuestas
-
-1)Proceso actual: "Actualmente, los padres o responsables tienen que pedir una copia impresa del menú semanal en la escuela o visitar el sitio web del comedor escolar para conocer el menú diario."
-
-2)Información específica: "Los padres o responsables desean saber qué se va a servir en el almuerzo, así como la información nutricional y las posibles alergias alimentarias asociadas con cada opción de menú."
-
-3)Forma de recibir la información: "La mayoría de los padres o responsables prefieren recibir la información a través de notificaciones push en la aplicación, pero algunos también podrían preferir recibir correos electrónicos o mensajes de texto."
-
-4)Comentarios sobre el menú: "Sí, los padres o responsables quieren tener la opción de realizar comentarios o sugerencias sobre el menú diario para que la escuela pueda mejorar la calidad de la comida que sirve."
-
-5)Información sobre alergias o restricciones dietéticas: "Es muy importante para los padres o responsables poder ingresar información sobre alergias alimentarias o restricciones dietéticas de sus hijos en la aplicación para asegurarse de que sus hijos solo coman alimentos seguros y saludables."
-
-6)Pedidos anticipados: "Sí, algunos padres o responsables quieren tener la opción de realizar pedidos anticipados de comida para sus hijos para que se les sirva exactamente lo que necesitan."
-
-7)Seguimiento del consumo: "La mayoría de los padres o responsables preferiría recibir actualizaciones diarias sobre el consumo de sus hijos en el comedor escolar para asegurarse de que están comiendo lo suficiente y comiendo alimentos saludables."
-
-8)Alertas y recordatorios: "Sí, algunos padres o responsables quieren tener la opción de configurar alertas o recordatorios sobre el consumo de sus hijos en la aplicación para mantenerse al tanto de lo que están comiendo."
-
-9)Restricciones presupuestarias o de tiempo: "No hay restricciones presupuestarias o de tiempo específicas, pero sería bueno tener una aplicación fácil de usar y que no consuma mucho tiempo para los padres o responsables."
-
-10)Otros requisitos o características: "Algunos padres o responsables podrían querer ver información adicional sobre el tiempo de actividad física de sus hijos en la escuela o la cantidad de tiempo que pasan en el comedor escolar."
-
-Referencias a fuentes de información:
-
-La fuente de donde procede esta información, es a traves de entrevistas realizadas con el personal del comedor, y padres/madres/tutores legales, que mostraban interes de disponer de una app donde puedan administrar el consumo de
-
-alimentos de sus hijos cuando estan fuera de sus hogares.
-
-Caracterización de usuarios: User Personas
-
-1)Padres o tutores legales: Son los principales usuarios de la aplicación y están interesados en conocer el menú diario del comedor escolar y controlar el consumo realizado por sus hijos.
-
-Quieren asegurarse de que sus hijos estén comiendo comidas saludables y nutritivas y que no estén expuestos a alimentos que puedan causar alergias o intolerancias alimentarias.
-
-También podrían estar interesados en realizar comentarios y sugerencias sobre el menú.
-
-Estudiantes: Aunque no son usuarios directos de la aplicación, son la razón por la cual se desarrolla la aplicación.
-
-Los estudiantes necesitan una dieta saludable y equilibrada durante el día escolar y la aplicación ayudará a sus padres o tutores legales a asegurarse de que sus hijos estén recibiendo la nutrición adecuada.
-
-Personal del comedor escolar: El personal del comedor escolar podría ser considerado indirectamente como usuarios de la aplicación,
-
-ya que la aplicación podría permitirles conocer mejor las preferencias y necesidades de los estudiantes y así mejorar la calidad del servicio que brindan.
-
-Modelo Conceptual del problema: El modelo conceptual del problema proporciona una representación abstracta y de alto nivel de los componentes clave del sistema y sus relaciones.
-
-En el caso de la aplicación para el comedor escolar, el modelo conceptual podría ser el siguiente:
-
-1. Usuarios: Los usuarios principales son los padres o tutores legales, que utilizan la aplicación para conocer el menú diario del comedor escolar y controlar el consumo realizado por sus hijos.
-
-2. Información del menú: La aplicación proporciona información sobre el menú diario del comedor escolar, incluyendo opciones de almuerzo y bebidas, información nutricional
-
-y posibles alergias alimentarias asociadas con cada opción.
-
-3. Registro de información personal: Los usuarios pueden ingresar información sobre alergias alimentarias y restricciones dietéticas de sus hijos para asegurarse de que solo coman alimentos seguros y saludables.
-
-4. Comentarios y sugerencias: Los usuarios pueden realizar comentarios y sugerencias sobre el menú diario para mejorar la calidad de la comida que sirve el comedor escolar.
-
-5. Pedidos anticipados: Los usuarios pueden realizar pedidos anticipados de comida para sus hijos para que se les sirva exactamente lo que necesitan.
-
-6. Registro y seguimiento del consumo: La aplicación permite a los usuarios realizar un seguimiento del consumo de sus hijos en el comedor escolar para asegurarse de que están comiendo lo suficiente y comiendo alimentos saludables.
-
-7. Alertas y recordatorios: La aplicación puede enviar alertas y recordatorios a los usuarios sobre el consumo de sus hijos en el comedor escolar para ayudarles a mantenerse al tanto de lo que están comiendo.
-
-8. Personalización: La aplicación puede ser personalizada para las necesidades específicas de cada estudiante, incluyendo restricciones dietéticas y preferencias de comida.
 
 ## Especificación
 
@@ -343,6 +253,66 @@ El sistema esta pensado para un comedor de un comedor, busca dar soporte a 3 gru
 
 ---
 
+# YO COMO USUARIO
+**PUEDO:** AGREGAR MÉTODOS DE PAGO
+
+**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
+
+**Precondiciones:**
+- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
+- Mi cuenta debe estar asociada a un alumno registrado en el colegio.
+- Debo haber verificado mi información de contacto(email, teléfono). 
+
+**Proceso:**
+* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
+
+## Criterios de aceptación:
+
+- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
+- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
+- La información de pago ingresada debe ser precisa y segura.
+- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
+
+#### YO COMO **_USUARIO_**
+**PUEDO:** AGREGAR MÉTODOS DE PAGO
+
+**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
+
+**Precondiciones:**
+- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
+- Mi cuenta debe estar asociada a un alumno registrado en el comedor.
+- Debo haber verificado mi información de contacto(email, teléfono). 
+
+**Proceso:**
+* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
+- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
+- La información de pago ingresada debe ser precisa y segura.
+- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
+
+﻿# YO COMO USUARIO
+**PUEDO:** AGREGAR MÉTODOS DE PAGO
+
+**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
+
+**Precondiciones:**
+- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
+- Mi cuenta debe estar asociada a un alumno registrado en el colegio.
+- Debo haber verificado mi información de contacto(email, teléfono). 
+
+**Proceso:**
+* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
+
+## Criterios de aceptación:
+
+- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
+- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
+- La información de pago ingresada debe ser precisa y segura.
+- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
+
 ## Historias de usuario para administradores
 
 > Un administrador tiene acceso a todas las funcionalidades de un usuario convencional
@@ -459,26 +429,34 @@ El sistema esta pensado para un comedor de un comedor, busca dar soporte a 3 gru
 	- Puedo filtrar y buscar los pedidos por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.
 	- Puedo generar informes y estadísticas sobre los pedidos procesados, como la cantidad de ingresos generados por pedidos en un determinado período de tiempo.
 
-#### YO COMO **_USUARIO_**
-**PUEDO:** AGREGAR MÉTODOS DE PAGO
+---
+﻿## Nombre del caso de uso: Administrar Pedidos
 
-**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
+### Actor principal: Administrador
+
+Breve descripción: Este caso de uso permite al administrador gestionar los pedidos de los clientes, registrando nuevos pedidos, visualizando pedidos sin procesar y procesados, y generando informes y estadísticas sobre los pedidos.
 
 **Precondiciones:**
-- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
-- Mi cuenta debe estar asociada a un alumno registrado en el comedor.
-- Debo haber verificado mi información de contacto(email, teléfono). 
 
-**Proceso:**
-* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
+-   El administrador debe tener una cuenta registrada y haber iniciado sesión en la aplicación.
+-   La cuenta del administrador debe tener permisos para administrar pedidos.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+**Flujo principal:**
 
-- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
-- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
-- La información de pago ingresada debe ser precisa y segura.
-- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
+1.  El administrador inicia sesión en la aplicación.
+2.  En la pantalla principal, el administrador elige la opción "Administración" y luego "Administrar Pedidos".
+3.  El administrador accede a la pantalla de búsqueda de comensales y puede buscarlos por QR de tarjeta, identificador de cliente, apellido o grupo del usuario.
+4.  Si el administrador busca por apellido o grupo del usuario, se desplegará una lista de estudiantes que coincidan con el resultado del criterio de búsqueda, y podrá seleccionar al comensal correspondiente.
+5.  Una vez seleccionado el comensal, el administrador podrá ver el menú de pedidos, si es libre o restringido, y podrá registrar un nuevo pedido.
+6.  El administrador puede acceder a una lista de todos los pedidos que no han sido procesados aún, visualizando la información del cliente y los productos incluidos en cada pedido sin procesar.
+7.  El administrador puede filtrar y buscar los pedidos por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.
+8.  El administrador puede acceder a una lista de todos los pedidos que han sido procesados y completados, visualizando la información del cliente y los productos incluidos en cada pedido procesado.
+9.  El administrador puede filtrar y buscar los pedidos procesados por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.
+10.  El administrador puede generar informes y estadísticas sobre los pedidos procesados, como la cantidad de ingresos generados por pedidos en un determinado período de tiempo.
 
+Flujo alternativo:
+
+-   Si el administrador no tiene una cuenta registrada o no ha iniciado sesión, no podrá acceder a este caso de uso.
 
 
 ### HISTORIAS DE USUARIO
@@ -591,7 +569,7 @@ El sistema esta pensado para un comedor de un comedor, busca dar soporte a 3 gru
 **Nombre: Finalizar compra**
 | Precondición | Actores | Post condición |
 |-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Estar logeado en el sistema<br>Tener al menos un comensal vinculado a la cuenta | *USUARIO<br>*SISTEMA |El sistema debita el total del pedido al método de pago del usuario, El sistema registra un nuevo pedido en el comedor |
+| Estar logeado en el sistema<br>Tener al menos un comensal vinculado a la cuenta<br>Tener al menos un item en el carrito | *USUARIO<br>*SISTEMA |El sistema debita el total del pedido al método de pago del usuario, El sistema registra un nuevo pedido en el comedor |
 | FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **compras** <br>El sistema dirige al usuario a la pantalla de carrito de compras<br>El usuario escoge la opción **pagar**<br>El sistema despliega mensaje de confirmación<br>El usuario usuario presiona **confirmar**<br>El sistema envia la solicitud de debito a la pasarela de pagos<br>Una vez el sistema recibe confirmación de la pasarela de pagos, registra el pedido en el comedor<br> El sistema muestra un mensaje de suceso al usuario|
 | Flujos alternativos | | -El usuario desiste de la operación y presiona la opción cancelar(El sistema regresa al usuario a la pantalla del carrito de compras)<br>El usuario no tiene saldo suficiente(El sistema muestra un mensaje de error al usuario) |
 
@@ -714,6 +692,62 @@ El sistema esta pensado para un comedor de un comedor, busca dar soporte a 3 gru
 | Estar logeado en el sistema.<br> Ser un administrador.<br>Tener al menos un plato dentro del menu | *ADMINISTRADOR<br>*SISTEMA | El sistema eliminara el plato del menu|
 | FLUJO NORMAL | | En la ventana principal, el administrador elije la opción **administración** <br>El sistema despliega una pantalla con varias opciones.<br> El administrador escoge **Administrar menus**<br>El sistema despliega una pantalla con diferentes opciones.<br> El administrador escoje **Administrar menu**<br>El sistema despliega una lista de menus creados en ese comedor.<br>El administrador escoje el plato que desea editar y preciona **Eliminar**<br>El sistema despliega un mensaje de confirmacion.<br>El administrador escoje la opcion **Eliminar**.<br>El sistema elimina la informacion del plato.<br> El sistema despliega un mensaje de exito. |
 | Flujos alternativos | | -El administrador desiste de la operacion y presiona cancelar (El sistema desplegara la pantalla de Administrar menu) |
+---
+| Nombre del caso de uso | Administrar Pedidos |
+|-----------------------|---------------------|
+| Actor principal       | Administrador       |
+| Breve descripción     | Permite al administrador gestionar los pedidos de los clientes, registrando nuevos pedidos, visualizando pedidos sin procesar y procesados, y generando informes y estadísticas sobre los pedidos. |
+| Precondiciones        | El administrador debe tener una cuenta registrada y haber iniciado sesión en la aplicación. La cuenta del administrador debe tener permisos para administrar pedidos. |
+| Flujo principal       | 1. El administrador inicia sesión en la aplicación.<br>2. En la pantalla principal, el administrador elige la opción "Administración" y luego "Administrar Pedidos".<br>3. El administrador accede a la pantalla de búsqueda de comensales y puede buscarlos por QR de tarjeta, identificador de cliente, apellido o grupo del usuario.<br>4. Si el administrador busca por apellido o grupo del usuario, se desplegará una lista de estudiantes que coincidan con el resultado del criterio de búsqueda, y podrá seleccionar al comensal correspondiente.<br>5. Una vez seleccionado el comensal, el administrador podrá ver el menú de pedidos, si es libre o restringido, y podrá registrar un nuevo pedido.<br>6. El administrador puede acceder a una lista de todos los pedidos que no han sido procesados aún, visualizando la información del cliente y los productos incluidos en cada pedido sin procesar.<br>7. El administrador puede filtrar y buscar los pedidos por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.<br>8. El administrador puede acceder a una lista de todos los pedidos que han sido procesados y completados, visualizando la información del cliente y los productos incluidos en cada pedido procesado.<br>9. El administrador puede filtrar y buscar los pedidos procesados por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.<br>10. El administrador puede generar informes y estadísticas sobre los pedidos procesados, como la cantidad de ingresos generados por pedidos en un determinado período de tiempo. |
+| Flujo alternativo     | Si el administrador no tiene una cuenta registrada o no ha iniciado sesión, no podrá acceder a este caso de uso. |
+---
+﻿| Nombre del caso de uso | Agregar Método de Pago |
+| --- | --- |
+| Actor principal | Usuario, Sistema |
+| Breve descripción | Permite al usuario gestionar sus métodos de pago dentro de la aplicación, pudiendo agregar un nuevo método de pago al sistema. |
+| Precondiciones | - El usuario debe haber iniciado sesión en la aplicación como padre de un alumno registrado en el colegio.<br>- La cuenta del usuario debe estar asociada a una cantina escolar en la aplicación.<br>- El usuario debe haber verificado su información de contacto. |
+| Flujo principal | 1. El usuario accede a la opción "Métodos de Pago" en la pantalla principal de la aplicación.<br>2. El sistema muestra una lista de los métodos de pago actualmente asociados a la cuenta del usuario.<br>3. El usuario selecciona la opción "Agregar nuevo método de pago".<br>4. El sistema presenta un formulario para ingresar la información del nuevo método de pago, incluyendo nombre del titular, número de tarjeta, fecha de vencimiento, código de seguridad y dirección de facturación.<br>5. El usuario completa el formulario y envía la información.<br>6. El sistema valida la información ingresada y muestra una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente. |
+| Flujo alternativo | - En el paso 5, si la información ingresada es incorrecta o incompleta, el sistema muestra un mensaje de error y solicita al usuario que corrija los datos.<br>- En el paso 5, si la información ingresada es sospechosa o se detecta un posible fraude, el sistema notifica al usuario y no permite agregar el nuevo método de pago.<br>- En el paso 6, si no se puede agregar el nuevo método de pago por problemas técnicos, el sistema muestra un mensaje de error y solicita al usuario que lo intente más tarde. |
+| Postcondiciones | El nuevo método de pago es agregado a la cuenta del usuario y se encuentra disponible para su uso en la aplicación de la cantina escolar. |
+---
+| Nombre del caso de uso | Listar y Eliminar Métodos de Pago |
+| --- | --- |
+| Actor principal | Usuario |
+| Breve descripción | Permitir al usuario listar y eliminar los métodos de pagos registrados en la aplicación de la cantina escolar. |
+| **Precondiciones** | - El usuario debe haber iniciado sesión en la aplicación como padre de un alumno registrado en el colegio. <br> - La cuenta del usuario debe estar asociada a una cantina escolar en la aplicación. <br> - El usuario debe haber verificado su información de contacto. |
+| **Flujo principal** | 1. El usuario accede a la opción "Métodos de Pago" en la pantalla principal de la aplicación. <br> 2. El sistema muestra una lista de los métodos de pago actualmente asociados a la cuenta del usuario. <br> 3. La aplicación muestra una lista de los métodos de pago registrados por el usuario, mostrando información oculta de los datos de las tarjetas de crédito, tales como los últimos 4 dígitos de la tarjeta, la marca y si es de crédito o débito. <br> 4. El usuario elige la opción "Eliminar" junto al método de pago que desea eliminar. <br> 5. La aplicación muestra un mensaje de confirmación pidiéndole al usuario que confirme si desea eliminar el método de pago seleccionado. <br> 6. El usuario confirma la eliminación del método de pago. <br> 7. La aplicación elimina el método de pago seleccionado de la lista. |
+| **Flujo alternativo** | - En cualquier momento, el usuario puede cancelar el proceso de eliminación del método de pago y volver a la lista de métodos de pago. |
+| **Excepciones** | - Si el usuario no tiene ningún método de pago registrado, la aplicación muestra un mensaje indicando que no hay métodos de pago registrados y ofrece la opción de agregar uno nuevo. <br> - Si ocurre algún error durante el proceso de eliminación, la aplicación muestra un mensaje de error al usuario y no elimina el método de pago seleccionado. |
+---
+**Nombre: Editar Grupos**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *ADMINISTRADOR<br>*SISTEMA |El usuario administrador modifica los datos de un grupo |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **Administración** , luego **Administración de Grupos** y finalmente **Lista de grupos**.<br> El Administrador accede a la vista de grupos donde se despliega una pantalla con la lista de grupos. <br> El Administrador selecciona un grupo a editar. <br> El sistema muestra una pantalla para editar los datos del grupo. <br> El Administrador realiza los cambios y selecciona la opción **Guardar** para confirmar los cambios. <br> En caso de querer cancelar los cambios, selecciona la opcion **Cancelar** |
+| Flujos alternativos | | El usuario ingresa datos erróneos. El sistema informa al usuario que los datos ingresados no son correctos.|
+
+---
+**Nombre: Eliminar Grupos**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *ADMINISTRADOR<br>*SISTEMA |El usuario administrador elimina un grupo |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **Administración** , luego **Administración de Grupos** y finalmente **Lista de grupos**.<br> El Administrador accede a la vista de grupos donde se despliega una pantalla con la lista de grupos. <br> El Administrador selecciona un grupo a eliminar. <br> El sistema muestra una pantalla con la opción para eliminar el grupo. <br> El Administrador selecciona la opción **Eliminar** para eliminar el grupo. <br> En caso de querer cancelar los cambios, selecciona la opcion **Cancelar** |
+| Flujos alternativos | | N/A.|
+---
+**Nombre: Registrar Grupo**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *ADMINISTRADOR<br>*SISTEMA | El usuario Administrador registra un nuevo grupo |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **Administración** y luego **Administración de Grupos** <br> El usuario selecciona la opción Registrar Grupo. <br> Se muestra una pantalla con los datos del grupo a completar. <br> El usuario ingresa un identificador numérico para el grupo y un nombre. <br> Para completar el registro selecciona la opción **Registrar** <br> Caso contrario, el usuario cancela el registro con la opción **Cancelar** <br> |
+| Flujos alternativos | | El usuario ingresa datos inválidos. El sistema informa al usuario que los datos ingresados no son correctos. |
+---
+**Nombre: Registrar Comensal**
+| Precondición | Actores | Post condición |
+|-----------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estar logeado en el sistema | *ADMINISTRADOR<br>*SISTEMA | El usuario Administrador registra un nuevo comensal |
+| FLUJO NORMAL | |El usuario en la ventana principal, elije la opción **Administración** y luego **Administración de Grupos** <br> El usuario selecciona la opción **Lista de grupos** y por último **Registrar Grupo**. <br> Se muestra el listado de grupos y la opción **Registrar nuevo comensal**. <br> El usuario selecciona la opción **Registrar nuevo comensal**. <br> Se muestra una pantalla con la lista de grupos y el usuario selecciona el grupo en el que quiere registrar al comensal. El usuario administrador confirma la operación seleccionando la opcion **Confirmar** <br> Caso contrario, el usuario cancela el registro con la opción **Cancelar** <br> |
+| Flujos alternativos | | El usuario no selecciona un grupo. El sistema informa al usuario que debe seleccionar un grupo. |
+---
 
 
 
