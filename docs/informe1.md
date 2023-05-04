@@ -1,19 +1,33 @@
+
 # Informe entrega 1
 
 ## Repositorio Git
 
 ## Versionado
-Para comenzar, creamos la rama principal de nuestro repositorio (master). Cada uno de los integrantes del equipo clonó el repositorio mediante el siguiente comando: git clone <URL repositorio>.
+Para comenzar, creamos la rama principal de nuestro repositorio (master). Cada uno de los integrantes del equipo clonó el repositorio mediante el siguiente comando: **git clone** < *URL repositorio* >.
 
-Una vez hecho esto, nos posicionamos en la rama principal (main) y creamos una nueva rama para el desarrollo (develop) mediante el siguiente comando: git branch <nombre rama>. A continuación, nos cambiamos a la nueva rama utilizando el comando: git checkout <nombre rama>.
+Una vez hecho esto, nos posicionamos en la rama principal (main) y creamos una nueva rama para el desarrollo (**develop**) mediante el siguiente comando: **git branch**  < *nombre rama* >. A continuación, nos cambiamos a la nueva rama utilizando el comando: **git checkout** < *nombre rama* >.
 
-Dentro de la rama develop, creamos un nuevo archivo mediante el comando: touch <nombre archivo>.txt .Después, editamos el archivo utilizando el comando: vi <nombre archivo>. Una vez dentro del archivo, presionamos la tecla "i" para insertar texto y modificamos el archivo según sea necesario. Para guardar los cambios y salir del editor vi, utilizamos el comando ":wq".
+Dentro de la rama develop, creamos un nuevo archivo mediante el comando: **touch** < *nombre archivo.txt* > .Después, editamos el archivo utilizando el comando: **vi** < *nombre archivo* >. Una vez dentro del archivo, presionamos la tecla "**i**" para insertar texto y modificamos el archivo según sea necesario. Para guardar los cambios y salir del editor vi, utilizamos el comando "**:wq**".
 
-De vuelta en la consola de git, agregamos los cambios realizados mediante el comando: git add . Y luego realizamos un commit con el siguiente comando: git commit -m "Mensaje".
+De vuelta en la consola de git, agregamos los cambios realizados mediante el comando: **git add .** Y luego realizamos un commit con el siguiente comando: **git commit -m** "*Mensaje*".
 
-Subimos los cambios a la rama develop del repositorio remoto utilizando el comando: git push --set-upstream origin develop y finalmente cada uno de los integrantes del equipo descargó los cambios más recientes utilizando el comando: git pull.
+Subimos los cambios a la rama develop del repositorio remoto utilizando el comando: **git push origin develop** y finalmente cada uno de los integrantes del equipo descargó los cambios más recientes utilizando el comando: **git pull**.
+### Git flow
+A la hora de decidir de que manera iríamos incorporando los nuevos cambios al repositorio optamos por manejar **feature branch**, es decir una vez dividido el trabnajo que cada integrante del grupo iba a realizar en esa fase se crearon nuevas ramas donde se trabajaria diferentes partes de la entrega ej: **feature/eliciticaion** donde en esa rama estarian todos los cambios relacionados a la parte de elicitacion. 
+Cada vez que se terminaba una parte importante del trabajo, ej **se agregan historias de usuario para administradores** creamos un commit para tener registros claros de los cambios importantes en nuestro repositorio.
+Para el merge optamos por usar **pull request**, cada vez que un integrante tenia cambios y queria incorporarlos a la rama develop abría un pull request y notificaba al resto del grupo. Alguien del grupo **validaba que lo que se esta agregando sigue los lineamientos de todo el proyecto** y hacia el merge.
+Cuando estuvimos listos para realizar la primera entrega, hicimos merge de todas nuestras **feature branches** con **develop**, luego hicimos un merge de develop con main y creamos un **Tag** para identificar esa primera entrega.
 ## Elicitación
 + Aplicación para comedor escolar. El objetivo principal de la aplicación es que madres, padres o responsables puedan conocer el menú diario y controlar el consumo realizados por sus hijos.
+
+### Misión de la aplicación
+El sistema esta pensado para un **comedor de un colegio**, busca dar soporte a **3 grupos de usuarios**.
+
+ 1. **Usuarios**: Los usuarios son los **tutores** que tienen niños o adolescentes a cargo y están interesados en tener un cierto control sobre la alimentación de los mismos en el comedor.
+ 2. **Administradores**: **Personal a cargo del comedor** en el comedor, esta interesado en ofrecer alimentos los cuales los usuarios se vean cómodos.
+ 3. **Comensales**: **Los alumnos de ese comedor**, que frecuentan el comedor están referenciados como comensales, si bien este actor tiene un papel fundamental en el dominio del negocio, **la aplicación esta pensada para que el no actué directamente con ella**, si no que sea el usuario el que por medio de esta aplicación de acceso al **menú del comedor**. Esto se planteo asi debido a la **preocupación de los usuarios sobre el el manejo del dinero por parte de los comensales** y la necesidad de **restringir los alimentos a que estos tienen acceso** dentro de la institución escolar. A nuestros usuarios les interesa **ver como se alimentan, su correcta alimentación  y que no tengan que preocuparse por el manejo que le están dando al dinero** con todo el riesgo que eso conlleva. Por esta razón no hay casos de usos ni historias para el actor comensal, ya que **el comensal es parte de las historias y casos de los demás actores**.
+ **La aplicación busca algo mas que solo dar información sobre como se alimentan los comensales**,  busca ayudar en problemáticas mas complejas tales como ayudar a **combatir la obesidad infantil y la malnutrición**. También busca dar **seguridad alimentaria** a los comensales, restringiendo el menú al cual tienen acceso, y fijando limites diarios de consumo.
 
 ## Resultados de la Entrevista.
 
@@ -21,13 +35,13 @@ Subimos los cambios a la rama develop del repositorio remoto utilizando el coman
 
 El día 25 de abril de 2023, se llevaron a cabo una serie de entrevistas en el *comedor Francisco Epínola*, en relación a la implementación de una aplicación para el comedor escolar. Las entrevistas se realizaron en la sala de reuniones del comedor, en horarios distintos para cada uno de los entrevistados. 
 
-La primera entrevista tuvo lugar a las 10:00 horas con parte del equipo docente, la Sra. Mag. Lucía Martínez, que es una persona referente del comedor encargada de la gestión del comedor, y el Prof. Sr. Enrique Cal. En la entrevista se discutieron temas relacionados con la logística de la implementación de la aplicación y la colaboración entre el comedor y la cantina para el éxito de la iniciativa.
+La primera entrevista tuvo lugar a las 10:00 horas con parte del equipo docente, la **Sra. Mag. Lucía Martínez**, que es una persona referente del comedor **encargada de la gestión del comedor**, y el **Prof. Sr. Enrique Cal**. En la entrevista se discutieron temas relacionados con la **logística de la implementación de la aplicación y la colaboración entre el comedor y la cantina** para el éxito de la iniciativa.
 
-La segunda entrevista tuvo lugar a las 11:30 de la mañana con los padres de dos estudiantes del comedor, el Sr. Juan Pérez y la Sra. Ana García. Durante la entrevista se discutieron temas relacionados con la experiencia de los padres en relación a la alimentación de sus hijos en el comedor escolar y sus expectativas en cuanto a la implementación de una aplicación para hacer más eficiente y cómodo el proceso.
+La segunda entrevista tuvo lugar a las 11:30 de la mañana con los padres de dos estudiantes del comedor, el **Sr. Juan Pérez y la Sra. Ana García**. Durante la entrevista se discutieron temas relacionados con la **experiencia de los padres en relación a la alimentación de sus hijos en el comedor escolar** y sus expectativas en cuanto a la implementación de una aplicación para hacer más eficiente y cómodo el proceso.
 
-La tercera entrevista se llevó a cabo a las 12:00 del mediodia con la madre de otro estudiante del comedor, la Sra. Laura Gómez. Durante la entrevista se abordaron temas similares a los de la segunda entrevista, pero con un enfoque más específico en las necesidades y expectativas de la Sra. Gómez.
+La tercera entrevista se llevó a cabo a las 12:00 del mediodía con la madre de otro estudiante del comedor, la **Sra. Laura Gómez**. Durante la entrevista se abordaron temas similares a los de la segunda entrevista, pero con un enfoque más específico en las necesidades y expectativas de la Sra. Gómez.
 
-Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cabo de manera individual o como maximo de dos personas, para permitir una conversación más enfocada y detallada.
+**Cada entrevista tuvo una duración aproximada de 30 minutos**, y se llevaron a cabo de manera individual o como máximo de dos personas, para permitir una conversación más enfocada y detallada.
 
 **Preguntas realizadas a los referentes de la institución:**
 
@@ -44,16 +58,16 @@ Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cab
 
 **Respuestas del equipo docente:**
 
-1. Proceso actual: "Actualmente, los padres o responsables tienen que pedir una copia impresa del menú semanal en la escuela o visitar el sitio web del comedor escolar para conocer el menú diario."
-2. Información específica: "Los padres o responsables desean saber qué se va a servir en el almuerzo, así como la información nutricional y las posibles alergias alimentarias asociadas con cada opción de menú."
-3. Forma de recibir la información: "La mayoría de los padres o responsables prefieren recibir la información a través de notificaciones push en la aplicación, pero algunos también podrían preferir recibir correos electrónicos o mensajes de texto por whatsapp"
-4. Comentarios sobre el menú: "Sí, los padres o responsables quieren tener la opción de realizar comentarios o sugerencias sobre el menú diario para que la escuela pueda mejorar la calidad de la comida que sirve."
-5. Información sobre alergias o restricciones dietéticas: "Es muy importante para los padres o responsables poder ingresar información sobre alergias alimentarias o restricciones dietéticas de sus hijos en la aplicación para asegurarse de que sus hijos solo coman alimentos seguros y saludables."
-6. Pedidos anticipados: "Sí, algunos padres o responsables quieren tener la opción de realizar pedidos anticipados de comida para sus hijos para que se les sirva exactamente lo que necesitan."
-7. Seguimiento del consumo: "La mayoría de los padres o responsables preferiría recibir actualizaciones diarias sobre el consumo de sus hijos en el comedor escolar para asegurarse de que están comiendo lo suficiente y comiendo alimentos saludables."
-8. Alertas y recordatorios: "Sí, algunos padres o responsables quieren tener la opción de configurar alertas o recordatorios sobre el consumo de sus hijos en la aplicación para mantenerse al tanto de lo que están comiendo."
-9. Restricciones presupuestarias o de tiempo: "No hay restricciones presupuestarias o de tiempo específicas, pero sería bueno tener una aplicación fácil de usar y que no consuma mucho tiempo para los padres o responsables."
-10. Otros requisitos o características: "Algunos padres o responsables podrían querer ver información adicional sobre el tiempo de actividad física de sus hijos en la escuela o la cantidad de tiempo que pasan en el comedor escolar."
+1. **Proceso actual**: "Actualmente, los padres o responsables tienen que pedir una copia impresa del menú semanal en la escuela o visitar el sitio web del comedor escolar para conocer el menú diario."
+2. **Información específica**: "Los padres o responsables desean saber qué se va a servir en el almuerzo, así como la información nutricional y las posibles alergias alimentarias asociadas con cada opción de menú."
+3. **Forma de recibir la información**: "La mayoría de los padres o responsables prefieren recibir la información a través de notificaciones push en la aplicación, pero algunos también podrían preferir recibir correos electrónicos o mensajes de texto por whatsapp"
+4. **Comentarios sobre el menú**: "Sí, los padres o responsables quieren tener la opción de realizar comentarios o sugerencias sobre el menú diario para que la escuela pueda mejorar la calidad de la comida que sirve."
+5. **Información sobre alergias o restricciones dietéticas**: "Es muy importante para los padres o responsables poder ingresar información sobre alergias alimentarias o restricciones dietéticas de sus hijos en la aplicación para asegurarse de que sus hijos solo coman alimentos seguros y saludables."
+6. **Pedidos anticipados**: "Sí, algunos padres o responsables quieren tener la opción de realizar pedidos anticipados de comida para sus hijos para que se les sirva exactamente lo que necesitan."
+7. **Seguimiento del consumo**: "La mayoría de los padres o responsables preferiría recibir actualizaciones diarias sobre el consumo de sus hijos en el comedor escolar para asegurarse de que están comiendo lo suficiente y comiendo alimentos saludables."
+8. **Alertas y recordatorios**: "Sí, algunos padres o responsables quieren tener la opción de configurar alertas o recordatorios sobre el consumo de sus hijos en la aplicación para mantenerse al tanto de lo que están comiendo."
+9. **Restricciones presupuestarias o de tiempo**: "No hay restricciones presupuestarias o de tiempo específicas, pero sería bueno tener una aplicación fácil de usar y que no consuma mucho tiempo para los padres o responsables."
+10. **Otros requisitos o características**: "Algunos padres o responsables podrían querer ver información adicional sobre el tiempo de actividad física de sus hijos en la escuela o la cantidad de tiempo que pasan en el comedor escolar."
 
 
 ### Preguntas realizadas en la segunda entrevista, a dos de los padres, la Sra. Ana García y el Sr. Juan Perez.
@@ -68,7 +82,7 @@ Cada entrevista tuvo una duración aproximada de 30 minutos, y se llevaron a cab
 
 **¿Qué características específicas les gustaría ver en una aplicación para el comedor escolar?**
 
-**Responde Juan Perez:** Nos gustaría ver un menú claro y fácil de usar, con opciones para personalizar los pedidos y hacer solicitudes especiales. También sería útil tener una función de seguimiento de pedidos para que los estudiantes puedan saber en qué etapa del proceso se encuentra su pedido. Además, sería importante tener información clara sobre los ingredientes y la información nutricional de los menúes disponibles. Ademas, nos gustaria disponer de menúes semanales, a los cuales podramos de alguna manera subscribirnos, tanto semanal como mensualmente, para no tener que lidiar todos los dias con el tema del almuerzo y tener que estar pendientes del mismo todos los dias.
+**Responde Juan Perez:** Nos gustaría ver un menú claro y fácil de usar, con opciones para personalizar los pedidos y hacer solicitudes especiales. También sería útil tener una función de seguimiento de pedidos para que los estudiantes puedan saber en qué etapa del proceso se encuentra su pedido. Además, sería importante tener información clara sobre los ingredientes y la información nutricional de los menúes disponibles. Ademas, nos gustaria disponer de menúes semanales, a los cuales podramos de alguna manera subscribirnos, tanto semanal como mensualmente, para no tener que lidiar todos los días con el tema del almuerzo y tener que estar pendientes del mismo todos los días.
 
 **¿Tienen alguna preocupación en cuanto a la privacidad y seguridad de la información personal en una aplicación de comedor escolar?**
 
@@ -129,53 +143,72 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 ### Definición de requerimientos funcionales y no funcionales
 
-### Misión de la aplicación
-El sistema esta pensado para un comedor de un comedor, busca dar soporte a 3 grupos de usuarios .
-
- 1. Usuarios: Los usuarios son los tutores que tienen niños o adolescentes a cargo y están interesados en tener un cierto control sobre la alimentación de los mismos en el comedor.
- 2. Administradores: Personal a cargo del comedor en el comedor, esta interesado en ofrecer alimentos los cuales los usuarios se vean cómodos.
- 3. Comensales: Los alumnos de ese comedor, que frecuentan el comedor están referenciados como comensales, si bien este actor tiene un papel fundamental en el dominio del negocio, la aplicación esta pensada para que el no actué directamente con ella, si no que sea el usuario el que por medio de esta aplicación de acceso al menú del comedor. Esto se planteo asi debido a la preocupación de los usuarios sobre el el manejo del dinero por parte de los comensales, ellos les interesa ver como se alimentan y que no tengan que preocuparse por el manejo que le están dando al dinero con todo el riesgo que eso conlleva. Por esta razón no hay casos de usos ni historias para el actor comensal, ya que el comensal es parte de las historias y casos de los demás actores.
- La aplicación busca algo mas que solo dar información sobre como se alimentan los comensales,  busca ayudar en problemáticas mas complejas tales como ayudar a combatir la obesidad infantil y la malnutrición. También busca dar seguridad alimentaria a los comensales, restringiendo el menú al cual tienen acceso, y fijando limites diarios de consumo.
-
 #### Funcionales:
-
+#### Usuarios
  - **Registro de usuarios**: la aplicación debe permitir a los usuarios registrarse y crear una cuenta para acceder a la información del menú diario y el consumo de sus hijos.
- - **Registro de administradores**: la aplicación debe permitir el registro de usuarios administradores, los cuales tendrán acceso a funcionalidades extras dentro de la aplicación.
- Para este registro ***se solicitara información adicional*** sobre la institución a la cual pertenece la cuenta.
- - **Inicio de sesión**: La aplicación debe proporcionar una función de inicio de sesión para que los usuarios puedan acceder a su cuenta utilizando un nombre de usuario y una contraseña.
- - **Reestablecer contraseña**: El sistema debe permitir que los usuarios por medio de su correo electrónico puedan reestablecer su contraseña.
- -  **Menú diario**: La aplicación debe mostrar el menú diario del comedor escolar seleccionado.
  - **Notificaciones**: La aplicación debe permitir a los padres o responsables recibir notificaciones de la información del menú diario y el consumo de sus hijos, a través de la aplicación o por correo electrónico.
- - **Registrar comedor**: La aplicación debe permitir a un usuario administrador crear un comedor, solicitando la siguiente información:
-	 - Nombre del comedor
-	 - Dirección donde se ubica el mismo
-	 - Descripción (área de texto donde el administrador podrá dar mas detalles sobre el comedor, ej.: numero de alumnos que atiende, hace cuanto tiempo esta funcionando ,etc.)
- - **Actualizar información de comedor**: La aplicación debe permitir a un usuario administrador actualizar la información del comedor.
- - **Eliminar comedor**:  La aplicación debe permitir a un usuario administrador eliminar un comedor.
- - **Registrar menú:** La aplicación debe permitir a los usuarios administradores registrar un menú solicitándoles la siguiente información:
-	 - Fecha en la cual se estará sirviendo el menú
-	 - Comedor en el cual se servirá dicho menú
-	 - Información nutricional (área de texto en la cual el administrador podrá dar información sobre el aporte nutricional del menú, como también indicar que alternativas se les dará a aquellos alumnos que posean intolerancia a algunos ingredientes del menú)
-	 - Desayuno (área de texto que describe que será servido en el desayuno)
-	 - Almuerzo (área de texto que describe que será servido en el almuerzo)
-	 - Merienda (área de texto que describe que será servido en el merienda)
- - **Actualizar menú:** La aplicación debe permitir a los usuarios administradores actualizar la información de un menú.
- - **Eliminar menú**: La aplicación debe permitir a los usuarios administradores eliminar un menú.
+ - **Suscribirse a menú semanal:** La aplicación debe permitir a los usuarios suscribir un comensal a un menú semanal.
+ -  **Cancelar suscripción a menú semanal:** La aplicación debe permitir a los usuarios cancelar la suscripción de un comensal a un menú semanal.
+ - **Vincular comensal:** La aplicación debe permitir a los usuarios vincularse un comensal.
+ - **Ver comensales vinculados:** La aplicación debe permitir a los usuarios ver los comensales a los cuales están vinculados.
+ - **Desvincular un comensal:** La aplicación debe permitir a los usuarios desvincularse de un comensal.
+ - **Editar limite de consumo:** La aplicación debe permitir a los usuarios editar el limite diario de consumo de un comensal vinculado a su cuenta.
+ - **Agregar método de pago:** La aplicación debe permitir a los usuarios agregar un método de pago a su cuenta.
+ - **Quitar método de pago:** La aplicación debe permitir a los usuarios quitar un método de pago de su cuenta.
+ - **Suscribirse a un comedor:** La aplicación debe permitir a los usuarios suscribirse a un comedor.
+ - **Quitar suscripción de un comedor:** La aplicación debe permitir a los usuarios quitar su suscripción a un comedor.
+  - **Agregar plato al carrito:** La aplicación debe permitir a los usuarios agregar un plato al carrito de compras, este plato estará asociado a un comensal que será quien lo retire físicamente en el comedor.
+ -  **Quitar plato del carrito:** La aplicación debe permitir a los usuarios quitar un plato del carrito de compras.
+ - **Finalizar compra:** La aplicación debe permitir a los usuarios finalizar el proceso de compra.
  - **Actualización de Usuario**: La aplicación debe permitir a los usuarios registrados modificar información de su perfil, tal como foto, nombre, correo electrónico y teléfono.
  
-- **Actualizar menú:** La aplicación debe permitir a los usuarios administradores actualizar la información de un menú.
+ 
+#### En común
+ - **Inicio de sesión**: La aplicación debe proporcionar una función de inicio de sesión para que los usuarios y administradores puedan acceder a su cuenta utilizando un nombre de usuario y una contraseña.
+ - **Reestablecer contraseña**: El sistema debe permitir que los usuarios y administradores por medio de su correo electrónico puedan reestablecer su contraseña.
+ -  **Menú diario**: La aplicación debe mostrar el menú diario del comedor a los usuarios y administradores.
+ -   **Menú semanal**: La aplicación debe mostrar el menú semanal del comedor, el menú semanal es una lista de menús diarios que se servirán durante la semana.
+  -  **Agregar comentario al menú diario del comedor:** La aplicación debe permitir a los usuarios y administradores agregar comentarios al menú del comedor.
+  - **Ver menú**: La aplicación debe permitir ver el menú del comedor.
+  - **Ver menú diario**: La aplicación debe permitir ver el menú diario del comedor.
+  - **Ver menú semanal**: La aplicación debe permitir ver el menú semanal diario del comedor.
+ - **Ver información del comedor**: La aplicación debe permitir ver la información del comedor.
+ -   **Actualizar información de perfil**: La aplicación debe permitir tanto a usuarios como administradores actualizar su información de perfil.
+#### Administradores
+ - **Registro de administradores**: la aplicación debe permitir el registro de usuarios administradores, los cuales tendrán acceso a funcionalidades extras dentro de la aplicación.
+ Para este registro ***se solicitara información adicional*** sobre la institución a la cual pertenece la cuenta.
+  - **Actualizar información de comedor**: La aplicación debe permitir a un usuario administrador actualizar la información del comedor.
+ - **Registrar un nuevo plato en el menú**: La aplicación debe permitir a un usuario administrador registrar un nuevo plato en el menú del comedor.
+ - **Editar la información de un plato del menú**: La aplicación debe permitir a un usuario administrador editar la información de un plato del menú.
+ -  **Eliminar un plato del menú**: La aplicación debe permitir a un usuario administrador eliminar un plato del menú del comedor.
+ - **Registrar menú diario:** La aplicación debe permitir a los usuarios administradores registrar un menú diario.
+ -    **Eliminar menú diario:** La aplicación debe permitir a los usuarios administradores eliminar un menú diario.
+ - **Editar menú diario:** La aplicación debe permitir a los usuarios administradores editar la información un menú diario.
+  - **Crear un nuevo grupo de comensales**: La aplicación debe permitir a un usuario administrador registrar un nuevo grupo de comensales.
+ - **Editar un grupo de comensales existente**: La aplicación debe permitir a un usuario administrador editar la información de un grupo de comensales.
+ -  **Eliminar grupo de comensales**: La aplicación debe permitir a un usuario administrador eliminar un grupo de comensales.
+   - **Registrar un nuevo comensal**: La aplicación debe permitir a un usuario administrador registrar un comensal y asociarlo a un grupo de comensales.
+ - **Editar un la información de un comensal**: La aplicación debe permitir a un usuario administrador editar la información de un comensal.
+ -  **Eliminar un comensal**: La aplicación debe permitir a un usuario administrador eliminar un comensal.
+ -  **Registrar un pedido**: La aplicación debe permitir a un usuario administrador registrar un pedido en nombre de un comensal.
+ -  **Ver pedidos**: La aplicación debe permitir a un usuario administrador ver los pedidos procesados y sin procesar que tiene el comedor.
+ - **Procesar pedido**: La aplicación debe permitir a un usuario administrador marcar un pedido como procesado.
 
-- **Eliminar menú**: La aplicación debe permitir a los usuarios administradores eliminar un menú.
 
-- **Actualización de Usuario**: La aplicación debe permitir a los usuarios registrados modificar información de su perfil, tal como foto, nombre, correo electrónico y teléfono.
+
 
 #### No Funcionales:
 
 - El sistema debe integrarse con auth0 para permitir login con google y facebook
-
-- Como lenguaje de desarrollo deberá utilizarse Javascript
-
+- Como lenguaje de desarrollo deberá utilizarse Javascript: Node Js
 - Para el desarrollo de la interfaz grafica se utilizara HTML y bootstrap
+- La documentación debe estar en formato markdown 
+- El control de versiones será por medio de git
+- La interfaz de usuario debe ser responsiva
+- Accesibilidad WCAG
+- Estándar de codificación  HTML/JS google style
+- Debe utilizarse análisis estático ESLint durante el desarrollo
+- Para las pruebas deberá utilizarse la librería Jest
 
 ### User Stories / Use Cases detallados
 
