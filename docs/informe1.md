@@ -3,7 +3,15 @@
 ## Repositorio Git
 
 ## Versionado
+Para comenzar, creamos la rama principal de nuestro repositorio (master). Cada uno de los integrantes del equipo clonó el repositorio mediante el siguiente comando: git clone <URL repositorio>.
 
+Una vez hecho esto, nos posicionamos en la rama principal (main) y creamos una nueva rama para el desarrollo (develop) mediante el siguiente comando: git branch <nombre rama>. A continuación, nos cambiamos a la nueva rama utilizando el comando: git checkout <nombre rama>.
+
+Dentro de la rama develop, creamos un nuevo archivo mediante el comando: touch <nombre archivo>.txt .Después, editamos el archivo utilizando el comando: vi <nombre archivo>. Una vez dentro del archivo, presionamos la tecla "i" para insertar texto y modificamos el archivo según sea necesario. Para guardar los cambios y salir del editor vi, utilizamos el comando ":wq".
+
+De vuelta en la consola de git, agregamos los cambios realizados mediante el comando: git add . Y luego realizamos un commit con el siguiente comando: git commit -m "Mensaje".
+
+Subimos los cambios a la rama develop del repositorio remoto utilizando el comando: git push --set-upstream origin develop y finalmente cada uno de los integrantes del equipo descargó los cambios más recientes utilizando el comando: git pull.
 ## Elicitación
 + Aplicación para comedor escolar. El objetivo principal de la aplicación es que madres, padres o responsables puedan conocer el menú diario y controlar el consumo realizados por sus hijos.
 
@@ -508,15 +516,11 @@ Flujo alternativo:
 
 **Nombre: Ver menú semanal**
 
-| Precondición | Actores | Post condición |
-
-|-----------------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-| Estar logeado en el sistema | *USUARIO<br>*SISTEMA | Se muestra información del menú diario |
-
+| Precondición | Actores  |Post condición|
+|--|--|--|
+| Estar logeado en el sistema  |*USUARIO<br>*SISTEMA   |Se muestra información del menú diario|
 | FLUJO NORMAL | | El usuario en la ventana principal, elije la opción **comedores** <br> El sistema despliega una pantalla con una lista de comedores ordenados alfabéticamente <br> El usuario elije el comedor que le interesa <br> El sistema despliega una pantalla con la información del comedor <br> El usuario selecciona la opción **Ver menú semanal** <br> El sistema muestra la información del menú para esa semana |
-
-| Flujos alternativos | | - N/A |
+| Flujos alternativos |  - N/A |
 
 ---
 
