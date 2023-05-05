@@ -153,6 +153,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
  - **Ver comensales vinculados:** La aplicación debe permitir a los usuarios ver los comensales a los cuales están vinculados.
  - **Desvincular un comensal:** La aplicación debe permitir a los usuarios desvincularse de un comensal.
  - **Editar limite de consumo:** La aplicación debe permitir a los usuarios editar el limite diario de consumo de un comensal vinculado a su cuenta.
+ - **Establecer menú personalizado a un comensal:** La aplicación debe permitir a los usuarios establecer un menú personalizado a los comensales que están suscriptos.
  - **Agregar método de pago:** La aplicación debe permitir a los usuarios agregar un método de pago a su cuenta.
  - **Quitar método de pago:** La aplicación debe permitir a los usuarios quitar un método de pago de su cuenta.
  - **Suscribirse a un comedor:** La aplicación debe permitir a los usuarios suscribirse a un comedor.
@@ -174,6 +175,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
   - **Ver menú semanal**: La aplicación debe permitir ver el menú semanal diario del comedor.
  - **Ver información del comedor**: La aplicación debe permitir ver la información del comedor.
  -   **Actualizar información de perfil**: La aplicación debe permitir tanto a usuarios como administradores actualizar su información de perfil.
+ 
 #### Administradores
  - **Registro de administradores**: la aplicación debe permitir el registro de usuarios administradores, los cuales tendrán acceso a funcionalidades extras dentro de la aplicación.
  Para este registro ***se solicitara información adicional*** sobre la institución a la cual pertenece la cuenta.
@@ -213,6 +215,8 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 ### User Stories / Use Cases detallados
 
 ---
+#### Usuario
+---
 
 #### YO COMO **_USUARIO_**
 
@@ -222,9 +226,188 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
+ 1. El sistema debe enviar un mensaje al usuario para confirmar el registro.
+ 2. El usuario debe poder acceder a la aplicación una vez confirmado el registro
+
 ---
 
 #### YO COMO **_USUARIO_**
+
+**PUEDO**: Suscribir un comensal al menú semanal
+
+**PARA**: Que ese comensal reciba en el comedor el menu diario de esa semana sin la necesidad de estar registrando el pedido cada dia.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El sistema deberá registrar un pedido por cada menú diario de esa semana.
+ 2. El pedido debe estar disponible para que el administrador del comedor pueda procesarlo
+ 3. El sistema debitara el valor total del menu semanal en un unico pago, el debito se producirá un dia antes del inicio de la semana correspondiente al menu.
+ 4. Si el usuario se suscribe a un menú semanal durante el transcurso de la semana, el sistema debe registrar únicamente los menús diarios que están a partir del día siguiente de la suscripción y será debitado únicamente el monto de dichos menús diarios en un único pago. Si la suscripción se realiza un viernes el sistema indicara que no hay mas menús diarios para esa semana, y preguntara al usuario si quiere suscribirse al menú de la próxima semana.
+ 5. El sistema debe permitir la suscripción a los menús semanales de cualquier fecha superior a la fecha actual.
+ 6. El usuario no tiene limite de suscripciones de menús semanales.
+ 7. No se registrara un pedido de menú si el pago de ese menú no fu confirmado.
+
+---
+
+#### YO COMO **_USUARIO_**
+
+**PUEDO**: Cancelar la suscripción de un comensal a un menú semanal. 
+
+**PARA**: Que no se registren los pedidos de esa semana.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El sistema no debe permitir cancelar la suscripción de un menú semanal si  ese menú semanal corresponde a la semana en la cual se esta intentando cancelar la suscripción.
+
+---
+
+#### YO COMO **_USUARIO_**
+
+**PUEDO**: Vincular comensal. 
+
+**PARA**: Poder controlar el consumo del comensal en el comedor .
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El comensal debe aparecer en la lista de comensales vinculados al usuario.
+ 2. El usuario debe tener acceso al perfil y la información de ese comensal así como también a realizar operaciones como el registro de pedido y la suscripción a comedores para ese comensal.
+
+---
+
+#### YO COMO **_USUARIO_**
+
+**PUEDO**: Desvincular un comensal. 
+
+**PARA**: No visualizar mas ese comensal en mi lista de comensales .
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El comensal debe desaparecer de la lista de comensales del usuario.
+ 2. El usuario pierde acceso a las funcionalidades del comensal.
+
+---
+
+#### YO COMO **_USUARIO_**
+
+**PUEDO**: Ver comensales vinculados. 
+
+**PARA**: Tener acceso rápido a la lista de comensales y a los cuales me vincule .
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El usuario podrá observar una lista de comensales a los cuales se suscribió, estos deberán aparecer ordenados alfabéticamente.
+---
+#### YO COMO **_USUARIO_**
+
+**PUEDO**: Establecer limite de consumo diario a un comensal. 
+
+**PARA**: Impedir que ese comensal realice consumos por encima de ese limite diario.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El limite diario deberá ser visible en la información del comensal.
+ 2. La suscripciones a menu semanal no cuentan como parte del limite diario.
+ 3. El usuario podrá registrar pedidos cuando se esta superando el limite diario del comensal.
+ 4. Cuando se registra un pedido para ese comensal, y sea que alguno de los usuarios vinculados a el los realizo por medio de la aplicación o sea el caso que el propio comensal solicito una orden en el comedor, el valor del pedido es descontado al limite diario.
+ 5. El limite diario se restablece automáticamente a la hora 00:00 de cada día.
+ 6. Cuando un comensal esta excediendo su limite diario esto será visible tanto para un administrador como para los usuarios asociados a ese comensal.
+ 7. Un administrador no podrá registrar un pedido si el valor de la orden que esta realizando el comensal de forma presencial supera el remanente de su limite diario.
+---
+
+#### YO COMO **_USUARIO_**
+**PUEDO:** Agregar método de pago
+
+**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El nuevo método de pago de ser agregado exitosamente y estar
+    disponible para su uso en la aplicación el comedor.
+ 2. El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
+3. La información de pago ingresada debe ser precisa y segura.
+4. Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
+ 5. El método de pago agregado debe ser visible al usuario de forma inmediata
+
+---
+#### YO COMO **_USUARIO_**
+**PUEDO:** Quitar método de pago
+
+**PARA:** Para que no pueda ser usado nuevamente ese método de pago dentro de la aplicación.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. Si el usuario solo posee ese método de pago asociado, el sistema no debe permitir su eliminación.
+ 2. El método de pago eliminado deberá desaparecer de la lista de métodos de pago del usuario y no estar disponible para ninguna operación dentro de la aplicación.
+---
+#### YO COMO **_USUARIO_**
+
+**PUEDO:** Suscribirme a un comedor
+
+**PARA:** Tener acceso rápido a la información del comedor y al menú y las funciones que ofrece.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. Una vez agregado suscrito al comedor, este debe aparecer en la lista de comedores suscriptos del usuario.
+
+---
+#### YO COMO **_USUARIO_**
+
+**PUEDO:** Quitar suscripción de un comedor
+
+**PARA:** No visualizar mas este comedor en mi lista de comedores.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. Una vez quitado el comedor este desaparece de la lista de comedores del usuario.
+---
+#### YO COMO **_USUARIO_**
+
+**PUEDO:** Agregar plato al carrito
+
+**PARA:** Luego finalizar la compra y que el comensal al cual asocie el plato pueda reclamarlo en el comedor.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. Cada plato agregado al carrito esta asociado a un comensal, si ese comensal tiene un menú personalizado y el plato no se encuentra dentro de ese menú, no podrá ser agregado al carrito.
+ 2. El usuario puede establecer una fecha de entrega personalizada para ese plato.
+ 3. El plato agregado debe visualizarse en el carrito y el valor del plato debe sumarse al monto total de los platos del carrito. 
+---
+#### YO COMO **_USUARIO_**
+
+**PUEDO:** Finalizar compra
+
+**PARA:** Para que mis comensales pueda acceder a los platos que ordene.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. El sistema deberá debitar en un solo pago el valor total de los platos del carrito.
+ 2. La orden deberá ser visible para los administradores del comedor una vez finalizada la compra.  
+---
+#### YO COMO **_USUARIO_**
+
+**PUEDO:** Quitar plato del carrito
+
+**PARA:** Que el plato no sea parte de mi orden.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. Una vez eliminado el plato, el valor de ese plato debe ser restado del monto total del carrito. 
+---
+#### En común
+---
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
+
+**PUEDO:** Actualizar la información de mi perfil
+
+**PARA:** Mantener esta información actualizada dentro del sistema y los administradores puedan verla.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. La información actualizada será visible de forma inmediata. 
+---
+
+
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
 **PUEDO**: Iniciar sesión en la aplicación
 
@@ -234,7 +417,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 ---
 
-#### YO COMO **_USUARIO_**
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
 **PUEDO**: Restablecer mi contraseña
 
@@ -242,49 +425,69 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
+ 1. La nueva contraseña debe cumplir con los criterios de seguridad
+ 2. El usuario una vez restablecida la contraseña tendra acceso inmediato al sistema mediante la misma.
+
 ---
 
-#### YO COMO **_USUARIO_**
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
-**PUEDO**: Ver menú diario
+**PUEDO**: Ver menú diario del comedor
 
-**PARA**: Observar detalles del menú diario de un comedor especifico
+**PARA**: Observar detalles del menú diario del comedor.
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
 ---
 
-#### YO COMO **_USUARIO_**
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
-**PUEDO**: Agregar comentarios al menu diario
+**PUEDO**: Agregar comentarios al menú diario
 
-**PARA**: Que los demás usuarios y los administradores puedan observar mi comentario
+**PARA**: Manifestar mi opinión o responder a otros comentarios sobre el menú
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
 ---
 
-#### YO COMO **_USUARIO_**
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
 **PUEDO**: Ver menú semanal
 
-**PARA**: Observar todos los menus diarios que se serviran durante una semana
+**PARA**: Observar todos los menús diarios que se servirán durante una semana en el comedor y ver que este correcto o si me interesa para un comensal.
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
 ---
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
-#### YO COMO **_USUARIO_**
+**PUEDO**: Ver menú diario
+
+**PARA**: Ver si me interesa ordenarlo, o ver que su información este correcta.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+---
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
+
+**PUEDO**: Ver menú
+
+**PARA**: Ver los platos servidos en el comedor e interesarme por alguno, o chequear que la información de los platos sea la correcta.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+---
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
 **PUEDO**: Ver información del comedor
 
-**PARA**: Observar detalles de un comedor
+**PARA**: Observar detalles del comedor
 
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
 ---
 
-#### YO COMO **_USUARIO_**
+#### YO COMO **_USUARIO / ADMINISTRADOR_**
 
 **PUEDO**: Actualizar mi información de perfil
 
@@ -293,68 +496,8 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 ##### CRITERIOS DE ACEPTACIÓN 👌
 
 ---
-
-# YO COMO USUARIO
-**PUEDO:** AGREGAR MÉTODOS DE PAGO
-
-**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
-
-**Precondiciones:**
-- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
-- Mi cuenta debe estar asociada a un alumno registrado en el colegio.
-- Debo haber verificado mi información de contacto(email, teléfono). 
-
-**Proceso:**
-* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
-
-## Criterios de aceptación:
-
-- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
-- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
-- La información de pago ingresada debe ser precisa y segura.
-- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
-
-#### YO COMO **_USUARIO_**
-**PUEDO:** AGREGAR MÉTODOS DE PAGO
-
-**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
-
-**Precondiciones:**
-- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
-- Mi cuenta debe estar asociada a un alumno registrado en el comedor.
-- Debo haber verificado mi información de contacto(email, teléfono). 
-
-**Proceso:**
-* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
-
-##### CRITERIOS DE ACEPTACIÓN 👌
-
-- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
-- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
-- La información de pago ingresada debe ser precisa y segura.
-- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
-
-﻿# YO COMO USUARIO
-**PUEDO:** AGREGAR MÉTODOS DE PAGO
-
-**PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago en la cantina escolar.
-
-**Precondiciones:**
-- Debo tener una cuenta registrada como padre de un alumno y haber iniciado sesión en la aplicación.
-- Mi cuenta debe estar asociada a un alumno registrado en el colegio.
-- Debo haber verificado mi información de contacto(email, teléfono). 
-
-**Proceso:**
-* En la pantalla principal, elijo la opción **Métodos de Pago** y luego la opción **Agregar nuevo método de pago**
-
-## Criterios de aceptación:
-
-- El nuevo método de pago de ser agregado exitosamente y estar disponible para su uso en la aplicación de la cantina escolar.
-- El proceso de agregar el nuevo método de pago, debe ser fácil de entender y completar por el usuario.
-- La información de pago ingresada debe ser precisa y segura.
-- Se debe proporcionar una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.
-
-## Historias de usuario para administradores
+#### Administrador
+---
 
 > Un administrador tiene acceso a todas las funcionalidades de un usuario convencional
 > por eso en este apartado solo se detallaran las funciones adicionales que tienen acceso dichos administradores.
@@ -500,7 +643,7 @@ Flujo alternativo:
 -   Si el administrador no tiene una cuenta registrada o no ha iniciado sesión, no podrá acceder a este caso de uso.
 
 
-### HISTORIAS DE USUARIO
+### Casos de usos
 
 **Nombre: Registro de usuario**
 | Precondición | Actores | Post condición |
