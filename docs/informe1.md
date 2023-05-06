@@ -656,6 +656,27 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 - Una vez registrado el nuevo comensal, la aplicación debe mostrar una confirmación clara de que el registro ha sido exitoso y permitir volver a la pantalla principal de la aplicación, o a la pantalla de donde venia en su defecto.
 - La información del nuevo comensal registrado debe de quedar almacenada en la base de datos de la aplicación y estar disponible para su uso en la cantina escolar.
 ---
+#### YO COMO ADMINISTRADOR
+**PUEDO:** EDITAR LA INFORMACIÓN DE UN COMENSAL EN LA APLICACIÓN
+
+**PARA:** Poder mantener actualizada la información del comensal y asegurar que la información utilizada en la cantina escolar sea precisa y actual.
+
+**Precondiciones:**
+- Debo tener una cuenta registrada como administrador y haber iniciado sesión en la aplicación.
+- Mi cuenta debe tener asociado el perfil de administrador de cantina.
+
+**Proceso:**
+* En la pantalla principal, elijo la opción **Administración** luego elijo la opción **Administrar Grupos**, en la pantalla de Administración de Grupos, selecciono la opción **Lista de Grupos(Ver)** y elijo la opción **Editar**
+
+#### Criterios de aceptación:
+
+-  La opción de editar comensal debe estar disponible en la interfaz de usuario del usuario administrador.
+-  La opción de editar comensal, debe permitir editar parte de la información del comensal, que incluye su nombre completo, y grupo al que pertenece y cualquier otra información necesaria, y no incluye su numero de identificación.
+- La opción de editar comensal, debe permitir asociar al comensal a un grupo de comensales existentes o crear un nuevo grupo.
+- La opción de editar comensal, debe validar que se hayan ingresado todos los datos necesarios antes de permitir la modificación del comensal.
+- Una vez editado el comensal, la aplicación debe mostrar una confirmación clara de que la edición ha sido exitosa y permitir volver a la pantalla principal de la aplicación, o a la pantalla de donde venia en su defecto.
+- La información del comensal editado debe de quedar almacenada en la base de datos de la aplicación y estar disponible para su uso en la cantina escolar.
+---
 ﻿
 ### Casos de usos
 
@@ -973,6 +994,14 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Flujo alternativo** | 1. En el paso 3, si el administrador no ingresa todos los datos necesarios, el sistema muestra un mensaje de error y solicita al administrador que complete los datos faltantes. |
 | **Postcondiciones** | El nuevo comensal es registrado en la aplicación y se encuentra disponible para su uso en la cantina escolar. |
 | **Excepciones** | En el paso 4, si no se puede registrar el nuevo comensal por problemas técnicos, el sistema muestra un mensaje de error y solicita al administrador que lo intente más tarde. |
+---
+|   Nombre   | Editar Información del Comensal |
+| :-------------: | :------------------------------: |
+|      **Actores**     |          Administrador          |
+|  **Precondiciones**  | - Tener una cuenta de administrador y haber iniciado sesión en la aplicación.<br>- Tener un perfil de administrador de cantina asociado a la cuenta. |
+|   **Flujo Normal**| 1. El administrador ingresa a la pantalla principal de la aplicación. <br>2. El administrador selecciona la opción **Administración**.<br> 3. El administrador elige la opción **Administrar Grupos**.<br> 4. En la pantalla de Administración de Grupos, el administrador selecciona la opción **Lista de Grupos(Ver)**.<br> 5. El administrador elige la opción **Editar** del comensal a modificar.<br> 6. El administrador edita la información necesaria del comensal, como su nombre completo y grupo al que pertenece.<br> 7. Si es necesario, el administrador puede asociar al comensal a un grupo de comensales existentes o crear un nuevo grupo.<br> 8. La aplicación valida que se hayan ingresado todos los datos necesarios antes de permitir la modificación del comensal.<br> 9. Una vez editado el comensal, la aplicación muestra una confirmación clara de que la edición ha sido exitosa y permite volver a la pantalla principal de la aplicación o a la pantalla de donde venía el administrador.<br> 10. La información del comensal editado se almacena en la base de datos de la aplicación y está disponible para su uso en la cantina escolar. |
+|  **Flujo Alternativo**  | - En el paso 7, si el administrador no desea asociar al comensal a un grupo existente o crear un nuevo grupo, puede optar por dejar al comensal sin asignar a un grupo.<br>- En el paso 8, si algún dato necesario no se ha ingresado, la aplicación muestra un mensaje de error y no permite la modificación del comensal hasta que se ingresen todos los datos necesarios. |
+|  **Postcondiciones** | La información del comensal editado se almacena en la base de datos de la aplicación y está disponible para su uso en la cantina escolar. |
 ---
 ### Bocetos de IU
 
