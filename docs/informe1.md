@@ -405,8 +405,30 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
  1. La información actualizada será visible de forma inmediata. 
 ---
+#### YO COMO ADMINISTRADOR
 
+**PUEDO:** ELIMINAR UN GRUPO DE COMENSALES EXISTENTE EN LA APLICACIÓN
 
+**PARA:** Poder mantener actualizada la lista de comensales activos.
+
+**Precondiciones:**
+
+-   Debo tener una cuenta registrada como administrador y haber iniciado sesión en la aplicación.
+-   Mi cuenta debe tener asociado el perfil de administrador de cantina.
+
+**Proceso:**
+
+-   En la pantalla principal, elijo la opción **Administrar Grupos** luego elijo la opción **Lista de Grupos(Ver)** y selecciono de la vista de grupo, la opción **Eliminar**
+
+## Criterios de aceptación:
+
+-   La opción de eliminar grupo de comensales debe estar disponible en la interfaz de usuario del usuario administrador.
+-   Al seleccionar la opción de eliminar grupo de comensales, el usuario debe ser capaz de buscar el grupo que desea eliminar.
+-   La aplicación debe confirmar con el usuario si realmente desea eliminar el grupo seleccionado antes de proceder.
+-   Si el usuario confirma la eliminación del grupo, la aplicación debe eliminarlo de la lista de comensales y todas las referencias a ese grupo deben ser eliminadas.
+-   La eliminación del grupo no debe afectar la información de los otros grupos de comensales.
+-   Si el usuario intenta eliminar un grupo que no existe, la aplicación debe mostrar un mensaje de error indicando que el grupo no se puede eliminar.
+---
 #### YO COMO **_USUARIO / ADMINISTRADOR_**
 
 **PUEDO**: Iniciar sesión en la aplicación
@@ -673,10 +695,10 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Actores:**           | Usuario, Sistema												|                     |
 | **Precondiciones:**     | El usuario debe estar logueado en el sistema.	|
 | **Flujos Normales:**  | 1. El usuario elige la opción "comedores" en la ventana principal.<br> 2. El sistema despliega una pantalla con una lista de comedores ordenados alfabéticamente.<br> 3. El usuario elige el comedor que le interesa.<br> 4. El sistema despliega una pantalla con la información del comedor.<br> 5. El usuario selecciona la opción "Ver menú semanal". <br> 6. El sistema muestra la información del menú para esa semana. |
-| **Flujos Alternativos:** | N/A                                                        |
+| **Flujos Alternativos:** | N/A |
 ---
-| Nombre:          | Agregar comentarios al menú diario                             |
-|------------------|------------------------------------------------------------------|
+| Nombre: | Agregar comentarios al menú diario |                             
+|---|---|
 | **Breve descripción:**| Se registra un nuevo comentario al comedor. 
 | **Actores:** | Usuario, Sistema |                   |
 | **Precondiciones:**     | El usuario debe estar logueado en el sistema. |
@@ -911,7 +933,16 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | Flujo principal | 1. El usuario accede a la opción “Métodos de Pago” en la pantalla principal de la aplicación.<br>2. El sistema muestra una lista de los métodos de pago actualmente asociados a la cuenta del usuario.<br>3. El usuario selecciona la opción “Agregar nuevo método de pago”.<br>4. El sistema presenta un formulario para ingresar la información del nuevo método de pago, incluyendo nombre del titular, número de tarjeta, fecha de vencimiento, código de seguridad y dirección de facturación.<br>5. El usuario completa el formulario y envía la información.<br>6. El sistema valida la información ingresada y muestra una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.| 
 | Flujo alternativo | En el paso 5, si la información ingresada es incorrecta o incompleta, el sistema muestra un mensaje de error y solicita al usuario que corrija los datos.<br>En el paso 5, si la información ingresada es sospechosa o se detecta un posible fraude, el sistema notifica al usuario y no permite agregar el nuevo método de pago.<br>En el paso 6, si no se puede agregar el nuevo método de pago por problemas técnicos, el sistema muestra un mensaje de error y solicita al usuario que lo intente más tarde. |
 | Postcondiciones | El nuevo método de pago es agregado a la cuenta del usuario y se encuentra disponible para su uso en la aplicación de la cantina escolar. |
-
+---
+| **Nombre del caso de uso** | Eliminar Grupo de Comensales |
+| --- | --- |
+| **Actor principal** | Administrador, perfil cantina |
+| **Breve descripción** | El caso de uso describe cómo el usuario administrador puede eliminar un grupo de comensales existente en la aplicación. |
+| **Precondiciones** | El usuario administrador ha iniciado sesión en la aplicación. |
+| **Flujo Normal** | 1. El usuario administrador accede a la lista de grupos de comensales. <br> 2. El usuario administrador selecciona el grupo de comensales que desea eliminar. <br> 3. El sistema muestra una ventana de confirmación para verificar la eliminación del grupo de comensales. <br> 4. El usuario administrador confirma la eliminación del grupo de comensales. <br> 5. El sistema elimina el grupo de comensales seleccionado y todas las referencias a ese grupo en la aplicación. |
+| **Flujos Alternativos** | 1. Si el usuario administrador decide no eliminar el grupo de comensales, se cancela la acción y se regresa a la lista de grupos de comensales. <br> 2. Si el grupo de comensales seleccionado tiene reservas asociadas, el sistema muestra un mensaje de error y no permite su eliminación. |
+| **Postcondiciones** | El grupo de comensales seleccionado ha sido eliminado de la lista de grupos de comensales. |
+| **Excepciones** | Si el usuario administrador no tiene los permisos suficientes para eliminar un grupo de comensales, el sistema muestra un mensaje de error y no permite la acción. 
 
 ### Bocetos de IU
 
