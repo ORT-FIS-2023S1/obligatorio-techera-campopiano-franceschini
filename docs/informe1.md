@@ -861,15 +861,6 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | Flujo principal       | 1. El administrador inicia sesión en la aplicación.<br>2. En la pantalla principal, el administrador elige la opción "Administración" y luego "Administrar Pedidos".<br>3. El administrador accede a la pantalla de búsqueda de comensales y puede buscarlos por QR de tarjeta, identificador de cliente, apellido o grupo del usuario.<br>4. Si el administrador busca por apellido o grupo del usuario, se desplegará una lista de estudiantes que coincidan con el resultado del criterio de búsqueda, y podrá seleccionar al comensal correspondiente.<br>5. Una vez seleccionado el comensal, el administrador podrá ver el menú de pedidos, si es libre o restringido, y podrá registrar un nuevo pedido.<br>6. El administrador puede acceder a una lista de todos los pedidos que no han sido procesados aún, visualizando la información del cliente y los productos incluidos en cada pedido sin procesar.<br>7. El administrador puede filtrar y buscar los pedidos por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.<br>8. El administrador puede acceder a una lista de todos los pedidos que han sido procesados y completados, visualizando la información del cliente y los productos incluidos en cada pedido procesado.<br>9. El administrador puede filtrar y buscar los pedidos procesados por diferentes criterios, como el estado del pedido, el nombre del cliente o la fecha de registro.<br>10. El administrador puede generar informes y estadísticas sobre los pedidos procesados, como la cantidad de ingresos generados por pedidos en un determinado período de tiempo. |
 | Flujo alternativo     | Si el administrador no tiene una cuenta registrada o no ha iniciado sesión, no podrá acceder a este caso de uso. |
 ---
-﻿| Nombre del caso de uso | Agregar Método de Pago |
-| --- | --- |
-| Actor principal | Usuario, Sistema |
-| Breve descripción | Permite al usuario gestionar sus métodos de pago dentro de la aplicación, pudiendo agregar un nuevo método de pago al sistema. |
-| Precondiciones | - El usuario debe haber iniciado sesión en la aplicación como padre de un alumno registrado en el colegio.<br>- La cuenta del usuario debe estar asociada a una cantina escolar en la aplicación.<br>- El usuario debe haber verificado su información de contacto. |
-| Flujo principal | 1. El usuario accede a la opción “Métodos de Pago” en la pantalla principal de la aplicación.<br>2. El sistema muestra una lista de los métodos de pago actualmente asociados a la cuenta del usuario.<br>3. El usuario selecciona la opción “Agregar nuevo método de pago”.<br>4. El sistema presenta un formulario para ingresar la información del nuevo método de pago, incluyendo nombre del titular, número de tarjeta, fecha de vencimiento, código de seguridad y dirección de facturación.<br>5. El usuario completa el formulario y envía la información.<br>6. El sistema valida la información ingresada y muestra una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente. |
-| Flujo alternativo | - En el paso 5, si la información ingresada es incorrecta o incompleta, el sistema muestra un mensaje de error y solicita al usuario que corrija los datos.<br>- En el paso 5, si la información ingresada es sospechosa o se detecta un posible fraude, el sistema notifica al usuario y no permite agregar el nuevo método de pago.<br>- En el paso 6, si no se puede agregar el nuevo método de pago por problemas técnicos, el sistema muestra un mensaje de error y solicita al usuario que lo intente más tarde. |
-| Postcondiciones | El nuevo método de pago es agregado a la cuenta del usuario y se encuentra disponible para su uso en la aplicación de la cantina escolar. |
----
 | Nombre | Listar y Eliminar Métodos de Pago |
 | --- | --- |
 | **Actor principal** | Usuario |
@@ -879,7 +870,6 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Flujo alternativo** | En cualquier momento, el usuario puede cancelar el proceso de eliminación del método de pago y volver a la lista de métodos de pago. |
 | **Excepciones** | Si el usuario no tiene ningún método de pago registrado, la aplicación muestra un mensaje indicando que no hay métodos de pago registrados y ofrece la opción de agregar uno nuevo. <br> Si ocurre algún error durante el proceso de eliminación, la aplicación muestra un mensaje de error al usuario y no elimina el método de pago seleccionado. |
 ---
-
 | Nombre | Editar Grupos |
 | --- | --- |
 | **Precondición** | Estar logueado en el sistema como administrador. |
@@ -887,9 +877,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Postcondición** | El sistema actualiza la información del grupo seleccionado con los cambios realizados por el administrador. |
 | **Flujo normal** | 1. En la ventana principal, el administrador elige la opción Administración.<br>2. El sistema despliega una pantalla con varias opciones.<br>3. El administrador escoge Administración de Grupos.<br>4. El sistema despliega una pantalla con la Lista de grupos.<br>5. El administrador selecciona el grupo que desea editar.<br>6. El sistema muestra una pantalla para editar los datos del grupo.<br>7. El administrador realiza los cambios y selecciona la opción Guardar para confirmar los cambios.<br>8. El sistema valida la información ingresada por el administrador.<br>9. El sistema actualiza la información del grupo seleccionado con los cambios realizados.<br>10. El sistema despliega un mensaje de éxito. |
 | **Flujos alternativos** | - El administrador desiste de la operación y presiona cancelar (El sistema desplegará la pantalla de Lista de grupos).<br>- La información ingresada por el administrador es incorrecta o está incompleta (El sistema muestra un mensaje de error). |
-
 ---
-
 | Nombre | Eliminar Grupos |
 | --- | --- |
 | **Precondición** | El usuario debe estar logueado en el sistema.<br> El usuario debe ser un administrador.<br> Debe existir al menos un grupo registrado en el sistema. |
@@ -898,7 +886,6 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Flujo Normal** | 1. El administrador selecciona la opción "Administración" en la ventana principal.<br>2. El sistema despliega una lista de opciones, el administrador selecciona "Administración de Grupos".<br>3. El sistema muestra la lista de grupos registrados.<br>4. El administrador selecciona el grupo que desea eliminar.<br>5. El sistema muestra una pantalla con la opción para eliminar el grupo.<br>6. El administrador selecciona la opción "Eliminar" para confirmar la acción.<br>7. El sistema elimina el grupo seleccionado.<br>8. El sistema muestra un mensaje de éxito. |
 | **Flujos Alternativos** | En caso de querer cancelar la operación, el administrador selecciona la opción "Cancelar".<br> Si el grupo seleccionado no existe, el sistema muestra un mensaje de error. |
 ---
-
 | Nombre | Registrar Grupo |
 | --- | --- |
 | **Precondición** | Estar logueado en el sistema como *Administrador* |
@@ -907,7 +894,6 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Flujo normal** | 1. El usuario elije la opción Administración y luego Administración de Grupos. <br> 2. El usuario selecciona la opción Registrar Grupo. <br> 3. Se muestra una pantalla con los datos del grupo a completar. <br> 4. El usuario ingresa un identificador numérico para el grupo y un nombre. <br> 5. Para completar el registro selecciona la opción Registrar. <br> 6. Caso contrario, el usuario cancela el registro con la opción Cancelar. |
 | **Flujos alternativos** | 1. El usuario ingresa datos inválidos. El sistema informa al usuario que los datos ingresados no son correctos. |
 ---
-
 | Nombre | Registrar Comensal |
 | --- | --- |
 | **Precondición** | El usuario debe estar logueado en el sistema como administrador. |
@@ -917,7 +903,14 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Flujos Alternativos** | 1. El usuario no selecciona un grupo. <br> El sistema informa al usuario que debe seleccionar un grupo. |
 | **Flujos de Excepción** | N/A |
 ---
-
+| Nombre del caso de uso | Agregar Método de Pago |
+| --- | --- |
+| Actor principal | Usuario, Sistema |
+| Breve descripción | Permite al usuario gestionar sus métodos de pago dentro de la aplicación, pudiendo agregar un nuevo método de pago al sistema. |
+| Precondiciones | El usuario debe haber iniciado sesión en la aplicación como padre de un alumno registrado en el colegio.<br>La cuenta del usuario debe estar asociada a una cantina escolar en la aplicación.<br> El usuario debe haber verificado su información de contacto. |
+| Flujo principal | 1. El usuario accede a la opción “Métodos de Pago” en la pantalla principal de la aplicación.<br>2. El sistema muestra una lista de los métodos de pago actualmente asociados a la cuenta del usuario.<br>3. El usuario selecciona la opción “Agregar nuevo método de pago”.<br>4. El sistema presenta un formulario para ingresar la información del nuevo método de pago, incluyendo nombre del titular, número de tarjeta, fecha de vencimiento, código de seguridad y dirección de facturación.<br>5. El usuario completa el formulario y envía la información.<br>6. El sistema valida la información ingresada y muestra una confirmación clara de que el nuevo método de pago ha sido agregado exitosamente.| 
+| Flujo alternativo | En el paso 5, si la información ingresada es incorrecta o incompleta, el sistema muestra un mensaje de error y solicita al usuario que corrija los datos.<br>En el paso 5, si la información ingresada es sospechosa o se detecta un posible fraude, el sistema notifica al usuario y no permite agregar el nuevo método de pago.<br>En el paso 6, si no se puede agregar el nuevo método de pago por problemas técnicos, el sistema muestra un mensaje de error y solicita al usuario que lo intente más tarde. |
+| Postcondiciones | El nuevo método de pago es agregado a la cuenta del usuario y se encuentra disponible para su uso en la aplicación de la cantina escolar. |
 
 
 ### Bocetos de IU
