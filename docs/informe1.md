@@ -1,4 +1,5 @@
 ﻿
+
 # Informe entrega 1
 
 ## Repositorio Git
@@ -636,7 +637,35 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 	- Puedo generar informes y estadísticas sobre los pedidos procesados, como la cantidad de ingresos generados por pedidos en un determinado período de tiempo.
 
 ---
-﻿
+#### YO COMO **_ADMINISTRADOR_**
+
+**PUEDO**: Registrarme como un administrador
+
+**PARA**: Poder tener acceso a las funciones de administrador y administrar el comedor escolar por la aplicación.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. Una vez registrado, el usuario tendrá acceso al sistema y a todas las funcionalidades de administración
+---
+
+#### YO COMO **_ADMINISTRADOR_**
+
+**PUEDO**: Actualizar información de comedor
+
+**PARA**: Para que los comensales puedan tener los datos importantes del comedor con la información correcta.
+
+##### CRITERIOS DE ACEPTACIÓN 👌
+
+ 1. La información actualizada debe verse en los datos del comedor de forma inmediata luego de la actualización.
+ ---
+ #### YO COMO **_ADMINISTRADOR_**
+
+**PUEDO**: Eliminar un menú diario
+
+**PARA**: Para que los usuarios no puedan ordenar este menú, y el mismo no sea mas visible en la lista de menús del comedor.
+
+---
+ 
 ### Casos de usos
 
 | Nombre : | Administrar Pedidos |
@@ -943,6 +972,37 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Flujos Alternativos** | 1. Si el usuario administrador decide no eliminar el grupo de comensales, se cancela la acción y se regresa a la lista de grupos de comensales. <br> 2. Si el grupo de comensales seleccionado tiene reservas asociadas, el sistema muestra un mensaje de error y no permite su eliminación. |
 | **Postcondiciones** | El grupo de comensales seleccionado ha sido eliminado de la lista de grupos de comensales. |
 | **Excepciones** | Si el usuario administrador no tiene los permisos suficientes para eliminar un grupo de comensales, el sistema muestra un mensaje de error y no permite la acción. 
+
+---
+| Nombre del caso de uso | Registro de administradores |
+| --- | --- |
+| Actor principal | Administrador|
+| Breve descripción | Permitir el registro de usuarios administradores, los cuales tendrán acceso a funcionalidades extras dentro de la aplicación. |
+| **Precondiciones** | - El usuario debe poseer el código de registro de administradores, este código de uso único permite a un usuario registrar una cuenta de administrador |
+| **Flujo principal** | 1. El usuario obtiene su código de uso único en la institución a la cual pertenece el comedor.<br> 2. El usuario acede a la aplicación y escoge la opción **registrar cuenta de administrador**.<br>3. El sistema despliega un formulario solicitando la siguiente información:<br> -- Nombre (maximo 50 caracteres)<br>-- Foto<br>-- Email<br>-- Contraseña <br> -- Codigo de administrador  |
+| **Flujo alternativo** | - En cualquier momento, el usuario puede cancelar el proceso y volver a la pantalla de inicio de sesión |
+| **Excepciones** | - Existe otra cuenta creada con ese correo <br> -El campo contraseña y repetir contraseña no coinciden <br> - La contraseña ingresada debe cumplir con los siguientes requerimientos: <br> - Debe incluir números. <br> - Una combinación de letras mayúsculas y minúsculas. <br> - Incluya al menos un carácter especial (\* ? ! @ # $ / () {} = . , ; : ) <br> - Tenga una longitud mayor o igual a 8 caracteres. <br> - No debe tener espacios en blanco. <br> - El nombre de usuario contiene caracteres especiales o su longitud es superior a los 25 caracteres <br> - La foto de perfil no es valida: esta en un formato diferente a los siguientes (PNG,JPEG,GIF) o su tamaño supera los 12MB, también debe tener al menos 400 píxeles de ancho y 150 píxeles de alto. |
+---
+| Nombre del caso de uso | Actualizar información de comedor |
+| --- | --- |
+| Actor principal | Administrador|
+| Breve descripción | Permitir actualizar la información publica del comedor que se puede visualizar en el sistema. |
+| **Precondiciones** | - Haber iniciado sesión con una cuenta de administrador |
+| **Flujo principal** | 1. En la pantalla principal el administrador escoge la opcion **Administración** <br> 2. El sistema despliega una pantallas con varias opciones.<br>3. El administrador escoge **Editar informacion del comedor**.<br>4. El sistema despliega un formulario con la informacion del comedor, donde el usuario puede modificar los siguentes campos:<br>-- Nombre del comedor<br>-- Dirección del comedor<br> -- Nombre de la institución a la cual pertenece el comedor<br> -- Foto del comedor<br> -- Información adicional del comedor<br> 5. El administrador edita esta información y presiona en la opción **Guardar** <br> 6. El sistema valida la información del usuario.<br> 7. El sistema actualiza la información.<br> 8. El sistema muestra un mensaje de éxito al usuario.|
+| **Flujo alternativo** | - En cualquier momento, el usuario puede cancelar el proceso y volver a la pantalla principal |
+| **Excepciones** | - La información introducida por el usuario no es valida por alguna de las siguientes razones:<br> 1- El nombre del comedor posee un largo superior a 50 caracteres.<br> 2. La foto del comedor esta en un formato diferente a los siguientes (PNG,JPEG,GIF) o su tamaño supera los 12MB.<br> 3. La informacion adicional supera los 250 caracteres. |
+---
+
+| Nombre del caso de uso | Eliminar menú diario |
+| --- | --- |
+| Actor principal | Administrador|
+| Breve descripción | Esta opción permite eliminar cualquier menú diario. |
+| **Precondiciones** | - Haber iniciado sesión con una cuenta de administrador |
+| **Flujo principal** | 1. En la pantalla principal el administrador escoge la opcion **Administración** <br> 2. El sistema despliega una pantallas con varias opciones.<br>3. El administrador escoge **Administrar menús**.<br>4. El sistema despliega una pantallas con varias opciones.<br> 5. El administrador escoge **administrar menú diario** <br> 6. El sistema despliega una lista de menús diarios registrados en el comedor, ordenados por fecha. <br>7. El administrador escoge de la lista cual desea eliminar y presiona en la opción eliminar.<br> 8. El sistema solicita confirmación al usuario. <br> 9. El usuario escoge **confirmar** <br> 9. El sistema elimina la información del menú diario. <br> 10. El sistema envia una notificación a todos los usuarios que realizaron pedidos de ese menú diario o están suscriptos al menú semanal al cual pertenece ese menú diario.|
+| **Flujo alternativo** | - En cualquier momento, el usuario puede cancelar el proceso y volver a la pantalla principal |
+| **Excepciones** | - N/A  |
+
+---
 
 ### Bocetos de IU
 
