@@ -1097,7 +1097,7 @@ Durante nuestra investigación nos encontramos con una aplicación en el mercado
 ---
 
 ### Bocetos de IU
-- Referencia a los bocetos de ui de la aplicación, en carpeta de bocetos, adjunta a este proyecto.
+- Referencia a los bocetos de ui de la aplicación, en carpeta de bocetos, adjunta a este proyecto [LINK](./bocetos_ui/).
 ## Validación y verificación
 Para esta fase del desarrollo lo que nos resulto mas útil fue utilizar bocetos de interfaces en papel, presentábamos dichos bocetos a los diferentes perfiles de usuario y recibíamos feedback inmediato. Con ese feedback íbamos modificando el siguiente diagrama de navegación [LINK](./diagramas/DiagramaNavegacion.png), este diagrama fue crucial ya que la aplicación cuenta con múltiples funcionalidades y no todas aplican a todos los perfiles de usuario.
 Un aspecto que nos resulto complejo fue lograr que la aplicación fuera intuitiva a todos nuestros perfiles de usuario, durante las entrevistas de validación cada usuario nos aportaba ideas que frecuentemente se contraponían con las de otro usuario. Aunque todas estaban orientadas en el mismo camino, cada usuario tenia su forma de realizar las cosas, y fue un gran desafío decidir una forma general donde todos estuvieran cómodos. Para esto presentábamos los cambios propuesto por un usuario a los demás, sin decirles que las ideas provenían de otro usuario como el. Luego regresábamos con anotaciones y repetimos este proceso hasta percibir que todos nuestros usuarios entrevistados estaban satisfechos con el resultado.
@@ -1111,3 +1111,32 @@ Por otro lado, ayuda a los padres a ahorrar el tiempo que dedicarían a realizar
 La aplicación es fácil de utilizar, tanto para el personal de la cantina como para los padres e hijos.
 Otorga a los padres un control sobre los alimentos que consumen sus hijos, ya sea limitando el dinero acreditado en la cuenta, como seleccionado los menús diarios para toda la semana.
 La aplicación es confiable, ya que la información dentro de la aplicación es confidencial y se protege la privacidad tanto de los padres, como de los estudiantes.
+
+#### Contribuciones individuales
+
+[Andres Campopiano](https://github.com/acampopiano)
+ 1. Versionado y git flow.
+ 2. Ingenieria reversa (app OrderEats)
+ 3. Elicitacion ( Entrevista y transcripción de las mismas)
+ 4. Elaboración User stories y casos de uso (división equitativa)
+ 5. Flujo de navegación general.
+ 6. Puesta a punto del informe final
+ 7. Definición misión de la aplicación
+
+[Bryan Techera](https://github.com/bryanTechera)
+ 1. Versionado y git flow
+ 2. Ingenieria reversa (app OrderEats)
+ 3. Elaboración User stories y casos de uso (división equitativa)
+ 4. Flujo de navegación general
+ 5. Modelo conceptual
+ 6. Definición de requerimientos funcionales, no funcionales y casos de usos.
+ 7.  Definición misión de la aplicación
+
+[HoracioF07](https://github.com/HoracioF07)
+
+ 1. Versionado y git flow.
+ 2. Ingenieria reversa (app OrderEats)
+ 3. Elaboración User stories y casos de uso (división equitativa)
+ 4. Flujo de navegación general
+ 5. Bocetos UI
+ 6.  Definición misión de la aplicación
