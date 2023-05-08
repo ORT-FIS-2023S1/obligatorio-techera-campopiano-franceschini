@@ -225,7 +225,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Tener acceso a la aplicación
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El sistema debe enviar un mensaje al usuario para confirmar el registro.
  2. El usuario debe poder acceder a la aplicación una vez confirmado el registro
@@ -238,7 +238,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Que ese comensal reciba en el comedor el menú diario de esa semana sin la necesidad de estar registrando el pedido cada día.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El sistema deberá registrar un pedido por cada menú diario de esa semana.
  2. El pedido debe estar disponible para que el administrador del comedor pueda procesarlo
@@ -256,7 +256,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Que no se registren los pedidos de esa semana.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El sistema no debe permitir cancelar la suscripción de un menú semanal si  ese menú semanal corresponde a la semana en la cual se esta intentando cancelar la suscripción.
 
@@ -268,7 +268,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Poder controlar el consumo del comensal en el comedor .
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El comensal debe aparecer en la lista de comensales vinculados al usuario.
  2. El usuario debe tener acceso al perfil y la información de ese comensal así como también a realizar operaciones como el registro de pedido y la suscripción a comedores para ese comensal.
@@ -281,7 +281,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: No visualizar mas ese comensal en mi lista de comensales .
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El comensal debe desaparecer de la lista de comensales del usuario.
  2. El usuario pierde acceso a las funcionalidades del comensal.
@@ -294,7 +294,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Tener acceso rápido a la lista de comensales y a los cuales me vincule .
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El usuario podrá observar una lista de comensales a los cuales se suscribió, estos deberán aparecer ordenados alfabéticamente.
 ---
@@ -304,7 +304,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Impedir que ese comensal realice consumos por encima de ese limite diario.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El limite diario deberá ser visible en la información del comensal.
  2. La suscripciones a menú semanal no cuentan como parte del limite diario.
@@ -320,7 +320,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** Poder gestionar de manera rápida y segura mis preferencias de pago.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El nuevo método de pago de ser agregado exitosamente y estar
     disponible para su uso en la aplicación el comedor.
@@ -335,7 +335,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** Para que no pueda ser usado nuevamente ese método de pago dentro de la aplicación.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. Si el usuario solo posee ese método de pago asociado, el sistema no debe permitir su eliminación.
  2. El método de pago eliminado deberá desaparecer de la lista de métodos de pago del usuario y no estar disponible para ninguna operación dentro de la aplicación.
@@ -346,7 +346,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** Tener acceso rápido a la información del comedor y al menú y las funciones que ofrece.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. Una vez agregado suscrito al comedor, este debe aparecer en la lista de comedores suscriptos del usuario.
 
@@ -357,7 +357,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** No visualizar mas este comedor en mi lista de comedores.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. Una vez quitado el comedor este desaparece de la lista de comedores del usuario.
 ---
@@ -367,7 +367,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** Luego finalizar la compra y que el comensal al cual asocie el plato pueda reclamarlo en el comedor.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. Cada plato agregado al carrito esta asociado a un comensal, si ese comensal tiene un menú personalizado y el plato no se encuentra dentro de ese menú, no podrá ser agregado al carrito.
  2. El usuario puede establecer una fecha de entrega personalizada para ese plato.
@@ -379,7 +379,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** Para que mis comensales pueda acceder a los platos que ordene.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. El sistema deberá debitar en un solo pago el valor total de los platos del carrito.
  2. La orden deberá ser visible para los administradores del comedor una vez finalizada la compra.  
@@ -390,7 +390,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** Que el plato no sea parte de mi orden.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. Una vez eliminado el plato, el valor de ese plato debe ser restado del monto total del carrito. 
 ---
@@ -402,7 +402,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA:** Mantener esta información actualizada dentro del sistema y los administradores puedan verla.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. La información actualizada será visible de forma inmediata. 
 ---
@@ -436,7 +436,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Obtener acceso a las funcionalidades de la misma
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 
@@ -446,7 +446,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Recuperar el acceso a la aplicación
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. La nueva contraseña debe cumplir con los criterios de seguridad
  2. El usuario una vez restablecida la contraseña tendrá acceso inmediato al sistema mediante la misma.
@@ -459,7 +459,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Observar detalles del menú diario del comedor.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 
@@ -469,7 +469,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Manifestar mi opinión o responder a otros comentarios sobre el menú
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 
@@ -479,7 +479,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Observar todos los menús diarios que se servirán durante una semana en el comedor y ver que este correcto o si me interesa para un comensal.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 #### YO COMO **_USUARIO / ADMINISTRADOR_**
@@ -488,7 +488,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Ver si me interesa ordenarlo, o ver que su información este correcta.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 #### YO COMO **_USUARIO / ADMINISTRADOR_**
@@ -497,7 +497,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Ver los platos servidos en el comedor e interesarme por alguno, o chequear que la información de los platos sea la correcta.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 #### YO COMO **_USUARIO / ADMINISTRADOR_**
@@ -506,7 +506,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Observar detalles del comedor
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 
@@ -516,7 +516,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Cambiar mis datos personales y de contacto
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 ---
 #### Administrador
@@ -531,7 +531,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Mantener esta información actualizada
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 **Validaciones**:
 
@@ -547,7 +547,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Que los usuarios puedan observar dicha información dentro del perfil del comedor y que este menú diario forme parte del menú semanal
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 **Validaciones**:
 
@@ -562,7 +562,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Que mantener esta información actualizada
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 **Validaciones**:
 
@@ -574,7 +574,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Que los platos estén disponibles para ordenar desde el menú del comedor
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 **Validaciones**:
 
@@ -586,7 +586,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Mantener actualizado la información de platos de mi menú
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 **Validaciones**:
 
@@ -598,7 +598,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Para que este no sea mas visible en el menú y por lo tanto no pueda ser ordenado
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
 **Validaciones**:
 
@@ -614,7 +614,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 **Proceso:**
 * En la pantalla principal, elijo la opción **Administración** y luego la opción **Administrar Pedidos**
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  - Puedo Registrar pedidos:
 	 - Accedo a una pantalla donde puedo buscar al comensal por los
@@ -1052,8 +1052,6 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 |  **Postcondiciones** | La información del comensal editado se almacena en la base de datos de la aplicación y está disponible para su uso en la cantina escolar. |
 ---
 
-<<<<<<< HEAD
----
 | Nombre del caso de uso | Registro de administradores |
 | --- | --- |
 | Actor principal | Administrador|
@@ -1084,7 +1082,6 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 ---
 
-=======
 | Nombre             | Eliminar un comensal de un grupo de comensales                                   |
 | -------------- | ----------------------------------------- |
 | **Breve Descripción**    | Un administrador puede eliminar a un comensal de un grupo de comensales en la aplicación. |
@@ -1093,7 +1090,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 | **Flujo Normal**| 1. El administrador selecciona la opción de **Administración** en la pantalla principal. <br>2. El administrador selecciona la opción de **Administrar Grupos**. <br>3. El administrador selecciona la opción de **Lista de Grupos(Ver)**. <br>4. El administrador selecciona el grupo de comensales del cual quiere eliminar un comensal. <br>5. El administrador selecciona la opción de **Eliminar** en la pantalla de lista de comensales. <br>6. El administrador selecciona el comensal que desea eliminar. <br>7. El administrador confirma la eliminación del comensal. <br>8. La aplicación elimina al comensal del grupo seleccionado y muestra una confirmación de la eliminación exitosa. |
 | **Postcondiciones**| El comensal seleccionado debe haber sido eliminado del grupo de comensales seleccionado y la información actualizada debe estar disponible en la base de datos de la aplicación. |
 ---
->>>>>>> 63d4c1539b425e963a3dd4ede69a6ceae3e0e687
+
 ### Bocetos de IU
 
 ## Validación y verificación
