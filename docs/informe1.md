@@ -13,7 +13,7 @@ Dentro de la rama develop, creamos un nuevo archivo mediante el comando: **touch
 
 De vuelta en la consola de git, agregamos los cambios realizados mediante el comando: **git add .** Y luego realizamos un commit con el siguiente comando: **git commit -m** "*Mensaje*".
 
-Subimos los cambios a la rama develop del repositorio remoto utilizando el comando: **git push origin develop** y finalmente cada uno de los integrantes del equipo descargó los cambios más recientes utilizando el comando: **git pull**.
+Subimos los cambios a la rama develop del repositorio remoto utilizando el comando: **git push --set-upstream origin develop** y finalmente cada uno de los integrantes del equipo descargó los cambios más recientes utilizando el comando: **git pull**.
 ### Git flow
 A la hora de decidir de que manera iríamos incorporando los nuevos cambios al repositorio optamos por manejar **feature branch**, es decir una vez dividido el trabajo que cada integrante del grupo iba a realizar en esa fase se crearon nuevas ramas donde se trabajaría diferentes partes de la entrega ej: **feature/eliciticaion** donde en esa rama estarían todos los cambios relacionados a la parte de elicitación. 
 Cada vez que se terminaba una parte importante del trabajo, ej **se agregan historias de usuario para administradores** creamos un commit para tener registros claros de los cambios importantes en nuestro repositorio.
@@ -1096,3 +1096,10 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 ## Validación y verificación
 
 ## Reflexión
+Esta aplicación tiene como objetivo facilitar la gestión de los servicios de la cantina de distintos colegios, mejorar la interacción entre los diferentes actores involucrados y proporciona información de utilidad en tiempo real.
+También es importante tener en cuenta que el comedor escolar es un lugar en donde se fomentan hábitos alimenticios saludables, por lo que la aplicación debe de reflejar esos objetivos. 
+Adicional a esto, la aplicación permite llevar un registro de las diferentes alergias o enfermedades que tiene cada estudiante, para así permitir al estudiante o a sus padres seleccionar la comida que mejor se adecúe a su estilo de vida.
+Por otro lado, ayuda a los padres a ahorrar el tiempo que dedicarían a realizar las comidas de sus hijos.
+La aplicación es fácil de utilizar, tanto para el personal de la cantina como para los padres e hijos.
+Otorga a los padres un control sobre los alimentos que consumen sus hijos, ya sea limitando el dinero acreditado en la cuenta, como seleccionado los menús diarios para toda la semana.
+La aplicación es confiable, ya que la información dentro de la aplicación es confidencial y se protege la privacidad tanto de los padres, como de los estudiantes.
