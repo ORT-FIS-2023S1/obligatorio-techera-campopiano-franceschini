@@ -3,7 +3,7 @@
 # Informe entrega 1
 
 ## Repositorio Git
-
+El repostitorio Git para esta entrega es el siguiente: https://github.com/ORT-FIS-2023S1/obligatorio-techera-campopiano-franceschini.git
 ## Versionado
 Para comenzar, creamos la rama principal de nuestro repositorio (master). Cada uno de los integrantes del equipo clonó el repositorio mediante el siguiente comando: **git clone** < *URL repositorio* >.
 
@@ -703,7 +703,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Poder tener acceso a las funciones de administrador y administrar el comedor escolar por la aplicación.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. Una vez registrado, el usuario tendrá acceso al sistema y a todas las funcionalidades de administración
 ---
@@ -714,7 +714,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 
 **PARA**: Para que los comensales puedan tener los datos importantes del comedor con la información correcta.
 
-##### CRITERIOS DE ACEPTACIÓN 👌
+##### CRITERIOS DE ACEPTACIÓN 
 
  1. La información actualizada debe verse en los datos del comedor de forma inmediata luego de la actualización.
  ---
@@ -1092,7 +1092,7 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 ---
 
 ### Bocetos de IU
-
+- Referencia a los bocetos de ui de la aplicación, en carpeta de bocetos, adjunta a este proyecto.
 ## Validación y verificación
 
 ## Reflexión
