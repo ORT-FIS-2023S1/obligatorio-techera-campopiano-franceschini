@@ -139,6 +139,9 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 7. Alertas y recordatorios: La aplicación puede enviar alertas y recordatorios a los usuarios sobre el consumo de sus hijos en el comedor escolar para ayudarles a mantenerse al tanto de lo que están comiendo.
 8. Personalización: La aplicación puede ser personalizada para las necesidades específicas de cada estudiante, incluyendo restricciones dietéticas y preferencias de comida.
 
+#### Ingeniería reversa
+
+Durante nuestra investigación nos encontramos con una aplicación en el mercado que básicamente busca resolver la misma problemática. Esta aplicación es **orderEats** lanzada en 2021 y que cuenta con mas de 10 mil usuarios y 50 comedores registrados . De esta aplicación observamos funcionalidades tales como la billetera prepaga, lo cual lo implementamos como un **limite diario de consumo** en nuestra aplicación, también la parte de realizar pedidos online nos inspiro a realizar toda la parte de **administración de pedidos** y el **registro de ordenes**. Luego mediante la interacción con los interesados surgieron las demás funcionalidades como la de proveer **información nutricional**, el **grupo de comensales**, **suscripción de comensales**, **múltiples formas de inicio de sesión**, **múltiples métodos de pagos**, **implementación de menú semanal**, **menú personalizado para cada comensal**, que orderEats no posee.
 
 ## Especificación
 
@@ -728,6 +731,8 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
  
 ### Casos de usos
 
+#### Diagrama de casos de uso [LINK](./diagramas/Casosdeuso.png)
+
 | Nombre : | Administrar Pedidos |
 | --- | --- |
 | **Breve Descripción:** | Este caso de uso permite al administrador gestionar los pedidos de los clientes, registrando nuevos pedidos, visualizando pedidos sin procesar y procesados, y generando informes y estadísticas sobre los pedidos. |
@@ -1094,6 +1099,9 @@ En el caso de la aplicación para el comedor escolar, el modelo conceptual, es e
 ### Bocetos de IU
 - Referencia a los bocetos de ui de la aplicación, en carpeta de bocetos, adjunta a este proyecto.
 ## Validación y verificación
+Para esta fase del desarrollo lo que nos resulto mas útil fue utilizar bocetos de interfaces en papel, presentábamos dichos bocetos a los diferentes perfiles de usuario y recibíamos feedback inmediato. Con ese feedback íbamos modificando el siguiente diagrama de navegación [LINK](./diagramas/DiagramaNavegacion.png), este diagrama fue crucial ya que la aplicación cuenta con múltiples funcionalidades y no todas aplican a todos los perfiles de usuario.
+Un aspecto que nos resulto complejo fue lograr que la aplicación fuera intuitiva a todos nuestros perfiles de usuario, durante las entrevistas de validación cada usuario nos aportaba ideas que frecuentemente se contraponían con las de otro usuario. Aunque todas estaban orientadas en el mismo camino, cada usuario tenia su forma de realizar las cosas, y fue un gran desafío decidir una forma general donde todos estuvieran cómodos. Para esto presentábamos los cambios propuesto por un usuario a los demás, sin decirles que las ideas provenían de otro usuario como el. Luego regresábamos con anotaciones y repetimos este proceso hasta percibir que todos nuestros usuarios entrevistados estaban satisfechos con el resultado.
+Para tener una visión global del dominio nos apoyamos en el siguiente diagrama conceptual [LINK](./diagramas/Modeloconceptual.png), donde podemos ver las diferentes entidades y como se relacionan entre ellas.
 
 ## Reflexión
 Esta aplicación tiene como objetivo facilitar la gestión de los servicios de la cantina de distintos colegios, mejorar la interacción entre los diferentes actores involucrados y proporciona información de utilidad en tiempo real.
