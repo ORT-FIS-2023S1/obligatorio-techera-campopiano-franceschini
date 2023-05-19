@@ -1,14 +1,18 @@
-import { register, login } from "../controllers/loginController";
+import login from "@controllers/loginController";
 
 import { Router } from "express";
+import loginValidations from "validations/login.validations";
 
-export default (function WorkspaceRoutes() {
+export default (() => {
   const router: Router = Router();
 
   //------------------------------------------------------
-  router.get("/register", register);
+  router.get("/", (req, res) =>
+    res.render("login", { role: req.header("x-role"), data: {}, configs: {} })
+  );
+
   //------------------------------------------------------
-  router.get("/login", login);
+  router.post("/", [loginValidations, login]);
   //------------------------------------------------------
   return router;
 })();

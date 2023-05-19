@@ -17,7 +17,8 @@
       "@interface/*": ["./interface/*"],
       "@domain/*": ["./domain/*"],
       "@routes/*": ["./routes/*"],
-      "@public/*": ["./public/*"]
+      "@public/*": ["./public/*"],
+      "@controllers/*": ["./controllers/*"]
     }
   },
   "include": ["src"],
