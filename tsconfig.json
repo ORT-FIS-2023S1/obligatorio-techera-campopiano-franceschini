@@ -13,17 +13,7 @@
     "baseUrl": "src",
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "paths": {
-      "@interface/*": ["./interface/*"],
-      "@domain/*": ["./domain/*"],
-      "@routes/*": ["./routes/*"],
-      "@public/*": ["./public/*"],
-      "@controllers/*": ["./controllers/*"]
-    }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  }
+  "exclude": ["node_modules", "dist"]
 }

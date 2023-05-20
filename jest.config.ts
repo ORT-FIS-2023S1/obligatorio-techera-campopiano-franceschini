@@ -15,10 +15,4 @@ export default {
   moduleDirectories: ["node_modules", "src"],
   moduleFileExtensions: ["js", "json", "ts"],
   roots: ["src"],
-  moduleNameMapper: {
-    "@interface/(.*)": "<rootDir>/src/interface/$1",
-    "@domain/(.*)": "<rootDir>/src/domain/$1",
-    "@routes/(.*)": "<rootDir>/src/routes/$1",
-    "@public/(.*)": "<rootDir>/src/public/$1",
-  },
 };

@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
-import { loginRoutes } from "@routes/index";
+import { loginRoutes } from "./routes";
 
 dotenv.config();
 

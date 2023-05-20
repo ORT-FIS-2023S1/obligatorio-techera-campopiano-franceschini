@@ -1,7 +1,7 @@
-import login from "@controllers/loginController";
+import login from "../controllers/loginController";
 
 import { Router } from "express";
-import loginValidations from "validations/login.validations";
+import loginValidations from "../validations/login.validations";
 
 export default (() => {
   const router: Router = Router();
