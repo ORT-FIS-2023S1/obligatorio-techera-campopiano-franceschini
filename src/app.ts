@@ -1,7 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
-import { loginRoutes } from "./routes";
+import userRoutes from "./user/routes";
+import adminRoutes from "./admin/routes";
+import sharedRoutes from "./shared/routes";
 
 dotenv.config();
 
@@ -10,15 +12,17 @@ const app = express();
 //set middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "./shared/public"));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/interface/views"));
+app.set("views", path.join(__dirname, "./shared/interface/views"));
 //-------------------------------------------------------------
 //Routes
 app.get("/", (req, res) => {
   res.render("index");
 });
-app.use("/login", loginRoutes);
+app.use("/", sharedRoutes);
+app.use("/user", userRoutes);
+app.use("/admin", adminRoutes);
 
 //-------------------------------------------------------------
 //initialize the server
