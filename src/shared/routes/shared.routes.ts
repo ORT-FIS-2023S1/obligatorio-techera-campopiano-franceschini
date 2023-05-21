@@ -7,12 +7,12 @@ export default (() => {
   const router: Router = Router();
 
   //------------------------------------------------------
-  router.get("/", (req, res) =>
+  router.get("/login", (req, res) =>
     res.render("login", { role: req.header("x-role"), data: {}, configs: {} })
   );
 
   //------------------------------------------------------
-  router.post("/", [loginValidations, login]);
+  router.post("/login", [loginValidations, login]);
   //------------------------------------------------------
   return router;
 })();

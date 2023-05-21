@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Social Network</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <style>
+      main {
+        font-family: Arial, sans-serif;
+        height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navbar {
+        background-color: #fff;
+      }
+
+      .post {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .post .author {
+        font-weight: bold;
+      }
+
+      .post .timestamp {
+        color: #868e96;
+        font-size: 12px;
+      }
+
+      .post .content {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <%-
+    include('../../../shared/interface/components/navBar',{title:'SafeFood'}) %>
+    <script>
+      let user = <%- JSON.stringify(data.user) %>;
+      localStorage.setItem('token', JSON.stringify({'token': user.token}));
+    </script>
+    <main>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="post">
+              <p class="author">John Doe</p>
+              <p class="timestamp">May 19, 2023</p>
+              <p class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                efficitur ligula non semper tempus. Pellentesque habitant morbi
+                tristique senectus et netus et malesuada fames ac turpis
+                egestas. Nam consectetur erat vel leo pharetra, nec vulputate
+                magna congue. Proin maximus sapien ut nisi tincidunt, et finibus
+                ex cursus. Morbi tincidunt bibendum sem, non pulvinar felis
+                rutrum ac.
+              </p>
+            </div>
+
+            <div class="post">
+              <p class="author">Jane Smith</p>
+              <p class="timestamp">May 18, 2023</p>
+              <p class="content">
+                Sed luctus ultricies leo, a suscipit sem congue in. Duis ac
+                lorem massa. Curabitur at efficitur neque. Fusce tincidunt nisl
+                dui, id congue erat tristique ac. Integer sagittis malesuada
+                ultricies. Proin ut est libero. Nullam ac nisi nec erat
+                scelerisque sollicitudin ac id mauris.
+              </p>
+            </div>
+
+            <!-- Add more posts here -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('../../../shared/interface/components/footer') %>
+  </body>
+</html>
