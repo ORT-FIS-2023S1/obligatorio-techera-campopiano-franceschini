@@ -1,13 +1,14 @@
-import path from "path";
 import jwt from "jsonwebtoken";
 import Cache from "../../utils/cache";
 import User from "shared/domain/User";
-export default (req, res) => {
+
+export default (req: any, res: any) => {
   const { email, password } = req.body;
   const cache = Cache.getInstance();
 
   const user: User = cache.get(email);
   const message = "Email or password is incorrect";
+
   if (!user || user.password !== password || user.email !== email) {
     console.log(message);
 
@@ -24,10 +25,7 @@ export default (req, res) => {
 
     user.token = token;
 
-    res.render(path.join(__dirname, "../../user/interface/views/homePage"), {
-      role: null,
-      data: { user: user.toJSON() },
-      configs: {},
-    });
+    res.cookie("token", token); // Agregar el token en una cookie en la respuesta
+    res.redirect("/adminProfile"); // Redireccionar al perfil del administrador o cualquier otra ruta que desees
   }
 };
