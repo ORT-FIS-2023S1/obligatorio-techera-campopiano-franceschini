@@ -19,8 +19,11 @@ export default class Cache {
   }
 
   private loadDefaultData() {
-    const user = new User("user@user.com", "user", "user", [], [], "");
+    const user = new User("user@user.com", "user", "user");
+    const admin = new User("admin@admin.com", "admin", "admin");
 
+    //save default data
     Cache.cache.set(user.email, user);
+    Cache.cache.set(admin.email, admin);
   }
 }

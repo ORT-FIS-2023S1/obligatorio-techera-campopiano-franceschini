@@ -45,10 +45,14 @@
   <body>
     <%-
     include('../../../shared/interface/components/navBar',{title:'SafeFood'}) %>
-    <script>
+    <!-- <script>
       let user = <%- JSON.stringify(data.user) %>;
-      localStorage.setItem('token', JSON.stringify({'token': user.token}));
+      localStorage.setItem('Authorization', JSON.stringify({'token': user.token}));
     </script>
+   -->
+    <header>
+      <h1>TEST-Welcome <%- user.email%></h1>
+    </header>
     <main>
       <div class="container">
         <div class="row justify-content-center">
@@ -80,6 +84,8 @@
             </div>
 
             <!-- Add more posts here -->
+
+            <a href="/user/diners"> go to diners!</a>
           </div>
         </div>
       </div>

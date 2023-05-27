@@ -19,15 +19,10 @@ export default (req, res) => {
   } else {
     const token = jwt.sign(
       { email: req.body.email, role: user.role },
-      "secret"
+      process.env.TOKEN_SECRET
     );
 
-    user.token = token;
-
-    res.render(path.join(__dirname, "../../user/interface/views/homePage"), {
-      role: null,
-      data: { user: user.toJSON() },
-      configs: {},
-    });
+    req.session.Autorization = token;
+    res.redirect(`${user.role}/home`);
   }
 };

@@ -3,9 +3,8 @@ export default class User {
     private _email: string,
     private _password: string,
     private _role: string,
-    private _diners: string[],
-    private _canteens: string[],
-    private _token: string
+    private _diners: string[] = [],
+    private _canteens: string[] = []
   ) {}
 
   //getters
@@ -17,7 +16,7 @@ export default class User {
     return this._password;
   }
 
-  get tole(): string {
+  get role(): string {
     return this._role;
   }
 
@@ -27,10 +26,6 @@ export default class User {
 
   get canteens(): string[] {
     return this._canteens;
-  }
-
-  get token(): string {
-    return this._token;
   }
 
   //setters
@@ -53,10 +48,6 @@ export default class User {
 
   set canteens(canteens: string[]) {
     this._canteens = canteens;
-  }
-
-  set token(token: string) {
-    this._token = token;
   }
 
   //methods
@@ -84,11 +75,9 @@ export default class User {
   toJSON(): object {
     return {
       email: this._email,
-      password: this._password,
       role: this._role,
       diners: this._diners,
       canteens: this._canteens,
-      token: this._token,
     };
   }
 
@@ -99,8 +88,7 @@ export default class User {
       json.password,
       json.role,
       json.diners,
-      json.canteens,
-      json.token
+      json.canteens
     );
     return user;
   }
