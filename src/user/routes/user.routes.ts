@@ -1,18 +1,17 @@
 import path from "path";
 import { Router } from "express";
-import getUserFromToken from "../../utils/getUserFromToken";
 
 export default (() => {
   const router: Router = Router();
 
   //------------------------------------------------------
 
-  router.get("/home/:Authorization", (req, res) => {
-    const Authorization = req.params.Authorization;
-    const user = getUserFromToken(Authorization);
+  router.get("/home", (req, res) => {
+    //get user from locals
+    const user = res.locals.user;
     res.render(path.join(__dirname, "../../user/interface/views/homePage"), {
-      user: user.role,
-      data: { user: user.toJSON() },
+      user,
+      data: {},
       configs: {},
     });
   });

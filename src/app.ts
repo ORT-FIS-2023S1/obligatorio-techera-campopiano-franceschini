@@ -1,4 +1,5 @@
 import express from "express";
+import session from "express-session";
 import dotenv from "dotenv";
 import path from "path";
 import userRoutes from "./user/routes";
@@ -16,10 +17,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "./shared/public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./shared/interface/views"));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 //-------------------------------------------------------------
 //Routes
-app.use(validateToken);
 app.use("/", sharedRoutes);
+//----------------PRIVATE ROUTES------------------------------
+app.use(validateToken); //check if the token is valid
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
 

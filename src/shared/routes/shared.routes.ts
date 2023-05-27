@@ -12,7 +12,7 @@ export default (() => {
   });
   //------------------------------------------------------
   router.get("/login", (req, res) =>
-    res.render("login", { role: req.header("x-role"), data: {}, configs: {} })
+    res.render("login", { user: {}, data: {}, configs: {} })
   );
 
   //------------------------------------------------------

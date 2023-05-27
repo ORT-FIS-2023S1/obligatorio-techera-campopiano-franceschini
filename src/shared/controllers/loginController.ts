@@ -22,7 +22,7 @@ export default (req, res) => {
       process.env.TOKEN_SECRET
     );
 
-    user.Autorization = token;
+    req.session.Autorization = token;
     res.redirect(`${user.role}/home`);
   }
 };
