@@ -5,7 +5,7 @@ export default class User {
     private _role: string,
     private _diners: string[],
     private _canteens: string[],
-    private _token: string
+    private _Autorization: string
   ) {}
 
   //getters
@@ -17,7 +17,7 @@ export default class User {
     return this._password;
   }
 
-  get tole(): string {
+  get role(): string {
     return this._role;
   }
 
@@ -29,8 +29,8 @@ export default class User {
     return this._canteens;
   }
 
-  get token(): string {
-    return this._token;
+  get Autorization(): string {
+    return this._Autorization;
   }
 
   //setters
@@ -55,8 +55,8 @@ export default class User {
     this._canteens = canteens;
   }
 
-  set token(token: string) {
-    this._token = token;
+  set Autorization(token: string) {
+    this._Autorization = token;
   }
 
   //methods
@@ -88,7 +88,7 @@ export default class User {
       role: this._role,
       diners: this._diners,
       canteens: this._canteens,
-      token: this._token,
+      token: this._Autorization,
     };
   }
 

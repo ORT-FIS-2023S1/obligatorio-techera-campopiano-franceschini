@@ -19,5 +19,3 @@ export default (req, res, next) => {
     next();
   }
 };
-
-//create express middleware function

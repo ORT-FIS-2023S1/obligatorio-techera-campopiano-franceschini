@@ -47,7 +47,7 @@
     include('../../../shared/interface/components/navBar',{title:'SafeFood'}) %>
     <script>
       let user = <%- JSON.stringify(data.user) %>;
-      localStorage.setItem('token', JSON.stringify({'token': user.token}));
+      localStorage.setItem('Authorization', JSON.stringify({'token': user.token}));
     </script>
     <main>
       <div class="container">

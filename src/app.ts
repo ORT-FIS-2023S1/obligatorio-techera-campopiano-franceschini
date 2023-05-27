@@ -4,6 +4,7 @@ import path from "path";
 import userRoutes from "./user/routes";
 import adminRoutes from "./admin/routes";
 import sharedRoutes from "./shared/routes";
+import validateToken from "./shared/middlewares/validateToken";
 
 dotenv.config();
 
@@ -17,9 +18,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./shared/interface/views"));
 //-------------------------------------------------------------
 //Routes
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use(validateToken);
 app.use("/", sharedRoutes);
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
