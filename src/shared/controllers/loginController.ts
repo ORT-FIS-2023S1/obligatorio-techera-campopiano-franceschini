@@ -2,6 +2,7 @@ import path from "path";
 import jwt from "jsonwebtoken";
 import Cache from "../../utils/cache";
 import User from "shared/domain/User";
+
 export default (req, res) => {
   const { email, password } = req.body;
   const cache = Cache.getInstance();

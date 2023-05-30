@@ -14,7 +14,9 @@ const app = express();
 //set middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "./shared/public"));
+//app.use(express.static(__dirname + "./shared/public"));
+// Configurar la carpeta 'public' como estática
+app.use(express.static(path.join(__dirname, "shared/public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./shared/interface/views"));
 app.use(

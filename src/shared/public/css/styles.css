@@ -1,0 +1,134 @@
+/* Estilos para la barra de navegación superior */
+.navbar {
+  background-color: #212529;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-title {
+  font-weight: bold;
+}
+
+.navbar-menu-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-menu-item {
+  display: inline-block;
+  position: relative;
+}
+
+.navbar-menu-item > a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #212529;
+  padding: 10px;
+}
+
+.submenu-item > a {
+  display: block;
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.navbar-menu-item:hover > .submenu {
+  display: block;
+}
+
+/* Estilos para el contenido principal */
+.content {
+  margin: 20px;
+}
+
+/* Estilos para el footer */
+.footer {
+  background-color: #212529;
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.footer h1 {
+  font-size: 36px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 18px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+/* Estilos del menú desplegable */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+/* Ajustar el ancho del menú desplegable */
+.dropdown-menu {
+  width: auto;
+}
+
+/* Estilos del submenú */
+.dropdown-submenu .dropdown-menu .dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+/* Estilos adicionales para el menú desplegable */
+.navbar-nav .nav-link.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.navbar-nav .nav-link.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(-225deg);
+}
+.navbar-nav li:hover > ul.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+  text-decoration: underline;
+  transform: rotate(-90deg);
+}
