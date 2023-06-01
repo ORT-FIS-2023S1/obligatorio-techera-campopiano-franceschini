@@ -1,12 +1,29 @@
+<!-- dashboard.ejs -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <%- include('./layout/header')%>
   </head>
   <body>
     <div class="wrapper">
-      <%- include('./layout/navigation')%> <%- include('./layout/sidebar')%> <%-
-      include('./layout/content-wrapper')%> <%- include('./layout/footer')%>
+      <%- include('./layout/navigation')%> <%- include('./layout/sidebar')%>
+      <div class="content-wrapper">
+        <% if (view === 'dashboard') { %>
+        <!-- Contenido del dashboard -->
+        <h1>Dashboard</h1>
+        <!-- Aquí puedes incluir el contenido específico del dashboard -->
+        <% } else if (view === 'agregarPlato') { %>
+        <!-- Contenido de agregarPlato -->
+        <h1>Agregar Plato al Menú</h1>
+        <!-- Aquí puedes incluir el contenido específico de agregarPlato -->
+        <!-- Por ejemplo, puedes incluir el formulario -->
+        <form action="/guardarPlato" method="POST">
+          <!-- Campos del formulario -->
+        </form>
+        <% } %>
+      </div>
+      <%- include('./layout/footer')%>
     </div>
     <!-- ./wrapper -->
     <%- include('./layout/js')%>
