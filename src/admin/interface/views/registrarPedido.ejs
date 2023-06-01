@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registro de Pedido - Cantina</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      box-shadow: 0 1px 2px rgb(95, 93, 93);
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    .button-container {
+      width: 200px;
+      height: 50px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: #4CAF50;
+      border-color: #4CAF50;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #45a049;
+    }
+
+    .btn-secondary {
+      background-color: #f44336;
+      border-color: #f44336;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #d32f2f;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 400px;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .comensal-info {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Registro de Pedido</h1>
+
+    <form onsubmit="event.preventDefault(); buscarComensal();">
+      <div class="form-group">
+        <label for="codigoQR">Búsqueda por Código QR:</label>
+        <input type="text" id="codigoQR" name="codigoQR" class="form-control" placeholder="Código QR">
+      </div>
+
+      <div class="form-group">
+        <label for="identificador">Búsqueda por ID:</label>
+        <input type="text" id="identificador" name="identificador" class="form-control" placeholder="Identificador">
+      </div>
+
+      <div class="form-group">
+        <label for="apellido">Búsqueda por Apellido:</label>
+        <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido">
+      </div>
+
+      <div class="form-group">
+        <label for="grupo">Grupos:</label>
+        <select id="grupo" name="grupo" class="form-control">
+          <option value="">Todos los grupos</option>
+          <option value="grupo1">Grupo 1</option>
+          <option value="grupo2">Grupo 2</option>
+          <option value="grupo3">Grupo 3</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Buscar</button>
+      <button type="button" class="btn btn-secondary btn-cancelar" onclick="cancelar()">Cancelar</button>
+    </form>
+
+    <div id="modalComensal" class="modal">
+      <div class="modal-content">
+        <div class="comensal-info">
+          <h2><strong>Comensal</strong></h2>
+          <p<strong>Nombre:</strong> <span id="comensalNombre"></span></p>
+            <p><strong>Apellido:</strong> <span id="comensalApellido"></span></p>
+            <p><strong>Grupo:</strong> <span id="comensalGrupo"></span></p>
+        </div>
+        <div class="button-container">
+          <button type="button" class="btn btn-success" onclick="seleccionarComensal()">Seleccionar</button>
+          <button type="button" class="btn btn-secondary btn-cancelar-modal" onclick="cerrarModal()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="text-center">
+      <h2>PediloYa</h2>
+      <p>&copy; 2023 PediloYa. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    var comensalSeleccionado = null;
+
+    function buscarComensal() {
+      // Obtenemos el código QR, el ID y el grupo ingresados por el usuario
+      var codigoQR = document.getElementById("codigoQR").value;
+      var identificador = document.getElementById("identificador").value;
+      var apellido = document.getElementById("apellido").value;
+      var grupo = document.getElementById("grupo").value;
+
+      // Lógica para buscar el comensal según el código QR o ID numérico
+      // Aquí puedes reemplazar el siguiente código con tu lógica de búsqueda real
+
+      // Ejemplo de búsqueda por código QR
+      if (codigoQR === "12345") {
+        mostrarResultado("Andres", "Campopiano", "Grupo 1");
+      }
+
+      // Ejemplo de búsqueda por ID numérico
+      if (identificador === "1") {
+        mostrarResultado("Bryan", "Techera", "Grupo 2");
+      }
+
+      //Ejemplo de búsqueda por apellido
+      if (apellido == "Franceschini") {
+        mostrarResultado("Horacio", "Franceschini", "Grupo 3");
+      }
+
+      //Ejemplo de búsqueda por grupo
+      if (grupo == "grupo3") {
+        mostrarResultado("Juan", "Perez", "Grupo 3");
+      }
+    }
+
+    function mostrarResultado(nombre, apellido, grupo) {
+      document.getElementById("comensalNombre").innerText = nombre;
+      document.getElementById("comensalApellido").innerText = apellido;
+      document.getElementById("comensalGrupo").innerText = grupo;
+
+      // Abre la ventana modal
+      document.getElementById("modalComensal").style.display = "block";
+    }
+
+    function seleccionarComensal() {
+      var nombre = document.getElementById("comensalNombre").innerText;
+      var apellido = document.getElementById("comensalApellido").innerText;
+      var grupo = document.getElementById("comensalGrupo").innerText;
+
+      // Acá se puede especificar la acción que queremos con los datos del comensal seleccionado
+
+      // Acá guarda los datos del comensal seleccionado
+      comensalSeleccionado = {
+        nombre: nombre,
+        apellido: apellido,
+        grupo: grupo
+      };
+
+      cerrarModal();
+    }
+
+    function cerrarModal() {
+      document.getElementById("modalComensal").style.display = "none";
+    }
+
+    function cancelar() {
+      // Acá se puede agregar la lógica para cancelar la operación, ahora solo muestra una alerta
+      alert("Operación cancelada");
+    }
+  </script>
+</body>
+
+</html>

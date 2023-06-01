@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pedidos de Comensal - Cantina</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .pedido {
+      margin-bottom: 20px;
+    }
+
+    .pedido-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .pedido-nombre {
+      font-weight: bold;
+    }
+
+    .pedido-menu {
+      font-style: italic;
+    }
+
+    .cancelar {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn-danger {
+      background-color: #f44336;
+      border-color: #f44336;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-danger:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Pedidos de Comensal</h1>
+
+    <div class="pedido">
+      <div class="pedido-info">
+        <span class="pedido-nombre">Comensal: Juan Pérez</span>
+        <span class="pedido-menu">Menú: Libre</span>
+      </div>
+      <p>Pedido 1: Pizza</p>
+      <p>Pedido 2: Ensalada</p>
+      <p>Pedido 3: Postre</p>
+    </div>
+
+    <div class="pedido">
+      <div class="pedido-info">
+        <span class="pedido-nombre">Comensal: María López</span>
+        <span class="pedido-menu">Menú: Restringido</span>
+      </div>
+      <p>Pedido 1: Pollo a la parrilla</p>
+      <p>Pedido 2: Ensalada</p>
+    </div>
+
+    <div class="cancelar">
+      <button type="button" class="btn btn-danger" onclick="cancelar()">Cancelar</button>
+    </div>
+  </div>
+
+  <script>
+    function cancelar() {
+      // Aquí puedes agregar la lógica para cancelar la operación
+      alert("Operación cancelada");
+    }
+  </script>
+</body>
+
+</html>
