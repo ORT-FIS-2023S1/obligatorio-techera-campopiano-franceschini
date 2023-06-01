@@ -1,10 +1,97 @@
-<!-- agregarPlato.ejs -->
-<h1>Agregar Plato al Menú</h1>
-<form action="/guardarPlato" method="POST">
-  <label for="nombre">Nombre del plato:</label>
-  <input type="text" id="nombre" name="nombre" value="<%= data.nombre %>" required>
+<!-- Contenido de agregarPlato -->
+<!-- Aquí puedes incluir el contenido específico de agregarPlato -->
+<!-- Por ejemplo, puedes incluir el formulario -->
+<div class="container">
+  <h1>Agregar Plato al Menú</h1>
+  <form id="plato-form">
+    <div class="form-group">
+      <label for="nombre">Nombre del Plato:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="precio">Precio del Plato:</label>
+      <input
+        type="text"
+        id="precio"
+        name="precio"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="ingredientes">Ingredientes principales:</label>
+      <input
+        type="text"
+        id="ingredientes"
+        name="ingredientes"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="porcion">Tamaño de la porción:</label>
+      <input
+        type="text"
+        id="porcion"
+        name="porcion"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="nutricional">Información Nutricional:</label>
+      <textarea
+        id="nutricional"
+        name="nutricional"
+        class="form-control"
+        rows="10"
+        required
+      ></textarea>
+    </div>
+    <div class="button-container">
+      <button type="submit" class="btn btn-primary">Agregar Plato</button>
+      <button type="button" class="btn btn-secondary cancel">Cancelar</button>
+    </div>
+  </form>
+</div>
+<script>
+  // Obtener el formulario y los campos
+  const form = document.getElementById("plato-form");
+  const nombreInput = document.getElementById("nombre");
+  const nutricionalInput = document.getElementById("nutricional");
 
-  <!-- Otros campos y etiquetas del formulario -->
-  
-  <button type="submit">Guardar</button>
-</form>
+  // Manejar el evento de envío del formulario
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar que el formulario se envíe
+
+    // Obtener los valores de los campos
+    const nombre = nombreInput.value;
+    const nutricional = nutricionalInput.value;
+
+    // Acá se pueden realizar las operaciones para agregar el plato al menú
+    //La alerta hace q salte una ventana emergente confirmando la operación
+    alert(
+      "Se ha agregado el plato al menú:\n\nNombre: " +
+        nombre +
+        "\nInformación Nutricional: " +
+        nutricional
+    );
+
+    // Limpiar los campos del formulario
+    nombreInput.value = "";
+    nutricionalInput.value = "";
+  });
+
+  // Maneja el evento de clic en el botón de cancelar
+  const cancelButton = document.querySelector(".cancel");
+  cancelButton.addEventListener("click", function () {
+    // Acá se puede redirigir al usuario a otra página o realizar alguna otra acción
+    location.reload();
+  });
+</script>

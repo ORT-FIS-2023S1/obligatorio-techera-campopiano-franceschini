@@ -5,10 +5,10 @@ const router = Router();
 
 // Otras rutas de admin
 
-router.get("/home", (req, res) => {
+router.get("/index", (req, res) => {
   //get user from locals
   const user = res.locals.user;
-  res.render(path.join(__dirname, "../../admin/interface/views/dashboard"), {
+  res.render(path.join(__dirname, "../../admin/interface/views/index"), {
     user,
     data: {},
     configs: {},
@@ -16,10 +16,10 @@ router.get("/home", (req, res) => {
   });
 });
 
-router.get("/home/agregarPlato", (req, res) => {
+router.get("/index/agregarPlato", (req, res) => {
   // Lógica para mostrar el formulario de agregar plato
   // ...
-  res.render(path.join(__dirname, "../../admin/interface/views/dashboard"), {
+  res.render(path.join(__dirname, "../../admin/interface/views/index"), {
     user: res.locals.user,
     data: {},
     configs: {},

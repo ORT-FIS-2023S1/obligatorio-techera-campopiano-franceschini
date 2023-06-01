@@ -24,6 +24,6 @@ export default (req, res) => {
     );
 
     req.session.Autorization = token;
-    res.redirect(`${user.role}/home`);
+    res.redirect(`${user.role}/index`);
   }
 };

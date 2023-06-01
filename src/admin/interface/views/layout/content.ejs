@@ -1,0 +1,9 @@
+<!-- content.ejs -->
+<div class="col-md-9">
+  <% if (view === 'dashboard') { %>
+  <!-- Contenido del dashboard -->
+  <h1>putamadres</h1>
+  <!-- Aquí puedes incluir el contenido específico del dashboard -->
+  <% } else if (view === 'agregarPlato') { %> <%- include('../agregarPlato') %>
+  <% } %>
+</div>
