@@ -15,7 +15,6 @@ router.get("/index", (req, res) => {
     data: {},
     configs: {},
     view: "dashboard",
-    platos: platos,
   });
 });
 
@@ -27,6 +26,7 @@ router.get("/index/agregarPlato", (req, res) => {
     data: {},
     configs: {},
     view: "agregarPlato",
+    platos: platos,
   });
 });
 router.post("/index/agregarPlato", (req, res) => {

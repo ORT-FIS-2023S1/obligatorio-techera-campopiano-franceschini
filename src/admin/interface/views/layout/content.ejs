@@ -3,9 +3,6 @@
   <% if (view === 'dashboard') { %>
   <!-- Contenido del dashboard -->
 
-  <% if (platos && platos.length > 0) { %> <% } else { %>
-  <p>No se han agregado platos aún.</p>
-  <% } %>
   <!-- Aquí puedes incluir el contenido específico del dashboard -->
   <% } else if (view === 'agregarPlato') { %> <%- include('../agregarPlato') %>
   <% } %>
