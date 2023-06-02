@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "ejs-lint": "^2.0.0",
@@ -28,7 +29,11 @@
     "jsonwebtoken": "^9.0.0",
     "multer": "^1.4.5-lts.1",
     "node-cache": "^5.1.2",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.7.10",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",

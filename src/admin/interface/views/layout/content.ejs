@@ -2,7 +2,22 @@
 <div class="col-md-9">
   <% if (view === 'dashboard') { %>
   <!-- Contenido del dashboard -->
-  <h1>putamadres</h1>
+  <h1>Lista de Platos</h1>
+  <% if (platos && platos.length > 0) { %>
+  <ul>
+    <% platos.map((plato) => { %>
+    <li>
+      <p>Nombre: <% plato.nombre %></p>
+      <p>Precio: <%= plato.precio %></p>
+      <p>Ingredientes: <%= plato.ingredientes %></p>
+      <p>Porción: <%= plato.porcion %></p>
+      <p>Información Nutricional: <%= plato.nutricional %></p>
+    </li>
+    <% }) %>
+  </ul>
+  <% } else { %>
+  <p>No se han agregado platos aún.</p>
+  <% } %>
   <!-- Aquí puedes incluir el contenido específico del dashboard -->
   <% } else if (view === 'agregarPlato') { %> <%- include('../agregarPlato') %>
   <% } %>

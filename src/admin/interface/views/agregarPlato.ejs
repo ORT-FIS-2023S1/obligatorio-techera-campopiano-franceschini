@@ -3,7 +3,7 @@
 <!-- Por ejemplo, puedes incluir el formulario -->
 <div class="container">
   <h1>Agregar Plato al Menú</h1>
-  <form id="plato-form">
+  <form id="plato-form" action="/admin/index/agregarPlato" method="POST">
     <div class="form-group">
       <label for="nombre">Nombre del Plato:</label>
       <input
@@ -63,35 +63,56 @@
 <script>
   // Obtener el formulario y los campos
   const form = document.getElementById("plato-form");
-  const nombreInput = document.getElementById("nombre");
-  const nutricionalInput = document.getElementById("nutricional");
 
   // Manejar el evento de envío del formulario
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Evitar que el formulario se envíe
 
     // Obtener los valores de los campos
-    const nombre = nombreInput.value;
-    const nutricional = nutricionalInput.value;
+    //const formData = new FormData(form);
 
-    // Acá se pueden realizar las operaciones para agregar el plato al menú
-    //La alerta hace q salte una ventana emergente confirmando la operación
-    alert(
-      "Se ha agregado el plato al menú:\n\nNombre: " +
-        nombre +
-        "\nInformación Nutricional: " +
-        nutricional
-    );
-
-    // Limpiar los campos del formulario
-    nombreInput.value = "";
-    nutricionalInput.value = "";
-  });
-
-  // Maneja el evento de clic en el botón de cancelar
-  const cancelButton = document.querySelector(".cancel");
-  cancelButton.addEventListener("click", function () {
-    // Acá se puede redirigir al usuario a otra página o realizar alguna otra acción
-    location.reload();
+    // Realizar una solicitud AJAX al servidor para guardar los datos del formulario
+    fetch(form.action, {
+      method: form.method,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(new FormData(form)),
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Se guardaron los datos exitosamente
+          Swal.fire({
+            icon: "success",
+            title: "Plato agregado",
+            text: "El plato ha sido agregado correctamente al menú",
+            showCancelButton: true,
+            confirmButtonText: "Agregar otro plato",
+            cancelButtonText: "Ir al inicio",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // El usuario quiere agregar otro plato
+              // Limpiar los campos del formulario
+              form.reset();
+              location.reload();
+            } else {
+              // El usuario quiere ir al inicio
+              // Redirigir al usuario a la página de inicio
+              window.location.href = "/admin/index"; // Reemplaza '/inicio' con la ruta de la página de inicio en tu aplicación
+            }
+          });
+        } else {
+          throw new Error("Error al guardar los datos del formulario");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        // Manejar el error de alguna manera, por ejemplo, mostrar un mensaje de error con Swal
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Ocurrió un error al guardar los datos del formulario.",
+        });
+      });
   });
 </script>
