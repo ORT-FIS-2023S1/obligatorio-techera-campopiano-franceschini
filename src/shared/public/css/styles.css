@@ -1,3 +1,15 @@
+/* Colores */
+:root {
+  --color-primary: #1b5e20;
+  --color-secondary: #1565c0;
+}
+
+/* Fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Iconos */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
 .logo {
   width: 208px;
   height: 32px;
@@ -6,20 +18,23 @@
   background-position: center;
   font-size: 18px;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
+  font-family: "Roboto", sans-serif;
 }
 
 #pediloYa {
   font-size: 18px;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-primary);
   margin-left: 20px;
+  font-family: "Roboto", sans-serif;
 }
+
 /* Estilos para la barra de navegación superior */
 .navbar {
-  background-color: #2b2d31 !important;
+  background-color: var(--color-primary) !important;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -29,6 +44,7 @@
 
 .navbar-title {
   font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 
 .navbar-menu-items {
@@ -46,6 +62,7 @@
   color: #fff;
   padding: 10px;
   text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 .submenu {
@@ -53,7 +70,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #212529;
+  background-color: var(--color-secondary);
   padding: 10px;
 }
 
@@ -62,6 +79,7 @@
   color: #fff;
   padding: 5px;
   text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 .navbar-menu-item:hover > .submenu {
@@ -75,9 +93,8 @@
 
 /* Estilos para el footer */
 .footer {
-  background-color: #2b2d31 !important;
+  background-color: var(--color-primary) !important;
   color: #fff;
-  /*padding: 20px;*/
   position: fixed;
   bottom: 0;
   left: 0;
@@ -85,19 +102,20 @@
   text-align: center;
   margin-top: auto;
   padding: 1em 0;
+  font-family: "Roboto", sans-serif;
 }
+
 .footer h1 {
   font-size: 36px;
   color: white;
-  font-family: "Roboto", sans-serif;
   margin-bottom: 20px;
 }
 
 .footer p {
   font-size: 18px;
   color: white;
-  font-family: "Roboto", sans-serif;
 }
+
 /* Estilos del menú desplegable */
 .dropdown-submenu {
   position: relative;
@@ -136,12 +154,15 @@
 .navbar-nav .nav-link.dropdown-toggle[aria-expanded="true"]::after {
   transform: rotate(-225deg);
 }
+
 .navbar-nav li:hover > ul.dropdown-menu {
   display: block;
 }
+
 .dropdown-submenu {
   position: relative;
 }
+
 .dropdown-submenu > .dropdown-menu {
   top: 0;
   left: 100%;
@@ -173,56 +194,58 @@
 .isubmenu-link:hover {
   background-color: #f5f5f5;
 }
+
 .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}
 
-  h1 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 40px;
-  }
+h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
 
-  h2 {
-    font-size: 24px;
-    font-weight: bold;
-  }
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
 
-  .form-group label {
-    font-weight: bold;
-  }
+.form-group label {
+  font-weight: bold;
+}
 
-  .form-control {
-    border-radius: 5px;
-  }
+.form-control {
+  border-radius: 5px;
+}
 
-  .button-container {
-    text-align: center;
-    margin-top: 20px;
-  }
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
 
-  .btn-primary {
-    background-color: #4caf50;
-    border-color: #4caf50;
-    transition: background-color 0.3s ease;
-  }
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease;
+}
 
-  .btn-primary:hover {
-    background-color: #45a049;
-  }
+.btn-primary:hover {
+  background-color: #0d4213;
+}
 
-  .btn-secondary {
-    background-color: #f44336;
-    border-color: #f44336;
-    transition: background-color 0.3s ease;
-  }
+.btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transition: background-color 0.3s ease;
+}
 
-  .btn-secondary:hover {
-    background-color: #d32f2f;
-  }
+.btn-secondary:hover {
+  background-color: #0f4d9b;
+}
