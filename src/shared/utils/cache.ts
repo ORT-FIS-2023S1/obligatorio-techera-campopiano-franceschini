@@ -1,5 +1,4 @@
 import NodeCache from "node-cache";
-import User from "../domain/entities/User";
 import ENTITIES from "../domain/types/entities";
 
 //create a singelton cache class
@@ -11,18 +10,7 @@ export default class Cache {
     Cache.cache.on("set", (key, value) =>
       console.log(`Entities Updates`, Cache.cache.keys())
     );
-    //Dedault data
-    this.loadDefaultData();
   }
-
-  /*
-  public static getInstance(): NodeCache {
-    if (!Cache.cache) {
-      new Cache();
-    }
-    return Cache.cache;
-  }
-  */
 
   public static initialize() {
     if (!Cache.cache) {
@@ -57,13 +45,5 @@ export default class Cache {
       return Array.from(entityMap.values());
     }
     return null;
-  }
-
-  private loadDefaultData() {
-    const user = new User("user@user.com", "user", "user");
-    const admin = new User("admin@admin.com", "admin", "admin");
-
-    Cache.saveEntity<User>(ENTITIES.USERS, user.email, user);
-    Cache.saveEntity<User>(ENTITIES.USERS, admin.email, admin);
   }
 }

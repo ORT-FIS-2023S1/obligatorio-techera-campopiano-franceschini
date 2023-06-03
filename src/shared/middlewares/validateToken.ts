@@ -24,6 +24,7 @@ export default (req, res, next) => {
     }
   } catch (error) {
     // redirigir a la página de inicio de sesión en caso de error
+    console.log(error);
     return res.redirect("/login");
   }
 };

@@ -9,7 +9,8 @@ export default (req, res) => {
     req.body.precio,
     req.body.ingredientes,
     req.body.porcion,
-    req.body.nutricional
+    req.body.nutricional,
+    req.body.imagen
   );
 
   Cache.saveEntity(ENTITIES.DISHES, req.body.nombre, dishes);

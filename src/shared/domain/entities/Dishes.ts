@@ -2,9 +2,10 @@ export default class Dishes {
   constructor(
     private _name: string,
     private _price: number,
-    private _ingredients: string[],
+    private _ingredients: string[] = [],
     private _portions: number,
-    private _nutritionalInformation: string
+    private _nutritionalInformation: string,
+    private _photo: string
   ) {}
 
   //getters
@@ -28,6 +29,10 @@ export default class Dishes {
     return this._nutritionalInformation;
   }
 
+  get photo(): string {
+    return this._photo;
+  }
+
   //setters
   set name(name: string) {
     this._name = name;
@@ -49,15 +54,20 @@ export default class Dishes {
     this._nutritionalInformation = nutritionalInformation;
   }
 
+  set photo(photo: string) {
+    this._photo = photo;
+  }
+
   //methods
 
   //toJSON
   toJSON(): object {
     return {
-      name: this._name,
-      price: this._price,
-      ingredients: this._ingredients,
-      nutritionalInformation: this._nutritionalInformation,
+      name: this.name,
+      price: this.price,
+      ingredients: this.ingredients,
+      nutritionalInformation: this.nutritionalInformation,
+      photo: this.photo,
     };
   }
 
@@ -68,7 +78,8 @@ export default class Dishes {
       json.price,
       json.ingredients,
       json.portions,
-      json.nutritionalInformation
+      json.nutritionalInformation,
+      json.photo
     );
   }
 }

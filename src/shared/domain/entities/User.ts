@@ -1,10 +1,13 @@
+import Canteen from "./Canteen";
+import Diner from "./Diner";
+
 export default class User {
   constructor(
     private _email: string,
     private _password: string,
     private _role: string,
-    private _diners: string[] = [],
-    private _canteens: string[] = []
+    private _diners: Diner[] = [],
+    private _canteens: Canteen[] = []
   ) {}
 
   //getters
@@ -20,11 +23,11 @@ export default class User {
     return this._role;
   }
 
-  get diners(): string[] {
+  get diners(): Diner[] {
     return this._diners;
   }
 
-  get canteens(): string[] {
+  get canteens(): Canteen[] {
     return this._canteens;
   }
 
@@ -42,42 +45,42 @@ export default class User {
     this._role = role;
   }
 
-  set diners(diners: string[]) {
-    this._diners = diners;
+  set diners(Diner: Diner[]) {
+    this._diners = Diner;
   }
 
-  set canteens(canteens: string[]) {
+  set canteens(canteens: Canteen[]) {
     this._canteens = canteens;
   }
 
   //methods
-  //add diners
-  addDiner(diner: string): void {
+  addDiner(diner: Diner): void {
     this._diners.push(diner);
   }
 
-  //add canteens
-  addCanteen(canteen: string): void {
+  addCanteen(canteen: Canteen): void {
     this._canteens.push(canteen);
   }
 
-  //remove diners
-  removeDiner(diner: string): void {
-    this._diners = this._diners.filter((d) => d !== diner);
+  removeDiner(diner: Diner): void {
+    this._diners = this._diners.filter(
+      (d) => d.dinerNumber !== diner.dinerNumber
+    );
   }
 
-  //remove canteens
-  removeCanteen(canteen: string): void {
-    this._canteens = this._canteens.filter((c) => c !== canteen);
+  removeCanteen(canteen: Canteen): void {
+    this._canteens = this._canteens.filter(
+      (c) => c.canteenNumber !== canteen.canteenNumber
+    );
   }
 
   //toJSON
   toJSON(): object {
     return {
-      email: this._email,
-      role: this._role,
-      diners: this._diners,
-      canteens: this._canteens,
+      email: this.email,
+      role: this.role,
+      diner: this.diners.map((diner) => diner.toJSON()),
+      canteens: this.canteens.map((canteen) => canteen.toJSON()),
     };
   }
 
@@ -87,7 +90,7 @@ export default class User {
       json.email,
       json.password,
       json.role,
-      json.diners,
+      json.diner,
       json.canteens
     );
     return user;
