@@ -6,13 +6,13 @@
     <div class="col-md-4">
       <div class="continer">
         <h1>Agregar Plato al Menú</h1>
-        <form id="plato-form" action="/admin/index/agregarPlato" method="POST">
+        <form id="plato-form" action="/admin/index/addDishe" method="POST">
           <div class="form-group">
             <label for="nombre">Nombre del Plato:</label>
             <input
               type="text"
-              id="nombre"
-              name="nombre"
+              id="name"
+              name="name"
               class="form-control"
               required
             />
@@ -21,8 +21,8 @@
             <label for="precio">Precio del Plato:</label>
             <input
               type="text"
-              id="precio"
-              name="precio"
+              id="price"
+              name="price"
               class="form-control"
               required
             />
@@ -31,8 +31,8 @@
             <label for="ingredientes">Ingredientes principales:</label>
             <input
               type="text"
-              id="ingredientes"
-              name="ingredientes"
+              id="ingredients"
+              name="ingredients"
               class="form-control"
               required
             />
@@ -41,8 +41,8 @@
             <label for="porcion">Tamaño de la porción:</label>
             <input
               type="text"
-              id="porcion"
-              name="porcion"
+              id="portions"
+              name="portions"
               class="form-control"
               required
             />
@@ -50,8 +50,8 @@
           <div class="form-group">
             <label for="nutricional">Información Nutricional:</label>
             <textarea
-              id="nutricional"
-              name="nutricional"
+              id="nutritionalInformation"
+              name="nutritionalInformation"
               class="form-control"
               rows="10"
               required
@@ -69,17 +69,18 @@
 
     <div class="col-md-6">
       <h1>Lista de Platos Disponibles</h1>
-      <% let i=0 %> <% if (platos && platos.length > 0) { %>
+      <% let j=0 %> <% if (dishes && dishes.length > 0) { %>
       <ol class="ol" style="--length: 5" role="list">
-        <% platos.map((plato) => { i++ %>
-        <li class="li" style="--i: <%=i%>">
-          <h3 class="h3"><%= plato.nombre %></h3>
-          <p class="p">Ingredientes: <%= plato.ingredientes %></p>
-          <p class="p">Porción: <%= plato.porcion %></p>
-          <p class="p">Info Nutricional: <%= plato.nutricional %></p>
-          <p class="p">Precio: $<%= plato.precio %></p>
+        <% for (let i = 0; i < dishes.length; i++) { const dishe = dishes[i];
+        j++; %>
+        <li class="li" style="--i: <%=j%>">
+          <h2 class="h3"><%= dishe.name %></h2>
+          <p class="p">Ingredientes: <%= dishe.ingredients %></p>
+          <p class="p">Porción: <%= dishe.portions %></p>
+          <p class="p">Info Nutricional: <%= dishe.nutritionalInformation %></p>
+          <p class="p">Precio: $<%= dishe.price %></p>
         </li>
-        <% }) %>
+        <% } %>
       </ol>
       <% } else { %>
       <p class="p">No se han agregado platos aún.</p>
