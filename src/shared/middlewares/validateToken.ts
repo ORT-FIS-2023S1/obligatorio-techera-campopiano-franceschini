@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
-import User from "../domain/User";
-import Cache from "../../utils/cache";
+import User from "../domain/entities/User";
+import Cache from "../utils/cache";
+import ENTITIES from "../domain/types/entities";
 export default (req, res, next) => {
   const session = req.session;
   if (!session) {
@@ -11,13 +12,18 @@ export default (req, res, next) => {
   const Authorization = session.Autorization;
 
   try {
-    const verified = jwt.verify(Authorization, process.env.TOKEN_SECRET);
-    const user: User = Cache.getInstance().get(verified.email);
-    // pass user to next middleware
-    res.locals.user = user.toJSON();
-    next();
+    const verified: any = jwt.verify(Authorization, process.env.TOKEN_SECRET);
+    if (typeof verified === "object" && verified.email) {
+      const user: User = Cache.getEntity<User>(ENTITIES.USERS, verified.email);
+      // pasar el usuario al siguiente middleware
+      res.locals.user = user.toJSON();
+      next();
+    } else {
+      // redirigir a la página de inicio de sesión si no se encontró el email
+      return res.redirect("/login");
+    }
   } catch (error) {
-    //redirect to login
+    // redirigir a la página de inicio de sesión en caso de error
     return res.redirect("/login");
   }
 };

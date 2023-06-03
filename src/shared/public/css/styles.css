@@ -1,0 +1,253 @@
+/* Colores */
+:root {
+  --color-primary: #1b5e20;
+  --color-secondary: #1565c0;
+}
+
+/* Fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Iconos */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+.logo {
+  width: 208px;
+  height: 32px;
+  background-image: url("../images/pediloyalogo_.png");
+  background-size: cover;
+  background-position: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+#pediloYa {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-left: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Estilos para la barra de navegación superior */
+.navbar {
+  background-color: var(--color-primary) !important;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-title {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar-menu-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-menu-item {
+  display: inline-block;
+  position: relative;
+}
+
+.navbar-menu-item > a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.submenu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-secondary);
+  padding: 10px;
+}
+
+.submenu-item > a {
+  display: block;
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar-menu-item:hover > .submenu {
+  display: block;
+}
+
+/* Estilos para el contenido principal */
+.content {
+  margin: 20px;
+}
+
+/* Estilos para el footer */
+.footer {
+  background-color: var(--color-primary) !important;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  padding: 1em 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer h1 {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 18px;
+  color: white;
+}
+
+/* Estilos del menú desplegable */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+/* Ajustar el ancho del menú desplegable */
+.dropdown-menu {
+  width: auto;
+}
+
+/* Estilos del submenú */
+.dropdown-submenu .dropdown-menu .dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+/* Estilos adicionales para el menú desplegable */
+.navbar-nav .nav-link.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.navbar-nav .nav-link.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(-225deg);
+}
+
+.navbar-nav li:hover > ul.dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+  text-decoration: underline;
+  transform: rotate(-90deg);
+}
+
+.isubmenu {
+  margin-top: 10px;
+}
+
+.isubmenu-link {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.isubmenu-link i {
+  margin-right: 5px;
+}
+
+.isubmenu-link:hover {
+  background-color: #f5f5f5;
+}
+
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+  overflow-y: auto;
+  margin-bottom: 100px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0d4213;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #0f4d9b;
+}

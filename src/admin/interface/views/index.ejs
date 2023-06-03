@@ -1,0 +1,19 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./layout/header')%>
+  </head>
+  <body>
+    <%- include ('./layout/navbar.ejs') %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <%- include ('./layout/sidebar.ejs') %> <%- include
+        ('./layout/content.ejs') %>
+      </div>
+    </div>
+
+    <%- include ('./layout/footer.ejs') %> <%- include('./layout/js')%>
+  </body>
+</html>
