@@ -1,13 +1,13 @@
-import path from "path";
 import jwt from "jsonwebtoken";
-import Cache from "../../utils/cache";
-import User from "shared/domain/User";
+import Cache from "../utils/cache";
+import User from "shared/domain/entities/User";
+import ENTITIES from "../../shared/domain/types/entities";
 
 export default (req, res) => {
   const { email, password } = req.body;
-  const cache = Cache.getInstance();
 
-  const user: User = cache.get(email);
+  const user: User = Cache.getEntity(ENTITIES.USERS, email);
+  //---------------------------------------------------------------------------------
   const message = "Email or password is incorrect";
   if (!user || user.password !== password || user.email !== email) {
     console.log(message);

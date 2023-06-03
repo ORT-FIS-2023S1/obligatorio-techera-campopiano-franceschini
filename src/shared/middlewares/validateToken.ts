@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
-import User from "../domain/User";
-import Cache from "../../utils/cache";
+import User from "../domain/entities/User";
+import Cache from "../utils/cache";
+import ENTITIES from "../domain/types/entities";
 export default (req, res, next) => {
   const session = req.session;
   if (!session) {
@@ -10,20 +11,10 @@ export default (req, res, next) => {
   //validate token
   const Authorization = session.Autorization;
 
-  /*try {
-    const verified = jwt.verify(Authorization, process.env.TOKEN_SECRET);
-    const user: User = Cache.getInstance().get(verified.email);
-    // pass user to next middleware
-    res.locals.user = user.toJSON();
-    next();
-  } catch (error) {
-    //redirect to login
-    return res.redirect("/login");
-  }*/
   try {
     const verified: any = jwt.verify(Authorization, process.env.TOKEN_SECRET);
     if (typeof verified === "object" && verified.email) {
-      const user: User = Cache.getInstance().get(verified.email);
+      const user: User = Cache.getEntity<User>(ENTITIES.USERS, verified.email);
       // pasar el usuario al siguiente middleware
       res.locals.user = user.toJSON();
       next();

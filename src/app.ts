@@ -1,6 +1,7 @@
 import express from "express";
 import session from "express-session";
 import dotenv from "dotenv";
+import Cache from "./shared/utils/cache";
 import path from "path";
 import userRoutes from "./user/routes";
 import adminRoutes from "./admin/routes";
@@ -9,6 +10,7 @@ import validateToken from "./shared/middlewares/validateToken";
 import bodyParser from "body-parser";
 
 dotenv.config();
+Cache.initialize();
 
 const app = express();
 
