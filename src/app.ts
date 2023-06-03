@@ -8,6 +8,8 @@ import adminRoutes from "./admin/routes";
 import sharedRoutes from "./shared/routes";
 import validateToken from "./shared/middlewares/validateToken";
 import bodyParser from "body-parser";
+import loadDishes from "./shared/predata/loadDishes";
+import loadPredata from "./shared/predata";
 
 dotenv.config();
 Cache.initialize();
@@ -17,9 +19,8 @@ const app = express();
 //set middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//app.use(express.static(__dirname + "./shared/public"));
 // Configurar la carpeta 'public' como estática
-app.use(express.static(path.join(__dirname, "shared/public")));
+app.use(express.static(path.join(__dirname, "./shared/public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set("view engine", "ejs");
@@ -38,6 +39,13 @@ app.use("/", sharedRoutes);
 app.use(validateToken); //check if the token is valid
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
+app.get("*", function (req, res) {
+  res.status(404).render(path.join(__dirname, "./shared/interface/views/404"));
+});
+
+//-------------------------------------------------------------
+//load predata
+loadPredata();
 
 //-------------------------------------------------------------
 //initialize the server
