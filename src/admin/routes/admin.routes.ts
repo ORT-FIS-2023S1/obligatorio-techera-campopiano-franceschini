@@ -32,6 +32,15 @@ router.get("/index/dishe", (req, res) => {
   });
 });
 
+router.get("/index/listaItems", (req, res) => {
+  res.render(path.join(__dirname, "../../admin/interface/views/index"), {
+    user: res.locals.user,
+    data: {},
+    configs: {},
+    view: "itemsMenu",
+  });
+});
+
 router.get("/index/logout", logoutController);
 
 router.post("/index/addDishe", addDisheController);

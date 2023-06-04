@@ -1,0 +1,86 @@
+<!-- Contenido de agregarPlato -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="container">
+        <h1>LIstado de Menús</h1>
+        <form id="items-menu-form" action="/admin/index/listaItemsMenu" method="POST">
+          <div class="menu-container">
+            <h2 class="menu-title">Menú 1</h2>
+            <div class="form-group">
+              <ul class="item-list">
+                <li class="item" onclick="showItemModal('Item 1', 'Información del Item 1')">Item 1<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+                <li class="item" onclick="showItemModal('Item 2', 'Información del Item 2')">Item 2<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+                <li class="item" onclick="showItemModal('Item 3', 'Información del Item 3')">Item 3<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="menu-container">
+            <h2 class="menu-title">Menú 2</h2>
+            <div class="form-group">
+              <ul class="item-list">
+                <li class="item" onclick="showItemModal('Item 1', 'Información del Item 1')">Item 1<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+                <li class="item" onclick="showItemModal('Item 2', 'Información del Item 2')">Item 2<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+                <li class="item" onclick="showItemModal('Item 3', 'Información del Item 3')">Item 3<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="menu-container">
+            <h2 class="menu-title">Menú 3</h2>
+            <div class="form-group">
+              <ul class="item-list">
+                <li class="item" onclick="showItemModal('Item 1', 'Información del Item 1')">Item 1<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+                <li class="item" onclick="showItemModal('Item 2', 'Información del Item 2')">Item 2<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+                <li class="item" onclick="showItemModal('Item 3', 'Información del Item 3')">Item 3<span class="delete-btn" onclick="deleteItem(event)">x</span></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="modalItem" class="modal">
+        <div class="modal-content">
+          <h2 id="itemTitle"></h2>
+          <textarea id="itemInfo" class="form-control" rows="4" placeholder="Ingrese información del item"></textarea>
+          <div class="modal-buttons">
+            <button type="button" class="btn btn-primary" onclick="saveItemInfo()">Guardar</button>
+            <button type="button" class="btn btn-secondary" onclick="closeItemModal()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        var selectedItem = null;
+        var selectedInfo = null;
+    
+        function showItemModal(itemName, itemInfo) {
+          selectedItem = itemName;
+          selectedInfo = itemInfo;
+          document.getElementById("itemTitle").innerText = itemName;
+          document.getElementById("itemInfo").value = itemInfo;
+          document.getElementById("modalItem").style.display = "block";
+        }
+    
+        function saveItemInfo() {
+          var itemInfo = document.getElementById("itemInfo").value;
+          // Aquí puedes realizar la acción que desees con la información del item seleccionado
+          // Por ejemplo, puedes enviarla al servidor o realizar alguna operación en JavaScript
+          console.log("Item seleccionado:", selectedItem);
+          console.log("Información del item:", itemInfo);
+          closeItemModal();
+        }
+    
+        function closeItemModal() {
+          document.getElementById("modalItem").style.display = "none";
+        }
+    
+        function deleteItem(event) {
+          event.stopPropagation(); // Detener la propagación del evento click para evitar que se abra el modal
+          var listItem = event.target.parentNode;
+          listItem.parentNode.removeChild(listItem);
+        }
+      </script>
+
+     
