@@ -1,12 +1,18 @@
+import { v4 as uuid } from "uuid";
+
 export default class Dishes {
+  private _id: string;
   constructor(
     private _name: string,
     private _price: number,
     private _ingredients: string[] = [],
     private _portions: number,
     private _nutritionalInformation: string,
-    private _photo: string
-  ) {}
+    private _photo: string,
+    _id?: string
+  ) {
+    !_id ? (this._id = uuid()) : (this._id = _id);
+  }
 
   //getters
   get name(): string {
@@ -60,6 +66,9 @@ export default class Dishes {
 
   //methods
 
+  getIdentifier(): string {
+    return this._id;
+  }
   //toJSON
   toJSON(): object {
     return {

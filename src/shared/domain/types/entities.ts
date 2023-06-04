@@ -4,6 +4,7 @@ enum ENTITIES {
   DAILY_MENU = "dailyMenu",
   CANTEENS = "canteens",
   DINERS = "diners",
+  GROUPS = "groups",
 }
 
 export default ENTITIES;
