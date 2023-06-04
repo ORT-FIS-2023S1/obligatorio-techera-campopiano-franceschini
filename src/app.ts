@@ -1,22 +1,29 @@
 import express from "express";
 import session from "express-session";
 import dotenv from "dotenv";
+import Cache from "./shared/utils/cache";
 import path from "path";
 import userRoutes from "./user/routes";
 import adminRoutes from "./admin/routes";
 import sharedRoutes from "./shared/routes";
 import validateToken from "./shared/middlewares/validateToken";
+import bodyParser from "body-parser";
 
 dotenv.config();
+Cache.initialize();
 
 const app = express();
 
 //set middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "./shared/public"));
+//app.use(express.static(__dirname + "./shared/public"));
+// Configurar la carpeta 'public' como estática
+app.use(express.static(path.join(__dirname, "shared/public")));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "./shared/interface/views"));
+app.set("views", path.join(__dirname, "shared/interface/views"));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,

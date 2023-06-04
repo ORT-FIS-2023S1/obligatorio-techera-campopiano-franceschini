@@ -1,89 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title>Social Network</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración de Cantina</title>
+
     <link
+      href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <style>
-      main {
-        font-family: Arial, sans-serif;
-        height: 92vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .navbar {
-        background-color: #fff;
-      }
-
-      .post {
-        background-color: #fff;
-        border: 1px solid #dee2e6;
-        border-radius: 5px;
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-
-      .post .author {
-        font-weight: bold;
-      }
-
-      .post .timestamp {
-        color: #868e96;
-        font-size: 12px;
-      }
-
-      .post .content {
-        margin-top: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
-
   <body>
-    <%-
-    include('../../../shared/interface/components/navBar',{title:'SafeFood'}) %>
-    <script>
-      let user = <%- JSON.stringify(data.user) %>;
-      localStorage.setItem('Authorization', JSON.stringify({'token': user.token}));
-    </script>
-    <main>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="post">
-              <p class="author">John Doe</p>
-              <p class="timestamp">May 19, 2023</p>
-              <p class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                efficitur ligula non semper tempus. Pellentesque habitant morbi
-                tristique senectus et netus et malesuada fames ac turpis
-                egestas. Nam consectetur erat vel leo pharetra, nec vulputate
-                magna congue. Proin maximus sapien ut nisi tincidunt, et finibus
-                ex cursus. Morbi tincidunt bibendum sem, non pulvinar felis
-                rutrum ac.
-              </p>
-            </div>
-
-            <div class="post">
-              <p class="author">Jane Smith</p>
-              <p class="timestamp">May 18, 2023</p>
-              <p class="content">
-                Sed luctus ultricies leo, a suscipit sem congue in. Duis ac
-                lorem massa. Curabitur at efficitur neque. Fusce tincidunt nisl
-                dui, id congue erat tristique ac. Integer sagittis malesuada
-                ultricies. Proin ut est libero. Nullam ac nisi nec erat
-                scelerisque sollicitudin ac id mauris.
-              </p>
-            </div>
-
-            <!-- Add more posts here -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Administración de Cantina</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Administración
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Editar Información del comedor</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Administrar pedidos</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Administrar grupos</a>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a
+                      class="dropdown-item dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Administrar menús
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Lista de ítems del menú (platos)</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Agregar plato al menú</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a
+                      class="dropdown-item dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Administrar menú diario
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Lista de menús diarios creados</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Agregar menú diario</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Administrador
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="adminDropdown"
+            >
+              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Salir</a></li>
+            </ul>
           </div>
         </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 bg-light sidebar"><%- %></div>
+        <div class="col-lg-10"><%- %></div>
       </div>
-    </main>
-    <%- include('../../../shared/interface/components/footer') %>
+    </div>
+
+    <footer class="footer">
+      <div class="text-center">
+        <h1>PediloYa</h1>
+        <p>&copy; 2023 PediloYa. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -1,16 +1,41 @@
 import { Router } from "express";
+import path from "path";
+import addDisheController from "../controllers/addDisheController";
+import ENTITIES from "../../shared/domain/types/entities";
+import Cache from "../../shared/utils/cache";
+import Dishes from "../../shared/domain/entities/Dishes";
+import logoutController from "../../shared/controllers/logoutController";
 
-export default (() => {
-  const router: Router = Router();
+const router = Router();
 
-  //------------------------------------------------------
-  router.get("/orders", (req, res) =>
-    res.render(`<h1> this is the order view!</h1>`, {
-      role: req.header("x-role"),
-      data: {},
-      configs: {},
-    })
-  );
+// Otras rutas de admin
+const platos = [];
+router.get("/index", (req, res) => {
+  //get user from locals
+  const user = res.locals.user;
+  res.render(path.join(__dirname, "../../admin/interface/views/index"), {
+    user,
+    data: {},
+    configs: {},
+    view: "dashboard",
+  });
+});
 
-  return router;
-})();
+router.get("/index/dishe", (req, res) => {
+  // Lógica para mostrar el formulario de agregar plato
+  // ...
+  const dishes: Dishes[] = Cache.getEntities<Dishes>(ENTITIES.DISHES) ?? [];
+  res.render(path.join(__dirname, "../../admin/interface/views/index"), {
+    user: res.locals.user,
+    data: {},
+    configs: {},
+    view: "addDishe",
+    dishes: dishes,
+  });
+});
+
+router.get("/index/logout", logoutController);
+
+router.post("/index/addDishe", addDisheController);
+
+export default router;
