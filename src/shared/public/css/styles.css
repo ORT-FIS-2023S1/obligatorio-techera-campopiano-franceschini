@@ -2,6 +2,20 @@
 :root {
   --color-primary: #1b5e20;
   --color-secondary: #1565c0;
+  --success: #3fbd63c4;
+  --success-md: #3fbd637c;
+  --success-l: #3fbd632d;
+  --info: #0069dec4;
+  --info-md: #0069de7c;
+  --info-l: #0069de2d;
+
+  --warning: #ef9400c4;
+  --warning-md: #ef94007c;
+  --warning-l: #ef94002d;
+
+  --danger: #ea4e2cc4;
+  --danger-md: #ea4e2c7c;
+  --danger-l: #ea4e2c2d;
 }
 
 /* Fuentes */
@@ -196,7 +210,7 @@
 }
 
 .container {
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 5px;

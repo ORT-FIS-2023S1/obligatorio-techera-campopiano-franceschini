@@ -4,6 +4,7 @@ import addDisheController from "../controllers/addDisheController";
 import ENTITIES from "../../shared/domain/types/entities";
 import Cache from "../../shared/utils/cache";
 import Dishes from "../../shared/domain/entities/Dishes";
+import logoutController from "../../shared/controllers/logoutController";
 
 const router = Router();
 
@@ -33,7 +34,7 @@ router.get("/index/dishe", (req, res) => {
   });
 });
 
-router.get("/index/salir", (req, res) => {});
+router.get("/index/logout", logoutController);
 
 router.post("/index/addDishe", addDisheController);
 

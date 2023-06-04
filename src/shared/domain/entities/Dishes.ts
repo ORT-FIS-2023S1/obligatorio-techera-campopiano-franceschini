@@ -5,7 +5,8 @@ export default class Dishes {
     private _price: number,
     private _ingredients: string[],
     private _portions: number,
-    private _nutritionalInformation: string
+    private _nutritionalInformation: string,
+    private _imageURL: string
   ) {}
 
   //getters
@@ -32,6 +33,10 @@ export default class Dishes {
     return this._nutritionalInformation;
   }
 
+  get imageURL(): string {
+    return this._imageURL;
+  }
+
   //setters
   set id(id: string) {
     this._id = id;
@@ -56,6 +61,9 @@ export default class Dishes {
     this._nutritionalInformation = nutritionalInformation;
   }
 
+  set imageURL(imageUrl: string) {
+    this._imageURL = imageUrl;
+  }
   //methods
 
   //toJSON
@@ -66,6 +74,7 @@ export default class Dishes {
       price: this._price,
       ingredients: this._ingredients,
       nutritionalInformation: this._nutritionalInformation,
+      imageURL: this._imageURL,
     };
   }
 
@@ -77,7 +86,8 @@ export default class Dishes {
       json.price,
       json.ingredients,
       json.portions,
-      json.nutritionalInformation
+      json.nutritionalInformation,
+      json.imageUrl
     );
   }
 }

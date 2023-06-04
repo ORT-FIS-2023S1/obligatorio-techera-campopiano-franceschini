@@ -7,15 +7,22 @@ export default (req, res) => {
   try {
     // Validar los datos de entrada si es necesario
 
-    const { name, price, ingredients, portions, nutritionalInformation } =
-      req.body;
+    const {
+      name,
+      price,
+      ingredients,
+      portions,
+      nutritionalInformation,
+      imageURL,
+    } = req.body;
 
     if (
       !name ||
       !price ||
       !ingredients ||
       !portions ||
-      !nutritionalInformation
+      !nutritionalInformation ||
+      !imageURL
     ) {
       return res.status(400).json({ error: "Datos incompletos" });
     }
@@ -28,7 +35,8 @@ export default (req, res) => {
       price,
       ingredients,
       portions,
-      nutritionalInformation
+      nutritionalInformation,
+      imageURL
     );
 
     Cache.saveEntity(ENTITIES.DISHES, id, dishesData);

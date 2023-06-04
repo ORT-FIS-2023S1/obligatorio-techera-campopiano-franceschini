@@ -8,7 +8,7 @@
         <h1>Agregar Plato al Menú</h1>
         <form id="plato-form" action="/admin/index/addDishe" method="POST">
           <div class="form-group">
-            <label for="nombre">Nombre del Plato:</label>
+            <label for="name">Nombre del Plato:</label>
             <input
               type="text"
               id="name"
@@ -18,7 +18,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="precio">Precio del Plato:</label>
+            <label for="price">Precio del Plato:</label>
             <input
               type="text"
               id="price"
@@ -28,7 +28,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="ingredientes">Ingredientes principales:</label>
+            <label for="ingredients">Ingredientes principales:</label>
             <input
               type="text"
               id="ingredients"
@@ -38,7 +38,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="porcion">Tamaño de la porción:</label>
+            <label for="portions">Tamaño de la porción:</label>
             <input
               type="text"
               id="portions"
@@ -48,14 +48,24 @@
             />
           </div>
           <div class="form-group">
-            <label for="nutricional">Información Nutricional:</label>
+            <label for="nutritionalInformation">Información Nutricional:</label>
             <textarea
               id="nutritionalInformation"
               name="nutritionalInformation"
               class="form-control"
-              rows="10"
+              rows="5"
               required
             ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imageURL">URL de la Imágen:</label>
+            <input
+              type="text"
+              id="imageURL"
+              name="imageURL"
+              class="form-control"
+              required
+            />
           </div>
           <div class="button-container">
             <button type="submit" class="btn btn-primary">Agregar Plato</button>
@@ -79,11 +89,21 @@
           <p class="p">Porción: <%= dishe.portions %></p>
           <p class="p">Info Nutricional: <%= dishe.nutritionalInformation %></p>
           <p class="p">Precio: $<%= dishe.price %></p>
+          <img
+            class="product-image"
+            src="<%= dishe.imageURL %>"
+            alt="Imagen del producto"
+          />
         </li>
         <% } %>
       </ol>
       <% } else { %>
-      <p class="p">No se han agregado platos aún.</p>
+      <div class="center">
+        <div class="notification warning">
+          <i class="fa-solid fa-exclamation"></i>
+          <span>No se han agregado platos aún.</span>
+        </div>
+      </div>
       <% } %>
     </div>
   </div>
