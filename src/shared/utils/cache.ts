@@ -8,7 +8,7 @@ export default class Cache {
   private constructor() {
     Cache.cache = new NodeCache();
     Cache.cache.on("set", (key, value) =>
-      console.log(`Entities Updates`, Cache.cache.keys())
+      console.log(`Entity ${key} saved`, Cache.cache.keys())
     );
   }
 
@@ -18,7 +18,7 @@ export default class Cache {
     }
   }
 
-  public static saveEntity<T>(entityName: ENTITIES, key: string, value: T) {
+  public static saveEntity<T>(entityName: ENTITIES, value: T | any) {
     let entityMap;
     if (Cache.cache.has(entityName)) {
       //save data
@@ -27,8 +27,16 @@ export default class Cache {
       //save the entity into cache
       entityMap = new Map<string, T>();
     }
-    entityMap.set(key, value);
+    entityMap.set(value.getIdentifier(), value);
     Cache.cache.set(entityName, entityMap);
+  }
+
+  public static updateEntity<T>(entityName: ENTITIES, value: T | any) {
+    if (Cache.cache.has(entityName)) {
+      const entityMap: Map<string, T> = Cache.cache.get(entityName);
+      entityMap.set(value.getIdentifier(), value);
+      Cache.cache.set(entityName, entityMap);
+    }
   }
 
   public static getEntity<T>(entityName: ENTITIES, key: string): T {
@@ -44,6 +52,6 @@ export default class Cache {
       const entityMap: Map<string, T> = Cache.cache.get(entityName);
       return Array.from(entityMap.values());
     }
-    return null;
+    return [];
   }
 }

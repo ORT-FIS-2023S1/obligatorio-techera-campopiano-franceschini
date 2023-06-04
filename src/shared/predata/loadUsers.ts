@@ -1,4 +1,5 @@
 import Canteen from "../domain/entities/Canteen";
+import Diner from "../domain/entities/Diner";
 import User from "../domain/entities/User";
 import ENTITIES from "../domain/types/entities";
 import Cache from "../utils/cache";
@@ -9,14 +10,13 @@ export default () => {
 
   //add canteens
   const canteenOne = Cache.getEntity<Canteen>(ENTITIES.CANTEENS, "1");
-  const dinersCanteenOne = canteenOne.groups[0].members;
-
-  dinersCanteenOne.forEach((diner) => {
-    user.addDiner(diner);
+  Cache.getEntities<Diner>(ENTITIES.DINERS).forEach((diner) => {
+    user.addDiner(diner.getIdentifier());
   });
-  user.addCanteen(canteenOne);
+
+  user.addCanteen(canteenOne.getIdentifier());
 
   //save users
-  Cache.saveEntity<User>(ENTITIES.USERS, user.email, user);
-  Cache.saveEntity<User>(ENTITIES.USERS, admin.email, admin);
+  Cache.saveEntity<User>(ENTITIES.USERS, user);
+  Cache.saveEntity<User>(ENTITIES.USERS, admin);
 };

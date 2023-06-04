@@ -1,14 +1,11 @@
+import { v4 as uuid } from "uuid";
 export default class Diner {
-  constructor(
-    private _dinerNumber: number,
-    private _name: string,
-    private _surname: string
-  ) {}
+  private _id?: string;
+  constructor(private _name: string, private _surname: string, _id?: string) {
+    !_id ? (this._id = uuid()) : (this._id = _id);
+  }
 
   //getters
-  get dinerNumber(): number {
-    return this._dinerNumber;
-  }
 
   get name(): string {
     return this._name;
@@ -27,10 +24,16 @@ export default class Diner {
     this._surname = surname;
   }
 
+  //methods
+
+  getIdentifier(): string {
+    return this._id;
+  }
+
   //toJSON
   toJSON(): any {
     return {
-      dinerNumber: this.dinerNumber,
+      id: this._id,
       name: this.name,
       surname: this.surname,
     };
@@ -38,7 +41,7 @@ export default class Diner {
 
   //fromJSON
   static fromJSON(json: any): Diner {
-    const object = new Diner(json.dinerNumber, json.name, json.surname);
+    const object = new Diner(json.id, json.name, json.surname);
     return object;
   }
 }

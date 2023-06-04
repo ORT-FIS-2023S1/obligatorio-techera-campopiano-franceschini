@@ -1,4 +1,3 @@
-import DailyMenu from "../domain/entities/DailyMenu";
 import Dishes from "../domain/entities/Dishes";
 import ENTITIES from "../domain/types/entities";
 import Cache from "../utils/cache";
@@ -6,7 +5,6 @@ import Cache from "../utils/cache";
 export default () => {
   //save dishes
   //breakfast
-  const dishes: Dishes[] = [];
 
   const coffeWithMilk = new Dishes(
     "Cafe con leche",
@@ -142,25 +140,24 @@ export default () => {
     "/temp/cafe.jpg"
   );
 
-  dishes.push(coffeWithMilk);
-  dishes.push(salad);
-  dishes.push(chips);
+  //save entities
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, coffeWithMilk);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, salad);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, chips);
 
-  dishes.push(muffins);
-  dishes.push(pasta);
-  dishes.push(chocolate);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, muffins);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, pasta);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, chocolate);
 
-  dishes.push(orangeJuice);
-  dishes.push(pizza);
-  dishes.push(iceCream);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, orangeJuice);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, pizza);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, iceCream);
 
-  dishes.push(cookies);
-  dishes.push(rice);
-  dishes.push(yogurt);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, cookies);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, rice);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, yogurt);
 
-  dishes.push(donuts);
-  dishes.push(meat);
-  dishes.push(fruit);
-
-  return dishes;
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, donuts);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, meat);
+  Cache.saveEntity<Dishes>(ENTITIES.DISHES, fruit);
 };

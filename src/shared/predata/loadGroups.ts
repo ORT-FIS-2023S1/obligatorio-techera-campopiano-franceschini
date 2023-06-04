@@ -1,13 +1,17 @@
+import Diner from "../domain/entities/Diner";
 import Group from "../domain/entities/Group";
-import loadDiners from "./loadDiners";
+import ENTITIES from "../domain/types/entities";
+import Cache from "../utils/cache";
 
 export default () => {
-  const groupOne = new Group("Grupo 1", "Este es el grupo 1", []);
-  const diners = loadDiners();
+  const members = Cache.getEntities<Diner>(ENTITIES.DINERS);
+  const groupOne = new Group(
+    "Grupo 1",
+    "Este es el grupo 1",
+    members.map((member) => member.getIdentifier()),
+    "1"
+  );
 
-  diners.forEach((diner) => {
-    groupOne.addMember(diner);
-  });
-
-  return [groupOne];
+  //save groups
+  Cache.saveEntity<Group>(ENTITIES.GROUPS, groupOne);
 };

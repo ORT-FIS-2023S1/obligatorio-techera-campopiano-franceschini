@@ -1,13 +1,10 @@
-import Canteen from "./Canteen";
-import Diner from "./Diner";
-
 export default class User {
   constructor(
     private _email: string,
     private _password: string,
     private _role: string,
-    private _diners: Diner[] = [],
-    private _canteens: Canteen[] = []
+    private _diners: string[] = [],
+    private _canteens: string[] = []
   ) {}
 
   //getters
@@ -23,11 +20,11 @@ export default class User {
     return this._role;
   }
 
-  get diners(): Diner[] {
+  get diners(): string[] {
     return this._diners;
   }
 
-  get canteens(): Canteen[] {
+  get canteens(): string[] {
     return this._canteens;
   }
 
@@ -45,33 +42,33 @@ export default class User {
     this._role = role;
   }
 
-  set diners(Diner: Diner[]) {
+  set diners(Diner: string[]) {
     this._diners = Diner;
   }
 
-  set canteens(canteens: Canteen[]) {
+  set canteens(canteens: string[]) {
     this._canteens = canteens;
   }
 
+  getIdentifier(): string {
+    return this.email;
+  }
+
   //methods
-  addDiner(diner: Diner): void {
-    this._diners.push(diner);
+  addDiner(id: string): void {
+    this._diners.push(id);
   }
 
-  addCanteen(canteen: Canteen): void {
-    this._canteens.push(canteen);
+  addCanteen(id: string): void {
+    this._canteens.push(id);
   }
 
-  removeDiner(diner: Diner): void {
-    this._diners = this._diners.filter(
-      (d) => d.dinerNumber !== diner.dinerNumber
-    );
+  removeDiner(id: string): void {
+    this._diners = this._diners.filter((d) => d !== id);
   }
 
-  removeCanteen(canteen: Canteen): void {
-    this._canteens = this._canteens.filter(
-      (c) => c.canteenNumber !== canteen.canteenNumber
-    );
+  removeCanteen(id: string): void {
+    this._canteens = this._canteens.filter((c) => c !== id);
   }
 
   //toJSON
@@ -79,8 +76,8 @@ export default class User {
     return {
       email: this.email,
       role: this.role,
-      diner: this.diners.map((diner) => diner.toJSON()),
-      canteens: this.canteens.map((canteen) => canteen.toJSON()),
+      diners: this.diners,
+      canteens: this.canteens,
     };
   }
 
