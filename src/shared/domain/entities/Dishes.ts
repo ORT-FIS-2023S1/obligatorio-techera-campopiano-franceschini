@@ -1,18 +1,19 @@
+import { v4 as uuid } from "uuid";
 export default class Dishes {
+  private _id: string;
   constructor(
-    private _id: string,
     private _name: string,
     private _price: number,
     private _ingredients: string[],
     private _portions: number,
     private _nutritionalInformation: string,
-    private _imageURL: string
-  ) {}
+    private _imageURL: string,
+    _id?: string
+  ) {
+    !_id ? (this._id = uuid()) : (this._id = _id);
+  }
 
   //getters
-  get id() {
-    return this._id;
-  }
   get name(): string {
     return this._name;
   }
@@ -38,9 +39,6 @@ export default class Dishes {
   }
 
   //setters
-  set id(id: string) {
-    this._id = id;
-  }
   set name(name: string) {
     this._name = name;
   }
@@ -66,10 +64,12 @@ export default class Dishes {
   }
   //methods
 
+  getIdentifier(): string {
+    return this._id;
+  }
   //toJSON
   toJSON(): object {
     return {
-      id: this._id,
       name: this._name,
       price: this._price,
       ingredients: this._ingredients,
@@ -81,7 +81,6 @@ export default class Dishes {
   //fromJSON
   static fromJSON(json: any): Dishes {
     return new Dishes(
-      json.id,
       json.name,
       json.price,
       json.ingredients,

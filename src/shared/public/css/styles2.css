@@ -84,8 +84,8 @@
   position: absolute;
   top: 60%;
   transform: translateY(-50%);
-  right: 10px; /* Ajusta el valor del margen derecho según tus necesidades */
-  width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  right: 10px;
+  width: 200px;
   height: auto;
 }
 

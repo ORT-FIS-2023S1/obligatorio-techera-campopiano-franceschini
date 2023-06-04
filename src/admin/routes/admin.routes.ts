@@ -11,7 +11,6 @@ const router = Router();
 // Otras rutas de admin
 const platos = [];
 router.get("/index", (req, res) => {
-  //get user from locals
   const user = res.locals.user;
   res.render(path.join(__dirname, "../../admin/interface/views/index"), {
     user,
@@ -23,7 +22,6 @@ router.get("/index", (req, res) => {
 
 router.get("/index/dishe", (req, res) => {
   // Lógica para mostrar el formulario de agregar plato
-  // ...
   const dishes: Dishes[] = Cache.getEntities<Dishes>(ENTITIES.DISHES) ?? [];
   res.render(path.join(__dirname, "../../admin/interface/views/index"), {
     user: res.locals.user,
