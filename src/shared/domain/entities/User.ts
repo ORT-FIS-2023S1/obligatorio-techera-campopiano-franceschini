@@ -42,42 +42,42 @@ export default class User {
     this._role = role;
   }
 
-  set diners(diners: string[]) {
-    this._diners = diners;
+  set diners(Diner: string[]) {
+    this._diners = Diner;
   }
 
   set canteens(canteens: string[]) {
     this._canteens = canteens;
   }
 
+  getIdentifier(): string {
+    return this.email;
+  }
+
   //methods
-  //add diners
-  addDiner(diner: string): void {
-    this._diners.push(diner);
+  addDiner(id: string): void {
+    this._diners.push(id);
   }
 
-  //add canteens
-  addCanteen(canteen: string): void {
-    this._canteens.push(canteen);
+  addCanteen(id: string): void {
+    this._canteens.push(id);
   }
 
-  //remove diners
-  removeDiner(diner: string): void {
-    this._diners = this._diners.filter((d) => d !== diner);
+  removeDiner(id: string): void {
+    this._diners = this._diners.filter((d) => d !== id);
   }
 
-  //remove canteens
-  removeCanteen(canteen: string): void {
-    this._canteens = this._canteens.filter((c) => c !== canteen);
+  removeCanteen(id: string): void {
+    this._canteens = this._canteens.filter((c) => c !== id);
   }
 
   //toJSON
   toJSON(): object {
     return {
-      email: this._email,
-      role: this._role,
-      diners: this._diners,
-      canteens: this._canteens,
+      email: this.email,
+      role: this.role,
+      diners: this.diners,
+      canteens: this.canteens,
     };
   }
 
@@ -87,7 +87,7 @@ export default class User {
       json.email,
       json.password,
       json.role,
-      json.diners,
+      json.diner,
       json.canteens
     );
     return user;

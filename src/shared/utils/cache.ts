@@ -1,5 +1,4 @@
 import NodeCache from "node-cache";
-import User from "../domain/entities/User";
 import ENTITIES from "../domain/types/entities";
 
 //create a singelton cache class
@@ -9,20 +8,9 @@ export default class Cache {
   private constructor() {
     Cache.cache = new NodeCache();
     Cache.cache.on("set", (key, value) =>
-      console.log(`Entities Updates`, Cache.cache.keys())
+      console.log(`Entity ${key} saved`, Cache.cache.keys())
     );
-    //Dedault data
-    this.loadDefaultData();
   }
-
-  /*
-  public static getInstance(): NodeCache {
-    if (!Cache.cache) {
-      new Cache();
-    }
-    return Cache.cache;
-  }
-  */
 
   public static initialize() {
     if (!Cache.cache) {
@@ -30,21 +18,29 @@ export default class Cache {
     }
   }
 
-  public static saveEntity<T>(entityName: ENTITIES, key: string, value: T) {
+  public static saveEntity<T>(entityName: ENTITIES, value: T | any) {
     let entityMap;
-    if (Cache.cache && Cache.cache.has(entityName)) {
+    if (Cache.cache.has(entityName)) {
       //save data
       entityMap = Cache.cache.get(entityName);
     } else {
       //save the entity into cache
       entityMap = new Map<string, T>();
     }
-    entityMap.set(key, value);
+    entityMap.set(value.getIdentifier(), value);
     Cache.cache.set(entityName, entityMap);
   }
 
+  public static updateEntity<T>(entityName: ENTITIES, value: T | any) {
+    if (Cache.cache.has(entityName)) {
+      const entityMap: Map<string, T> = Cache.cache.get(entityName);
+      entityMap.set(value.getIdentifier(), value);
+      Cache.cache.set(entityName, entityMap);
+    }
+  }
+
   public static getEntity<T>(entityName: ENTITIES, key: string): T {
-    if (Cache.cache && Cache.cache.has(entityName)) {
+    if (Cache.cache.has(entityName)) {
       const entityMap: Map<string, T> = Cache.cache.get(entityName);
       return entityMap.get(key);
     }
@@ -52,18 +48,10 @@ export default class Cache {
   }
 
   public static getEntities<T>(entityName: ENTITIES): T[] {
-    if (Cache.cache && Cache.cache.has(entityName)) {
+    if (Cache.cache.has(entityName)) {
       const entityMap: Map<string, T> = Cache.cache.get(entityName);
       return Array.from(entityMap.values());
     }
-    return null;
-  }
-
-  private loadDefaultData() {
-    const user = new User("user@user.com", "user", "user");
-    const admin = new User("admin@admin.com", "admin", "admin");
-
-    Cache.saveEntity<User>(ENTITIES.USERS, user.email, user);
-    Cache.saveEntity<User>(ENTITIES.USERS, admin.email, admin);
+    return [];
   }
 }

@@ -1,12 +1,9 @@
 import Dishes from "../../shared/domain/entities/Dishes";
 import ENTITIES from "../../shared/domain/types/entities";
 import Cache from "../../shared/utils/cache";
-import { v4 as uuidv4 } from "uuid";
 
 export default (req, res) => {
   try {
-    // Validar los datos de entrada si es necesario
-
     const {
       name,
       price,
@@ -27,10 +24,7 @@ export default (req, res) => {
       return res.status(400).json({ error: "Datos incompletos" });
     }
 
-    const id = uuidv4();
-
     const dishesData = new Dishes(
-      id,
       name,
       price,
       ingredients,
@@ -39,7 +33,7 @@ export default (req, res) => {
       imageURL
     );
 
-    Cache.saveEntity(ENTITIES.DISHES, id, dishesData);
+    Cache.saveEntity<Dishes>(ENTITIES.DISHES, dishesData);
 
     res.sendStatus(200);
   } catch (error) {
