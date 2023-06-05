@@ -1,23 +1,14 @@
-import dayjs from "dayjs";
-import DailyMenu from "../domain/entities/DailyMenu";
-import Cache from "../utils/cache";
+import Diner from "../domain/entities/Diner";
 import ENTITIES from "../domain/types/entities";
+import Cache from "../utils/cache";
 
 export default () => {
-  //--------------------------------------------------------------------------------------------------
-  //get dishes
-  const dishes = Cache.getEntities<DailyMenu>(ENTITIES.DISHES);
+  const dinerOne = new Diner("Juan", "Pérez", "1");
+  const dinerTwo = new Diner("María", "González", "2");
+  const dinerThree = new Diner("Carlos", "López", "3");
 
-  let startMenuDate = dayjs();
-  for (let i = 0; i < dishes.length; i += 3) {
-    const dailyMenu = new DailyMenu(
-      startMenuDate.toDate(),
-      dishes[i].getIdentifier(),
-      dishes[i + 1].getIdentifier(),
-      dishes[i + 2].getIdentifier()
-    );
-    //save daily menus
-    Cache.saveEntity<DailyMenu>(ENTITIES.DAILY_MENU, dailyMenu);
-    startMenuDate.add(1, "day");
-  }
+  // Save diners
+  Cache.saveEntity<Diner>(ENTITIES.DINERS, dinerOne);
+  Cache.saveEntity<Diner>(ENTITIES.DINERS, dinerTwo);
+  Cache.saveEntity<Diner>(ENTITIES.DINERS, dinerThree);
 };
