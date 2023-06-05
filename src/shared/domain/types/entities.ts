@@ -5,6 +5,7 @@ enum ENTITIES {
   CANTEENS = "canteens",
   DINERS = "diners",
   GROUPS = "groups",
+  ORDERS = "orders",
 }
 
 export default ENTITIES;
