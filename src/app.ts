@@ -8,7 +8,6 @@ import adminRoutes from "./admin/routes";
 import sharedRoutes from "./shared/routes";
 import validateToken from "./shared/middlewares/validateToken";
 import bodyParser from "body-parser";
-import loadDishes from "./shared/predata/loadDishes";
 import loadPredata from "./shared/predata";
 
 dotenv.config();
@@ -42,10 +41,6 @@ app.use("/admin", adminRoutes);
 app.get("*", function (req, res) {
   res.status(404).render(path.join(__dirname, "./shared/interface/views/404"));
 });
-
-//-------------------------------------------------------------
-//load predata
-loadPredata();
 
 //-------------------------------------------------------------
 //load predata
