@@ -12,7 +12,6 @@ import logoutController from "../../shared/controllers/logoutController";
 const router = Router();
 
 // Otras rutas de admin
-const platos = [];
 router.get("/index", (req, res) => {
   const user = res.locals.user;
   res.render(path.join(__dirname, "../../admin/interface/views/index"), {
