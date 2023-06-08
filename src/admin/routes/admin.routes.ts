@@ -13,12 +13,14 @@ const router = Router();
 
 // Otras rutas de admin
 router.get("/index", (req, res) => {
+  const orders: Order[] = Cache.getEntities<Order>(ENTITIES.ORDERS) ?? [];
   const user = res.locals.user;
   res.render(path.join(__dirname, "../../admin/interface/views/index"), {
     user,
     data: {},
     configs: {},
     view: "dashboard",
+    orders: orders
   });
 });
 

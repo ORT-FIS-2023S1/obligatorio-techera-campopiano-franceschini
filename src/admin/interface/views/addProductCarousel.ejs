@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h1>Pedidos Añadidos Recientemente</h1>
+      <div class="wrap">
+        <div class="slider" id="slider">
+          <div class="slider__row" id="slider_row">
+            <% let j = 0 %><% if (orders && orders.length > 0) { %>
+            <ul
+              class="card-list"
+              style="--length: <%= orders.length %>"
+              role="list"
+            >
+              <% for (let i = 0; i < orders.length; i++) { const order =
+              orders[i]; j++; %>
+              <li class="card-item" style="--i: <%= j %>">
+                <div
+                  class="cardSlider"
+                  style="background-image: url('<%= order.dish.imageURL %>')"
+                >
+                  <h2 class="h3" style="color: rgb(255 255 255) !important">
+                    <%= order.dish.name %>
+                  </h2>
+                  <p class="p">
+                    Comensal: <%= order.diner.name %> <%= order.diner.surname %>
+                  </p>
+                  <p class="p">Ingredientes: <%= order.dish.ingredients %></p>
+                  <p class="p">Porción: <%= order.dish.portions %></p>
+                  <p class="p">
+                    Info Nutricional: <%= order.dish.nutritionalInformation %>
+                  </p>
+                  <p class="p">Precio: $<%= order.dish.price %></p>
+                  <p class="p">
+                    Información adicional: <%= order.additionalInfo %>
+                  </p>
+                  <p class="p">
+                    Procesado: <%= order.processed ? 'Sí' : 'No' %>
+                  </p>
+                </div>
+              </li>
+              <% } %>
+            </ul>
+            <% }else { %>
+            <div class="center">
+              <div class="notification warning">
+                <i class="fa-solid fa-exclamation"></i>
+                <span>No se han registrado pedidos aún.</span>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-control prev" onclick="moveLeft()">&lt;</button>
+        <button class="slider-control next" onclick="moveRight()">&gt;</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var toLeft = 0;
+  var sliderRow = document.getElementById("slider_row");
+  var cardItems = sliderRow.getElementsByClassName("card-item");
+  var itemWidth = cardItems[0].offsetWidth;
+  var itemCount = cardItems.length;
+  var visibleItems = 2; // Número de elementos visibles a la vez
+  var containerWidth = itemWidth * visibleItems;
+  var totalWidth = itemWidth * itemCount;
+
+  sliderRow.style.width = totalWidth + "px";
+
+  if (itemCount % visibleItems !== 0) {
+    containerWidth = itemWidth * (itemCount % visibleItems);
+  }
+  function autoPlay() {
+    var timer = setTimeout(function () {
+      toLeft -= containerWidth;
+      if (toLeft < -totalWidth + containerWidth) {
+        toLeft = 0;
+      }
+      sliderRow.style.transform = "translateX(" + toLeft + "px)";
+      autoPlay();
+    }, 3000);
+  }
+  autoPlay();
+  function moveLeft() {
+    toLeft += containerWidth;
+    if (toLeft > 0) {
+      toLeft = -totalWidth + containerWidth;
+    }
+    sliderRow.style.transform = "translateX(" + toLeft + "px)";
+  }
+
+  function moveRight() {
+    toLeft -= containerWidth;
+    if (toLeft < -totalWidth + containerWidth) {
+      toLeft = 0;
+    }
+    sliderRow.style.transform = "translateX(" + toLeft + "px)";
+  }
+</script>
