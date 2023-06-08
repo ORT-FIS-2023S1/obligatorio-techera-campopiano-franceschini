@@ -1,0 +1,199 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h1>Pedidos Añadidos Recientemente</h1>
+      <div class="wrap">
+        <div class="slider" id="slider">
+          <div class="slider__row" id="slider_row">
+            <% let j = 0 %><% if (orders && orders.length > 0) { %>
+            <ul
+              class="card-list"
+              style="--length: <%= orders.length %>"
+              role="list"
+            >
+              <% for (let i = 0; i < orders.length; i++) { const order =
+              orders[i]; j++; %>
+              <li class="card-item" style="--i: <%= j %>">
+                <div
+                  class="cardSlider"
+                  style="background-image: url('<%= order.dish.imageURL %>')"
+                >
+                  <h2 class="h3" style="color: rgb(255 255 255) !important">
+                    <%= order.dish.name %>
+                  </h2>
+                  <p class="p">
+                    Comensal: <%= order.diner.name %> <%= order.diner.surname %>
+                  </p>
+                  <p class="p">Ingredientes: <%= order.dish.ingredients %></p>
+                  <p class="p">Porción: <%= order.dish.portions %></p>
+                  <p class="p">
+                    Info Nutricional: <%= order.dish.nutritionalInformation %>
+                  </p>
+                  <p class="p">Precio: $<%= order.dish.price %></p>
+                  <p class="p">
+                    Información adicional: <%= order.additionalInfo %>
+                  </p>
+                  <p class="p">
+                    Procesado: <%= order.processed ? 'Sí' : 'No' %>
+                  </p>
+                  <% if(!order.processed) { %>
+                  <button
+                    class="procesar-btn"
+                    onclick="enviarPedido('<%= JSON.stringify(order) %>')"
+                    title="Procesar pedido"
+                  >
+                    Procesar Pedido
+                    <i class="fas fa-check" aria-hidden="true"></i>
+                  </button>
+                  <% } else { %>
+                  <button class="procesado-btn" onclick="noProcesarPedido()">
+                    Pedido Procesado
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                  </button>
+                  <%}%>
+                </div>
+              </li>
+              <% } %>
+            </ul>
+            <% }else { %>
+            <div class="center">
+              <div class="notification warning">
+                <i class="fa-solid fa-exclamation"></i>
+                <span>No se han registrado pedidos aún.</span>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-control prev" onclick="moveLeft()">
+          <i class="fas fa-chevron-left"></i>
+          <!-- Icono de flecha hacia la izquierda -->
+        </button>
+        <button class="slider-control next" onclick="moveRight()">
+          <i class="fas fa-chevron-right"></i>
+          <!-- Icono de flecha hacia la derecha -->
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var toLeft = 0;
+  var sliderRow = document.getElementById("slider_row");
+  var cardItems = sliderRow.getElementsByClassName("card-item");
+  var itemWidth = cardItems[0].offsetWidth;
+  var itemCount = cardItems.length;
+  var visibleItems = 2; // Número de elementos visibles a la vez
+  var containerWidth = itemWidth * visibleItems;
+  var totalWidth = itemWidth * itemCount;
+
+  sliderRow.style.width = totalWidth + "px";
+
+  if (itemCount % visibleItems !== 0) {
+    containerWidth = itemWidth * (itemCount % visibleItems);
+  }
+  var timer;
+
+  function autoPlay() {
+    timer = setTimeout(function () {
+      toLeft -= containerWidth;
+      if (toLeft < -totalWidth + containerWidth) {
+        toLeft = 0;
+      }
+      sliderRow.style.transform = "translateX(" + toLeft + "px)";
+      autoPlay();
+    }, 3000);
+  }
+  autoPlay();
+
+  function moveLeft() {
+    toLeft += containerWidth;
+    if (toLeft > 0) {
+      toLeft = -totalWidth + containerWidth;
+    }
+    sliderRow.style.transform = "translateX(" + toLeft + "px)";
+  }
+
+  function moveRight() {
+    toLeft -= containerWidth;
+    if (toLeft < -totalWidth + containerWidth) {
+      toLeft = 0;
+    }
+    sliderRow.style.transform = "translateX(" + toLeft + "px)";
+  }
+
+  for (var i = 0; i < cardItems.length; i++) {
+    cardItems[i].addEventListener("mouseover", function () {
+      clearTimeout(timer);
+    });
+
+    cardItems[i].addEventListener("mouseout", function () {
+      autoPlay();
+    });
+  }
+</script>
+<script>
+  const enviarPedido = (pedidoJSON) => {
+    const pedido = JSON.parse(pedidoJSON);
+    procesarPedido(pedido);
+  };
+
+  const procesarPedido = (pedido) => {
+    Swal.fire({
+      title: "¿Deseas procesar el pedido?",
+      html: `
+        <p>Nombre del plato: ${pedido.dish.name}</p>
+        <p>Comensal: ${pedido.diner.name} ${pedido.diner.surname}</p>
+        <p>Ingredientes: ${pedido.dish.ingredients}</p>
+        <p>Porción: ${pedido.dish.portions}</p>
+        <p>Información Nutricional: ${pedido.dish.nutritionalInformation}</p>
+        <p>Precio: $${pedido.dish.price}</p>
+        <p>Información adicional: ${pedido.additionalInfo}</p>
+        <p>Procesado: ${pedido.processed ? "Sí" : "No"}</p>
+      `,
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Procesar",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const orderId = pedido.id;
+        enviarPedidoAlControlador(orderId);
+      }
+    });
+  };
+  const enviarPedidoAlControlador = (orderId) => {
+    fetch(`/admin/index/processOrder`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ orderId: orderId }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          Swal.fire({
+            title: "Pedido procesado",
+            text: "El pedido ha sido procesado correctamente",
+            icon: "success",
+            showConfirmButton: true,
+            confirmButtonText: "Aceptar",
+          }).then(() => {
+            location.reload();
+          });
+        } else {
+          Swal.fire("Error", "Ocurrió un error al procesar el pedido", "error");
+        }
+      })
+      .catch((error) => {
+        console.error("Error en la solicitud:", error);
+        Swal.fire("Error", "Ocurrió un error en la solicitud", "error");
+      });
+  };
+  const noProcesarPedido = () => {
+    Swal.fire("Pedido procesado", "El pedido ya ha sido procesado", "warning");
+  };
+</script>
