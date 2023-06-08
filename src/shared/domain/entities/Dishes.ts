@@ -73,6 +73,7 @@ export default class Dishes {
       name: this._name,
       price: this._price,
       ingredients: this._ingredients,
+      portions: this.portions,
       nutritionalInformation: this._nutritionalInformation,
       imageURL: this._imageURL,
     };

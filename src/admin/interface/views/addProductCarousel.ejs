@@ -36,6 +36,21 @@
                   <p class="p">
                     Procesado: <%= order.processed ? 'Sí' : 'No' %>
                   </p>
+                  <% if(!order.processed) { %>
+                  <button
+                    class="procesar-btn"
+                    onclick="enviarPedido('<%= JSON.stringify(order) %>')"
+                    title="Procesar pedido"
+                  >
+                    Procesar Pedido
+                    <i class="fas fa-check" aria-hidden="true"></i>
+                  </button>
+                  <% } else { %>
+                  <button class="procesado-btn" onclick="noProcesarPedido()">
+                    Pedido Procesado
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                  </button>
+                  <%}%>
                 </div>
               </li>
               <% } %>
@@ -52,8 +67,14 @@
         </div>
       </div>
       <div class="slider-controls">
-        <button class="slider-control prev" onclick="moveLeft()">&lt;</button>
-        <button class="slider-control next" onclick="moveRight()">&gt;</button>
+        <button class="slider-control prev" onclick="moveLeft()">
+          <i class="fas fa-chevron-left"></i>
+          <!-- Icono de flecha hacia la izquierda -->
+        </button>
+        <button class="slider-control next" onclick="moveRight()">
+          <i class="fas fa-chevron-right"></i>
+          <!-- Icono de flecha hacia la derecha -->
+        </button>
       </div>
     </div>
   </div>
@@ -73,8 +94,10 @@
   if (itemCount % visibleItems !== 0) {
     containerWidth = itemWidth * (itemCount % visibleItems);
   }
+  var timer;
+
   function autoPlay() {
-    var timer = setTimeout(function () {
+    timer = setTimeout(function () {
       toLeft -= containerWidth;
       if (toLeft < -totalWidth + containerWidth) {
         toLeft = 0;
@@ -84,6 +107,7 @@
     }, 3000);
   }
   autoPlay();
+
   function moveLeft() {
     toLeft += containerWidth;
     if (toLeft > 0) {
@@ -99,4 +123,77 @@
     }
     sliderRow.style.transform = "translateX(" + toLeft + "px)";
   }
+
+  for (var i = 0; i < cardItems.length; i++) {
+    cardItems[i].addEventListener("mouseover", function () {
+      clearTimeout(timer);
+    });
+
+    cardItems[i].addEventListener("mouseout", function () {
+      autoPlay();
+    });
+  }
+</script>
+<script>
+  const enviarPedido = (pedidoJSON) => {
+    const pedido = JSON.parse(pedidoJSON);
+    procesarPedido(pedido);
+  };
+
+  const procesarPedido = (pedido) => {
+    Swal.fire({
+      title: "¿Deseas procesar el pedido?",
+      html: `
+        <p>Nombre del plato: ${pedido.dish.name}</p>
+        <p>Comensal: ${pedido.diner.name} ${pedido.diner.surname}</p>
+        <p>Ingredientes: ${pedido.dish.ingredients}</p>
+        <p>Porción: ${pedido.dish.portions}</p>
+        <p>Información Nutricional: ${pedido.dish.nutritionalInformation}</p>
+        <p>Precio: $${pedido.dish.price}</p>
+        <p>Información adicional: ${pedido.additionalInfo}</p>
+        <p>Procesado: ${pedido.processed ? "Sí" : "No"}</p>
+      `,
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Procesar",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const orderId = pedido.id;
+        enviarPedidoAlControlador(orderId);
+      }
+    });
+  };
+  const enviarPedidoAlControlador = (orderId) => {
+    fetch(`/admin/index/processOrder`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ orderId: orderId }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          Swal.fire({
+            title: "Pedido procesado",
+            text: "El pedido ha sido procesado correctamente",
+            icon: "success",
+            showConfirmButton: true,
+            confirmButtonText: "Aceptar",
+          }).then(() => {
+            location.reload();
+          });
+        } else {
+          Swal.fire("Error", "Ocurrió un error al procesar el pedido", "error");
+        }
+      })
+      .catch((error) => {
+        console.error("Error en la solicitud:", error);
+        Swal.fire("Error", "Ocurrió un error en la solicitud", "error");
+      });
+  };
+  const noProcesarPedido = () => {
+    Swal.fire("Pedido procesado", "El pedido ya ha sido procesado", "warning");
+  };
 </script>

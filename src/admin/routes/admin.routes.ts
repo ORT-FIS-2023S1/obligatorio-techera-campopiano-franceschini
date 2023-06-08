@@ -2,6 +2,7 @@ import { Router } from "express";
 import path from "path";
 import addDisheController from "../controllers/addDisheController";
 import addOrderController from "../controllers/addOrderController";
+import processOrderController from "../controllers/processOrderController";
 import ENTITIES from "../../shared/domain/types/entities";
 import Cache from "../../shared/utils/cache";
 import Dishes from "../../shared/domain/entities/Dishes";
@@ -20,7 +21,7 @@ router.get("/index", (req, res) => {
     data: {},
     configs: {},
     view: "dashboard",
-    orders: orders
+    orders: orders,
   });
 });
 
@@ -57,4 +58,6 @@ router.get("/index/logout", logoutController);
 
 router.post("/index/addDishe", addDisheController);
 router.post("/index/addOrder", addOrderController);
+router.post("/index/processOrder", processOrderController);
+
 export default router;
