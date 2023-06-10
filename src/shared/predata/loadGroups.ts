@@ -5,12 +5,7 @@ import Cache from "../utils/cache";
 
 export default () => {
   const members = Cache.getEntities<Diner>(ENTITIES.DINERS);
-  const groupOne = new Group(
-    "Grupo 1",
-    "Este es el grupo 1",
-    members.map((member) => member.getIdentifier()),
-    "1"
-  );
+  const groupOne = new Group("Grupo 1", "Este es el grupo 1", members, "1");
 
   //save groups
   Cache.saveEntity<Group>(ENTITIES.GROUPS, groupOne);

@@ -36,10 +36,11 @@ export default (req, res) => {
 
     Cache.saveEntity<Dishes>(ENTITIES.DISHES, dishesData);
     //el plato pertenece a una cantina asi q obtengo la cantina
-    const cantina = Cache.getEntity<Canteen>(
-      ENTITIES.CANTEENS,
-      req.body.cantina
-    );
+    const cantina = Cache.getEntities<Canteen>(ENTITIES.CANTEENS)[0];
+    if (!cantina) {
+      return res.status(400).json({ error: "Cantina no encontrada" });
+    }
+
     //le agrego el plato
     cantina.addDishe(dishesData.getIdentifier());
     //como modifique la cantina la actualizo en el cache

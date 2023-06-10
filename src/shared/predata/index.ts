@@ -7,10 +7,10 @@ import loadUsers from "./loadUsers";
 
 export default () => {
   //la predata se tiene que cargar en este orden!
+  loadCanteens();
   loadDiners();
   loadDishes();
   loadGroups();
   loadDailyMenu();
-  loadCanteens();
   loadUsers();
 };
