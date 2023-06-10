@@ -98,7 +98,7 @@
   }
   var timer;
 
-  function autoPlay() {
+  const autoPlay = () => {
     timer = setTimeout(function () {
       toLeft -= containerWidth;
       if (toLeft < -totalWidth + containerWidth) {
@@ -107,24 +107,24 @@
       sliderRow.style.transform = "translateX(" + toLeft + "px)";
       autoPlay();
     }, 3000);
-  }
+  };
   autoPlay();
 
-  function moveLeft() {
+  const moveLeft = () => {
     toLeft += containerWidth;
     if (toLeft > 0) {
       toLeft = -totalWidth + containerWidth;
     }
     sliderRow.style.transform = "translateX(" + toLeft + "px)";
-  }
+  };
 
-  function moveRight() {
+  const moveRight = () => {
     toLeft -= containerWidth;
     if (toLeft < -totalWidth + containerWidth) {
       toLeft = 0;
     }
     sliderRow.style.transform = "translateX(" + toLeft + "px)";
-  }
+  };
 
   for (var i = 0; i < cardItems.length; i++) {
     cardItems[i].addEventListener("mouseover", function () {

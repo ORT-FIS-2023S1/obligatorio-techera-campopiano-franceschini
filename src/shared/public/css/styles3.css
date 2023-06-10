@@ -131,3 +131,33 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.comensales-list {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.comensales-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comensales-list .comensal-icon {
+  background-color: #5d6672;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comensales-list .comensal-icon i {
+  color: #fff;
+  font-size: 16px;
+}
+
+.comensales-list .comensal-name {
+  font-weight: bold;
+}
