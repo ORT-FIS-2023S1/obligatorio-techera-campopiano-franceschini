@@ -51,10 +51,6 @@ export default class Group {
     this._members.push(diner);
   }
 
-  getMembers(): Diner[] {
-    return this._members;
-  }
-
   getDinerById(dinerId: string): Diner | null {
     return (
       this._members.find((diner) => diner.getIdentifier() === dinerId) || null
@@ -66,7 +62,7 @@ export default class Group {
   }
 
   getMembers(): Diner[] {
-    return Cache.getEntitiesByKeys<Diner>(ENTITIES.DINERS, this._members);
+    return this._members;
   }
 
   //toJSON
