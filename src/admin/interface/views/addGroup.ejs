@@ -3,7 +3,11 @@
     <div class="col-md-4">
       <div class="continer">
         <h1>Registrar Nuevo Grupo de Comensales</h1>
-        <form id="group-form" action="/admin/index/addGroup" method="POST">
+        <form
+          id="group-form"
+          action="/admin/index/group/addGroup"
+          method="POST"
+        >
           <div class="mb-3">
             <label for="groupName" class="form-label">Nombre del grupo</label>
             <input
@@ -54,23 +58,35 @@
         <% for (let i = 0; i < groups.length; i++) { const group = groups[i];
         j++; %>
         <li class="li" style="--i: <%= j %>">
-          <h2 class="h3"><%= group.name %></h2>
-          <p class="p">Descripción: <%= group.description %></p>
-          <p class="p">Miembros:</p>
-          <ul class="list-group comensales-list">
-            <% if (group.members && group.members.length > 0) { %> <% for (let i
-            = 0; i < group.members.length; i++) { %> <% const member =
-            group.members[i]; %>
-            <li class="list-group-item">
-              <span class="comensal-icon"
-                ><i class="fa-solid fa-user"></i
-              ></span>
-              <span class="comensal-name"
-                ><%= member.name %> <%= member.surname %></span
-              >
-            </li>
-            <% } %> <% } %>
-          </ul>
+          <div class="group-header">
+            <h2 class="h3"><%= group.name %></h2>
+            <button
+              class="collapse-button"
+              aria-expanded="true"
+              aria-controls="group-content-<%= i %>"
+            >
+              <span class="visually-hidden">Expandir/Cerrar</span>
+              <i class="fa-solid fa-plus-square collapsed-icon"></i>
+            </button>
+          </div>
+          <div class="group-content" id="group-content-<%= i %>">
+            <p class="p">Descripción: <%= group.description %></p>
+            <p class="p">Miembros:</p>
+            <ul class="list-group comensales-list">
+              <% if (group.members && group.members.length > 0) { %> <% for (let
+              i = 0; i < group.members.length; i++) { %> <% const member =
+              group.members[i]; %>
+              <li class="list-group-item">
+                <span class="comensal-icon"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                <span class="comensal-name"
+                  ><%= member.name %> <%= member.surname %>
+                </span>
+              </li>
+              <% } %> <% } %>
+            </ul>
+          </div>
         </li>
         <% } %>
       </ol>
@@ -126,5 +142,30 @@
           });
         });
     });
+  </script>
+  <script>
+    // JavaScript para colapsar y expandir los grupos
+    const collapseButtons = document.querySelectorAll(".collapse-button");
+
+    collapseButtons.forEach((button) => {
+      button.addEventListener("click", toggleCollapse);
+    });
+
+    function toggleCollapse() {
+      const content = this.parentNode.nextElementSibling;
+      const isExpanded = content.classList.contains("collapsed");
+
+      if (isExpanded) {
+        content.classList.remove("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-plus-square collapsed-icon"></i>';
+      } else {
+        content.classList.add("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-minus-square expanded-icon"></i>';
+      }
+
+      this.setAttribute("aria-expanded", !isExpanded);
+    }
   </script>
 </div>

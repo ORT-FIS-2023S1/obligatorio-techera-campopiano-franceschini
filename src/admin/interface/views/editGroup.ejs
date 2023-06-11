@@ -1,0 +1,147 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Editar Grupos de Comensales</h1>
+      <% let j = 0 %> <% if (groups && groups.length > 0) { %>
+      <ol class="ol" style="--length: <%= groups.length %>" role="list">
+        <% for (let i = 0; i < groups.length; i++) { const group = groups[i];
+        j++; %>
+        <li class="li" style="--i: <%= j %>">
+          <div class="group-header">
+            <h2 class="h3"><%= group.name %></h2>
+            <button
+              class="collapse-button"
+              aria-expanded="true"
+              aria-controls="group-content-<%= i %>"
+            >
+              <span class="visually-hidden">Expandir/Cerrar</span>
+              <i class="fa-solid fa-plus-square collapsed-icon"></i>
+            </button>
+          </div>
+          <div class="group-content" id="group-content-<%= group._id %>">
+            <p class="p">Descripción: <%= group.description %></p>
+            <p class="p">Miembros:</p>
+            <ul class="list-group comensales-list">
+              <% if (group.members && group.members.length > 0) { %> <% for (let
+              i = 0; i < group.members.length; i++) { %> <% const member =
+              group.members[i]; %>
+              <li class="list-group-item" data-comensal-id="<%= member._id %>">
+                <span class="comensal-icon"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                <span class="comensal-name"
+                  ><%= member.name %> <%= member.surname %>
+                </span>
+                <span class="delete-member" onclick="removeMember(this)"
+                  ><i class="fa-solid fa-trash"></i
+                ></span>
+              </li>
+              <% } %> <% } %>
+            </ul>
+          </div>
+        </li>
+        <% } %>
+      </ol>
+      <% } else { %>
+      <div class="center">
+        <div class="notification warning">
+          <i class="fa-solid fa-exclamation"></i>
+          <span>No se han registrado grupos aún.</span>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <script>
+    // JavaScript para colapsar y expandir los grupos
+    const collapseButtons = document.querySelectorAll(".collapse-button");
+
+    collapseButtons.forEach((button) => {
+      button.addEventListener("click", toggleCollapse);
+    });
+
+    function toggleCollapse() {
+      const content = this.parentNode.nextElementSibling;
+      const isExpanded = content.classList.contains("collapsed");
+
+      if (isExpanded) {
+        content.classList.remove("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-plus-square collapsed-icon"></i>';
+      } else {
+        content.classList.add("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-minus-square expanded-icon"></i>';
+      }
+
+      this.setAttribute("aria-expanded", !isExpanded);
+    }
+
+    const removeMember = (element) => {
+      const listItem = element.parentNode;
+      const comensalName = listItem.querySelector(".comensal-name").textContent;
+      Swal.fire({
+        title: "Eliminar comensal",
+        text: `¿Estás seguro de eliminar a ${comensalName} de la lista del grupo?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
+        reverseButtons: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const groupId = getGroupId(listItem);
+          const comensalId = getComensalId(listItem);
+          fetch(`/admin/index/group/${groupId}/member/${comensalId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ groupId: groupId, comensalId: comensalId }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                Swal.fire({
+                  title: "Eliminar Comensal de un Grupo",
+                  text: "El comensal ha sido eliminado del grupo correctamente",
+                  icon: "success",
+                  showConfirmButton: true,
+                  confirmButtonText: "Aceptar",
+                }).then(() => {
+                  location.reload();
+                });
+              } else {
+                Swal.fire(
+                  "Error",
+                  "Ocurrió un error al eliminar el comensal del grupo",
+                  "error"
+                );
+              }
+            })
+            .catch((error) => {
+              console.error("Error en la solicitud:", error);
+              Swal.fire("Error", "Ocurrió un error en la solicitud", "error");
+            });
+
+          listItem.parentNode.removeChild(listItem);
+
+          Swal.fire({
+            title: "Comensal eliminado",
+            text: `${comensalName} ha sido eliminado de la lista del grupo.`,
+            icon: "success",
+          });
+        }
+      });
+    };
+    const getGroupId = (element) => {
+      const groupContent = element.closest(".group-content");
+      const groupIdAttr = groupContent.getAttribute("id");
+      return groupIdAttr.replace("group-content-", "");
+    };
+
+    const getComensalId = (element) => {
+      const listItem = element.closest(".list-group-item");
+      return listItem.getAttribute("data-comensal-id");
+    };
+  </script>
+</div>

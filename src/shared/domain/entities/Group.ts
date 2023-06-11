@@ -49,6 +49,16 @@ export default class Group {
     this._members.push(diner);
   }
 
+  getMembers(): Diner[] {
+    return this._members;
+  }
+
+  getDinerById(dinerId: string): Diner | null {
+    return (
+      this._members.find((diner) => diner.getIdentifier() === dinerId) || null
+    );
+  }
+
   removeMember(id: Diner): void {
     this._members = this._members.filter((member) => member !== id);
   }
