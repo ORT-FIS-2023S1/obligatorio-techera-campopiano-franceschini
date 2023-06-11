@@ -1,8 +1,6 @@
 import Group from "../../shared/domain/entities/Group";
 import Cache from "../../shared/utils/cache";
 import ENTITIES from "../../shared/domain/types/entities";
-import Canteen from "../../shared/domain/entities/Canteen";
-import Diner from "../../shared/domain/entities/Diner";
 
 export default (req, res) => {
   try {

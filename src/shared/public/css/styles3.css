@@ -217,14 +217,32 @@
   right: 0;
   transform: translate(-100%, -50%);
   cursor: pointer;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.2s;
 }
 
-.delete-member:hover {
-  opacity: 1;
+.delete-member i:hover {
+  color: green;
 }
 
 .delete-member i {
   color: #ea4e2cc4;
+}
+
+.add-member {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-100%, -50%);
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.add-member i:hover {
+  color: #ea4e2cc4;
+}
+
+.add-member i {
+  color: green;
 }

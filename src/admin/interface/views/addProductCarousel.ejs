@@ -66,7 +66,7 @@
           </div>
         </div>
       </div>
-      <% if (orders && orders.length > 0) { %>
+      <% if (orders && orders.length > 3) { %>
       <div class="slider-controls">
         <button class="slider-control prev" onclick="moveLeft()">
           <i class="fas fa-chevron-left"></i>
@@ -87,7 +87,7 @@
   var cardItems = sliderRow.getElementsByClassName("card-item");
   var itemWidth = cardItems[0].offsetWidth;
   var itemCount = cardItems.length;
-  var visibleItems = 2; // Número de elementos visibles a la vez
+  var visibleItems = 3; // Número de elementos visibles a la vez
   var containerWidth = itemWidth * visibleItems;
   var totalWidth = itemWidth * itemCount;
 

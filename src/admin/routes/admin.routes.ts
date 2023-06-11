@@ -5,6 +5,7 @@ import addOrderController from "../controllers/addOrderController";
 import processOrderController from "../controllers/processOrderController";
 import addGroupController from "../controllers/addGroupController";
 import delDinerFromGroupController from "../controllers/delDinerFromGroupController";
+import addDinerToGroupController from "../controllers/addDinerToGroupController";
 import ENTITIES from "../../shared/domain/types/entities";
 import Cache from "../../shared/utils/cache";
 import Dishes from "../../shared/domain/entities/Dishes";
@@ -91,4 +92,5 @@ router.delete(
   "/index/group/:groupId/member/:comensalId",
   delDinerFromGroupController
 );
+router.post("/index/group/:groupId/members", addDinerToGroupController);
 export default router;
