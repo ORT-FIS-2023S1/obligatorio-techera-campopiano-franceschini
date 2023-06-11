@@ -1,0 +1,275 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Editar Grupos de Comensales</h1>
+      <% let j = 0 %> <% if (groups && groups.length > 0) { %>
+      <ol class="ol" style="--length: <%= groups.length %>" role="list">
+        <% for (let i = 0; i < groups.length; i++) { const group = groups[i];
+        j++; %>
+        <li class="li" style="--i: <%= j %>">
+          <div class="group-header">
+            <h2 class="h3"><%= group.name %></h2>
+            <button
+              class="collapse-button"
+              aria-expanded="true"
+              aria-controls="group-content-<%= i %>"
+            >
+              <span class="visually-hidden">Expandir/Cerrar</span>
+              <i class="fa-solid fa-chevron-down collapsed-icon"></i>
+            </button>
+          </div>
+          <div class="group-content" id="group-content-<%= group._id %>">
+            <p class="p">Descripción: <%= group.description %></p>
+            <p class="p">
+              Miembros:
+              <span
+                class="add-member"
+                onclick="addMembers('<%= JSON.stringify(members) %>','<%= JSON.stringify(group.members) %>',this)"
+                title="Añadir Comensal"
+                ><i class="fa-solid fa-plus-square"></i
+              ></span>
+            </p>
+
+            <ul class="list-group comensales-list">
+              <% if (group.members && group.members.length > 0) { %> <% for (let
+              i = 0; i < group.members.length; i++) { %> <% const member =
+              group.members[i]; %>
+              <li class="list-group-item" data-comensal-id="<%= member._id %>">
+                <span class="comensal-icon"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                <span class="comensal-name"
+                  ><%= member.name %> <%= member.surname %>
+                </span>
+                <span class="delete-member" onclick="removeMember(this)"
+                  ><i class="fa-solid fa-trash"></i
+                ></span>
+              </li>
+              <% } %> <% } else { %>
+              <div class="center">
+                <div class="notification danger">
+                  <i class="fa-solid fa-exclamation"></i>
+                  <span>El grupo no tiene comensales.</span>
+                </div>
+              </div>
+              <% } %>
+            </ul>
+          </div>
+        </li>
+        <% } %>
+      </ol>
+      <% } else { %>
+      <div class="center">
+        <div class="notification warning">
+          <i class="fa-solid fa-exclamation"></i>
+          <span>No se han registrado grupos aún.</span>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <script>
+    const collapseButtons = document.querySelectorAll(".collapse-button");
+    collapseButtons.forEach((button) => {
+      button.addEventListener("click", toggleCollapse);
+    });
+
+    function toggleCollapse() {
+      const content = this.parentNode.nextElementSibling;
+      const isExpanded = content.classList.contains("collapsed");
+
+      if (isExpanded) {
+        content.classList.remove("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-chevron-down collapsed-icon"></i>';
+      } else {
+        content.classList.add("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-chevron-up expanded-icon"></i>';
+      }
+
+      this.setAttribute("aria-expanded", !isExpanded);
+    }
+
+    const removeMember = (element) => {
+      const listItem = element.parentNode;
+      const comensalName = listItem.querySelector(".comensal-name").textContent;
+      Swal.fire({
+        title: "Eliminar comensal",
+        text: `¿Estás seguro de eliminar a ${comensalName} de la lista del grupo?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
+        reverseButtons: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const groupId = getGroupId(listItem);
+          const comensalId = getComensalId(listItem);
+          fetch(`/admin/index/group/${groupId}/member/${comensalId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ groupId: groupId, comensalId: comensalId }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                Swal.fire({
+                  title: "Comensal Eliminado",
+                  text: "El comensal ha sido eliminado del grupo correctamente",
+                  icon: "success",
+                  showConfirmButton: true,
+                  confirmButtonText: "Aceptar",
+                }).then(() => {});
+              } else {
+                Swal.fire(
+                  "Error",
+                  "Ocurrió un error al eliminar el comensal del grupo",
+                  "error"
+                );
+              }
+            })
+            .catch((error) => {
+              console.error("Error en la solicitud:", error);
+              Swal.fire("Error", "Ocurrió un error en la solicitud", "error");
+            });
+
+          listItem.parentNode.removeChild(listItem);
+
+          Swal.fire({
+            title: "Comensal eliminado",
+            text: `${comensalName} ha sido eliminado de la lista del grupo.`,
+            icon: "success",
+          });
+        }
+      });
+    };
+    const getGroupId = (element) => {
+      const groupContent = element.closest(".group-content");
+      const groupIdAttr = groupContent.getAttribute("id");
+      return groupIdAttr.replace("group-content-", "");
+    };
+
+    const getComensalId = (element) => {
+      const listItem = element.closest(".list-group-item");
+      return listItem.getAttribute("data-comensal-id");
+    };
+    const addMembers = (allMembers, groupMembers, element) => {
+      const listItem = element.parentNode;
+      const parsedAllMembers = JSON.parse(allMembers);
+      const parsedGroupMembers = JSON.parse(groupMembers);
+
+      const filteredMembers = parsedAllMembers.filter((member) => {
+        // Filtrar los miembros que no están en el grupo
+        return !parsedGroupMembers.some(
+          (groupMember) => groupMember.id === member.id
+        );
+      });
+
+      if (filteredMembers.length === 0) {
+        Swal.fire({
+          title: "Todos los comensales disponibles están en el grupo",
+          icon: "info",
+          confirmButtonText: "Aceptar",
+        });
+        return;
+      }
+
+      const formattedOptions = filteredMembers.map((comensal, index) => {
+        const optionText = `${index + 1}. ${comensal.name} ${comensal.surname}`;
+        return `<option value="${comensal.id}">${optionText}</option>`;
+      });
+
+      Swal.fire({
+        title: "Seleccione comensales",
+        html: `
+      <select id="comensal-select" multiple>
+        ${formattedOptions.join("")}
+      </select>
+    `,
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Aceptar",
+        didOpen: () => {
+          const selectElement = document.getElementById("comensal-select");
+          selectElement.focus();
+        },
+        preConfirm: () => {
+          const selectElement = document.getElementById("comensal-select");
+          const selectedOptions = Array.from(selectElement.selectedOptions);
+          const selectedComensales = selectedOptions.map(
+            (option) => option.value
+          );
+          return selectedComensales;
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const groupId = getGroupId(listItem);
+          const comensalesId = result.value;
+
+          fetch(`/admin/index/group/${groupId}/members`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              groupId: groupId,
+              comensalesId: comensalesId,
+            }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error("Error al agregar los comensales al grupo");
+              }
+            })
+            .then((data) => {
+              const comensales = data.comensales;
+
+              const groupId = getGroupId(listItem);
+
+              const comensalList = document.querySelector(
+                `#group-content-${groupId} .comensales-list`
+              );
+
+              comensalList.innerHTML = "";
+
+              comensales.forEach((comensal) => {
+                const newComensal = document.createElement("li");
+                newComensal.classList.add("list-group-item");
+                newComensal.setAttribute("data-comensal-id", comensal.id);
+
+                newComensal.innerHTML = `
+      <span class="comensal-icon"><i class="fa-solid fa-user"></i></span>
+      <span class="comensal-name">${comensal.name} ${comensal.surname}</span>
+      <span class="delete-member" onclick="removeMember(this)"><i class="fa-solid fa-trash"></i></span>
+    `;
+
+                comensalList.appendChild(newComensal);
+              });
+
+              const updatedGroupMembers = [
+                ...JSON.parse(groupMembers),
+                ...comensales,
+              ];
+              const updatedGroupMembersJSON =
+                JSON.stringify(updatedGroupMembers);
+
+              element.setAttribute(
+                "onclick",
+                `addMembers('${allMembers}', '${updatedGroupMembersJSON}', this)`
+              );
+
+              Swal.fire({
+                title: "Comensales agregados",
+                text: "Los comensales han sido agregados a la lista del grupo.",
+                icon: "success",
+              });
+            });
+        }
+      });
+    };
+  </script>
+</div>
