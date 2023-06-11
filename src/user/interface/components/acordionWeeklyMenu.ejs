@@ -1,0 +1,26 @@
+<div class="container" style="background-color: var(--color-primary);">
+  <h1 style="color: #ffffff;">Menu de la semanal</h1>
+
+  <% if(!weeklyMenu[0]){ %>
+  <%- include('./noContent') %>
+  <% }else{ %>
+  <div id="accordion">
+    <% weeklyMenu.forEach(function(dailyMenu, index) { %>
+    <!-- DailyMenu <%= index + 1 %> -->
+    <div class="card">
+      <div class="card-header" id="heading<%= index + 1 %>">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= index + 1 %>" aria-expanded="true" aria-controls="collapse<%= index + 1 %>">
+            <%= dailyMenu.day %>
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapse<%= index + 1 %>" class="collapse" aria-labelledby="heading<%= index + 1 %>" data-parent="#accordion">
+        <%- include('./collageDishes',{featuredDishes:[dailyMenu]}) %>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>

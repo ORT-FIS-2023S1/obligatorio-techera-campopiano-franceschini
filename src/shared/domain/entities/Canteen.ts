@@ -1,4 +1,8 @@
 import { v4 as uuid } from "uuid";
+import dayjs from "dayjs";
+import weekOfYear from "dayjs/plugin/weekOfYear";
+dayjs.extend(weekOfYear);
+
 import Cache from "../../utils/cache";
 import ENTITIES from "../types/entities";
 import DailyMenu from "./DailyMenu";
@@ -84,13 +88,38 @@ export default class Canteen {
     return this._id;
   }
 
-  getDailyMenu(id: string): DailyMenu {
-    //verifico si el dailyMenu pertenece a este comedor
-    if (!this.dailyMenus.includes(id))
-      throw new Error("El dailyMenu no pertenece a este comedor");
+  getDailyMenu(): DailyMenu {
+    let inputDate = dayjs();
+    if (inputDate.day() === 0 || inputDate.day() === 6) {
+      inputDate = inputDate.day(1);
+    }
+    const dailyMenus = Cache.getEntitiesByKeys<DailyMenu>(
+      ENTITIES.DAILY_MENU,
+      this._dailyMenus
+    );
 
-    const dailyMenu = Cache.getEntity<DailyMenu>(ENTITIES.DAILY_MENU, id);
-    return dailyMenu;
+    const menu = dailyMenus.find((menu) =>
+      dayjs(menu.date, "YYYY-MM-DD").isSame(inputDate, "day")
+    );
+
+    return menu;
+  }
+
+  getWeeklyMenu(): DailyMenu[] {
+    const dailyMenus = Cache.getEntitiesByKeys<DailyMenu>(
+      ENTITIES.DAILY_MENU,
+      this._dailyMenus
+    );
+
+    const inputWeek = dayjs().week();
+    const inputYear = dayjs().year();
+
+    const menus = dailyMenus.filter((menu) => {
+      const menuDate = dayjs(menu.date);
+      return menuDate.week() === inputWeek && menuDate.year() === inputYear;
+    });
+
+    return menus;
   }
 
   getGroupd(id: string): Group {

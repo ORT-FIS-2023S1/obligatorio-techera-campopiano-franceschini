@@ -1,172 +1,185 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Obligatorio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      id="bootstrap-css"
-    />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <style>
-      /* Custom styles */
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .hero {
-        background: url("./images/home-principal.jpg") no-repeat center center;
-        background-size: cover;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: 48px;
-        color: #fff;
-        margin-bottom: 20px;
-      }
-      .hero p {
-        font-size: 20px;
-        color: #fff;
-        margin-bottom: 40px;
-      }
-      .btn {
-        font-size: 18px;
-        padding: 12px 24px;
-      }
-      .img-fluid {
-        height: 60%;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- <%- include('../components/navBar',{title:'SafeFood'}) %> -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Obligatorio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- crea una landing page para una aplicacion de pedidos de comida a domicilio -->
-    <!-- debe tener una foto de fondo que ocupe toda la pantalla, un boton que diga iniciar sesion, otro que diga registrarse -->
-    <!-- y un boton que diga ver restaurantes -->
-    <main>
-      <div class="hero">
-        <div class="container">
-          <h1>Safe Food App</h1>
-          <p>Alimentación saludable para tus hijos, facil y sin riesgos!</p>
-          <a href="/login" class="btn btn-primary">Empezar</a>
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+
+    .btn-primary {
+      background-color: #1565c0 !important;
+    }
+
+    .btn-primary,
+    a {
+      color: #ffffff;
+    }
+
+    .hero {
+      background: url("./images/home-principal.jpg") no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      font-size: 18px;
+      padding: 12px 24px;
+    }
+
+    .img-fluid {
+      height: 60%;
+    }
+
+    /* Estilos para el footer */
+    .footer {
+      background-color: #1b5e20 !important;
+      color: #fff;
+      text-align: center;
+      margin-top: auto;
+      padding: 1rem 0;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .footer h1 {
+      font-size: 36px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .footer p {
+      font-size: 18px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <%- include('../components/navBar',{title:'SafeFood'}) %> -->
+
+  <!-- crea una landing page para una aplicacion de pedidos de comida a domicilio -->
+  <!-- debe tener una foto de fondo que ocupe toda la pantalla, un boton que diga iniciar sesion, otro que diga registrarse -->
+  <!-- y un boton que diga ver restaurantes -->
+  <main>
+    <div class="hero">
+      <div class="container">
+        <h1>Safe Food App</h1>
+        <p>Alimentación saludable para tus hijos, facil y sin riesgos!</p>
+        <a href="/login" class="btn btn-primary">Empezar</a>
+      </div>
+    </div>
+
+    <section class="bg-light py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Promovemos hábitos saludables</h2>
+            <p>
+              Personaliza el menu de tus hijos para que obtengas solo los
+              alimentos que crees que son mas indicados para ellos.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="./images/habitos-saludables.jpg" alt="Easy Ordering" class="img-fluid rounded float-right" />
+          </div>
         </div>
       </div>
+    </section>
 
-      <section class="bg-light py-4">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h2>Promovemos hábitos saludables</h2>
-              <p>
-                Personaliza el menu de tus hijos para que obtengas solo los
-                alimentos que crees que son mas indicados para ellos.
-              </p>
-            </div>
-            <div class="col-md-6">
-              <img
-                src="./images/habitos-saludables.jpg"
-                alt="Easy Ordering"
-                class="img-fluid rounded float-right"
-              />
-            </div>
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="./images/limites-consumo.jpg" alt="Fast Delivery" class="img-fluid rounded float-left" />
+          </div>
+          <div class="col-md-6">
+            <h2>Fija limites de consumo diario</h2>
+            <p>
+              Establece limites de consumo diario para tus hijos y para
+              ayudalos a comer tan solo lo que necesitan.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <img
-                src="./images/limites-consumo.jpg"
-                alt="Fast Delivery"
-                class="img-fluid rounded float-left"
-              />
-            </div>
-            <div class="col-md-6">
-              <h2>Fija limites de consumo diario</h2>
-              <p>
-                Establece limites de consumo diario para tus hijos y para
-                ayudalos a comer tan solo lo que necesitan.
-              </p>
-            </div>
+    <section class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Sin efectivo</h2>
+            <p>
+              Elimina el riesgo de manegar efectivo, simplemente ordena y tus
+              hijos retiran los alimentos directo en el comedor, sin la
+              necesidad de usar dinero en efectivo.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="./images/riesgo-de-efectivo.png" alt="Easy Ordering" class="img-fluid rounded float-right" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="bg-light py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h2>Sin efectivo</h2>
-              <p>
-                Elimina el riesgo de manegar efectivo, simplemente ordena y tus
-                hijos retiran los alimentos directo en el comedor, sin la
-                necesidad de usar dinero en efectivo.
-              </p>
-            </div>
-            <div class="col-md-6">
-              <img
-                src="./images/riesgo-de-efectivo.png"
-                alt="Easy Ordering"
-                class="img-fluid rounded float-right"
-              />
-            </div>
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="./images/informacion-nutricional.jpg" alt="Fast Delivery" class="img-fluid rounded float-left" />
+          </div>
+          <div class="col-md-6">
+            <h2>Informacion nutricional a tu alcance</h2>
+            <p>
+              Enterate de toda la informacion nutricional de los alimentos que
+              estan llegando a tus hijos, de forma facil y en tiempo real.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <img
-                src="./images/informacion-nutricional.jpg"
-                alt="Fast Delivery"
-                class="img-fluid rounded float-left"
-              />
-            </div>
-            <div class="col-md-6">
-              <h2>Informacion nutricional a tu alcance</h2>
-              <p>
-                Enterate de toda la informacion nutricional de los alimentos que
-                estan llegando a tus hijos, de forma facil y en tiempo real.
-              </p>
-            </div>
+    <section class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Suscripciones a menus</h2>
+            <p>
+              Dale a tus hijos aceso a los menus del dia y menus semanales,
+              directamente desde la app.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="./images/variedad-alimentos.jpg" alt="Easy Ordering" class="img-fluid rounded float-right" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
+  <%- include('../components/footer') %>
+</body>
 
-      <section class="bg-light py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h2>Suscripciones a menus</h2>
-              <p>
-                Dale a tus hijos aceso a los menus del dia y menus semanales,
-                directamente desde la app.
-              </p>
-            </div>
-            <div class="col-md-6">
-              <img
-                src="./images/variedad-alimentos.jpg"
-                alt="Easy Ordering"
-                class="img-fluid rounded float-right"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <%- include('../components/footer') %>
-  </body>
 </html>

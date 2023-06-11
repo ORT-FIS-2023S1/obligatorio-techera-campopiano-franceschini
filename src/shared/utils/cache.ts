@@ -54,4 +54,17 @@ export default class Cache {
     }
     return [];
   }
+  public static getEntitiesByKeys<T>(
+    entityName: ENTITIES,
+    keys: string[]
+  ): T[] {
+    if (Cache.cache.has(entityName)) {
+      const entityMap: Map<string, T> = Cache.cache.get(entityName);
+      const entities: T[] = Array.from(entityMap.values());
+      return entities.filter((entity: any) =>
+        keys.includes(entity.getIdentifier())
+      );
+    }
+    return [];
+  }
 }
