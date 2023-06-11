@@ -1,0 +1,169 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="continer">
+        <h1>Registrar Nuevo Grupo de Comensales</h1>
+        <form
+          id="group-form"
+          action="/admin/index/group/addGroup"
+          method="POST"
+        >
+          <div class="mb-3">
+            <label for="groupName" class="form-label">Nombre del grupo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="groupName"
+              name="groupName"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="groupDescription" class="form-label"
+              >Descripción del grupo</label
+            >
+            <textarea
+              class="form-control"
+              id="groupDescription"
+              name="groupDescription"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="groupMembers" class="form-label"
+              >Miembros del grupo</label
+            >
+            <select
+              multiple
+              class="form-control"
+              id="groupMembers"
+              name="groupMembers"
+              required
+            >
+              <% members.forEach((member) => { %>
+              <option value="<%= member._id %>">
+                <%= member.name %> <%= member.surname %>
+              </option>
+              <% }); %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear grupo</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h1>Lista Actual de Grupos</h1>
+      <% let j = 0 %> <% if (groups && groups.length > 0) { %>
+      <ol class="ol" style="--length: <%= groups.length %>" role="list">
+        <% for (let i = 0; i < groups.length; i++) { const group = groups[i];
+        j++; %>
+        <li class="li" style="--i: <%= j %>">
+          <div class="group-header">
+            <h2 class="h3"><%= group.name %></h2>
+            <button
+              class="collapse-button"
+              aria-expanded="true"
+              aria-controls="group-content-<%= i %>"
+            >
+              <span class="visually-hidden">Expandir/Cerrar</span>
+              <i class="fa-solid fa-chevron-down collapsed-icon"></i>
+            </button>
+          </div>
+          <div class="group-content" id="group-content-<%= i %>">
+            <p class="p">Descripción: <%= group.description %></p>
+            <p class="p">Miembros:</p>
+            <ul class="list-group comensales-list">
+              <% if (group.members && group.members.length > 0) { %> <% for (let
+              i = 0; i < group.members.length; i++) { %> <% const member =
+              group.members[i]; %>
+              <li class="list-group-item">
+                <span class="comensal-icon"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                <span class="comensal-name"
+                  ><%= member.name %> <%= member.surname %>
+                </span>
+              </li>
+              <% } %> <% } %>
+            </ul>
+          </div>
+        </li>
+        <% } %>
+      </ol>
+      <% } else { %>
+      <div class="center">
+        <div class="notification warning">
+          <i class="fa-solid fa-exclamation"></i>
+          <span>No se han registrado grupos aún.</span>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById("group-form");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evitar que el formulario se envíe
+      fetch(form.action, {
+        method: form.method,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(new FormData(form)),
+      })
+        .then((response) => {
+          if (response.ok) {
+            Swal.fire({
+              icon: "success",
+              title: "Grupo Agregado",
+              text: "El grupo de comensales ha sido agregado correctamente",
+              showCancelButton: true,
+              confirmButtonText: "Agregar otro grupo",
+              cancelButtonText: "Ir al inicio",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                form.reset();
+                location.reload();
+              } else {
+                window.location.href = "/admin/index";
+              }
+            });
+          } else {
+            throw new Error("Error al guardar los datos del formulario");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Ocurrió un error al guardar los datos del formulario.",
+          });
+        });
+    });
+  </script>
+  <script>
+    const collapseButtons = document.querySelectorAll(".collapse-button");
+
+    collapseButtons.forEach((button) => {
+      button.addEventListener("click", toggleCollapse);
+    });
+
+    function toggleCollapse() {
+      const content = this.parentNode.nextElementSibling;
+      const isExpanded = content.classList.contains("collapsed");
+
+      if (isExpanded) {
+        content.classList.remove("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-chevron-down collapsed-icon"></i>';
+      } else {
+        content.classList.add("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-chevron-up expanded-icon"></i>';
+      }
+
+      this.setAttribute("aria-expanded", !isExpanded);
+    }
+  </script>
+</div>

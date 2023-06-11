@@ -1,4 +1,5 @@
 .p {
+  position: relative;
   margin: 0;
   line-height: 1.6;
 }
@@ -72,7 +73,7 @@
   }
 
   .h3 {
-    font-size: 2.25rem;
+    font-size: 2.15rem;
     margin: 0 0 2rem;
   }
 
@@ -170,4 +171,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.toast-container {
+  z-index: 10000;
 }
