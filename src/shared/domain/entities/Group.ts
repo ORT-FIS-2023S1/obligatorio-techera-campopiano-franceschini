@@ -1,4 +1,7 @@
 import { v4 as uuid } from "uuid";
+import Cache from "../../utils/cache";
+import ENTITIES from "../types/entities";
+import Diner from "./Diner";
 
 export default class Group {
   private _id: string;
@@ -50,6 +53,10 @@ export default class Group {
 
   removeMember(id: string): void {
     this._members = this._members.filter((member) => member !== id);
+  }
+
+  getMembers(): Diner[] {
+    return Cache.getEntitiesByKeys<Diner>(ENTITIES.DINERS, this._members);
   }
 
   //toJSON

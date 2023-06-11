@@ -1,0 +1,19 @@
+<% if(!diners){ %>
+<%- include('./noContent') %>
+<% }else{ %>
+<div class="container">
+  <h2>Comensales</h2>
+  <div class="row">
+    <% diners.forEach(function(diner, index) { %>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><%= diner.name %> <%= diner.surname %></h5>
+          <a href="/404" class="btn btn-primary">Ver</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<% } %>

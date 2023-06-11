@@ -14,7 +14,10 @@ export default () => {
     user.addDiner(diner.getIdentifier());
   });
 
+  const canteenTwo = Cache.getEntity<Canteen>(ENTITIES.CANTEENS, "2");
+
   user.addCanteen(canteenOne.getIdentifier());
+  user.addCanteen(canteenTwo.getIdentifier());
 
   //save users
   Cache.saveEntity<User>(ENTITIES.USERS, user);

@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Comedores</h2>
+
+  <% if(!canteens){ %>
+  <%- include('./noContent') %>
+  <% }else{ %>
+  <div id="accordion">
+    <% canteens.forEach(function(canteen, index) { %>
+    <!-- Canteen <%= index + 1 %> -->
+    <div class="card">
+      <div class="card-header" id="heading<%= index + 1 %>">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= index + 1 %>" aria-expanded="true" aria-controls="collapse<%= index + 1 %>">
+            <%= canteen.name %>
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapse<%= index + 1 %>" class="collapse <%= index === 0 ? 'show' : '' %>" aria-labelledby="heading<%= index + 1 %>" data-parent="#accordion">
+        <div class="card-body">
+          <h5>Nombre: <%= canteen.name %></h5>
+          <p>Direccion: <%= canteen.address %></p>
+          <p>Telefono: <%= canteen.telephone %></p>
+          <p>Email: <%= canteen.email %></p>
+          <a href=<%= `canteen/${canteen.id}`%> class="btn btn-primary">Ver</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>

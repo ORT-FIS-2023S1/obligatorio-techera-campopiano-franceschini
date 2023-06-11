@@ -11,16 +11,28 @@ export default () => {
   const dailyMenus = Cache.getEntities<DailyMenu>(ENTITIES.DAILY_MENU);
 
   const canteenOne = new Canteen(
-    "Canteen One",
-    "Address One",
-    "Telephone One",
-    "Email One",
+    "Colegio y Liceo Alemán Sede Pocitos",
+    "Av. Dr. Francisco Soca 1356, 11300 Montevideo, Departamento de Montevideo",
+    "2708 4381",
+    "consultas@dsm.com.uy",
     groups.map((group) => group.getIdentifier()),
     dishes.map((dish) => dish.getIdentifier()),
     dailyMenus.map((dailyMenu) => dailyMenu.getIdentifier()),
     "1"
   );
 
+  const canteenTwo = new Canteen(
+    "Colegio y Liceo Hans Christian Andersen",
+    "Av. Millán 4392, 12900 Montevideo, Departamento de Montevideo",
+    "2355 0928",
+    "consultas@hca.com.uy",
+    [],
+    [],
+    [],
+    "2"
+  );
+
   //save canteens
   Cache.saveEntity<Canteen>(ENTITIES.CANTEENS, canteenOne);
+  Cache.saveEntity<Canteen>(ENTITIES.CANTEENS, canteenTwo);
 };

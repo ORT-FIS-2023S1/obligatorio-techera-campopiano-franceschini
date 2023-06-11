@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Platos Destacados</h2>
+  <% if(!featuredDishes){ %>
+  <%- include('./noContent') %>
+  <% }else{ %>
+  <div class="row">
+    <% featuredDishes.forEach((menu)=>{%>
+    <% const breakfast= menu.breakfast %>
+    <% const lunch= menu.lunch %>
+    <% const snack= menu.snack %>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="dish-card">
+          <div class="dish-image" style="background-image: url('<%= breakfast.imageURL %>')"></div>
+        </div>
+        <div class="card-body" style="background-color: #F2DEDE;">
+          <h5 class="card-title"><%= breakfast.name %></h5>
+          <p class="card-text"><%= breakfast.description %></p>
+          <p class="card-text">Precio: $<%= breakfast.price %></p>
+          <a href="/404" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="dish-card">
+          <div class="dish-image" style="background-image: url('<%= lunch.imageURL %>')"></div>
+        </div>
+        <div class="card-body" style="background-color: #DFF0D8;">
+          <h5 class="card-title"><%= lunch.name %></h5>
+          <p class="card-text"><%= lunch.description %></p>
+          <p class="card-text">Precio: $<%= lunch.price %></p>
+          <a href="/404" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="dish-card">
+          <div class="dish-image" style="background-image: url('<%= snack.imageURL %>')"></div>
+        </div>
+        <div class="card-body" style="background-color: #F5F5F5;">
+          <h5 class="card-title"><%= snack.name %></h5>
+          <p class="card-text"><%= snack.description %></p>
+          <p class="card-text">Precio: $<%= snack.price %></p>
+          <a href="/404" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+  <% } %>
+</div>

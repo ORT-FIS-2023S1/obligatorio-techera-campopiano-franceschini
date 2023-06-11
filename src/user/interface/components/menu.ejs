@@ -1,0 +1,22 @@
+<div class="container menu-container">
+  <div class="menu-header">
+    <h2 class="menu-title" data-toggle="collapse" data-target="#menu-items">Menu <i class="bi bi-chevron-down"></i></h2>
+  </div>
+  <% if(!menu[0]){ %>
+  <%- include('./noContent') %>
+  <% }else{%>
+  <div id="menu-items" class="collapse row">
+    <% menu.forEach(function(menu, index) { %>
+    <div class="menu-item col-md-4">
+      <img src="<%= menu.imageURL %>" alt="<%= menu.name %>" class="menu-item-image">
+      <h4><%= menu.name %></h4>
+      <p class="item-description"><%- `Ingredientes: ${menu.ingredients.join(', ')}` %></p>
+      <p class="item-price">$<%- `${menu.price.toFixed(2)}` %></p>
+      <div class="menu-item-footer">
+        <a href="/404" class="btn btn-primary">Agregar al carrito</a>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>
