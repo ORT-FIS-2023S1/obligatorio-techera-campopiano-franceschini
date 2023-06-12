@@ -8,7 +8,7 @@
   <div id="menu-items" class="collapse row">
     <% menu.forEach(function(menu, index) { %>
     <div class="menu-item col-md-4">
-      <img src="<%= menu.imageURL %>" alt="<%= menu.name %>" class="menu-item-image">
+      <img src="<%= menu.imageURL %>" alt="<%= menu.name %>" class="menu-item-image rounded">
       <h4><%= menu.name %></h4>
       <p class="item-description"><%- `Ingredientes: ${menu.ingredients.join(', ')}` %></p>
       <p class="item-price">$<%- `${menu.price.toFixed(2)}` %></p>
