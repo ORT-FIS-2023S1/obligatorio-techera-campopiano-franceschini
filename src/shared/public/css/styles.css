@@ -80,10 +80,14 @@
 }
 
 .navbar-menu-item > a {
-  color: #fff;
+  color: #ffffff;
   padding: 10px;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
+}
+
+.navbar-menu-item .nav-link:hover {
+  font-size: 18px;
 }
 
 .submenu {

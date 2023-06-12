@@ -11,10 +11,10 @@ export default () => {
   const dailyMenus = Cache.getEntities<DailyMenu>(ENTITIES.DAILY_MENU);
 
   const canteenOne = new Canteen(
-    "Colegio y Liceo Alemán Sede Pocitos",
-    "Av. Dr. Francisco Soca 1356, 11300 Montevideo, Departamento de Montevideo",
-    "2708 4381",
-    "consultas@dsm.com.uy",
+    "Colegio Francisco Espínola",
+    "Dr. Horacio Garcia Lagos, Paso Carrasco, Canelones, Uruguay",
+    "2604 6988",
+    "info@franciscoespinola.edu.uy",
     groups.map((group) => group.getIdentifier()),
     dishes.map((dish) => dish.getIdentifier()),
     dailyMenus.map((dailyMenu) => dailyMenu.getIdentifier()),
