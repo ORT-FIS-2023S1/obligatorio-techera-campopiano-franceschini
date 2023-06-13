@@ -161,7 +161,10 @@
     const addMembers = (allMembers, groupMembers, element) => {
       const listItem = element.parentNode;
       const parsedAllMembers = JSON.parse(allMembers);
-      const parsedGroupMembers = JSON.parse(groupMembers);
+      //const parsedGroupMembers = JSON.parse(groupMembers);
+      const parsedGroupMembers = JSON.parse(
+        element.getAttribute("data-members")
+      );
       //console.log(parsedGroupMembers);
       const filteredMembers = parsedAllMembers.filter((member) => {
         // Filtrar los miembros que no están en el grupo
@@ -264,7 +267,7 @@
                 comensalList.appendChild(newComensal);
               });
 
-              updatedGroupMembersJSON = JSON.stringify(comensales);
+              let updatedGroupMembersJSON = JSON.stringify(comensales);
 
               element.setAttribute(
                 "data-members",
