@@ -136,6 +136,7 @@
                   "data-members",
                   JSON.stringify(updatedGroupMembers)
                 );
+                //console.log(updatedGroupMembers);
               });
             })
             .catch((error) => {
@@ -161,7 +162,7 @@
       const listItem = element.parentNode;
       const parsedAllMembers = JSON.parse(allMembers);
       const parsedGroupMembers = JSON.parse(groupMembers);
-
+      //console.log(parsedGroupMembers);
       const filteredMembers = parsedAllMembers.filter((member) => {
         // Filtrar los miembros que no están en el grupo
         return !parsedGroupMembers.some(
@@ -229,12 +230,18 @@
             })
             .then((data) => {
               const comensales = data.comensales;
-              const updatedGroupMembersJSON = JSON.stringify(comensales);
+              //console.log(comensales);
+              /*const updatedGroupMembers = [
+                ...new Set([...JSON.parse(groupMembers), ...comensales]),
+              ];
+
+              const updatedGroupMembersJSON =
+                JSON.stringify(updatedGroupMembers);
 
               element.setAttribute(
                 "data-members",
                 `${updatedGroupMembersJSON}`
-              );
+              );*/
               const groupId = getGroupId(listItem);
 
               const comensalList = document.querySelector(
@@ -257,25 +264,13 @@
                 comensalList.appendChild(newComensal);
               });
 
-              /*const updatedGroupMembers = [
-                ...JSON.parse(groupMembers),
-                ...comensales,
-              ];
-              const updatedGroupMembersJSON =
-                JSON.stringify(updatedGroupMembers);
+              updatedGroupMembersJSON = JSON.stringify(comensales);
 
               element.setAttribute(
                 "data-members",
                 `${updatedGroupMembersJSON}`
               );
-
-              element.setAttribute(
-                "onclick",
-                `addMembers('${allMembers}', '${element.getAttribute(
-                  "data-members"
-                )}', this)`
-              );*/
-
+              console.log(updatedGroupMembersJSON);
               Swal.fire({
                 title: "Comensales agregados",
                 text: "Los comensales han sido agregados a la lista del grupo.",
