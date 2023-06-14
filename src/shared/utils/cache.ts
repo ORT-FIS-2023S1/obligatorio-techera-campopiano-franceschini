@@ -67,4 +67,11 @@ export default class Cache {
     }
     return [];
   }
+  public static removeEntity(entityName: ENTITIES, entityId: string): void {
+    if (Cache.cache.has(entityName)) {
+      const entityMap: Map<string, any> = Cache.cache.get(entityName);
+      entityMap.delete(entityId);
+      Cache.cache.set(entityName, entityMap);
+    }
+  }
 }

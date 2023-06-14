@@ -6,6 +6,7 @@ import processOrderController from "../controllers/processOrderController";
 import addGroupController from "../controllers/addGroupController";
 import delDinerFromGroupController from "../controllers/delDinerFromGroupController";
 import addDinerToGroupController from "../controllers/addDinerToGroupController";
+import delGroupController from "../controllers/delGroupController";
 import ENTITIES from "../../shared/domain/types/entities";
 import Cache from "../../shared/utils/cache";
 import Dishes from "../../shared/domain/entities/Dishes";
@@ -82,6 +83,19 @@ router.get("/index/group/edit", (req, res) => {
   });
 });
 
+router.get("/index/group/delete", (req, res) => {
+  const diners: Diner[] = Cache.getEntities<Diner>(ENTITIES.DINERS) ?? [];
+  const groups: Group[] = Cache.getEntities<Group>(ENTITIES.GROUPS) ?? [];
+  res.render(path.join(__dirname, "../../admin/interface/views/index"), {
+    user: res.locals.user,
+    data: {},
+    configs: {},
+    view: "deleteGroup",
+    members: diners,
+    groups: groups,
+  });
+});
+
 router.get("/index/logout", logoutController);
 
 router.post("/index/addDishe", addDisheController);
@@ -92,5 +106,6 @@ router.delete(
   "/index/group/:groupId/member/:comensalId",
   delDinerFromGroupController
 );
+router.delete("/index/group/:groupId", delGroupController);
 router.post("/index/group/:groupId/members", addDinerToGroupController);
 export default router;

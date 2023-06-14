@@ -150,6 +150,13 @@ export default class Canteen {
     this.groups.push(id);
   }
 
+  removeGroup(groupId: string): void {
+    const groupIndex = this.groups.indexOf(groupId);
+    if (groupIndex !== -1) {
+      this.groups.splice(groupIndex, 1);
+    }
+  }
+
   addDishe(id: string): void {
     this.menu.push(id);
   }

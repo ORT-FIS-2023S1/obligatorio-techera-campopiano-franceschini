@@ -123,6 +123,18 @@
   background-color: #ea4e2c7c;
 }
 
+.eliminarGrupo-btn {
+  background-color: #ea4e2cc4;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.eliminarGrupo-btn:hover {
+  background-color: #ea4e2c7c;
+}
+
 .procesado-btn {
   background-color: green;
   color: white;

@@ -136,7 +136,6 @@
                   "data-members",
                   JSON.stringify(updatedGroupMembers)
                 );
-                //console.log(updatedGroupMembers);
               });
             })
             .catch((error) => {
@@ -161,11 +160,9 @@
     const addMembers = (allMembers, groupMembers, element) => {
       const listItem = element.parentNode;
       const parsedAllMembers = JSON.parse(allMembers);
-      //const parsedGroupMembers = JSON.parse(groupMembers);
       const parsedGroupMembers = JSON.parse(
         element.getAttribute("data-members")
       );
-      //console.log(parsedGroupMembers);
       const filteredMembers = parsedAllMembers.filter((member) => {
         // Filtrar los miembros que no están en el grupo
         return !parsedGroupMembers.some(
@@ -233,31 +230,15 @@
             })
             .then((data) => {
               const comensales = data.comensales;
-              //console.log(comensales);
-              /*const updatedGroupMembers = [
-                ...new Set([...JSON.parse(groupMembers), ...comensales]),
-              ];
-
-              const updatedGroupMembersJSON =
-                JSON.stringify(updatedGroupMembers);
-
-              element.setAttribute(
-                "data-members",
-                `${updatedGroupMembersJSON}`
-              );*/
               const groupId = getGroupId(listItem);
-
               const comensalList = document.querySelector(
                 `#group-content-${groupId} .comensales-list`
               );
-
               comensalList.innerHTML = "";
-
               comensales.forEach((comensal) => {
                 const newComensal = document.createElement("li");
                 newComensal.classList.add("list-group-item");
                 newComensal.setAttribute("data-comensal-id", comensal.id);
-
                 newComensal.innerHTML = `
       <span class="comensal-icon"><i class="fa-solid fa-user"></i></span>
       <span class="comensal-name">${comensal.name} ${comensal.surname}</span>
@@ -266,9 +247,7 @@
 
                 comensalList.appendChild(newComensal);
               });
-
               let updatedGroupMembersJSON = JSON.stringify(comensales);
-
               element.setAttribute(
                 "data-members",
                 `${updatedGroupMembersJSON}`
