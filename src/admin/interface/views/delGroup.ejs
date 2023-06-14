@@ -1,0 +1,152 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Eliminar Grupos de Comensales</h1>
+      <% let j = 0 %> <% if (groups && groups.length > 0) { %>
+      <ol class="ol" style="--length: <%= groups.length %>" role="list">
+        <% for (let i = 0; i < groups.length; i++) { const group = groups[i];
+        j++; %>
+        <li class="li" style="--i: <%= j %>">
+          <div class="group-header">
+            <h2 class="h3"><%= group.name %></h2>
+            <button
+              class="collapse-button"
+              aria-expanded="true"
+              aria-controls="group-content-<%= i %>"
+            >
+              <span class="visually-hidden">Expandir/Cerrar</span>
+              <i class="fa-solid fa-chevron-down collapsed-icon"></i>
+            </button>
+          </div>
+          <div class="group-content" id="group-content-<%= group._id %>">
+            <p class="p">Descripción: <%= group.description %></p>
+            <p class="p">Miembros:</p>
+
+            <ul class="list-group comensales-list">
+              <% if (group.members && group.members.length > 0) { %> <% for (let
+              i = 0; i < group.members.length; i++) { %> <% const member =
+              group.members[i]; %>
+              <li class="list-group-item" data-comensal-id="<%= member._id %>">
+                <span class="comensal-icon"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                <span class="comensal-name"
+                  ><%= member.name %> <%= member.surname %>
+                </span>
+              </li>
+              <% } %> <% } else { %>
+              <div class="center">
+                <div class="notification danger">
+                  <i class="fa-solid fa-exclamation"></i>
+                  <span>El grupo no tiene comensales.</span>
+                </div>
+              </div>
+              <% } %>
+            </ul>
+            <button class="eliminarGrupo-btn" onclick="deleteGroup(this)">
+              Eliminar Grupo
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </li>
+        <% } %>
+      </ol>
+      <% } else { %>
+      <div class="center">
+        <div class="notification warning">
+          <i class="fa-solid fa-exclamation"></i>
+          <span>No se han registrado grupos aún.</span>
+        </div>
+      </div>
+      <% } %>
+      <div class="center no-groups-message" style="display: none">
+        <div class="notification warning">
+          <i class="fa-solid fa-exclamation"></i>
+          <span>No se han registrado grupos aún.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const collapseButtons = document.querySelectorAll(".collapse-button");
+    collapseButtons.forEach((button) => {
+      button.addEventListener("click", toggleCollapse);
+    });
+
+    function toggleCollapse() {
+      const content = this.parentNode.nextElementSibling;
+      const isExpanded = content.classList.contains("collapsed");
+
+      if (isExpanded) {
+        content.classList.remove("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-chevron-down collapsed-icon"></i>';
+      } else {
+        content.classList.add("collapsed");
+        this.innerHTML =
+          '<span class="visually-hidden">Expandir/Cerrar</span><i class="fa-solid fa-chevron-up expanded-icon"></i>';
+      }
+
+      this.setAttribute("aria-expanded", !isExpanded);
+    }
+
+    const deleteGroup = (element) => {
+      const groupContent = element.parentNode;
+      const groupContainer = groupContent.parentNode;
+      const groupId = getGroupId(groupContent);
+
+      Swal.fire({
+        title: "Eliminar grupo",
+        text: "¿Estás seguro de eliminar este grupo de comensales?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
+        reverseButtons: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          deleteGroupFromServer(groupId);
+          groupContainer.parentNode.removeChild(groupContainer);
+          const groupElements = document.querySelectorAll(".li");
+          if (groupElements.length === 0) {
+            const noGroupsMessage =
+              document.querySelector(".no-groups-message");
+            noGroupsMessage.style.display = "block";
+          }
+        }
+      });
+    };
+
+    const getGroupId = (element) => {
+      const groupIdAttr = element.getAttribute("id");
+      return groupIdAttr.replace("group-content-", "");
+    };
+
+    const deleteGroupFromServer = (groupId) => {
+      fetch(`/admin/index/group/${groupId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ groupId: groupId }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            Swal.fire({
+              title: "Grupo Eliminado",
+              text: "El gupo ha sido eliminado correctamente",
+              icon: "success",
+              showConfirmButton: true,
+              confirmButtonText: "Aceptar",
+            });
+          } else {
+            throw new Error("Error al eliminar el grupo");
+          }
+        })
+        .catch((error) => {
+          console.error("Error en la solicitud:", error);
+          Swal.fire("Error", "Ocurrió un error en la solicitud", "error");
+        });
+    };
+  </script>
+</div>

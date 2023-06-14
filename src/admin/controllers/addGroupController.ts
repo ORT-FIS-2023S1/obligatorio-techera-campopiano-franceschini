@@ -14,14 +14,24 @@ export default (req, res) => {
     const dinersCache = Cache.getEntities<Diner>(ENTITIES.DINERS);
     const group = new Group(groupName, groupDescription, []);
 
-    groupMembers.forEach((memberId) => {
+    if (Array.isArray(groupMembers)) {
+      groupMembers.forEach((memberId) => {
+        const member = dinersCache.find(
+          (diner) => diner.getIdentifier() === memberId
+        );
+        if (member) {
+          group.addMember(member);
+        }
+      });
+    } else {
+      const memberId = groupMembers;
       const member = dinersCache.find(
         (diner) => diner.getIdentifier() === memberId
       );
       if (member) {
         group.addMember(member);
       }
-    });
+    }
 
     Cache.saveEntity<Group>(ENTITIES.GROUPS, group);
 

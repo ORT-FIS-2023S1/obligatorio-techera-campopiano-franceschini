@@ -24,8 +24,9 @@
               Miembros:
               <span
                 class="add-member"
-                onclick="addMembers('<%= JSON.stringify(members) %>','<%= JSON.stringify(group.members) %>',this)"
+                onclick="addMembers('<%= JSON.stringify(members) %>', this.getAttribute('data-members'), this)"
                 title="Añadir Comensal"
+                data-members="<%= JSON.stringify(group.members) %>"
                 ><i class="fa-solid fa-plus-square"></i
               ></span>
             </p>
@@ -115,36 +116,37 @@
           })
             .then((response) => {
               if (response.ok) {
-                Swal.fire({
-                  title: "Comensal Eliminado",
-                  text: "El comensal ha sido eliminado del grupo correctamente",
-                  icon: "success",
-                  showConfirmButton: true,
-                  confirmButtonText: "Aceptar",
-                }).then(() => {});
+                return response.json(); // Parsear la respuesta JSON
               } else {
-                Swal.fire(
-                  "Error",
-                  "Ocurrió un error al eliminar el comensal del grupo",
-                  "error"
-                );
+                throw new Error("Error al eliminar el comensal del grupo");
               }
+            })
+            .then((data) => {
+              Swal.fire({
+                title: "Comensal Eliminado",
+                text: "El comensal ha sido eliminado del grupo correctamente",
+                icon: "success",
+                showConfirmButton: true,
+                confirmButtonText: "Aceptar",
+              }).then(() => {
+                const updatedGroupMembers = data.comensales;
+                const addMemberButton = document.querySelector(".add-member");
+
+                addMemberButton.setAttribute(
+                  "data-members",
+                  JSON.stringify(updatedGroupMembers)
+                );
+              });
             })
             .catch((error) => {
               console.error("Error en la solicitud:", error);
               Swal.fire("Error", "Ocurrió un error en la solicitud", "error");
             });
-
           listItem.parentNode.removeChild(listItem);
-
-          Swal.fire({
-            title: "Comensal eliminado",
-            text: `${comensalName} ha sido eliminado de la lista del grupo.`,
-            icon: "success",
-          });
         }
       });
     };
+
     const getGroupId = (element) => {
       const groupContent = element.closest(".group-content");
       const groupIdAttr = groupContent.getAttribute("id");
@@ -158,8 +160,9 @@
     const addMembers = (allMembers, groupMembers, element) => {
       const listItem = element.parentNode;
       const parsedAllMembers = JSON.parse(allMembers);
-      const parsedGroupMembers = JSON.parse(groupMembers);
-
+      const parsedGroupMembers = JSON.parse(
+        element.getAttribute("data-members")
+      );
       const filteredMembers = parsedAllMembers.filter((member) => {
         // Filtrar los miembros que no están en el grupo
         return !parsedGroupMembers.some(
@@ -227,20 +230,15 @@
             })
             .then((data) => {
               const comensales = data.comensales;
-
               const groupId = getGroupId(listItem);
-
               const comensalList = document.querySelector(
                 `#group-content-${groupId} .comensales-list`
               );
-
               comensalList.innerHTML = "";
-
               comensales.forEach((comensal) => {
                 const newComensal = document.createElement("li");
                 newComensal.classList.add("list-group-item");
                 newComensal.setAttribute("data-comensal-id", comensal.id);
-
                 newComensal.innerHTML = `
       <span class="comensal-icon"><i class="fa-solid fa-user"></i></span>
       <span class="comensal-name">${comensal.name} ${comensal.surname}</span>
@@ -249,19 +247,12 @@
 
                 comensalList.appendChild(newComensal);
               });
-
-              const updatedGroupMembers = [
-                ...JSON.parse(groupMembers),
-                ...comensales,
-              ];
-              const updatedGroupMembersJSON =
-                JSON.stringify(updatedGroupMembers);
-
+              let updatedGroupMembersJSON = JSON.stringify(comensales);
               element.setAttribute(
-                "onclick",
-                `addMembers('${allMembers}', '${updatedGroupMembersJSON}', this)`
+                "data-members",
+                `${updatedGroupMembersJSON}`
               );
-
+              console.log(updatedGroupMembersJSON);
               Swal.fire({
                 title: "Comensales agregados",
                 text: "Los comensales han sido agregados a la lista del grupo.",
