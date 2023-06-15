@@ -2,32 +2,33 @@ import Group from "../../shared/domain/entities/Group";
 import Cache from "../../shared/utils/cache";
 import ENTITIES from "../../shared/domain/types/entities";
 import Diner from "../../shared/domain/entities/Diner";
+import Canteen from "../../shared/domain/entities/Canteen";
 
 export default (req, res) => {
   try {
-    const { groupId } = req.params;
-    const { comensalesId } = req.body;
-    const dinersCache = Cache.getEntities<Diner>(ENTITIES.DINERS);
-    const group = Cache.getEntity<Group>(ENTITIES.GROUPS, groupId);
+    const { comensalName, comensalSurname, groupId } = req.body;
 
+    const cantina = Cache.getEntities<Canteen>(ENTITIES.CANTEENS)[0];
+
+    if (!comensalName || !comensalSurname) {
+      return res.status(400).json({ error: "Datos incompletos" });
+    }
+    if (!cantina) {
+      return res.status(400).json({ error: "Cantina no encontrada" });
+    }
+    const group = cantina.getGroupd(groupId);
     if (!group) {
       return res.status(404).json({ error: "Grupo no encontrado" });
     }
 
-    comensalesId.forEach((memberId) => {
-      const member = dinersCache.find(
-        (diner) => diner.getIdentifier() === memberId
-      );
-      if (member) {
-        group.addMember(member);
-      }
-    });
+    const dinerData = new Diner(comensalName, comensalSurname);
 
+    group.addMember(dinerData);
+
+    Cache.saveEntity<Diner>(ENTITIES.DINERS, dinerData);
     Cache.updateEntity(ENTITIES.GROUPS, group);
 
-    const updatedComensales = group.getMembers();
-
-    return res.status(200).json({ comensales: updatedComensales });
+    res.sendStatus(200);
   } catch (error) {
     console.error("Error al agregar el comensal al grupo:", error);
     return res.status(500).json({ error: "Error interno del servidor" });
