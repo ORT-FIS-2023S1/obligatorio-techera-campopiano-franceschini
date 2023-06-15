@@ -9,10 +9,19 @@ export default {
   },
   clearMocks: true,
   collectCoverage: true,
+  //collectCoverageFrom: ["./src/tests/**"],
   coverageDirectory: "coverage",
   coverageProvider: "v8",
-  testMatch: ["**/tests/**/*.test.ts"],
+  //testMatch: ["**/src/tests/*.test.ts"],
   moduleDirectories: ["node_modules", "src"],
   moduleFileExtensions: ["js", "json", "ts"],
   roots: ["src"],
+  coverageThreshold: {
+    "global": {
+      "branches": 50,
+      "functions": 85,
+      "lines": 85,
+      "statements": 85
+    },
+  }
 };

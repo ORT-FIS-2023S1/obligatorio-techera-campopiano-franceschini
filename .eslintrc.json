@@ -1,0 +1,16 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "commonjs": true,
+        "jest": true
+    },
+    "extends": "standard-with-typescript",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": ["/home/geto/Desktop/Proyecto FIS/obligatorio-techera-campopiano-franceschini/tsconfig.json"]
+    },
+    "rules": {
+    }
+}
