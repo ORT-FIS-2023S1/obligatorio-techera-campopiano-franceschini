@@ -23,3 +23,24 @@ Testing de proyecto asignado
 En cada entrega se realiza un informe académico que debe dar evidencia de las actividades realizadas y explicar la aplicación de buenas prácticas. Incluir en el informe una reflexión sobre las técnicas de ingeniería de software y los aprendizajes del proyecto.
 
 Trabajo individual: detallar las actividades realizadas por cada integrante del equipo, en el informe académico y mediante commits en el repositorio. Cada integrante debe realizar actividades en todas las áreas indicadas en esta letra.
+
+
+## Configuración del Proyecto
+
+Para poder ejecutar el proyecto, sigue los siguientes pasos:
+
+1. Clona el repositorio del proyecto desde el siguiente enlace: `<URL_DEL_REPOSITORIO>`
+
+2. Navega a la carpeta raíz del proyecto y ejecuta el siguiente comando para instalar las dependencias del proyecto:
+
+   ```
+   npm install
+   ```
+
+3. Una vez que se hayan instalado las dependencias, ejecuta el siguiente comando para iniciar el proyecto:
+
+   ```
+   npm start
+   ```
+
+4. Después de iniciar el proyecto, podrás acceder al sitio web a través de tu navegador utilizando la siguiente URL: [http://localhost:8080](http://localhost:8080)
