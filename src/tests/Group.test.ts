@@ -44,7 +44,7 @@ describe("Group", () => {
   it("should add member", () => {
     group.addMember(diner3);
     expect(group.members).toEqual([diner1, diner2, diner3]);
-  });s
+  });
 
   it("should remove member", () => {
     group.removeMember(diner2);

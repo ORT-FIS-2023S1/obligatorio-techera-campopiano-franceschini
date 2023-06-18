@@ -116,7 +116,7 @@ describe("Canteen", () => {
 
   it("should throw error when DailyMenu does not belong to canteen", () => {
     expect(() => {
-      canteen.getDailyMenu("999");
+      canteen.getDailyMenu();
     }).toThrowError("El dailyMenu no pertenece a este comedor");
   });
 
