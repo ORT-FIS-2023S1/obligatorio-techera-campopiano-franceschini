@@ -1,4 +1,4 @@
-import User from "../shared/domain/entities/User";
+import User from "../../shared/domain/entities/User";
 
 describe("User", () => {
   let user: User;
@@ -34,6 +34,12 @@ describe("User", () => {
     user.addDiner("diner1");
     user.addDiner("diner2");
     expect(user.diners).toEqual(["diner1", "diner2"]);
+  });
+
+  it("shoud get diners", () => {
+    const diners = ["diner1", "diner2", "diner3"];
+    diners.forEach((diner) => user.addDiner(diner));
+    expect(user.diners).toEqual(["diner1", "diner2", "diner3"]);
   });
 
   it("should add canteen", () => {
@@ -74,14 +80,15 @@ describe("User", () => {
       email: "newemail@example.com",
       password: "newpassword",
       role: "newrole",
-      //diners: ['diner1', 'diner2'],
+      diners: ["diner1", "diner2"],
       canteens: ["canteen1", "canteen2"],
     };
     const newUser = User.fromJSON(json);
     expect(newUser.email).toBe("newemail@example.com");
     expect(newUser.password).toBe("newpassword");
     expect(newUser.role).toBe("newrole");
-    //expect(newUser.diners).toEqual(['diner1', 'diner2']);
+    expect(newUser.diners).toEqual(["diner1", "diner2"]);
     expect(newUser.canteens).toEqual(["canteen1", "canteen2"]);
+    expect(newUser).toBeInstanceOf(User);
   });
 });

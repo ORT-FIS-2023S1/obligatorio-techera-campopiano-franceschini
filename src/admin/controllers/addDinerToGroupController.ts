@@ -16,7 +16,7 @@ export default (req, res) => {
     if (!cantina) {
       return res.status(400).json({ error: "Cantina no encontrada" });
     }
-    const group = cantina.getGroupd(groupId);
+    const group = cantina.getGroup(groupId);
     if (!group) {
       return res.status(404).json({ error: "Grupo no encontrado" });
     }

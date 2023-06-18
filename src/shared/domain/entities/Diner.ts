@@ -41,7 +41,7 @@ export default class Diner {
 
   //fromJSON
   static fromJSON(json: any): Diner {
-    const object = new Diner(json.id, json.name, json.surname);
+    const object = new Diner(json.name, json.surname, json.id);
     return object;
   }
 }

@@ -87,7 +87,7 @@ export default class User {
       json.email,
       json.password,
       json.role,
-      json.diner,
+      json.diners,
       json.canteens
     );
     return user;

@@ -12,14 +12,14 @@ export default (req, res) => {
       return res.status(400).json({ error: "Cantina no encontrada" });
     }
 
-    const group = cantina.getGroupd(groupId);
+    const group = cantina.getGroup(groupId);
     if (!group) {
       return res.status(404).json({ error: "Grupo no encontrado" });
     }
     Cache.removeEntity(ENTITIES.GROUPS, groupId);
 
     cantina.removeGroup(groupId);
-    
+
     Cache.updateEntity(ENTITIES.CANTEENS, cantina);
 
     res.sendStatus(200);

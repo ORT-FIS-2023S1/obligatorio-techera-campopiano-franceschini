@@ -54,6 +54,12 @@
       margin-top: 10px;
     }
 
+    .item-price {
+      margin-bottom: 0;
+      font-weight: bold;
+      color: #545b62;
+    }
+
     .carousel-item img {
       max-height: 500px;
     }
@@ -66,7 +72,7 @@
 </head>
 
 <body>
-  <%- include('../components/userNav') %>
+  <%- include('../components/userNav',{canteens:data.canteens}) %>
   <main class="container-fluid">
     <section>
       <%- include('../components/dinersMainList',{diners:data.diners}) %>

@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS",
     "esModuleInterop": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "ES2017",
+    "types": ["node", "jest"],
     "incremental": true,
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": "src",
-    "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist","**/*.test.*", "**/mocks/*", "**/__tests__/*"]
 }

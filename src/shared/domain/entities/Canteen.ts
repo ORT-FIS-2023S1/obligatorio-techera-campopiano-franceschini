@@ -88,11 +88,12 @@ export default class Canteen {
     return this._id;
   }
 
-  getDailyMenu(): DailyMenu {
-    let inputDate = dayjs();
+  getDailyMenu(isoDay?: number): DailyMenu {
+    let inputDate = isoDay ? dayjs().weekday(isoDay) : dayjs();
     if (inputDate.day() === 0 || inputDate.day() === 6) {
       inputDate = inputDate.day(1);
     }
+    if (this.dailyMenus.length === 0) return null;
     const dailyMenus = Cache.getEntitiesByKeys<DailyMenu>(
       ENTITIES.DAILY_MENU,
       this._dailyMenus
@@ -122,7 +123,7 @@ export default class Canteen {
     return menus;
   }
 
-  getGroupd(id: string): Group {
+  getGroup(id: string): Group {
     //verifico si el group pertenece a este comedor
     if (!this.groups.includes(id))
       throw new Error("El group no pertenece a este comedor");
@@ -178,16 +179,15 @@ export default class Canteen {
   //fromJSON
   static fromJSON(json: any): Canteen {
     const canteen = new Canteen(
-      json.id,
       json.name,
       json.address,
       json.telephone,
       json.email,
+      json.groups,
       json.menu,
       json.dailyMenus,
-      json.groups
+      json.id
     );
-
     return canteen;
   }
 }

@@ -5,11 +5,18 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="navbar-menu-item">
-        <a class="nav-link" href="/404">Comensales</a>
+      <li class="navbar-menu-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Comedores
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% canteens.forEach(function(canteen, index) { %>
+          <a class="dropdown-item" href=<%= `canteen/${canteen.id}`%>><%= canteen.name %></a>
+          <% }) %>
+        </div>
       </li>
       <li class="navbar-menu-item">
-        <a class="nav-link" href="/404">Comedores</a>
+        <a class="nav-link" href="/404">Comensales</a>
       </li>
       <li class="navbar-menu-item">
         <a class="nav-link" href="/404">Compras</a>
