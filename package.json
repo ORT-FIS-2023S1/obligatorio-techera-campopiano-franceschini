@@ -10,6 +10,11 @@
     "test": "jest --coverage",
     "start": "npm run build && node dist/app.js",
     "start:dev": "nodemon --exec ts-node ./src/app.ts",
+    "test": "jest --coverage",
+    "lint": "eslint ./src/tests/**",
+    "lint:fix": "eslint ./src/tests/**",
+    "test:cov": "jest --coverage",
+    "posttest:cov": "ts-node commands/open-coverage.command.ts",
     "build": "tsc && npm run copy-interfaces",
     "copy-interfaces": "ncp src/shared/interface dist/shared/interface && ncp src/admin/interface dist/admin/interface && ncp src/user/interface dist/user/interface && ncp src/shared/public dist/shared/public && ncp .env dist/.env"
   },
