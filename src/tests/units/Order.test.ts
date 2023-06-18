@@ -1,6 +1,6 @@
-import Order from "../shared/domain/entities/Order";
-import Diner from "../shared/domain/entities/Diner";
-import Dishes from "../shared/domain/entities/Dishes";
+import Order from "../../shared/domain/entities/Order";
+import Diner from "../../shared/domain/entities/Diner";
+import Dishes from "../../shared/domain/entities/Dishes";
 
 describe("Order", () => {
   let order: Order;
@@ -19,7 +19,7 @@ describe("Order", () => {
       "urlimagen"
     );
     date = new Date();
-    order = new Order(diner, dish, date, "Additional info", false);
+    order = new Order(diner, dish, date, "Additional info", false, "1");
   });
 
   it("should correctly initialize Order instance", () => {
@@ -76,6 +76,11 @@ describe("Order", () => {
     expect(identifier).toBe(order.id);
   });
 
+  it("should create a default id", () => {
+    const entity = new Order(diner, dish, date, "Additional info", false);
+    expect(entity.getIdentifier()).toBeDefined();
+  });
+
   it("should return JSON representation", () => {
     const json = order.toJSON();
     expect(json).toEqual({
@@ -86,5 +91,24 @@ describe("Order", () => {
       additionalInfo: "Additional info",
       processed: false,
     });
+  });
+
+  it("should create Order from JSON", () => {
+    const json = {
+      id: "2",
+      diner: diner.toJSON(),
+      dish: dish.toJSON(),
+      date: date.toISOString(),
+      additionalInfo: "Additional info",
+      processed: false,
+    };
+    const order = Order.fromJSON(json);
+    expect(order).toBeInstanceOf(Order);
+    expect(order.diner).toBeInstanceOf(Diner);
+    expect(order.dish).toBeInstanceOf(Dishes);
+    expect(order.date).toBeInstanceOf(Date);
+    expect(order.additionalInfo).toBe("Additional info");
+    expect(order.processed).toBe(false);
+    expect(order.id).toBe("2");
   });
 });

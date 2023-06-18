@@ -36,6 +36,7 @@
     "nodemon": "^2.0.22",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.7.10",
+    "ts-jest": "^29.1.0",
     "uuid": "^9.0.0",
     "uuidv4": "^6.2.13"
   },

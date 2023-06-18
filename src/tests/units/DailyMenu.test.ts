@@ -1,4 +1,4 @@
-import DailyMenu from "../shared/domain/entities/DailyMenu";
+import DailyMenu from "../../shared/domain/entities/DailyMenu";
 
 describe("DailyMenu", () => {
   let dailyMenu: DailyMenu;
