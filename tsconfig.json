@@ -12,7 +12,7 @@
     "outDir": "dist",
     "baseUrl": "src",
     "skipLibCheck": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

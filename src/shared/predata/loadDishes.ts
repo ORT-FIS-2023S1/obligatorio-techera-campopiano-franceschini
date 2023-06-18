@@ -20,7 +20,7 @@ export default () => {
     ["Harina", "huevos", "azucar"],
     2,
     "Hidratos de carbono",
-    "/temp/cafe.jpg"
+    "/temp/muffins.jpg"
   );
   const orangeJuice = new Dishes(
     "Zumo de naranja",
@@ -28,7 +28,7 @@ export default () => {
     ["Naranjas"],
     3,
     "Vitamina C",
-    "/temp/cafe.jpg"
+    "/temp/vaso-jugo-naranja-colocado-madera.jpg"
   );
   const cookies = new Dishes(
     "Galletas",
@@ -36,7 +36,7 @@ export default () => {
     ["Harina", "huevos", "azucar"],
     4,
     "Hidratos de carbono",
-    "/temp/cafe.jpg"
+    "/temp/cookies.jpg"
   );
   const donuts = new Dishes(
     "Donuts",
@@ -44,7 +44,7 @@ export default () => {
     ["Harina", "huevos", "azucar"],
     5,
     "Hidratos de carbono",
-    "/temp/cafe.jpg"
+    "https://canalcocina.es/medias/images/0001083606QuiqueAlCuboT02E021HDonuts-de-galletasCLEAN01.jpg"
   );
   //lunches
   const salad = new Dishes(
@@ -54,7 +54,7 @@ export default () => {
     6,
 
     "Vitaminas y proteinas",
-    "/temp/cafe.jpg"
+    "https://saboreaunohoy.com/wp-content/uploads/Love-One-Today-featured-avocado-recipe-Springtime-Cobb-Salad-with-Avocado-Dijon-Dressing.jpg"
   );
 
   const pasta = new Dishes(
@@ -63,7 +63,7 @@ export default () => {
     ["Pasta", "tomate", "atun"],
     7,
     "Hidratos de carbono y proteinas",
-    "/temp/cafe.jpg"
+    "https://www.budgetbytes.com/wp-content/uploads/2013/07/Creamy-Spinach-Tomato-Pasta-bowl-500x500.jpg"
   );
 
   const pizza = new Dishes(
@@ -72,7 +72,7 @@ export default () => {
     ["Harina", "tomate", "queso"],
     8,
     "Hidratos de carbono y proteinas",
-    "/temp/cafe.jpg"
+    "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg"
   );
 
   const rice = new Dishes(
@@ -81,7 +81,7 @@ export default () => {
     ["Arroz", "tomate", "atun"],
     9,
     "Hidratos de carbono y proteinas",
-    "/temp/cafe.jpg"
+    "https://images.aws.nestle.recipes/original/cc1ed7245ed521b41e14c8c7ca0fa9f8_foto_arroz.jpg"
   );
 
   const meat = new Dishes(
@@ -90,7 +90,7 @@ export default () => {
     ["Carne", "tomate", "atun"],
     10,
     "Proteinas",
-    "/temp/cafe.jpg"
+    "https://cdn.aarp.net/content/dam/aarp/health/healthy-living/2019/10/1140-rib-eye-steak-esp.imgcache.rev.web.1000.575.jpg"
   );
 
   //snacks
@@ -100,7 +100,7 @@ export default () => {
     ["Patatas", "aceite", "sal"],
     11,
     "Hidratos de carbono",
-    "/temp/cafe.jpg"
+    "https://comidaschilenas.com/wp-content/uploads/2020/01/Receta-de-papas-fritas-perfectas.jpg"
   );
 
   const chocolate = new Dishes(
@@ -109,7 +109,7 @@ export default () => {
     ["Cacao", "leche", "azucar"],
     12,
     "Hidratos de carbono",
-    "/temp/cafe.jpg"
+    "https://t1.uc.ltmcdn.com/es/posts/4/4/5/como_hacer_bombones_de_chocolate_23544_600.webp"
   );
 
   const iceCream = new Dishes(
@@ -118,7 +118,7 @@ export default () => {
     ["Leche", "azucar", "huevo"],
     13,
     "Hidratos de carbono",
-    "/temp/cafe.jpg"
+    "https://recetinas.com/wp-content/uploads/2021/06/helado-de-frutas-rojas-y-yogur.jpg"
   );
 
   const yogurt = new Dishes(
@@ -127,7 +127,7 @@ export default () => {
     ["Leche", "azucar", "huevo"],
     14,
     "Hidratos de carbono",
-    "/temp/cafe.jpg"
+    "https://assets.unileversolutions.com/recipes-v2/236472.jpg"
   );
 
   const fruit = new Dishes(
@@ -137,7 +137,7 @@ export default () => {
     ["Fruta"],
     15,
     "Vitaminas",
-    "/temp/cafe.jpg"
+    "https://www.fisenf.com/wp-content/uploads/2015/11/frutas-y-frutos-secos.jpg"
   );
 
   //save entities

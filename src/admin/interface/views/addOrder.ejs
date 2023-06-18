@@ -1,0 +1,137 @@
+<!-- Contenido de agregarPlato -->
+<div class="container scrollable-menu" data-simplebar>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="continer">
+        <h1>Registrar un Pedido</h1>
+        <form id="order-form" action="/admin/index/addOrder" method="POST">
+          <div class="form-group">
+            <label for="dinerId">Nombre y Apellido del Comensal:</label>
+            <select id="dinerId" name="dinerId" class="form-control" required>
+              <% if (diners && diners.length > 0) { %> <% for (let i = 0; i <
+              diners.length; i++) { const diner = diners[i]; %>
+              <option value="<%= diner._id %>">
+                <%= diner.name + " " + diner.surname %>
+              </option>
+              <% } %> <% } else { %>
+              <option value="" disabled>No se encontraron comensales</option>
+              <% } %>
+              <!-- Agrega aquí más opciones con los nombres y apellidos de los comensales -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dishId">Menú Deseado:</label>
+            <select id="dishId" name="dishId" class="form-control" required>
+              <% if (dishes && dishes.length > 0) { %> <% for (let i = 0; i <
+              dishes.length; i++) { const dish = dishes[i]; %>
+              <option value="<%= dish._id %>"><%= dish.name %></option>
+              <% } %> <% } else { %>
+              <option value="" disabled>
+                No se encontraron menús disponibles
+              </option>
+              <% } %>
+              <!-- Agrega aquí más opciones con los menús disponibles -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="additionalInfo">Información Adicional:</label>
+            <textarea
+              id="additionalInfo"
+              name="additionalInfo"
+              class="form-control"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="button-container">
+            <button type="submit" class="btn btn-primary">
+              Agregar Pedido
+            </button>
+            <button type="button" class="btn btn-secondary cancel">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h1>Lista Actual de Pedidos</h1>
+      <% let j = 0 %> <% if (orders && orders.length > 0) { %>
+      <ol class="ol" style="--length: <%= orders.length %>" role="list">
+        <% for (let i = 0; i < orders.length; i++) { const order = orders[i];
+        j++; %>
+        <li class="li" style="--i: <%= j %>">
+          <h2 class="h3"><%= order.dish.name %></h2>
+          <p class="p">
+            Comensal: <%= order.diner.name %> <%= order.diner.surname %>
+          </p>
+          <p class="p">Ingredientes: <%= order.dish.ingredients %></p>
+          <p class="p">Porción: <%= order.dish.portions %></p>
+          <p class="p">
+            Info Nutricional: <%= order.dish.nutritionalInformation %>
+          </p>
+          <p class="p">Precio: $<%= order.dish.price %></p>
+          <p class="p">Información adicional: <%= order.additionalInfo %></p>
+          <p class="p">Procesado: <%= order.processed ? 'Sí' : 'No' %></p>
+          <img
+            class="product-image"
+            src="<%= order.dish.imageURL %>"
+            alt="Imagen del producto"
+          />
+        </li>
+        <% } %>
+      </ol>
+      <% }else { %>
+      <div class="center">
+        <div class="notification warning">
+          <i class="fa-solid fa-exclamation"></i>
+          <span>No se han registrado pedidos aún.</span>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById("order-form");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evitar que el formulario se envíe
+      fetch(form.action, {
+        method: form.method,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(new FormData(form)),
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Se guardaron los datos exitosamente
+            Swal.fire({
+              icon: "success",
+              title: "Pedido Agregado",
+              text: "El pedido ha sido agregado correctamente",
+              showCancelButton: true,
+              confirmButtonText: "Agregar otro pedido",
+              cancelButtonText: "Ir al inicio",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                form.reset();
+                location.reload();
+              } else {
+                window.location.href = "/admin/index";
+              }
+            });
+          } else {
+            throw new Error("Error al guardar los datos del formulario");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Ocurrió un error al guardar los datos del formulario.",
+          });
+        });
+    });
+  </script>
+</div>

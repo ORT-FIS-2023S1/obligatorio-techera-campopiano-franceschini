@@ -1,6 +1,6 @@
 <!-- sidebar.ejs -->
 <div class="col-md-3">
-  <div class="container">
+  <div class="container scrollable-menu" data-simplebar>
     <div class="card-deck">
       <div class="mb-2">
         <div class="card">
@@ -23,6 +23,15 @@
             <p class="card-text">
               Aquí puedes administrar los pedidos realizados.
             </p>
+            <div class="isubmenu">
+              <a
+                href="/admin/index/order"
+                title="Registrar un pedido a un comensal"
+                class="isubmenu-link"
+              >
+                <i class="fa fa-shopping-basket"></i> Registrar Pedido
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -30,14 +39,35 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">
-              <i class="fas fa-users"></i> Administrar grupos
+              <i class="fas fa-users"></i> Administrar Grupos
             </h5>
             <p class="card-text">
-              Aquí puedes administrar los grupos de usuarios.
+              Aquí puedes administrar los grupos de comensales.
             </p>
+            <div class="isubmenu">
+              <a href="#" class="isubmenu-link">
+                <i class="fas fa-list"></i> Lista de Grupos
+              </a>
+              <a href="/admin/index/diner/add" class="isubmenu-link">
+                <i class="fas fa-user-plus"></i> Registrar Nuevo Comensal
+              </a>
+              <a href="#" class="isubmenu-link">
+                <i class="fas fa-users"></i> Comensales
+              </a>
+              <a href="/admin/index/group/edit" class="isubmenu-link">
+                <i class="fas fa-edit"></i> Editar
+              </a>
+              <a href="/admin/index/group/delete" class="isubmenu-link">
+                <i class="fas fa-trash"></i> Eliminar
+              </a>
+              <a href="/admin/index/group/add" class="isubmenu-link">
+                <i class="fas fa-plus"></i> Registrar Nuevo Grupo
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="mb-2">
         <div class="card">
           <div class="card-body">
@@ -51,9 +81,8 @@
               <i class="fas fa-utensil-spoon"></i> Lista de ítems del menú
               (platos)
               <a
-                href="/admin/index/agregarPlato"
-                target="_self"
-                title="Agregar un plato al menú"
+                href="/admin/index/dishe"
+                title="Agrega un plato al menú"
                 class="isubmenu-link"
               >
                 <i class="fas fa-plus"></i> Agregar plato al menú

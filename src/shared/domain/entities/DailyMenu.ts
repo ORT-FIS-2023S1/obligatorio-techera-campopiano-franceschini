@@ -1,4 +1,7 @@
 import { v4 as uuid } from "uuid";
+import Dishes from "./Dishes";
+import Cache from "../../utils/cache";
+import ENTITIES from "../types/entities";
 export default class DailyMenu {
   private _id: string;
   constructor(

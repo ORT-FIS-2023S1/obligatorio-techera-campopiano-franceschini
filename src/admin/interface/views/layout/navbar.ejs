@@ -2,7 +2,9 @@
 <header class="main-header">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/admin/index"><span class="logo"></span></a>
+      <a class="navbar-brand" href="/admin/index" target="_self" title="Home"
+        ><span class="logo"></span
+      ></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -36,11 +38,60 @@
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-tasks"></i> Administrar pedidos
                 </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/admin/index/order"
+                      title="Registrar Pedido"
+                      target="_self"
+                    >
+                      <i class="fa fa-shopping-basket"></i> Registrar Pedido
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-users"></i> Administrar grupos
                 </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-list"></i> Lista de Grupos
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/admin/index/diner/add">
+                      <i class="fas fa-user-plus"></i> Registrar nuevo comensal
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-users"></i> Comensales
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/admin/index/group/edit">
+                      <i class="fas fa-edit"></i> Editar
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/admin/index/group/delete">
+                      <i class="fas fa-trash"></i> Eliminar
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/admin/index/group/add"
+                      title="Crear nuevo grupo de comensales"
+                      target="_self"
+                    >
+                      <i class="fas fa-user-plus"></i> Registrar nuevo grupo
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="dropdown-submenu">
                 <a
@@ -62,9 +113,9 @@
                   <li>
                     <a
                       class="dropdown-item"
-                      href="/admin/index/agregarPlato"
+                      href="/admin/index/dishe"
+                      title="Agregar plato al menú"
                       target="_self"
-                      title="Agregar un plato al menú"
                     >
                       <i class="fas fa-plus"></i> Agregar plato al menú
                     </a>
@@ -109,17 +160,14 @@
         >
           <i class="fas fa-user"></i> Administrador
         </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="adminDropdown"
-        >
+        <ul class="dropdown-menu dropdown-menu-end">
           <li>
             <a class="dropdown-item" href="#"
               ><i class="fas fa-user-circle"></i> Perfil</a
             >
           </li>
           <li>
-            <a class="dropdown-item" href="#"
+            <a class="dropdown-item" href="/admin/index/logout"
               ><i class="fas fa-sign-out-alt"></i> Salir</a
             >
           </li>

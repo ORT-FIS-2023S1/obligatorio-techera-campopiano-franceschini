@@ -1,14 +1,13 @@
 import { v4 as uuid } from "uuid";
-
 export default class Dishes {
   private _id: string;
   constructor(
     private _name: string,
     private _price: number,
-    private _ingredients: string[] = [],
+    private _ingredients: string[],
     private _portions: number,
     private _nutritionalInformation: string,
-    private _photo: string,
+    private _imageURL: string,
     _id?: string
   ) {
     !_id ? (this._id = uuid()) : (this._id = _id);
@@ -35,8 +34,8 @@ export default class Dishes {
     return this._nutritionalInformation;
   }
 
-  get photo(): string {
-    return this._photo;
+  get imageURL(): string {
+    return this._imageURL;
   }
 
   //setters
@@ -60,10 +59,9 @@ export default class Dishes {
     this._nutritionalInformation = nutritionalInformation;
   }
 
-  set photo(photo: string) {
-    this._photo = photo;
+  set imageURL(imageUrl: string) {
+    this._imageURL = imageUrl;
   }
-
   //methods
 
   getIdentifier(): string {
@@ -72,11 +70,12 @@ export default class Dishes {
   //toJSON
   toJSON(): object {
     return {
-      name: this.name,
-      price: this.price,
-      ingredients: this.ingredients,
-      nutritionalInformation: this.nutritionalInformation,
-      photo: this.photo,
+      name: this._name,
+      price: this._price,
+      ingredients: this._ingredients,
+      portions: this.portions,
+      nutritionalInformation: this._nutritionalInformation,
+      imageURL: this._imageURL,
     };
   }
 
@@ -88,7 +87,7 @@ export default class Dishes {
       json.ingredients,
       json.portions,
       json.nutritionalInformation,
-      json.photo
+      json.imageUrl
     );
   }
 }

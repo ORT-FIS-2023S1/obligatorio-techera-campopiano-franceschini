@@ -2,6 +2,20 @@
 :root {
   --color-primary: #1b5e20;
   --color-secondary: #1565c0;
+  --success: #3fbd63c4;
+  --success-md: #3fbd637c;
+  --success-l: #3fbd632d;
+  --info: #0069dec4;
+  --info-md: #0069de7c;
+  --info-l: #0069de2d;
+
+  --warning: #ef9400c4;
+  --warning-md: #ef94007c;
+  --warning-l: #ef94002d;
+
+  --danger: #ea4e2cc4;
+  --danger-md: #ea4e2c7c;
+  --danger-l: #ea4e2c2d;
 }
 
 /* Fuentes */
@@ -10,6 +24,21 @@
 /* Iconos */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
+.btn-primary {
+  background-color: var(--color-secondary) !important;
+}
+.btn-primary,
+a {
+  color: #ffffff;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px; /* Ajusta el valor según la altura del footer */
+}
 .logo {
   width: 208px;
   height: 32px;
@@ -59,10 +88,14 @@
 }
 
 .navbar-menu-item > a {
-  color: #fff;
+  color: #ffffff;
   padding: 10px;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
+}
+
+.navbar-menu-item .nav-link:hover {
+  font-size: 18px;
 }
 
 .submenu {
@@ -93,15 +126,15 @@
 
 /* Estilos para el footer */
 .footer {
-  background-color: var(--color-primary) !important;
-  color: #fff;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 9999; /* Asegúrate de que el z-index sea mayor que el de otros elementos */
+  background-color: var(--color-primary) !important;
+  color: #fff;
   text-align: center;
-  margin-top: auto;
-  padding: 1em 0;
+  padding: 1rem 0;
   font-family: "Roboto", sans-serif;
 }
 
@@ -196,7 +229,7 @@
 }
 
 .container {
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 5px;
@@ -250,4 +283,17 @@ h2 {
 
 .btn-secondary:hover {
   background-color: #0f4d9b;
+}
+.scrollable-menu {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  margin-bottom: 60px;
+}
+
+.simplebar-scrollbar:before {
+  background-color: var(--color-primary);
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar {
+  width: 20px;
 }
