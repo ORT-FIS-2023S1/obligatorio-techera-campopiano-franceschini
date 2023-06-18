@@ -9,6 +9,24 @@
       font-family: "Roboto", sans-serif;
     }
 
+    .logo {
+      width: 33rem;
+      height: 5rem;
+      background-image: url("../images/pediloyalogo_.png");
+      background-size: cover;
+      background-position: center;
+      display: inline-flex;
+    }
+
+    /* Estilos para pantallas de hasta 768px de ancho */
+    @media (max-width: 768px) {
+      .logo {
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+
     .btn-primary {
       background-color: #1565c0 !important;
     }
@@ -73,15 +91,13 @@
 </head>
 
 <body>
-  <!-- <%- include('../components/navBar',{title:'SafeFood'}) %> -->
-
   <!-- crea una landing page para una aplicacion de pedidos de comida a domicilio -->
   <!-- debe tener una foto de fondo que ocupe toda la pantalla, un boton que diga iniciar sesion, otro que diga registrarse -->
   <!-- y un boton que diga ver restaurantes -->
   <main>
     <div class="hero">
       <div class="container">
-        <h1>Safe Food App</h1>
+        <span class="logo"></span>
         <p>Alimentación saludable para tus hijos, facil y sin riesgos!</p>
         <a href="/login" class="btn btn-primary">Empezar</a>
       </div>
