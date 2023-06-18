@@ -36,6 +36,12 @@ describe("User", () => {
     expect(user.diners).toEqual(["diner1", "diner2"]);
   });
 
+  it("shoud get diners", () => {
+    const diners = ["diner1", "diner2", "diner3"];
+    diners.forEach((diner) => user.addDiner(diner));
+    expect(user.diners).toEqual(["diner1", "diner2", "diner3"]);
+  });
+
   it("should add canteen", () => {
     user.addCanteen("canteen1");
     user.addCanteen("canteen2");
@@ -74,14 +80,15 @@ describe("User", () => {
       email: "newemail@example.com",
       password: "newpassword",
       role: "newrole",
-      //diners: ['diner1', 'diner2'],
+      diners: ["diner1", "diner2"],
       canteens: ["canteen1", "canteen2"],
     };
     const newUser = User.fromJSON(json);
     expect(newUser.email).toBe("newemail@example.com");
     expect(newUser.password).toBe("newpassword");
     expect(newUser.role).toBe("newrole");
-    //expect(newUser.diners).toEqual(['diner1', 'diner2']);
+    expect(newUser.diners).toEqual(["diner1", "diner2"]);
     expect(newUser.canteens).toEqual(["canteen1", "canteen2"]);
+    expect(newUser).toBeInstanceOf(User);
   });
 });

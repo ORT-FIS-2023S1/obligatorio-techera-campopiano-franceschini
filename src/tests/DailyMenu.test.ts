@@ -51,4 +51,19 @@ describe("DailyMenu", () => {
       snack: "Snack",
     });
   });
+
+  it("should create DailyMenu from JSON", () => {
+    const json = {
+      date: new Date("2023-06-11"),
+      breakfast: "Breakfast",
+      lunch: "Lunch",
+      snack: "Snack",
+    };
+    const dailyMenu = DailyMenu.fromJSON(json);
+    expect(dailyMenu).toBeInstanceOf(DailyMenu);
+    expect(dailyMenu.date).toEqual(new Date("2023-06-11"));
+    expect(dailyMenu.breakfast).toBe("Breakfast");
+    expect(dailyMenu.lunch).toBe("Lunch");
+    expect(dailyMenu.snack).toBe("Snack");
+  });
 });

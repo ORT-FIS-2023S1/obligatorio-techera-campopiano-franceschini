@@ -1,6 +1,4 @@
 import { v4 as uuid } from "uuid";
-import Cache from "../../utils/cache";
-import ENTITIES from "../types/entities";
 import Diner from "./Diner";
 
 export default class Group {
@@ -77,10 +75,10 @@ export default class Group {
   //fromJSON
   static fromJSON(groupJSON: any): Group {
     const group = new Group(
-      groupJSON.id,
       groupJSON.name,
       groupJSON.description,
-      groupJSON.members
+      groupJSON.members,
+      groupJSON.id
     );
     return group;
   }

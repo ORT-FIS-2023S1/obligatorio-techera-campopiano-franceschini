@@ -36,4 +36,17 @@ describe("Diner", () => {
       surname: "Perez",
     });
   });
+
+  it("should create Diner from JSON", () => {
+    const json = {
+      id: "1",
+      name: "Juan",
+      surname: "Perez",
+    };
+    const diner = Diner.fromJSON(json);
+    expect(diner).toBeInstanceOf(Diner);
+    expect(diner.name).toBe("Juan");
+    expect(diner.surname).toBe("Perez");
+    expect(diner.getIdentifier()).toBe("1");
+  });
 });

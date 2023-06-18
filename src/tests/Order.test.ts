@@ -31,6 +31,11 @@ describe("Order", () => {
     expect(order.id).toBeTruthy();
   });
 
+  it("should create a default id", () => {
+    const entity = new Order(diner, dish, date, "Additional info", false);
+    expect(entity.id).toBeDefined();
+  });
+
   it("should set diner", () => {
     const newDiner = new Diner("1", "Pedro", "Gomez");
     order.diner = newDiner;

@@ -26,6 +26,11 @@ describe("Group", () => {
     expect(group.getIdentifier()).toBe("12345");
   });
 
+  it("should create a default id", () => {
+    const entity = new Group("Grupo 1", "Descripcion grupo", [diner1, diner2]);
+    expect(entity.getIdentifier()).toBeDefined();
+  });
+
   it("should set name", () => {
     group.name = "Grupo actualizado";
     expect(group.name).toBe("Grupo actualizado");
@@ -63,5 +68,18 @@ describe("Group", () => {
       description: "Descripcion grupo",
       members: [diner1, diner2],
     });
+  });
+
+  it("shoud create a group from JSON", () => {
+    const json = {
+      name: "Grupo 1",
+      description: "Descripcion grupo",
+      members: [diner1, diner2],
+    };
+    const groupFromJson = Group.fromJSON(json);
+    expect(groupFromJson.name).toBe("Grupo 1");
+    expect(groupFromJson.description).toBe("Descripcion grupo");
+    expect(groupFromJson.members).toHaveLength(2);
+    expect(groupFromJson).toBeInstanceOf(Group);
   });
 });
