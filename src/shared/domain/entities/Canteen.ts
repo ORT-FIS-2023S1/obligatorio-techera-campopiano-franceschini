@@ -88,12 +88,12 @@ export default class Canteen {
     return this._id;
   }
 
-  getDailyMenu(): DailyMenu {
-    let inputDate = dayjs();
+  getDailyMenu(isoDay?: number): DailyMenu {
+    let inputDate = isoDay ? dayjs().weekday(isoDay) : dayjs();
     if (inputDate.day() === 0 || inputDate.day() === 6) {
       inputDate = inputDate.day(1);
     }
-    if (this.dailyMenus.length === 0) throw new Error("No hay menú del día");
+    if (this.dailyMenus.length === 0) return null;
     const dailyMenus = Cache.getEntitiesByKeys<DailyMenu>(
       ENTITIES.DAILY_MENU,
       this._dailyMenus

@@ -1,18 +1,8 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+import type { Config } from "@jest/types";
 
-export default {
-  transform: {
-    "^.+\\.ts?$": "esbuild-jest",
-  },
-  clearMocks: true,
-  collectCoverage: true,
-  coverageDirectory: "coverage",
-  coverageProvider: "v8",
-  testMatch: ["**/tests/**/*.test.ts"],
-  moduleDirectories: ["node_modules", "src"],
-  moduleFileExtensions: ["js", "json", "ts"],
-  roots: ["src"],
+const config: Config.InitialOptions = {
+  preset: "ts-jest",
+  testEnvironment: "node",
+  verbose: true,
 };
+export default config;

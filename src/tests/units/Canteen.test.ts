@@ -1,12 +1,12 @@
 import dayjs from "dayjs";
 import weekday from "dayjs/plugin/weekday";
 dayjs.extend(weekday);
-import Canteen from "../shared/domain/entities/Canteen";
-import DailyMenu from "../shared/domain/entities/DailyMenu";
-import Dishes from "../shared/domain/entities/Dishes";
-import Group from "../shared/domain/entities/Group";
-import ENTITIES from "../shared/domain/types/entities";
-import Cache from "../shared/utils/cache";
+import Canteen from "../../shared/domain/entities/Canteen";
+import DailyMenu from "../../shared/domain/entities/DailyMenu";
+import Dishes from "../../shared/domain/entities/Dishes";
+import Group from "../../shared/domain/entities/Group";
+import ENTITIES from "../../shared/domain/types/entities";
+import Cache from "../../shared/utils/cache";
 
 describe("Canteen", () => {
   let canteen: Canteen;
@@ -32,7 +32,7 @@ describe("Canteen", () => {
       "Desayuno",
       "Almuerzo",
       "Snack",
-      "54321"
+      "54320"
     );
 
     group = new Group("Nombre grupo", "Descripcion grupo", [], "67890");
@@ -60,6 +60,19 @@ describe("Canteen", () => {
     expect(canteen.dailyMenus).toEqual([]);
     expect(canteen.groups).toEqual([]);
     expect(canteen.getIdentifier()).toBe("12345");
+  });
+
+  it("should allow the creation of a canteen without its optional properties", () => {
+    const entity = new Canteen(
+      "Nombre cantina",
+      "Direccion cantina",
+      "123456789",
+      "emailone@gmail.com"
+    );
+    expect(entity).toBeInstanceOf(Canteen);
+    expect(entity.groups).toEqual([]);
+    expect(entity.menu).toEqual([]);
+    expect(entity.dailyMenus).toEqual([]);
   });
 
   it("should set name", () => {
@@ -97,6 +110,25 @@ describe("Canteen", () => {
     expect(canteen.groups).toEqual(["AAA", "BBB", "CCC"]);
   });
 
+  it("shoud be remove group", () => {
+    canteen.groups = ["AAA", "BBB", "CCC"];
+    canteen.removeGroup("AAA");
+    expect(canteen.groups).toEqual(["BBB", "CCC"]);
+  });
+
+  it("should create a default id", () => {
+    const entity = new Canteen(
+      "Nombre cantina",
+      "Direccion cantina",
+      "123456789",
+      "canteen@xd.com",
+      [],
+      [],
+      []
+    );
+    expect(entity.getIdentifier()).toBeDefined();
+  });
+
   it("should return identifier as id", () => {
     const identifier = canteen.getIdentifier();
     expect(identifier).toBe("12345");
@@ -106,9 +138,24 @@ describe("Canteen", () => {
     canteen.addDailyMenu(dailyMenu.getIdentifier());
     expect(canteen.dailyMenus).toEqual([dailyMenu.getIdentifier()]);
   });
+
   it("should return DailyMenu", () => {
     canteen.addDailyMenu(dailyMenu.getIdentifier());
     const result = canteen.getDailyMenu();
+    expect(result).toBeInstanceOf(DailyMenu);
+    expect(result.getIdentifier()).toBe(dailyMenu.getIdentifier());
+  });
+
+  it("should return the Monday menu if it receives the Sunday date", () => {
+    canteen.addDailyMenu(dailyMenu.getIdentifier());
+    const result = canteen.getDailyMenu(0);
+    expect(result).toBeInstanceOf(DailyMenu);
+    expect(result.getIdentifier()).toBe(dailyMenu.getIdentifier());
+  });
+
+  it("should return the Monday menu if it receives the Saturday date", () => {
+    canteen.addDailyMenu(dailyMenu.getIdentifier());
+    const result = canteen.getDailyMenu(6);
     expect(result).toBeInstanceOf(DailyMenu);
     expect(result.getIdentifier()).toBe(dailyMenu.getIdentifier());
   });
@@ -124,9 +171,55 @@ describe("Canteen", () => {
   });
 
   it("should throw error when DailyMenu does not belong to canteen", () => {
-    expect(() => {
-      canteen.getDailyMenu();
-    }).toThrowError("No hay menú del día");
+    const dailyMenu = canteen.getDailyMenu();
+    expect(dailyMenu).toBeNull();
+  });
+
+  it("shoud get weekly menu", () => {
+    const dailyMenu2 = new DailyMenu(
+      dayjs().weekday(2).toDate(),
+      "Desayuno",
+      "Almuerzo",
+      "Snack",
+      "54321"
+    );
+    const dailyMenu3 = new DailyMenu(
+      dayjs().weekday(3).toDate(),
+      "Desayuno",
+      "Almuerzo",
+      "Snack",
+      "54322"
+    );
+
+    const dailyMenu4 = new DailyMenu(
+      dayjs().weekday(4).toDate(),
+      "Desayuno",
+      "Almuerzo",
+      "Snack",
+      "54323"
+    );
+
+    const dailyMenu5 = new DailyMenu(
+      dayjs().weekday(5).toDate(),
+      "Desayuno",
+      "Almuerzo",
+      "Snack",
+      "54324"
+    );
+
+    Cache.saveEntity<DailyMenu>(ENTITIES.DAILY_MENU, dailyMenu2);
+    Cache.saveEntity<DailyMenu>(ENTITIES.DAILY_MENU, dailyMenu3);
+    Cache.saveEntity<DailyMenu>(ENTITIES.DAILY_MENU, dailyMenu4);
+    Cache.saveEntity<DailyMenu>(ENTITIES.DAILY_MENU, dailyMenu5);
+
+    canteen.addDailyMenu(dailyMenu.getIdentifier());
+    canteen.addDailyMenu(dailyMenu2.getIdentifier());
+    canteen.addDailyMenu(dailyMenu3.getIdentifier());
+    canteen.addDailyMenu(dailyMenu4.getIdentifier());
+    canteen.addDailyMenu(dailyMenu5.getIdentifier());
+
+    const result = canteen.getWeeklyMenu();
+    expect(result).toHaveLength(5);
   });
 
   it("should return Group by id", () => {

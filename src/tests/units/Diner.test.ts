@@ -1,4 +1,4 @@
-import Diner from "../shared/domain/entities/Diner";
+import Diner from "../../shared/domain/entities/Diner";
 
 describe("Diner", () => {
   let diner: Diner;
@@ -26,6 +26,11 @@ describe("Diner", () => {
   it("should return identifier as id", () => {
     const identifier = diner.getIdentifier();
     expect(identifier).toBe("1");
+  });
+
+  it("should create a default id", () => {
+    const entity = new Diner("Juan", "Perez");
+    expect(entity.getIdentifier()).toBeDefined();
   });
 
   it("should return JSON representation", () => {

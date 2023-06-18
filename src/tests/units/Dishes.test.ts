@@ -1,16 +1,19 @@
-import Dishes from "../shared/domain/entities/Dishes";
+import Dishes from "../../shared/domain/entities/Dishes";
 
 describe("Dishes", () => {
-  it("should create a Dishes instance", () => {
-    const dish = new Dishes(
+  let dish: Dishes;
+  beforeEach(() => {
+    dish = new Dishes(
       "Pizza",
       12.99,
       ["Harina", "Queso", "Salsa de tomate", "Bacon"],
       8,
       "Calorías: 250 por porción",
-      "urlimagen"
+      "urlimagen",
+      "1"
     );
-
+  });
+  it("should create a Dishes instance", () => {
     expect(dish).toBeInstanceOf(Dishes);
     expect(dish.name).toBe("Pizza");
     expect(dish.price).toBe(12.99);
@@ -22,6 +25,36 @@ describe("Dishes", () => {
     ]);
     expect(dish.portions).toBe(8);
     expect(dish.nutritionalInformation).toBe("Calorías: 250 por porción");
+    expect(dish.imageURL).toBe("urlimagen");
+  });
+
+  it("should set name", () => {
+    dish.name = "Burrito";
+    expect(dish.name).toBe("Burrito");
+  });
+
+  it("should set price", () => {
+    dish.price = 9.99;
+    expect(dish.price).toBe(9.99);
+  });
+
+  it("should set ingredients", () => {
+    dish.ingredients = ["Tortilla", "Carne", "Queso", "Lechuga"];
+    expect(dish.ingredients).toEqual(["Tortilla", "Carne", "Queso", "Lechuga"]);
+  });
+
+  it("should set portions", () => {
+    dish.portions = 1;
+    expect(dish.portions).toBe(1);
+  });
+
+  it("should set nutritional information", () => {
+    dish.nutritionalInformation = "Calorías: 500";
+    expect(dish.nutritionalInformation).toBe("Calorías: 500");
+  });
+
+  it("should set image URL", () => {
+    dish.imageURL = "urlimagen";
     expect(dish.imageURL).toBe("urlimagen");
   });
 

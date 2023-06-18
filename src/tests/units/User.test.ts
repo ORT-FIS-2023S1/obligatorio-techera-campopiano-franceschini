@@ -1,4 +1,4 @@
-import User from "../shared/domain/entities/User";
+import User from "../../shared/domain/entities/User";
 
 describe("User", () => {
   let user: User;
