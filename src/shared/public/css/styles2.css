@@ -85,6 +85,19 @@
     margin-right: 1.5rem;
   }
 }
+@media (max-width: 768px) {
+  .product-image {
+    display: none !important;
+  }
+}
+.producto-imagen {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  transform: translate(-10%, -50%);
+  max-width: 40%;
+  height: auto;
+}
 .product-image {
   position: absolute;
   top: 60%;
@@ -93,7 +106,6 @@
   width: 200px;
   height: auto;
 }
-
 .notification {
   background-color: #fff;
   padding: 15px;
