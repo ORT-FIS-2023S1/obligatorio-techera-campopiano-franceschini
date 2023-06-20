@@ -1,6 +1,6 @@
-import { v4 as uuid } from "uuid";
-import Diner from "./Diner";
-import Dishes from "./Dishes";
+import {v4 as uuid} from 'uuid';
+import Diner from './Diner';
+import Dishes from './Dishes';
 
 export default class Order {
   private _id: string;
@@ -11,7 +11,7 @@ export default class Order {
     private _date: Date,
     private _additionalInfo: string,
     private _processed: boolean,
-    _id?: string
+    _id?: string,
   ) {
     !_id ? (this._id = uuid()) : (this._id = _id);
   }
@@ -86,7 +86,7 @@ export default class Order {
       date,
       json.additionalInfo,
       json.processed,
-      json.id
+      json.id,
     );
   }
 }

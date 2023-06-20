@@ -1,29 +1,30 @@
-import Canteen from "../../shared/domain/entities/Canteen";
-import DailyMenu from "../../shared/domain/entities/DailyMenu";
-import Dishes from "../../shared/domain/entities/Dishes";
-import ENTITIES from "../../shared/domain/types/entities";
-import Cache from "../../shared/utils/cache";
-import path from "path";
-import dayjs from "dayjs";
+import Canteen from '../../shared/domain/entities/Canteen';
+import DailyMenu from '../../shared/domain/entities/DailyMenu';
+import Dishes from '../../shared/domain/entities/Dishes';
+import ENTITIES from '../../shared/domain/types/entities';
+import Cache from '../../shared/utils/cache';
+import path from 'path';
+import dayjs from 'dayjs';
 
 export default (req, res) => {
   const user = res.locals.user;
   const id = req.params.id;
 
   const canteen = Cache.getEntity<Canteen>(ENTITIES.CANTEENS, id);
-  if (!canteen)
-    return res.render(path.join(__dirname, "../../shared/interface/views/404"));
+  if (!canteen) {
+    return res.render(path.join(__dirname, '../../shared/interface/views/404'));
+  }
 
-  //obtengo platos destacados(menu del dia del comedor)
+  // obtengo platos destacados(menu del dia del comedor)
   const dailyMenu = getDailyMenu(canteen);
 
-  //obtengo menu semanal
+  // obtengo menu semanal
   const weeklyMenu = getWeeklyMenu(canteen);
 
-  //obtengo el menu
+  // obtengo el menu
   const menu = getMenu(canteen);
 
-  res.render(path.join(__dirname, "../interface/views/canteen"), {
+  res.render(path.join(__dirname, '../interface/views/canteen'), {
     user: user,
     data: {
       canteen: canteen.toJSON(),
@@ -40,17 +41,17 @@ const getDailyMenu = (canteen: Canteen) => {
   if (dailyMenuObject) {
     const breakfast = Cache.getEntity<Dishes>(
       ENTITIES.DISHES,
-      dailyMenuObject.breakfast
+      dailyMenuObject.breakfast,
     ).toJSON();
 
     const lunch = Cache.getEntity<Dishes>(
       ENTITIES.DISHES,
-      dailyMenuObject.lunch
+      dailyMenuObject.lunch,
     ).toJSON();
 
     const snack = Cache.getEntity<Dishes>(
       ENTITIES.DISHES,
-      dailyMenuObject.snack
+      dailyMenuObject.snack,
     ).toJSON();
 
     const dishes = {
@@ -65,13 +66,13 @@ const getDailyMenu = (canteen: Canteen) => {
 
 const getWeeklyMenu = (canteen: Canteen) => {
   const days = [
-    "Domingo",
-    "Lunes",
-    "Martes",
-    "Miercoles",
-    "Jueves",
-    "Viernes",
-    "Sabado",
+    'Domingo',
+    'Lunes',
+    'Martes',
+    'Miercoles',
+    'Jueves',
+    'Viernes',
+    'Sabado',
   ];
 
   const weeklyMenu = canteen.getWeeklyMenu().map((menu: DailyMenu) => {
@@ -81,7 +82,7 @@ const getWeeklyMenu = (canteen: Canteen) => {
       day: days[day],
       breakfast: Cache.getEntity<Dishes>(
         ENTITIES.DISHES,
-        menu.breakfast
+        menu.breakfast,
       ).toJSON(),
       lunch: Cache.getEntity<Dishes>(ENTITIES.DISHES, menu.lunch).toJSON(),
       snack: Cache.getEntity<Dishes>(ENTITIES.DISHES, menu.snack).toJSON(),

@@ -43,8 +43,7 @@
       <h1>Lista de Platos Disponibles</h1>
       <% let j=0 %> <% if (dishes && dishes.length > 0) { %>
       <ol class="ol" style="--length: 5" role="list">
-        <% for (let i = 0; i < dishes.length; i++) { const dishe = dishes[i];
-        j++; %>
+        <% for (let i = 0; i < dishes.length; i++) { const dishe = dishes[i];j++; %>
         <li class="li" style="--i: <%=j%>">
           <h2 class="h3"><%= dishe.name %></h2>
           <p class="p">Ingredientes: <%= dishe.ingredients %></p>

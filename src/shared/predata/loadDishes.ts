@@ -1,146 +1,147 @@
-import Dishes from "../domain/entities/Dishes";
-import ENTITIES from "../domain/types/entities";
-import Cache from "../utils/cache";
+/* eslint-disable max-len */
+import Dishes from '../domain/entities/Dishes';
+import ENTITIES from '../domain/types/entities';
+import Cache from '../utils/cache';
 
 export default () => {
-  //save dishes
-  //breakfast
+  // save dishes
+  // breakfast
 
   const coffeWithMilk = new Dishes(
-    "Cafe con leche",
+    'Cafe con leche',
     80,
-    ["Leche", "cafe", "azucar"],
+    ['Leche', 'cafe', 'azucar'],
     1,
-    "Proteina y calcio",
-    "/temp/cafe.jpg"
+    'Proteina y calcio',
+    '/temp/cafe.jpg',
   );
   const muffins = new Dishes(
-    "Magdalenas",
+    'Magdalenas',
     100,
-    ["Harina", "huevos", "azucar"],
+    ['Harina', 'huevos', 'azucar'],
     2,
-    "Hidratos de carbono",
-    "/temp/muffins.jpg"
+    'Hidratos de carbono',
+    '/temp/muffins.jpg',
   );
   const orangeJuice = new Dishes(
-    "Zumo de naranja",
+    'Zumo de naranja',
     50,
-    ["Naranjas"],
+    ['Naranjas'],
     3,
-    "Vitamina C",
-    "/temp/vaso-jugo-naranja-colocado-madera.jpg"
+    'Vitamina C',
+    '/temp/vaso-jugo-naranja-colocado-madera.jpg',
   );
   const cookies = new Dishes(
-    "Galletas",
+    'Galletas',
     150,
-    ["Harina", "huevos", "azucar"],
+    ['Harina', 'huevos', 'azucar'],
     4,
-    "Hidratos de carbono",
-    "/temp/cookies.jpg"
+    'Hidratos de carbono',
+    '/temp/cookies.jpg',
   );
   const donuts = new Dishes(
-    "Donuts",
+    'Donuts',
     200,
-    ["Harina", "huevos", "azucar"],
+    ['Harina', 'huevos', 'azucar'],
     5,
-    "Hidratos de carbono",
-    "https://canalcocina.es/medias/images/0001083606QuiqueAlCuboT02E021HDonuts-de-galletasCLEAN01.jpg"
+    'Hidratos de carbono',
+    'https://canalcocina.es/medias/images/0001083606QuiqueAlCuboT02E021HDonuts-de-galletasCLEAN01.jpg',
   );
-  //lunches
+  // lunches
   const salad = new Dishes(
-    "Ensalada",
+    'Ensalada',
     200,
-    ["Lechuga", "tomate", "atun"],
+    ['Lechuga', 'tomate', 'atun'],
     6,
 
-    "Vitaminas y proteinas",
-    "https://saboreaunohoy.com/wp-content/uploads/Love-One-Today-featured-avocado-recipe-Springtime-Cobb-Salad-with-Avocado-Dijon-Dressing.jpg"
+    'Vitaminas y proteinas',
+    'https://saboreaunohoy.com/wp-content/uploads/Love-One-Today-featured-avocado-recipe-Springtime-Cobb-Salad-with-Avocado-Dijon-Dressing.jpg',
   );
 
   const pasta = new Dishes(
-    "Pasta",
+    'Pasta',
     300,
-    ["Pasta", "tomate", "atun"],
+    ['Pasta', 'tomate', 'atun'],
     7,
-    "Hidratos de carbono y proteinas",
-    "https://www.budgetbytes.com/wp-content/uploads/2013/07/Creamy-Spinach-Tomato-Pasta-bowl-500x500.jpg"
+    'Hidratos de carbono y proteinas',
+    'https://www.budgetbytes.com/wp-content/uploads/2013/07/Creamy-Spinach-Tomato-Pasta-bowl-500x500.jpg',
   );
 
   const pizza = new Dishes(
-    "Pizza",
+    'Pizza',
     400,
-    ["Harina", "tomate", "queso"],
+    ['Harina', 'tomate', 'queso'],
     8,
-    "Hidratos de carbono y proteinas",
-    "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg"
+    'Hidratos de carbono y proteinas',
+    'https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg',
   );
 
   const rice = new Dishes(
-    "Arroz",
+    'Arroz',
     500,
-    ["Arroz", "tomate", "atun"],
+    ['Arroz', 'tomate', 'atun'],
     9,
-    "Hidratos de carbono y proteinas",
-    "https://images.aws.nestle.recipes/original/cc1ed7245ed521b41e14c8c7ca0fa9f8_foto_arroz.jpg"
+    'Hidratos de carbono y proteinas',
+    'https://images.aws.nestle.recipes/original/cc1ed7245ed521b41e14c8c7ca0fa9f8_foto_arroz.jpg',
   );
 
   const meat = new Dishes(
-    "Carne",
+    'Carne',
     600,
-    ["Carne", "tomate", "atun"],
+    ['Carne', 'tomate', 'atun'],
     10,
-    "Proteinas",
-    "https://cdn.aarp.net/content/dam/aarp/health/healthy-living/2019/10/1140-rib-eye-steak-esp.imgcache.rev.web.1000.575.jpg"
+    'Proteinas',
+    'https://cdn.aarp.net/content/dam/aarp/health/healthy-living/2019/10/1140-rib-eye-steak-esp.imgcache.rev.web.1000.575.jpg',
   );
 
-  //snacks
+  // snacks
   const chips = new Dishes(
-    "Patatas fritas",
+    'Patatas fritas',
     200,
-    ["Patatas", "aceite", "sal"],
+    ['Patatas', 'aceite', 'sal'],
     11,
-    "Hidratos de carbono",
-    "https://comidaschilenas.com/wp-content/uploads/2020/01/Receta-de-papas-fritas-perfectas.jpg"
+    'Hidratos de carbono',
+    'https://comidaschilenas.com/wp-content/uploads/2020/01/Receta-de-papas-fritas-perfectas.jpg',
   );
 
   const chocolate = new Dishes(
-    "Chocolate",
+    'Chocolate',
     300,
-    ["Cacao", "leche", "azucar"],
+    ['Cacao', 'leche', 'azucar'],
     12,
-    "Hidratos de carbono",
-    "https://t1.uc.ltmcdn.com/es/posts/4/4/5/como_hacer_bombones_de_chocolate_23544_600.webp"
+    'Hidratos de carbono',
+    'https://t1.uc.ltmcdn.com/es/posts/4/4/5/como_hacer_bombones_de_chocolate_23544_600.webp',
   );
 
   const iceCream = new Dishes(
-    "Helado",
+    'Helado',
     400,
-    ["Leche", "azucar", "huevo"],
+    ['Leche', 'azucar', 'huevo'],
     13,
-    "Hidratos de carbono",
-    "https://recetinas.com/wp-content/uploads/2021/06/helado-de-frutas-rojas-y-yogur.jpg"
+    'Hidratos de carbono',
+    'https://recetinas.com/wp-content/uploads/2021/06/helado-de-frutas-rojas-y-yogur.jpg',
   );
 
   const yogurt = new Dishes(
-    "Yogur",
+    'Yogur',
     500,
-    ["Leche", "azucar", "huevo"],
+    ['Leche', 'azucar', 'huevo'],
     14,
-    "Hidratos de carbono",
-    "https://assets.unileversolutions.com/recipes-v2/236472.jpg"
+    'Hidratos de carbono',
+    'https://assets.unileversolutions.com/recipes-v2/236472.jpg',
   );
 
   const fruit = new Dishes(
-    "Fruta",
+    'Fruta',
     600,
 
-    ["Fruta"],
+    ['Fruta'],
     15,
-    "Vitaminas",
-    "https://www.fisenf.com/wp-content/uploads/2015/11/frutas-y-frutos-secos.jpg"
+    'Vitaminas',
+    'https://www.fisenf.com/wp-content/uploads/2015/11/frutas-y-frutos-secos.jpg',
   );
 
-  //save entities
+  // save entities
   Cache.saveEntity<Dishes>(ENTITIES.DISHES, coffeWithMilk);
   Cache.saveEntity<Dishes>(ENTITIES.DISHES, salad);
   Cache.saveEntity<Dishes>(ENTITIES.DISHES, chips);

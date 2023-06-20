@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import {v4 as uuid} from 'uuid';
 export default class DailyMenu {
   private _id: string;
   constructor(
@@ -6,12 +6,12 @@ export default class DailyMenu {
     private _breakfast: string,
     private _lunch: string,
     private _snack: string,
-    _id?: string
+    _id?: string,
   ) {
     !_id ? (this._id = uuid()) : (this._id = _id);
   }
 
-  //getters
+  // getters
   get date(): Date {
     return this._date;
   }
@@ -28,7 +28,7 @@ export default class DailyMenu {
     return this._snack;
   }
 
-  //setters
+  // setters
   set date(date: Date) {
     this._date = date;
   }
@@ -45,12 +45,12 @@ export default class DailyMenu {
     this._snack = snack;
   }
 
-  //methods
+  // methods
   getIdentifier(): string {
     return this._id;
   }
 
-  //toJSON
+  // toJSON
   toJSON(): any {
     return {
       date: this.date,
@@ -60,14 +60,14 @@ export default class DailyMenu {
     };
   }
 
-  //fromJSON
+  // fromJSON
 
   static fromJSON(json: any): DailyMenu {
     const dailyMenu = new DailyMenu(
       json.date,
       json.breakfast,
       json.lunch,
-      json.snack
+      json.snack,
     );
     return dailyMenu;
   }

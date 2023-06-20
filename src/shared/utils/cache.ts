@@ -1,14 +1,14 @@
-import NodeCache from "node-cache";
-import ENTITIES from "../domain/types/entities";
+import NodeCache from 'node-cache';
+import ENTITIES from '../domain/types/entities';
 
-//create a singelton cache class
+// create a singelton cache class
 export default class Cache {
   private static cache: NodeCache;
 
   private constructor() {
     Cache.cache = new NodeCache();
-    Cache.cache.on("set", (key, value) =>
-      console.log(`Entity ${key} saved`, Cache.cache.keys())
+    Cache.cache.on('set', (key) =>
+      console.log(`Entity ${key} saved`, Cache.cache.keys()),
     );
   }
 
@@ -21,10 +21,10 @@ export default class Cache {
   public static saveEntity<T>(entityName: ENTITIES, value: T | any) {
     let entityMap;
     if (Cache.cache.has(entityName)) {
-      //save data
+      // save data
       entityMap = Cache.cache.get(entityName);
     } else {
-      //save the entity into cache
+      // save the entity into cache
       entityMap = new Map<string, T>();
     }
     entityMap.set(value.getIdentifier(), value);
@@ -56,13 +56,13 @@ export default class Cache {
   }
   public static getEntitiesByKeys<T>(
     entityName: ENTITIES,
-    keys: string[]
+    keys: string[],
   ): T[] {
     if (Cache.cache.has(entityName)) {
       const entityMap: Map<string, T> = Cache.cache.get(entityName);
       const entities: T[] = Array.from(entityMap.values());
       return entities.filter((entity: any) =>
-        keys.includes(entity.getIdentifier())
+        keys.includes(entity.getIdentifier()),
       );
     }
     return [];

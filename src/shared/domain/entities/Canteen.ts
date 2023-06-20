@@ -1,13 +1,13 @@
-import { v4 as uuid } from "uuid";
-import dayjs from "dayjs";
-import weekOfYear from "dayjs/plugin/weekOfYear";
+import {v4 as uuid} from 'uuid';
+import dayjs from 'dayjs';
+import weekOfYear from 'dayjs/plugin/weekOfYear';
 dayjs.extend(weekOfYear);
 
-import Cache from "../../utils/cache";
-import ENTITIES from "../types/entities";
-import DailyMenu from "./DailyMenu";
-import Dishes from "./Dishes";
-import Group from "./Group";
+import Cache from '../../utils/cache';
+import ENTITIES from '../types/entities';
+import DailyMenu from './DailyMenu';
+import Dishes from './Dishes';
+import Group from './Group';
 
 export default class Canteen {
   private _id: string;
@@ -19,12 +19,12 @@ export default class Canteen {
     private _groups: string[] = [],
     private _menu: string[] = [],
     private _dailyMenus: string[] = [],
-    _id?: string
+    _id?: string,
   ) {
     !_id ? (this._id = uuid()) : (this._id = _id);
   }
 
-  //getters
+  // getters
 
   get name(): string {
     return this._name;
@@ -54,7 +54,7 @@ export default class Canteen {
     return this._groups;
   }
 
-  //setters
+  // setters
   set name(name: string) {
     this._name = name;
   }
@@ -83,7 +83,7 @@ export default class Canteen {
     this._groups = groups;
   }
 
-  //methods
+  // methods
   getIdentifier(): string {
     return this._id;
   }
@@ -96,11 +96,11 @@ export default class Canteen {
     if (this.dailyMenus.length === 0) return null;
     const dailyMenus = Cache.getEntitiesByKeys<DailyMenu>(
       ENTITIES.DAILY_MENU,
-      this._dailyMenus
+      this._dailyMenus,
     );
 
     const menu = dailyMenus.find((menu) =>
-      dayjs(menu.date, "YYYY-MM-DD").isSame(inputDate, "day")
+      dayjs(menu.date, 'YYYY-MM-DD').isSame(inputDate, 'day'),
     );
 
     return menu;
@@ -109,7 +109,7 @@ export default class Canteen {
   getWeeklyMenu(): DailyMenu[] {
     const dailyMenus = Cache.getEntitiesByKeys<DailyMenu>(
       ENTITIES.DAILY_MENU,
-      this._dailyMenus
+      this._dailyMenus,
     );
 
     const inputWeek = dayjs().week();
@@ -124,9 +124,10 @@ export default class Canteen {
   }
 
   getGroup(id: string): Group {
-    //verifico si el group pertenece a este comedor
-    if (!this.groups.includes(id))
-      throw new Error("El group no pertenece a este comedor");
+    // verifico si el group pertenece a este comedor
+    if (!this.groups.includes(id)) {
+      throw new Error('El group no pertenece a este comedor');
+    }
 
     const group = Cache.getEntity<Group>(ENTITIES.GROUPS, id);
 
@@ -134,9 +135,10 @@ export default class Canteen {
   }
 
   getDishe(id: string): Dishes {
-    //verifico si el dishe pertenece a este comedor
-    if (!this.menu.includes(id))
-      throw new Error("El dishe no pertenece a este comedor");
+    // verifico si el dishe pertenece a este comedor
+    if (!this.menu.includes(id)) {
+      throw new Error('El dishe no pertenece a este comedor');
+    }
 
     const dishe = Cache.getEntity<Dishes>(ENTITIES.DISHES, id);
 
@@ -162,7 +164,7 @@ export default class Canteen {
     this.menu.push(id);
   }
 
-  //toJSON
+  // toJSON
   toJSON(): any {
     return {
       id: this._id,
@@ -176,7 +178,7 @@ export default class Canteen {
     };
   }
 
-  //fromJSON
+  // fromJSON
   static fromJSON(json: any): Canteen {
     const canteen = new Canteen(
       json.name,
@@ -186,7 +188,7 @@ export default class Canteen {
       json.groups,
       json.menu,
       json.dailyMenus,
-      json.id
+      json.id,
     );
     return canteen;
   }
