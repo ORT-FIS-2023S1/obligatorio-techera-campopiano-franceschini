@@ -76,8 +76,7 @@
           },
           body: new URLSearchParams(new FormData(form)),
         })
-        .then(async (response) => {
-          const body = await response.json()
+        .then((response) => {
           if (response.ok) {
             Swal.fire({
               icon: "success",
@@ -94,13 +93,6 @@
                 window.location.href = "/admin/index";
               }
             });
-          } else if (response.status === 400) {
-            Swal.fire({
-              icon: "error",
-              title: "Error",
-              text: body.error,
-            });
-
           } else {
             throw new Error("Error al guardar los datos del formulario");
           }
@@ -110,7 +102,7 @@
           Swal.fire({
             icon: "error",
             title: "Error",
-            text: `Ocurrió un error al guardar los datos del formulario.`,
+            text: "Ocurrió un error al guardar los datos del formulario.",
           });
         });
     });
