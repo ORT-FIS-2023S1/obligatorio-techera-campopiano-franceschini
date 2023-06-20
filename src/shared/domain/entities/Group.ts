@@ -1,5 +1,5 @@
-import { v4 as uuid } from "uuid";
-import Diner from "./Diner";
+import {v4 as uuid} from 'uuid';
+import Diner from './Diner';
 
 export default class Group {
   private _id: string;
@@ -7,13 +7,13 @@ export default class Group {
     private _name: string,
     private _description: string,
     private _members: Diner[],
-    _id?: string
+    _id?: string,
   ) {
-    //generate id
+    // generate id
     !_id ? (this._id = uuid()) : (this._id = _id);
   }
 
-  //getter
+  // getter
   get name(): string {
     return this._name;
   }
@@ -26,7 +26,7 @@ export default class Group {
     return this._members;
   }
 
-  //setter
+  // setter
   set name(name: string) {
     this._name = name;
   }
@@ -39,7 +39,7 @@ export default class Group {
     this._members = members;
   }
 
-  //methods
+  // methods
 
   getIdentifier(): string {
     return this._id;
@@ -63,7 +63,7 @@ export default class Group {
     return this._members;
   }
 
-  //toJSON
+  // toJSON
   toJSON(): any {
     return {
       name: this.name,
@@ -72,13 +72,13 @@ export default class Group {
     };
   }
 
-  //fromJSON
+  // fromJSON
   static fromJSON(groupJSON: any): Group {
     const group = new Group(
       groupJSON.name,
       groupJSON.description,
       groupJSON.members,
-      groupJSON.id
+      groupJSON.id,
     );
     return group;
   }

@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import {v4 as uuid} from 'uuid';
 export default class Dishes {
   private _id: string;
   constructor(
@@ -8,12 +8,12 @@ export default class Dishes {
     private _portions: number,
     private _nutritionalInformation: string,
     private _imageURL: string,
-    _id?: string
+    _id?: string,
   ) {
     !_id ? (this._id = uuid()) : (this._id = _id);
   }
 
-  //getters
+  // getters
   get name(): string {
     return this._name;
   }
@@ -38,7 +38,7 @@ export default class Dishes {
     return this._imageURL;
   }
 
-  //setters
+  // setters
   set name(name: string) {
     this._name = name;
   }
@@ -62,12 +62,12 @@ export default class Dishes {
   set imageURL(imageUrl: string) {
     this._imageURL = imageUrl;
   }
-  //methods
+  // methods
 
   getIdentifier(): string {
     return this._id;
   }
-  //toJSON
+  // toJSON
   toJSON(): object {
     return {
       name: this._name,
@@ -79,7 +79,7 @@ export default class Dishes {
     };
   }
 
-  //fromJSON
+  // fromJSON
   static fromJSON(json: any): Dishes {
     return new Dishes(
       json.name,
@@ -87,7 +87,7 @@ export default class Dishes {
       json.ingredients,
       json.portions,
       json.nutritionalInformation,
-      json.imageUrl
+      json.imageUrl,
     );
   }
 }

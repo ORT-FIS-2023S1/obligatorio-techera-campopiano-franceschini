@@ -1,3 +1,3 @@
-import sharedRoutes from "./shared.routes";
+import sharedRoutes from './shared.routes';
 
 export default sharedRoutes;

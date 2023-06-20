@@ -4,10 +4,10 @@ export default class User {
     private _password: string,
     private _role: string,
     private _diners: string[] = [],
-    private _canteens: string[] = []
+    private _canteens: string[] = [],
   ) {}
 
-  //getters
+  // getters
   get email(): string {
     return this._email;
   }
@@ -28,7 +28,7 @@ export default class User {
     return this._canteens;
   }
 
-  //setters
+  // setters
 
   set email(email: string) {
     this._email = email;
@@ -54,7 +54,7 @@ export default class User {
     return this.email;
   }
 
-  //methods
+  // methods
   addDiner(id: string): void {
     this._diners.push(id);
   }
@@ -71,7 +71,7 @@ export default class User {
     this._canteens = this._canteens.filter((c) => c !== id);
   }
 
-  //toJSON
+  // toJSON
   toJSON(): object {
     return {
       email: this.email,
@@ -81,14 +81,14 @@ export default class User {
     };
   }
 
-  //fromJSON
+  // fromJSON
   static fromJSON(json: any): User {
     const user = new User(
       json.email,
       json.password,
       json.role,
       json.diners,
-      json.canteens
+      json.canteens,
     );
     return user;
   }
