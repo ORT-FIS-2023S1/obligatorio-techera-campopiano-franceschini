@@ -16,7 +16,13 @@
               <li class="card-item" style="--i: <%= j %>">
                 <div
                   class="cardSlider"
-                  style="background-image: url('<%= order.dish.imageURL %>')"
+                  style="
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.7),
+                        rgba(0, 0, 0, 0.7)
+                      ),
+                      url('<%= order.dish.imageURL %>');
+                  "
                 >
                   <h2 class="h3" style="color: rgb(255 255 255) !important">
                     <%= order.dish.name %>
