@@ -27,8 +27,8 @@ export default (req, res) => {
 
     const dishesData = new Dishes(
       name,
-      price,
-      ingredients,
+      Number(price),
+      ingredients.trim().toLowerCase().split(","),
       portions,
       nutritionalInformation,
       imageURL

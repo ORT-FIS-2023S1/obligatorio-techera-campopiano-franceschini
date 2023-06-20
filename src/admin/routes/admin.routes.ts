@@ -15,6 +15,7 @@ import Order from "../../shared/domain/entities/Order";
 import Diner from "../../shared/domain/entities/Diner";
 import Group from "../../shared/domain/entities/Group";
 import logoutController from "../../shared/controllers/logoutController";
+import addDisheValidations from "../validations/addDishe.validations";
 
 const router = Router();
 
@@ -111,7 +112,7 @@ router.get("/index/diner/add", (req, res) => {
 });
 
 router.get("/index/logout", logoutController);
-router.post("/index/addDishe", addDisheController);
+router.post("/index/addDishe", [addDisheValidations, addDisheController]);
 router.post("/index/addOrder", addOrderController);
 router.post("/index/processOrder", processOrderController);
 router.post("/index/group/addGroup", addGroupController);
