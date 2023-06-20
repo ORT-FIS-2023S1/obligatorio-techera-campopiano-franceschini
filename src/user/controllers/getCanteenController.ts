@@ -11,6 +11,8 @@ export default (req, res) => {
   const id = req.params.id;
 
   const canteen = Cache.getEntity<Canteen>(ENTITIES.CANTEENS, id);
+  if (!canteen)
+    return res.render(path.join(__dirname, "../../shared/interface/views/404"));
 
   //obtengo platos destacados(menu del dia del comedor)
   const dailyMenu = getDailyMenu(canteen);
