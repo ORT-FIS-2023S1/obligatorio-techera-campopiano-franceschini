@@ -98,6 +98,9 @@ Este caso de prueba verifica el comportamiento del sistema al hacer clic en la o
 |-------------|--------|----------------------------------------------------------------|----------|-------------------------------------------------------------------------------------|
 | 2023-06-22  | Andrés   | Eliminación de producto del carrito sin pedidos y realizar pedido | 20 minutos   | -Verificado el comportamiento del botón "Realizar pedido" tras eliminar un producto. -Confirmado el mensaje de error al intentar realizar pedido sin productos en el carrito |
 |2023-06-22| Andrés| Carga inconsistente de menús en la pantalla "Secciones" al hacer clic en Menú | 10 minutos | Realizada la prueba de manera repetida para evaluar la consistencia de la carga. Encontrado el problema de carga inconsistente, en algunas ocasiones no se cargan los menús.|
+|2023-06-22| Horacio| Inconsistencia en valor de productos en el carrito. | 5 minutos | Al aumentar la cantidad de productos en el carrito, el precio no varía, siempre es el mismo.|
+|2023-06-22| Horacio| Agregar nuevo plato y Edición de Plato con datos vacíos. | 10 minutos | El sistema permite dejar los campos de un plato vacíos al crearlo o editarlo (Nombre, Descripción, Precio, Tipo, Imagen).|
+|2023-06-22| Horacio| Agregar plato ya existente. | 10 minutos | Al agregar un plato ya existente no realiza ninguna comprobación previa y lo agrega igualmente.|
 
 
 ## Evaluación Global de la Calidad
