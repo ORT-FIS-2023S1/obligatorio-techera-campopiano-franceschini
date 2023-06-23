@@ -90,7 +90,89 @@ Este caso de prueba verifica el comportamiento del sistema al hacer clic en la o
 
 ---
 
+- [ ] Caso de prueba 3 - Agregar el mismo producto varias veces al carrito
 
+**Descripción:**
+Este caso de prueba verifica el comportamiento del sistema al agregar el mismo producto repetidas veces al carrito. Se evalúa si aumenta el costo total del carrito.
+
+**Pasos:**
+1. Ingresar en la aplicación.
+2. Navegar a la pantalla de Menú.
+3. Agregar un menú al carrito.
+4. Navegar a la pantalla del carrito de compras..
+5. Verificar que se haya agregado el producto correctamente.
+6. Aumentar la cantidad de unidades del producto.
+7. Verificar que el costo total aumente.
+
+**Resultado esperado:**
+- El sistema debe aumentar el costo total del carrito a medida que se agrega un mismo producto.
+
+**Datos de prueba:**
+- Producto: Producto de ejemplo
+- Cantidad inicial en el carrito: 2 o más
+
+**Entorno de prueba:**
+- Dispositivo: Ubuntu 22.04 LTS
+- Navegador: Google Chrome Version 114.0.5735.133 (Official Build) (64-bit)
+
+**Observaciones:**
+- Al agregar varias cantidades de un mismo producto, el costo se mantiene igual y no aumenta de forma relativa a la cantidad de productos que haya en el carrito.
+- Se debe verificar que al agregar una nueva unidad del producto, su valor se sume al valor acumulado.
+---
+
+- [ ] Caso de prueba 4 - Agregar un nuevo plato o editar un plato y dejar sus campos vacíos.
+
+**Descripción:**
+Este caso de prueba verifica el comportamiento del sistema al agregar o editar un plato dejando todos sus campos vacíos.
+
+**Pasos:**
+1. Ingresar en la aplicación.
+2. Navegar a la pantalla Editar Menú.
+3. Agregar un nuevo plato o editar un plato existente.
+4. Dejar todos los campos vacíos y guardar los cambios.
+
+**Resultado esperado:**
+- El sistema debe mostrar un error al guardar los cambios con los campos vacíos.
+
+**Datos de prueba:**
+- Plato: Nuevo plato
+- Datos del plato: Nulos
+
+**Entorno de prueba:**
+- Dispositivo: Ubuntu 22.04 LTS
+- Navegador: Google Chrome Version 114.0.5735.133 (Official Build) (64-bit)
+
+**Observaciones:**
+- Al crear un nuevo plato y no llenar ninguno de sus campos, el sistema permite crear el plato igualmente, sin mostrar ningún mensaje de error.
+- Al editar un plato existente y borrar todos sus datos, el sistema permite guardar los cambios, sin mostrar ningún mensaje de error.
+---
+
+- [ ] Caso de prueba 5 - Agregar un plato ya existente
+
+**Descripción:**
+Este caso de prueba verifica el comportamiento del sistema al agregar un plato ya existente.
+
+**Pasos:**
+1. Ingresar en la aplicación.
+2. Navegar a la pantalla de Editar Menú.
+3. Agregar un nuevo plato.
+4. Completar los datos para que tengan la misma información que un plato ya existente.
+5. Verificar que se haya agregado el plato correctamente.
+
+**Resultado esperado:**
+- El sistema debe mostrar un mensaje de error informando que el nuevo plato que se intenta agregar, ya existe.
+
+**Datos de prueba:**
+- Plato: Plato ya existente
+
+**Entorno de prueba:**
+- Dispositivo: Ubuntu 22.04 LTS
+- Navegador: Google Chrome Version 114.0.5735.133 (Official Build) (64-bit)
+
+**Observaciones:**
+- Al agregar un nuevo plato que contiene los mismos datos que uno existente, el sistema lo agrega igualmente.
+- Se debe verificar que al agregar un nuevo plato, el mismo no exista previamente en el sistema.
+---
 
 ## Sesiones de Prueba Exploratoria
 
