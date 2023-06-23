@@ -190,7 +190,11 @@ Este caso de prueba verifica el comportamiento del sistema al agregar un plato y
 
 ## Evaluación Global de la Calidad
 
+Se han identificado varios errores de funcionalidad, algunos de los cuales tienen una severidad importante o moderada. Estos errores incluyen problemas con el cálculo del costo total del carrito al agregar varias unidades del mismo producto, la falta de validación de campos vacíos al agregar o editar platos, y la falta de detección de platos ya existentes al agregar nuevos platos. Además, se ha encontrado una inconsistencia en la carga de menús en la pantalla "Secciones" al hacer clic en la opción "Menú". Estos problemas afectan la usabilidad y la funcionalidad del sistema.
 
+Se han generado casos de prueba para abordar cada uno de los problemas identificados. Estos casos de prueba cubren diferentes escenarios y se enfocan en verificar el comportamiento esperado del sistema. También se han realizado sesiones de prueba exploratoria para evaluar el sistema desde diferentes perspectivas y descubrir posibles problemas adicionales.
+
+En general, se recomienda abordar los errores identificados y realizar pruebas adicionales para garantizar la calidad del sistema. Es importante corregir los problemas críticos e importantes, ya que afectan la funcionalidad básica del sistema y la experiencia del usuario. También se han detectado errores de ortografía en algunas opciones de menú.
 
 
 
