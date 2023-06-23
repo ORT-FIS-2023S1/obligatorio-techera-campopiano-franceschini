@@ -7,11 +7,14 @@
 #### Severidad Crítica
 
 #### Severidad Importante
+- [ ] Issue 3 - Al agregar 2 o más unidades de un mismo producto en el carrito, sus costos no se suman.
+- [ ] Issue 4 - El sistema no arroja un error al agregar o editar platos con sus campos vacíos.
 
 #### Severidad Moderada
 
 - [ ] Issue 1 - El botón "Realizar pedido" sigue visible después de eliminar el único producto del carrito
 - [ ] Issue 2 - Carga inconsistente de menús en la pantalla "Secciones" al hacer clic en Menú
+- [ ] Issue 5 - No se muestra ningún mensaje de error al agregar un plato ya existente.
 
 ### Problemas de Usabilidad
 
@@ -90,7 +93,7 @@ Este caso de prueba verifica el comportamiento del sistema al hacer clic en la o
 
 ---
 
-- [ ] Caso de prueba 3 - Agregar el mismo producto varias veces al carrito
+- [ ] Caso de prueba 3 - Agregar el mismo producto varias veces al carrito.
 
 **Descripción:**
 Este caso de prueba verifica el comportamiento del sistema al agregar el mismo producto repetidas veces al carrito. Se evalúa si aumenta el costo total del carrito.
