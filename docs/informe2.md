@@ -251,5 +251,6 @@ El primer contexto es el de user, aqui se encontrara toda la logica relacionada 
 9. **Vista principal de comedor**: Desarolle la logica y la interfaz de la vista del comedor, en esta vista se puede obserbar los platos destacados del dia (dia actual), el menu semanal y las opciones desayuno almuerzo y merienda. Tambien se puede obserbar el menu completo con la informacion de cada plato, nombre ingrediente y precio.
    Para el desarollo de las vistas utilice ejs, html, css y bootstrap 4. El desarollo de estas dos vistan implico tambien el desarollar rutas y controladores los cuales obtienen la informacion actualizada desde nuestra fuente de datos (el cache) y retornan las vistas mencionadas, utilizando nodejs y express principalmente.
 10. **Test unitarios**: Colabore en la codificacion de test unitarios a las clases del dominio y del cache, para asi lograr el nivel de cobertura solicitado.
+11. **Configutracion TS-Lint**: Para mantener el estilo de codificacion requerido, configure TS-Lint que es la version de ES-Lint para Typescript.
 
 Además de las funcionalidades mencionadas, también realicé las pruebas de sistema correspondientes para verificar el correcto funcionamiento de la aplicación en su conjunto. Esto incluyó la ejecución de pruebas unitarias y pruebas de integración para garantizar la calidad y estabilidad del sistema.
