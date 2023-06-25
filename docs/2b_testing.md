@@ -2,6 +2,18 @@
 
 ## Sumario de Issues
 
+- [ ] Issue 1 - El botón "Realizar pedido" sigue visible después de eliminar el único producto del carrito
+- [ ] Issue 2 - Carga inconsistente de menús en la pantalla "Secciones" al hacer clic en Menú
+- [ ] Issue 3 - Al agregar 2 o más unidades de un mismo producto en el carrito, sus costos no se suman.
+- [ ] Issue 4 - El sistema no arroja un error al agregar o editar platos con sus campos vacíos.
+- [ ] Issue 5 - No se muestra ningún mensaje de error al agregar un plato ya existente.
+- [ ] Issue 6 - Si utilizo el boton de ir hacia atras del navegador, no importa en que pqagina este, no me carga el contenido.
+- [ ] Issue 7 - Al cargar la pagina principal se obserban errores en consola.
+- [ ] Issue 8 - Las secciones y recursos no implementados no son correctamente informados al usuario, muestran un error de carga de una imagen.
+- [ ] Issue 9 - El buscador no realiza ninguna accion, no queda del todo claro si no funciona o no es parte de la implementacion.
+- [ ] Issue 10 - No se esta validando el tipado de dichi formulrio, es posible establecer el precio como un texto y no existe limite de numero de caracteres para los campos.
+- [ ] Issue 11 - Si bien al navegar entre paginas la informacion persiste, al recargar el navegador (NO la aplicacion) la informacion se pierde.
+
 ### Errores de Funcionalidad
 
 #### Severidad Crítica
