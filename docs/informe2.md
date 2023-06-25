@@ -1,13 +1,8 @@
 ﻿# Informe académico - Entrega 2
-  
 
 ## Objetivos
 
-  
-
 En esta segunda entrega del proyecto, nos planteamos los siguientes objetivos:
-
-  
 
 - Construir la aplicación utilizando las tecnologías definidas.
 
@@ -20,33 +15,28 @@ En esta segunda entrega del proyecto, nos planteamos los siguientes objetivos:
 - Reportar issues y realizar una evaluación global de calidad.
 
 ## Construcción
+
 Durante el desarrollo del proyecto, hemos aplicado diversas técnicas de ingeniería de software y hemos adquirido importantes aprendizajes. Hemos utilizado Node.js, Express y EJS como tecnologías principales. A continuación, se detalla el motivo por el cual hemos seleccionado cada una de estas tecnologías:
 
-  
+- **Node.js**: Elegimos Node.js debido a su capacidad para manejar grandes volúmenes de peticiones concurrentes y su eficiencia en la construcción de aplicaciones web escalables.
 
--  **Node.js**: Elegimos Node.js debido a su capacidad para manejar grandes volúmenes de peticiones concurrentes y su eficiencia en la construcción de aplicaciones web escalables.
+- **Express**: Utilizamos Express como framework de aplicaciones web en Node.js debido a su simplicidad y flexibilidad. Nos permite crear fácilmente rutas, gestionar middleware y trabajar con solicitudes y respuestas HTTP de manera eficiente.
 
-  
-
--  **Express**: Utilizamos Express como framework de aplicaciones web en Node.js debido a su simplicidad y flexibilidad. Nos permite crear fácilmente rutas, gestionar middleware y trabajar con solicitudes y respuestas HTTP de manera eficiente.
-
-  
-
--  **EJS (Embedded JavaScript)**: Optamos por EJS como motor de plantillas para generar vistas dinámicas en nuestra aplicación. EJS nos permite mezclar código JavaScript con HTML, lo cual facilita la generación de contenido dinámico y la reutilización de componentes.
-
-  
+- **EJS (Embedded JavaScript)**: Optamos por EJS como motor de plantillas para generar vistas dinámicas en nuestra aplicación. EJS nos permite mezclar código JavaScript con HTML, lo cual facilita la generación de contenido dinámico y la reutilización de componentes.
 
 A lo largo del proyecto, hemos explorado y aplicado buenas prácticas de desarrollo, como el uso de controladores, modelos, enrutamiento modular, validación de datos, gestión de sesiones, entre otros. También hemos realizado pruebas unitarias y pruebas de sistema para asegurar la calidad de nuestro código y la funcionalidad de la aplicación.
-##  Interfaz de Usuario
+
+## Interfaz de Usuario
+
 ### Sección para usuarios generales
 
 Esta sección está destinada a los usuarios que navegan por el sitio y brinda información general y de interés sobre comidas saludables para colegios. Algunos aspectos destacados de esta sección son:
 
--   Promovemos hábitos saludables: Se proporciona información y recursos para fomentar hábitos alimenticios saludables entre los estudiantes.
--   Fija límites de consumo diario: Se destacan los límites recomendados de consumo diario para diferentes grupos de alimentos, ayudando a los usuarios a tomar decisiones informadas sobre sus elecciones alimenticias.
--   Sin efectivo: Se informa a los usuarios que el sistema no utiliza dinero en efectivo como forma de pago, brindando alternativas y explicando cómo se realizan los pagos.
--   Información nutricional a tu alcance: Se destaca la accesibilidad a la información nutricional de los platos y menús disponibles, brindando transparencia y ayudando a los usuarios a tomar decisiones informadas.
--   Suscripciones a menús: Se presenta la opción de suscribirse a menús semanales, lo que brinda comodidad y planificación a los usuarios.
+- Promovemos hábitos saludables: Se proporciona información y recursos para fomentar hábitos alimenticios saludables entre los estudiantes.
+- Fija límites de consumo diario: Se destacan los límites recomendados de consumo diario para diferentes grupos de alimentos, ayudando a los usuarios a tomar decisiones informadas sobre sus elecciones alimenticias.
+- Sin efectivo: Se informa a los usuarios que el sistema no utiliza dinero en efectivo como forma de pago, brindando alternativas y explicando cómo se realizan los pagos.
+- Información nutricional a tu alcance: Se destaca la accesibilidad a la información nutricional de los platos y menús disponibles, brindando transparencia y ayudando a los usuarios a tomar decisiones informadas.
+- Suscripciones a menús: Se presenta la opción de suscribirse a menús semanales, lo que brinda comodidad y planificación a los usuarios.
 
 Además, en esta sección se muestra un botón con el texto "Comenzar", el cual redirige a los usuarios a la pantalla de inicio de sesión.
 
@@ -54,20 +44,21 @@ Además, en esta sección se muestra un botón con el texto "Comenzar", el cual 
 
 En esta sección, los usuarios del colegio pueden iniciar sesión o registrarse en el sitio. Algunas características de esta sección son:
 
--   Inicio de sesión: Los usuarios existentes pueden ingresar sus credenciales para acceder a las funcionalidades del sitio.
--   Registro: Los nuevos usuarios tienen la posibilidad de registrarse como usuarios del colegio, proporcionando la información necesaria para crear una cuenta.
+- Inicio de sesión: Los usuarios existentes pueden ingresar sus credenciales para acceder a las funcionalidades del sitio.
+- Registro: Los nuevos usuarios tienen la posibilidad de registrarse como usuarios del colegio, proporcionando la información necesaria para crear una cuenta.
 
 ### Sección de administración (para usuarios administradores)
 
 Esta sección está destinada a los usuarios administradores y proporciona funcionalidades avanzadas para la gestión de colegios. Algunos elementos clave de esta sección son:
 
--   Gestión de platos y menús: Los administradores pueden agregar nuevos platos y menús, lo que les permite mantener actualizada la oferta alimenticia del colegio.
--   Comensales y grupos: Los administradores pueden ver la lista de comensales asociados al colegio, así como gestionar los grupos de comensales existentes. Pueden registrar nuevos comensales, asignarlos a grupos y editar información relevante.
--   Pedidos: Los administradores tienen la capacidad de registrar pedidos de comidas para los comensales del colegio, facilitando la organización y el control de la distribución de alimentos.
--   Edición y eliminación de grupos: Los administradores pueden editar la información de los grupos existentes, como el nombre y la descripción, y también tienen la opción de eliminar grupos si es necesario.
--   Gestión de comedores: Los administradores pueden editar información relevante de los comedores, como el nombre y la ubicación, brindando flexibilidad para adaptarse a los cambios en la infraestructura escolar.
+- Gestión de platos y menús: Los administradores pueden agregar nuevos platos y menús, lo que les permite mantener actualizada la oferta alimenticia del colegio.
+- Comensales y grupos: Los administradores pueden ver la lista de comensales asociados al colegio, así como gestionar los grupos de comensales existentes. Pueden registrar nuevos comensales, asignarlos a grupos y editar información relevante.
+- Pedidos: Los administradores tienen la capacidad de registrar pedidos de comidas para los comensales del colegio, facilitando la organización y el control de la distribución de alimentos.
+- Edición y eliminación de grupos: Los administradores pueden editar la información de los grupos existentes, como el nombre y la descripción, y también tienen la opción de eliminar grupos si es necesario.
+- Gestión de comedores: Los administradores pueden editar información relevante de los comedores, como el nombre y la ubicación, brindando flexibilidad para adaptarse a los cambios en la infraestructura escolar.
 
 En cuanto al diseño de la interfaz de usuario, se utilizará una paleta de colores basada en tonos verdes para transmitir una sensación de frescura y salud.
+
 ## Codificación
 
 ### Estructura de carpetas
@@ -145,7 +136,8 @@ La estructura de carpetas se organiza en función de los distintos módulos y co
     - `utils`: Utilidades específicas para la sección de usuario.
     -
 
- `validations`: Validaciones de datos para la sección de usuario.
+`validations`: Validaciones de datos para la sección de usuario.
+
 - `app.ts`: Archivo principal de la aplicación que configura y ejecuta el servidor.
 
 ### Tecnologías utilizadas
@@ -198,6 +190,7 @@ Las rutas del administrador se definen utilizando el enrutador `Router` de Expre
 - `/admin/index/order`: Ruta para mostrar el formulario de agregar pedido
 
 .
+
 - `/admin/index/group/add`: Ruta para mostrar el formulario de agregar grupo.
 - `/admin/index/group/edit`: Ruta para mostrar el formulario de editar grupo.
 - `/admin/index/group/delete`: Ruta para mostrar el formulario de eliminar grupo.
@@ -206,22 +199,17 @@ Las rutas del administrador se definen utilizando el enrutador `Router` de Expre
 
 Estas rutas utilizan controladores correspondientes para procesar la lógica de negocio asociada a cada acción. Los controladores se importan desde diferentes archivos ubicados en la carpeta `admin/controllers`.
 
-
 ## Test Unitario
-Se adjuntan los test unitarios realizados en el proyecto en la carpeta **test\units**, para cada entidad del dominio implementada en el proyecto, teniendo una cobertura del 100% del código para cada test realizado.
 
+Se adjuntan los test unitarios realizados en el proyecto en la carpeta **test\units**, para cada entidad del dominio implementada en el proyecto, teniendo una cobertura del 100% del código para cada test realizado.
 
 ## Reflexión Trabajo individual
 
- Cada integrante del equipo ha realizado actividades en todas las áreas del proyecto, brindando su aporte en el desarrollo de funcionalidades, diseño de la interfaz de usuario, implementación de pruebas y revisión de código. Todos los integrantes han documentado sus actividades a través de commits en el repositorio.
-
-  
+Cada integrante del equipo ha realizado actividades en todas las áreas del proyecto, brindando su aporte en el desarrollo de funcionalidades, diseño de la interfaz de usuario, implementación de pruebas y revisión de código. Todos los integrantes han documentado sus actividades a través de commits en el repositorio.
 
 **Integrante: Andrés Campopiano**
 
 Durante esta etapa del proyecto, me enfoqué en desarrollar las siguientes funcionalidades, tanto en el backend como en el frontend, utilizando todas las herramientas disponibles:
-
-  
 
 1.  **Registrar un nuevo plato en el menú**: Implementé la lógica necesaria para permitir a un usuario administrador registrar un nuevo plato en el menú del comedor. Esto incluyó la creación de las rutas correspondientes, la validación de los datos ingresados y el almacenamiento adecuado en el cache de la aplicación. En el frontend, diseñé y desarrollé la interfaz de usuario, en conjunto con parte del equipo, para ingresar la información del plato y enviarla al servidor.
 
@@ -237,19 +225,31 @@ Durante esta etapa del proyecto, me enfoqué en desarrollar las siguientes funci
 
 7.  **Registrar un nuevo comensal**: Implementé la funcionalidad para permitir a un usuario administrador registrar un comensal y asociarlo a un grupo de comensales existente. Esto involucró la creación de las rutas y controladores correspondientes, la validación de los datos del comensal y su almacenamiento en el cache de la aplicación. En el frontend, diseñé y desarrollé la interfaz de usuario para ingresar la información del comensal y su asociación con un grupo de comensales.
 
-  
-
 Además de las funcionalidades mencionadas, también realicé las pruebas de sistema correspondientes para verificar el correcto funcionamiento de la aplicación en su conjunto. Esto incluyó la ejecución de pruebas unitarias y pruebas de integración para garantizar la calidad y estabilidad del sistema. También elaboré y participé en los planes de testing para evaluar el sistema del grupo asignado.
 
- 
 **Integrante: Horacio Franceschini**
 
-En esta etapa del proyecto, colaboré con el desarrollo Frontend de diferentes funcionalidades, las cuales fueron siendo adaptadas en conjunto con mis compañeros a medida que se avanzaba en el proyecto. 
+En esta etapa del proyecto, colaboré con el desarrollo Frontend de diferentes funcionalidades, las cuales fueron siendo adaptadas en conjunto con mis compañeros a medida que se avanzaba en el proyecto.
 
 Desarrollé los Test Unitarios para las clases del dominio y ayude a probar las nuevas funcionalidades a medida que se subían cambios, para garantizar su correcto funcionamiento.
 
 Durante el desarrollo de estas funcionalidades, aplicamos buenas prácticas de ingeniería de software, como el uso de patrones de diseño adecuados, la modularización del código, la implementación de pruebas unitarias y la adopción de estándares de calidad de código.
 También elaboré y participé en los planes de testing para evaluar el sistema del grupo asignado.
-  
-  
 
+**Integrante: Bryan Techera**
+Me encargue de realizar la arquitectura del proyecto, decidi aplicar una arquitectura mvc, configure express, typescript y jest. Cree las carpetas del proyecto y decidi dividir el codigo en 3 contextos.
+El primer contexto es el de user, aqui se encontrara toda la logica relacionada a las funcionalidades especificas que tienen acceso los usuario ( tutores en nuestro caso). Luego defini otro contexto admin, en este contexto se ubicaria toda la logica relacionada a las funcionalidades exclusivas de los administradores. Por ultimo defini el contexto shares, aqui estarian las funcionalidades compartidas como por ejemplo el login.
+
+1. **MVC**: implemente un arquitectura mvc utilizando express, defini el flujo de la siguiente manera. Todas las peticiones llegarian a un Router, el router validaria la informacion mediante un middleware que utilizaria la libreria Joi, luego el flujo pasaria a un controller, este controller contiene toda la logica del caso de uso y como respuesta envia una vista en ejs al cliente.
+2. **Autenticacion**: Para la autenticacion configure un middleware, el cual seria invocado antes del controlador de todas las rutas privadas de nuestra app, este middleware lee un token envado por medio de una cookie, valida ese toke y si todo esta bien envia el flujo al controlador.
+3. **Predata**: Cree las clases loadCanteens, loadDailyMenu,loadDiners,loadDishes,loadGroups,loadUsers y las pobre con datos de prueba para que al iniciar la aplicacion se cargaran automaticamente y el usuario no encontrara una app totalmente vacia, esta clase tambien me sirvio para prbar el almacenamiento en cache.
+4. **Creacion de entidades**: Creo las entidades Canteen,DailyMenu,Diner,Dishes,Group, User y defino su logica, metodos setter, getter, etc.
+5. **Cache**: Implemente la clase cache, aplicandole un patron de disenio singelton, defini en toda esta clase la logica necesaria para poder almacenar informacion en el sistema, usando la libreria node cache de una forma sencilla.
+6. **Main page**: Disenio e implementacion de toda la logica de la pagina principal, tambien la parte visual con ejs y bootstrap. Se incluye informacion relevante de la aplicacion y sus veneficios.
+7. **Login de usuario**: Disenio de interfaz y logica para el login de usuario, este requerimiento fue utilizado por los demas integrantes del grupo como guia para la implementacion de los posteriores requerimientos. Aqui defini el flujo del MVC, como deberian configurarse las rutas y los controladores, inclui la libreria Joi para la validacion del dto de entrada mediante un middleware. Tambien inclui la libreria jswowebtoken para manejar la autenticacion de usuarios mediante el uso de un token.
+8. **Vista principal de usuario**: Desarolle la logica y la interfaz de la vista principal de usuario. En esta vista se pueden obserbar los comensales asociados al usuario, los comedores e informacion relevante de los mismos y una seccion de platos destacados de dichos comedores.
+9. **Vista principal de comedor**: Desarolle la logica y la interfaz de la vista del comedor, en esta vista se puede obserbar los platos destacados del dia (dia actual), el menu semanal y las opciones desayuno almuerzo y merienda. Tambien se puede obserbar el menu completo con la informacion de cada plato, nombre ingrediente y precio.
+   Para el desarollo de las vistas utilice ejs, html, css y bootstrap 4. El desarollo de estas dos vistan implico tambien el desarollar rutas y controladores los cuales obtienen la informacion actualizada desde nuestra fuente de datos (el cache) y retornan las vistas mencionadas, utilizando nodejs y express principalmente.
+10. **Test unitarios**: Colabore en la codificacion de test unitarios a las clases del dominio y del cache, para asi lograr el nivel de cobertura solicitado.
+
+Además de las funcionalidades mencionadas, también realicé las pruebas de sistema correspondientes para verificar el correcto funcionamiento de la aplicación en su conjunto. Esto incluyó la ejecución de pruebas unitarias y pruebas de integración para garantizar la calidad y estabilidad del sistema.
